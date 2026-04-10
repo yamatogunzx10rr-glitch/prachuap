@@ -1,112 +1,189 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <title>รับทำเว็บไซต์ 999 บาท | Prachuap Online</title>
-  <style>
-    body {
-      font-family: "Prompt", Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-      color: #333;
-    }
-    /* Hero Section */
-    .hero {
-      position: relative;
-      background: url('https://picsum.photos/id/1011/1600/900') no-repeat center center;
-      background-size: cover;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.5); /* overlay */
-    }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      padding: 2em;
-    }
-    .hero h1 {
-      font-size: 3.5em;
-      margin: 0;
-    }
-    .hero p {
-      font-size: 1.5em;
-      margin-top: 0.5em;
-    }
-    .btn {
-      display: inline-block;
-      background: #ffcc00;
-      color: #333;
-      padding: 1em 2em;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 1.5em;
-      transition: background 0.3s;
-    }
-    .btn:hover {
-      background: #e6b800;
-    }
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 3em 2em;
-      text-align: center;
-    }
-    .price {
-      font-size: 2em;
-      color: #e60000;
-      margin: 1em 0;
-    }
-    .special {
-      background: #ffcc00;
-      padding: 1.5em;
-      margin: 2em 0;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 1em;
-      font-size: 0.9em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srisanor Café & Boutique Resort | พักผ่อนในความเรียบง่าย</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200;300;400;600&family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Prompt', sans-serif; }
+        .serif { font-family: 'Playfair Display', serif; }
+        .bg-wood { background-color: #F5F2ED; }
+        .text-brown { color: #5D4037; }
+        .bg-brown { background-color: #5D4037; }
+        .overlay { background: rgba(0, 0, 0, 0.3); }
+        html { scroll-behavior: smooth; }
+    </style>
 </head>
-<body>
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>รับทำเว็บไซต์ ราคา 999 บาท</h1>
-      <p>เว็บไซต์หน้าเดียว สวย เรียบง่าย ใช้งานได้จริง</p>
-      <a href="mailto:contact@prachuap.online" class="btn">สั่งทำเว็บไซต์เลย</a>
-    </div>
-  </section>
+<body class="bg-wood text-gray-800">
 
-  <main>
-    <p class="price">เพียง 999 บาท</p>
-    <p>เหมาะสำหรับธุรกิจเล็ก ๆ ร้านค้า หรือโปรไฟล์ส่วนตัว</p>
-    
-    <div class="special">
-      🎁 แถมฟรี! สิทธิพิเศษเชื่อมต่อกับแอพ <strong>Prachuap Connect</strong><br>
-      แอพไดเรคทอรี่ประจำจังหวัดประจวบคีรีขันธ์ ใช้ก่อนใคร
-    </div>
-  </main>
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="serif text-2xl font-bold tracking-widest text-brown">SRISANOR</h1>
+            <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest">
+                <a href="#home" class="hover:text-amber-700 transition">หน้าแรก</a>
+                <a href="#rooms" class="hover:text-amber-700 transition">ห้องพัก</a>
+                <a href="#cafe" class="hover:text-amber-700 transition">คาเฟ่</a>
+                <a href="#gallery" class="hover:text-amber-700 transition">แกลเลอรี</a>
+                <a href="#contact" class="hover:text-amber-700 transition">ติดต่อเรา</a>
+            </div>
+            <a href="#booking" class="bg-brown text-white px-6 py-2 rounded-sm hover:bg-stone-700 transition shadow-lg">จองเลย</a>
+        </div>
+    </nav>
 
-  <footer>
-    © 2026 Prachuap Online | ติดต่อ: contact@prachuap.online
-  </footer>
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=2000" class="absolute inset-0 w-full h-full object-cover" alt="Resort Architecture">
+        <div class="absolute inset-0 overlay"></div>
+        <div class="relative text-center text-white px-4">
+            <h2 class="text-4xl md:text-6xl mb-4 font-light">พักผ่อนในความเรียบง่ายที่สมบูรณ์แบบ</h2>
+            <p class="text-lg md:text-xl mb-8 font-extralight tracking-wide">Srisanor Boutique Resort & Café ท่ามกลางธรรมชาติ</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#rooms" class="bg-white text-brown px-10 py-3 rounded-sm font-medium hover:bg-stone-100 transition">จองห้องพัก</a>
+                <a href="#cafe" class="border border-white text-white px-10 py-3 rounded-sm font-medium hover:bg-white hover:text-brown transition">ดูคาเฟ่</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="rooms" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h3 class="serif text-4xl text-brown mb-2">Our Sanctuary</h3>
+            <div class="w-16 h-1 bg-amber-800 mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="group cursor-pointer">
+                <div class="overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800" class="w-full h-80 object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <h4 class="text-xl font-semibold mb-2">Deluxe Wooden Room</h4>
+                <p class="text-gray-600 text-sm mb-4">สัมผัสกลิ่นอายไม้แท้และการตกแต่งแบบมินิมอลพรีเมียม</p>
+                <div class="flex justify-between items-center border-t pt-4">
+                    <span class="text-brown font-bold">฿3,500 / คืน</span>
+                    <button class="text-sm underline hover:text-amber-800">ดูรายละเอียด</button>
+                </div>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1590490359683-658d3d23f972?auto=format&fit=crop&q=80&w=800" class="w-full h-80 object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <h4 class="text-xl font-semibold mb-2">Srisanor Suite</h4>
+                <p class="text-gray-600 text-sm mb-4">พื้นที่พักผ่อนขนาดใหญ่ พร้อมอ่างอาบน้ำและระเบียงส่วนตัว</p>
+                <div class="flex justify-between items-center border-t pt-4">
+                    <span class="text-brown font-bold">฿5,200 / คืน</span>
+                    <button class="text-sm underline hover:text-amber-800">ดูรายละเอียด</button>
+                </div>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&q=80&w=800" class="w-full h-80 object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <h4 class="text-xl font-semibold mb-2">Garden View Villa</h4>
+                <p class="text-gray-600 text-sm mb-4">ใกล้ชิดธรรมชาติเพียงก้าวเดียวจากเตียงนอน</p>
+                <div class="flex justify-between items-center border-t pt-4">
+                    <span class="text-brown font-bold">฿4,200 / คืน</span>
+                    <button class="text-sm underline hover:text-amber-800">ดูรายละเอียด</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cafe" class="bg-stone-900 text-white py-24">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h3 class="serif text-4xl mb-6">Srisanor Café</h3>
+                <p class="text-stone-400 mb-8 leading-relaxed">
+                    จิบกาแฟคั่วบดพิเศษท่ามกลางบรรยากาศสวนป่า พื้นที่ที่ออกแบบมาเพื่อความผ่อนคลายโดยเฉพาะ 
+                    เราคัดสรรเมล็ดกาแฟคุณภาพและเบเกอรี่โฮมเมดที่อบใหม่ทุกวัน
+                </p>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center">✨ Specialty Coffee Selection</li>
+                    <li class="flex items-center">🥐 Freshly Baked Pastries</li>
+                    <li class="flex items-center">🍃 Garden Chill-out Zone</li>
+                </ul>
+                <button class="border border-white px-8 py-3 hover:bg-white hover:text-stone-900 transition">ชมเมนูแนะนำ</button>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=600" class="rounded-sm mt-8" alt="Cafe interior">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=600" class="rounded-sm" alt="Coffee">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-3xl mb-2">🌿</div>
+                    <h5 class="font-medium text-brown">Nature Garden</h5>
+                </div>
+                <div>
+                    <div class="text-3xl mb-2">🅿️</div>
+                    <h5 class="font-medium text-brown">Private Parking</h5>
+                </div>
+                <div>
+                    <div class="text-3xl mb-2">📶</div>
+                    <h5 class="font-medium text-brown">High-speed Wi-Fi</h5>
+                </div>
+                <div>
+                    <div class="text-3xl mb-2">🛋️</div>
+                    <h5 class="font-medium text-brown">Relax Zone</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="py-24 bg-wood">
+        <div class="max-w-3xl mx-auto px-6 bg-white p-12 shadow-xl rounded-sm">
+            <div class="text-center mb-10">
+                <h3 class="serif text-3xl text-brown">สำรองห้องพัก</h3>
+                <p class="text-stone-500">เริ่มต้นการเดินทางที่แสนพิเศษของคุณที่นี่</p>
+            </div>
+            <form class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm mb-2 uppercase tracking-wide">ชื่อ-นามสกุล</label>
+                        <input type="text" class="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-amber-800 transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm mb-2 uppercase tracking-wide">เบอร์โทรศัพท์</label>
+                        <input type="tel" class="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-amber-800 transition">
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm mb-2 uppercase tracking-wide">วันที่เช็คอิน</label>
+                        <input type="date" class="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-amber-800 transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm mb-2 uppercase tracking-wide">ประเภทห้องพัก</label>
+                        <select class="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-amber-800 transition">
+                            <option>Deluxe Wooden Room</option>
+                            <option>Srisanor Suite</option>
+                            <option>Garden View Villa</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="w-full bg-brown text-white py-4 mt-4 hover:bg-stone-700 transition tracking-widest uppercase">ยืนยันการจอง</button>
+            </form>
+            <div class="mt-8 text-center flex justify-center space-x-6 text-sm">
+                <span class="flex items-center">💬 LINE: @srisanor</span>
+                <span class="flex items-center">📞 โทร: 081-XXX-XXXX</span>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-stone-100 py-12 border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="serif text-2xl font-bold tracking-widest text-brown mb-4">SRISANOR</h2>
+            <p class="text-stone-500 text-sm mb-8">© 2026 Srisanor Café & Boutique Resort. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 opacity-60">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Google Maps</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
