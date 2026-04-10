@@ -11,24 +11,56 @@
       background: #f5f5f5;
       color: #333;
     }
-    header {
-      background: #006699;
-      color: white;
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: url('https://picsum.photos/id/1011/1600/900') no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 2em 1em;
+      color: white;
     }
-    header h1 {
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5); /* overlay */
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 2em;
+    }
+    .hero h1 {
+      font-size: 3.5em;
       margin: 0;
-      font-size: 2.2em;
     }
-    header p {
-      margin: 0.5em 0 0;
-      font-size: 1.2em;
+    .hero p {
+      font-size: 1.5em;
+      margin-top: 0.5em;
+    }
+    .btn {
+      display: inline-block;
+      background: #ffcc00;
+      color: #333;
+      padding: 1em 2em;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1.5em;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #e6b800;
     }
     main {
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
-      padding: 2em;
+      padding: 3em 2em;
       text-align: center;
     }
     .price {
@@ -38,10 +70,11 @@
     }
     .special {
       background: #ffcc00;
-      padding: 1em;
+      padding: 1.5em;
       margin: 2em 0;
       border-radius: 8px;
       font-weight: bold;
+      font-size: 1.2em;
     }
     footer {
       background: #333;
@@ -50,26 +83,17 @@
       padding: 1em;
       font-size: 0.9em;
     }
-    .btn {
-      display: inline-block;
-      background: #006699;
-      color: white;
-      padding: 0.8em 1.5em;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 1em;
-    }
-    .btn:hover {
-      background: #004466;
-    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>รับทำเว็บไซต์ ราคา 999 บาท</h1>
-    <p>เว็บไซต์หน้าเดียว สวย เรียบง่าย ใช้งานได้จริง</p>
-  </header>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>รับทำเว็บไซต์ ราคา 999 บาท</h1>
+      <p>เว็บไซต์หน้าเดียว สวย เรียบง่าย ใช้งานได้จริง</p>
+      <a href="mailto:contact@prachuap.online" class="btn">สั่งทำเว็บไซต์เลย</a>
+    </div>
+  </section>
 
   <main>
     <p class="price">เพียง 999 บาท</p>
@@ -79,8 +103,6 @@
       🎁 แถมฟรี! สิทธิพิเศษเชื่อมต่อกับแอพ <strong>Prachuap Connect</strong><br>
       แอพไดเรคทอรี่ประจำจังหวัดประจวบคีรีขันธ์ ใช้ก่อนใคร
     </div>
-
-    <a href="mailto:contact@prachuap.online" class="btn">สั่งทำเว็บไซต์เลย</a>
   </main>
 
   <footer>
