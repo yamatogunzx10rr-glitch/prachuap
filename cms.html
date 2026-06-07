@@ -3,7 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>รับพัฒนา CMS ครบวงจร - prachuap online</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>รับทำเว็บไซต์ครบวงจร พัฒนา WordPress & CMS ทุกระบบ | Prachuap Online</title>
+    <meta name="description" content="บริการรับทำเว็บไซต์ครบวงจร ออกแบบสวยงาม รองรับมือถือ ขยายธุรกิจด้วยระบบ WordPress, Shopify, Strapi Headless CMS และ Website Builder ประเมินราคาฟรี โดยผู้เชี่ยวชาญ">
+    <meta name="keywords" content="รับทำเว็บไซต์, รับทำเว็บ WordPress, พัฒนา CMS, รับทำเว็บไซต์ ประจวบ, บริการทำเว็บ eCommerce, Shopify, Strapi Headless CMS, Prachuap Online">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourdomain.com/">
+
+    <!-- Open Graph / Facebook SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:title" content="รับทำเว็บไซต์ครบวงจร พัฒนา WordPress & CMS ทุกระบบ | Prachuap Online">
+    <meta property="og:description" content="บริการรับทำเว็บไซต์และระบบ CMS ชั้นนำระดับโลก ออกแบบถูกหลัก SEO โหลดไว ปลอดภัยสูง เพื่อทุกประเภทธุรกิจของคุณ">
+    <meta property="og:image" content="https://yourdomain.com/logoprachuap.jpg">
+
+    <!-- Twitter SEO -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourdomain.com/">
+    <meta property="twitter:title" content="รับทำเว็บไซต์ครบวงจร พัฒนา WordPress & CMS ทุกระบบ | Prachuap Online">
+    <meta property="twitter:description" content="บริการรับทำเว็บไซต์และระบบ CMS ชั้นนำระดับโลก ออกแบบถูกหลัก SEO โหลดไว ปลอดภัยสูง เพื่อทุกประเภทธุรกิจของคุณ">
+    <meta property="twitter:image" content="https://yourdomain.com/logoprachuap.jpg">
+
+    <!-- JSON-LD Structured Data (Schema.org) - ช่วยให้ Google เข้าใจโครงสร้างธุรกิจและติดหน้าแรกง่ายขึ้น -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Prachuap Online Studio",
+      "image": "https://yourdomain.com/logoprachuap.jpg",
+      "@id": "https://yourdomain.com/#website",
+      "url": "https://yourdomain.com/",
+      "telephone": "063-889-0295",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Prachuap Khiri Khan",
+        "addressCountry": "TH"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 11.8124,
+        "longitude": 99.7963
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "sameAs": [
+        "https://line.me/ti/p/~ใส่LINE_IDของคุณ"
+      ]
+    }
+    </script>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome สำหรับ Icon -->
@@ -12,10 +74,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         body {
             font-family: 'Prompt', sans-serif;
         }
+        /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
@@ -24,33 +88,35 @@
 <body class="bg-slate-50 text-slate-800 antialiased">
 
     <!-- Navbar -->
-    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20">
                 
                 <div class="flex items-center">
                     <a href="index.html" class="flex-shrink-0 flex items-center">
-                        <img src="logoprachuap.jpg" alt="Prachuap Online Logo" class="h-12 w-auto object-contain py-1">
+                        <!-- ใส่ alt ที่ระบุ Keyword ชัดเจนส่งผลดีต่อ Google Image Search -->
+                        <img src="logoprachuap.jpg" alt="Prachuap Online บริการรับทำเว็บไซต์ครบวงจร" class="h-12 w-auto object-contain py-1">
                     </a>
                 </div>
 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-6">
+                <div class="hidden xl:flex items-center space-x-5">
                     <a href="index.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">Home</a>
                     <a href="promotion.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">โปรโมชั่น</a>
                     <a href="service.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">บริการอื่นๆ</a>
-                    <a href="domain.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">ราคา ชื่อเวบ</a>
+                    <a href="domain.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">ราคา ชื่อเว็บ</a>
+                    <a href="category.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">ตัวอย่างเว็บ</a>
+                    <a href="cms.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">รับพัฒนาเว็บเดิม</a>
                     <a href="about.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">เกี่ยวกับเรา</a>
-                    <a href="port.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">ตัวอย่างเวบ</a>
                     
-                    <a href="#contact" class="bg-blue-600 text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-blue-700 transition shadow-md shadow-blue-600/20 flex items-center gap-2">
+                    <a href="#contact" class="bg-blue-600 text-white px-4 py-2.5 rounded-xl font-bold text-sm hover:bg-blue-700 transition shadow-md shadow-blue-600/20 flex items-center gap-2">
                         <i class="fa-solid fa-comments"></i> ติดต่อเรา
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <div class="flex items-center md:hidden">
-                    <button id="mobile-menu-button" class="text-slate-600 hover:text-blue-600 focus:outline-none p-2 text-2xl transition">
+                <div class="flex items-center xl:hidden">
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-blue-600 focus:outline-none p-2 text-2xl transition" aria-label="เปิดเมนูนำทาง">
                         <i class="fa-solid fa-bars"></i>
                     </button>
                 </div>
@@ -60,22 +126,25 @@
     </nav>
 
     <!-- Mobile Sidebar Menu -->
-    <div id="mobile-sidebar" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-all duration-300">
-        <div id="mobile-backdrop" class="absolute inset-0 bg-slate-900/50 opacity-0 transition-opacity duration-300 pointer-events-auto"></div>
-        <div id="mobile-menu-panel" class="absolute inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl flex flex-col p-6 translate-x-full transition-transform duration-300 ease-in-out pointer-events-auto">
+    <div id="mobile-sidebar" class="fixed inset-0 z-50 overflow-hidden hidden transition-all duration-300">
+        <div id="mobile-backdrop" class="absolute inset-0 bg-slate-900/50 opacity-0 transition-opacity duration-300"></div>
+        
+        <div id="mobile-menu-panel" class="absolute inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl flex flex-col p-6 translate-x-full transition-transform duration-300 ease-in-out">
             <div class="flex items-center justify-between mb-8">
                 <span class="font-bold text-lg text-slate-900">เมนูนำทาง</span>
-                <button id="mobile-close-button" class="text-slate-500 hover:text-slate-800 text-xl p-2">
+                <button id="mobile-close-button" class="text-slate-500 hover:text-slate-800 text-xl p-2" aria-label="ปิดเมนู">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
+            
             <div class="flex flex-col space-y-4">
                 <a href="index.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">Home</a>
                 <a href="promotion.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">โปรโมชั่น</a>
                 <a href="service.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">บริการอื่นๆ</a>
-                <a href="domain.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">ราคา ชื่อเวบ</a>
+                <a href="domain.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">ราคา ชื่อเว็บ</a>
+                <a href="category.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">ตัวอย่างเว็บ</a>
+                <a href="cms.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">รับพัฒนาเว็บเดิม</a>
                 <a href="about.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">เกี่ยวกับเรา</a>
-                <a href="port.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">ตัวอย่างเวบ</a>
                 
                 <a href="#contact" class="mobile-nav-link bg-blue-600 text-white text-center px-5 py-3 rounded-xl font-bold text-base hover:bg-blue-700 transition shadow-md shadow-blue-600/20 flex items-center justify-center gap-2 mt-4">
                     <i class="fa-solid fa-comments"></i> ติดต่อเรา
@@ -88,11 +157,12 @@
     <header class="bg-gradient-to-b from-blue-50 via-slate-50 to-slate-50 py-20 border-b border-slate-100">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span class="bg-blue-50 text-blue-600 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border border-blue-200">CMS Development Services</span>
+            <!-- H1 ปรับแต่งคำให้กระชับและเน้นคีย์เวิร์ดหลักอย่างทรงพลัง -->
             <h1 class="text-4xl sm:text-5xl font-black text-slate-900 mt-6 tracking-tight leading-tight">
-                รับพัฒนาเว็บไซต์ด้วย <span class="text-blue-600">WordPress</span> <br class="hidden sm:inline"> และระบบ CMS ชั้นนำระดับโลก
+                รับทำเว็บไซต์ครบวงจร พัฒนาด้วย <span class="text-blue-600">WordPress</span> <br class="hidden sm:inline"> และระบบ CMS ชั้นนำประสิทธิภาพสูง
             </h1>
             <p class="mt-6 text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                ไม่ได้มีแค่ WordPress เท่านั้น! เราเชี่ยวชาญการออกแบบและพัฒนาระบบจัดการเนื้อหา (CMS) ที่หลากหลาย เพื่อให้ตอบโจทย์ทุกประเภทธุรกิจ โครงสร้างซับซ้อน และงบประมาณของคุณอย่างคุ้มค่าที่สุด
+                ยกระดับธุรกิจของคุณด้วยบริการออกแบบและพัฒนาระบบจัดการเนื้อหา (CMS) ที่หลากหลาย ปรับแต่งโครงสร้างให้ถูกหลัก SEO โหลดเร็ว ปลอดภัย และตอบโจทย์ทุกความต้องการทางธุรกิจอย่างคุ้มค่า
             </p>
             <div class="mt-10 flex flex-wrap justify-center gap-4">
                 <a href="#cms-solutions" class="bg-slate-900 text-white px-6 py-3.5 rounded-xl font-bold text-sm hover:bg-slate-800 transition shadow-lg shadow-slate-900/10">
@@ -110,8 +180,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="text-3xl font-bold text-slate-900 tracking-tight">เลือกเทคโนโลยี CMS ที่ใช่สำหรับธุรกิจคุณ</h2>
-                <p class="mt-4 text-slate-600">เจาะลึกระบบจัดการเนื้อหาแต่ละประเภทที่เราพร้อมให้บริการและพร้อมปรับแต่งอย่างมืออาชีพ</p>
+                <h2 class="text-3xl font-bold text-slate-900 tracking-tight">เทคโนโลยีระดับโลกที่เราเลือกใช้ในการรับทำเว็บไซต์</h2>
+                <p class="mt-4 text-slate-600">เจาะลึกระบบจัดการเนื้อหาแต่ละประเภทที่ตอบโจทย์ความยืดหยุ่นและการทำ SEO ยุคใหม่อย่างเต็มรูปแบบ</p>
             </div>
 
             <!-- หมวดหมู่ที่ 1: E-commerce -->
@@ -120,16 +190,15 @@
                     <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center text-lg shadow-sm">
                         <i class="fa-solid fa-basket-shopping"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-slate-900">1. กลุ่ม E-commerce (เน้นระบบร้านค้าออนไลน์โดยเฉพาะ)</h3>
+                    <h3 class="text-2xl font-bold text-slate-900">1. กลุ่ม E-commerce (ระบบร้านค้าออนไลน์ทำการตลาดง่าย)</h3>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Shopify -->
-                    <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
+                    <article class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-5">
                                 <span class="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-md text-xs font-semibold">SaaS Platform</span>
-                                <!-- ช่องใส่โลโก้ (สามารถเปลี่ยนเป็นแท็ก <img> ได้เลย) -->
                                 <div class="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center text-slate-400 text-xs border border-slate-200 font-medium overflow-hidden">
                                     <span class="px-1 text-center">Shopify Logo</span>
                                 </div>
@@ -141,10 +210,10 @@
                             <span><i class="fa-solid fa-bolt text-amber-500 mr-1"></i> โหลดไวมาก</span>
                             <span><i class="fa-solid fa-shield-halved text-blue-500 mr-1"></i> ปลอดภัยสูง</span>
                         </div>
-                    </div>
+                    </article>
 
                     <!-- Magento -->
-                    <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
+                    <article class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-5">
                                 <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-md text-xs font-semibold">Enterprise</span>
@@ -159,10 +228,10 @@
                             <span><i class="fa-solid fa-boxes-stacked text-indigo-500 mr-1"></i> สต็อกขนาดใหญ่</span>
                             <span><i class="fa-solid fa-gears text-slate-500 mr-1"></i> Custom ขั้นสูง</span>
                         </div>
-                    </div>
+                    </article>
 
                     <!-- OpenCart / PrestaShop -->
-                    <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
+                    <article class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-5">
                                 <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-md text-xs font-semibold">Open-Source</span>
@@ -171,13 +240,13 @@
                                 </div>
                             </div>
                             <h4 class="text-lg font-bold text-slate-900">OpenCart / PrestaShop</h4>
-                            <p class="mt-3 text-sm text-slate-600 leading-relaxed">CMS สาย PHP สำหรับเปิดร้านค้าออนไลน์โดยเฉพาะ ควบคุมระบบและโฮสติ้งเองได้ 100% ตัวระบบเบากว่า มีความยืดหยุ่นสูงในราคาสบายกระเป๋า</p>
+                            <p class="mt-3 text-sm text-slate-600 leading-relaxed">CMS สาย PHP สำหรับเปิดร้านค้าออนไลน์โดยเฉพาะ ควบคุมระบบและโฮสติ้งเองได้ 100% ตัวระบบเบากกว่า มีความยืดหยุ่นสูงในราคาสบายกระเป๋า</p>
                         </div>
                         <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
                             <span><i class="fa-solid fa-feather text-emerald-500 mr-1"></i> ระบบน้ำหนักเบา</span>
                             <span><i class="fa-solid fa-server text-amber-500 mr-1"></i> โฮสต์ส่วนตัว</span>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
 
@@ -187,12 +256,12 @@
                     <div class="w-10 h-10 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center text-lg shadow-sm">
                         <i class="fa-solid fa-network-wired"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-slate-900">2. กลุ่ม Headless CMS (เทรนด์ยุคใหม่สำหรับเว็บไซต์ความเร็วสูง)</h3>
+                    <h3 class="text-2xl font-bold text-slate-900">2. กลุ่ม Headless CMS (เทรนด์ยุคใหม่ส่งผลดีต่อคะแนน SEO สูงสุด)</h3>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Strapi -->
-                    <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
+                    <article class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-5">
                                 <span class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-md text-xs font-semibold">Node.js / JS</span>
@@ -207,10 +276,10 @@
                             <span><i class="fa-solid fa-code text-blue-500 mr-1"></i> API-First</span>
                             <span><i class="fa-solid fa-code-branch text-purple-500 mr-1"></i> ยืดหยุ่นสูงสุด</span>
                         </div>
-                    </div>
+                    </article>
 
                     <!-- Contentful / Sanity -->
-                    <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
+                    <article class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-5">
                                 <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-md text-xs font-semibold">Cloud Content</span>
@@ -225,10 +294,10 @@
                             <span><i class="fa-solid fa-gauge-high text-emerald-500 mr-1"></i> โหลดเร็ววิกทรา</span>
                             <span><i class="fa-solid fa-magnifying-glass text-amber-500 mr-1"></i> ดีต่อ SEO</span>
                         </div>
-                    </div>
+                    </article>
 
                     <!-- Ghost -->
-                    <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
+                    <article class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-5">
                                 <span class="bg-slate-900 text-white px-3 py-1 rounded-md text-xs font-semibold">Publishing</span>
@@ -236,14 +305,14 @@
                                     <span class="px-1 text-center">Ghost Logo</span>
                                 </div>
                             </div>
-                            <h4 class="text-lg font-bold text-slate-900">Ghost</h4>
+                            <h4 class="text-lg font-bold text-slate-900">Ghost CMS</h4>
                             <p class="mt-3 text-sm text-slate-600 leading-relaxed">ทางเลือกใหม่ที่เกิดมาทดแทนการทำบล็อกของ WordPress โค้ดสะอาดมาก ทำงานเร็ว มีฟีเจอร์สำหรับระบบสมาชิกแบบเก็บเงิน (Subscription) และส่ง Newsletter ในตัว</p>
                         </div>
                         <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
                             <span><i class="fa-solid fa-newspaper text-rose-500 mr-1"></i> เหมาะกับบล็อก/ข่าว</span>
                             <span><i class="fa-solid fa-user-check text-blue-500 mr-1"></i> มีระบบสมาชิก</span>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
 
@@ -253,12 +322,12 @@
                     <div class="w-10 h-10 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center text-lg shadow-sm">
                         <i class="fa-solid fa-server"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-slate-900">3. กลุ่มสายลุยและเว็บองค์กร (Traditional Custom CMS)</h3>
+                    <h3 class="text-2xl font-bold text-slate-900">3. กลุ่มสายลุยและเว็บองค์กร (Traditional Custom CMS ปลอดภัยสูง)</h3>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Joomla! -->
-                    <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
+                    <article class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-5">
                                 <span class="bg-amber-50 text-amber-700 px-3 py-1 rounded-md text-xs font-semibold">User ACL</span>
@@ -273,10 +342,10 @@
                             <span><i class="fa-solid fa-users-gear text-blue-500 mr-1"></i> จัดการสิทธิ์ดีเยี่ยม</span>
                             <span><i class="fa-solid fa-building text-slate-500 mr-1"></i> เว็บองค์กร</span>
                         </div>
-                    </div>
+                    </article>
 
                     <!-- Drupal -->
-                    <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
+                    <article class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-5">
                                 <span class="bg-red-50 text-red-700 px-3 py-1 rounded-md text-xs font-semibold">High Security</span>
@@ -291,10 +360,10 @@
                             <span><i class="fa-solid fa-shield-cat text-red-500 mr-1"></i> ปลอดภัยขั้นสุด</span>
                             <span><i class="fa-solid fa-database text-blue-500 mr-1"></i> Big Data</span>
                         </div>
-                    </div>
+                    </article>
 
                     <!-- Craft CMS -->
-                    <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
+                    <article class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-5">
                                 <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-md text-xs font-semibold">Modern UI</span>
@@ -309,7 +378,7 @@
                             <span><i class="fa-solid fa-wand-magic-sparkles text-amber-500 mr-1"></i> หลังบ้านสวยใช้งานง่าย</span>
                             <span><i class="fa-solid fa-cubes text-purple-500 mr-1"></i> โครงสร้างยืดหยุ่น</span>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
 
@@ -319,12 +388,12 @@
                     <div class="w-10 h-10 bg-sky-50 text-sky-600 rounded-xl flex items-center justify-center text-lg shadow-sm">
                         <i class="fa-solid fa-wand-magic-sparkles"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-slate-900">4. กลุ่ม Website Builders & Visual CMS (เน้นดีไซน์สวย จบงานไว แก้ไขเองง่าย)</h3>
+                    <h3 class="text-2xl font-bold text-slate-900">4. กลุ่ม Website Builders & Visual CMS (แก้ไขเองง่าย จบงานไว)</h3>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Webflow -->
-                    <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
+                    <article class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-5">
                                 <span class="bg-sky-50 text-sky-700 px-3 py-1 rounded-md text-xs font-semibold">Visual Coding</span>
@@ -339,10 +408,10 @@
                             <span><i class="fa-solid fa-palette text-pink-500 mr-1"></i> ดีไซน์อิสระขั้นสุด</span>
                             <span><i class="fa-solid fa-file-code text-blue-500 mr-1"></i> โก้ดคลีนสะอาด</span>
                         </div>
-                    </div>
+                    </article>
 
                     <!-- Wix / Squarespace -->
-                    <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
+                    <article class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-5">
                                 <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-md text-xs font-semibold">Drag & Drop</span>
@@ -357,13 +426,13 @@
                             <span><i class="fa-solid fa-hand-pointer text-emerald-500 mr-1"></i> ลากวางง่าย</span>
                             <span><i class="fa-solid fa-clock text-amber-500 mr-1"></i> ขึ้นระบบด่วนไว</span>
                         </div>
-                    </div>
+                    </article>
 
                     <!-- คาร์ดสรุป/จุดยืนร้าน -->
                     <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-6 shadow-lg shadow-blue-600/20 text-white flex flex-col justify-between">
                         <div>
                             <span class="bg-white/20 text-white px-3 py-1 rounded-md text-xs font-semibold">Our Advice</span>
-                            <h4 class="text-lg font-bold mt-4">แนะนำเพิ่มเติมจากเรา</h4>
+                            <h4 class="text-lg font-bold mt-4">แนะนำเพิ่มเติมจากผู้เชี่ยวชาญ</h4>
                             <p class="mt-3 text-sm text-white/90 leading-relaxed">หากคุณต้องการเว็บเบา โหลดเร็ว ไม่ถูกแฮกง่าย แนะนำเทรนด์ยุคใหม่อย่าง <strong>Strapi + Next.js (Headless CMS)</strong> หรือ <strong>Webflow</strong> ซึ่งทางทีมงานเราพร้อมให้คำปรึกษาและลงมือพัฒนาทุกรูปแบบครับ</p>
                         </div>
                         <div class="mt-6 pt-4 border-t border-white/10 text-right">
@@ -381,8 +450,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-100">
                 <div>
-                    <h2 class="text-3xl font-bold text-slate-900">ติดต่อประเมินราคาฟรี</h2>
-                    <p class="mt-4 text-slate-600">พูดคุยแลกเปลี่ยนไอเดียและรายละเอียดความต้องการระบบ CMS ได้ตลอดเวลา ไม่มีค่าใช้จ่ายเบื้องต้น</p>
+                    <h2 class="text-3xl font-bold text-slate-900">ติดต่อรับทำเว็บไซต์และประเมินราคาฟรี</h2>
+                    <p class="mt-4 text-slate-600">พูดคุยแลกเปลี่ยนไอเดียและรายละเอียดความต้องการทำเว็บได้ตลอดเวลา ไม่มีค่าใช้จ่ายเบื้องต้น</p>
                     
                     <div class="mt-12 space-y-6">
                         <div class="flex items-center gap-4">
@@ -390,7 +459,7 @@
                                 <i class="fa-solid fa-phone"></i>
                             </div>
                             <div>
-                                <h4 class="text-sm text-slate-400">เบอร์โทรศัพท์</h4>
+                                <h3 class="text-sm text-slate-400 font-medium">เบอร์โทรศัพท์ติดต่อ</h3>
                                 <p class="text-base font-semibold text-slate-900">063-889-0295</p>
                             </div>
                         </div>
@@ -399,7 +468,7 @@
                                 <i class="fa-solid fa-envelope"></i>
                             </div>
                             <div>
-                                <h4 class="text-sm text-slate-400">อีเมลเพื่อติดต่องาน</h4>
+                                <h3 class="text-sm text-slate-400 font-medium">อีเมลเพื่อติดต่องาน</h3>
                                 <p class="text-base font-semibold text-slate-900">zx1000rr@gmail.com</p>
                             </div>
                         </div>
@@ -409,12 +478,12 @@
                 <div class="space-y-4 bg-slate-50 rounded-2xl p-6 border border-slate-100">
                     <h3 class="text-lg font-bold text-slate-900 mb-4 text-center sm:text-left">เลือกช่องทางที่คุณสะดวกคุย</h3>
                     
-                    <a href="https://line.me/ti/p/~ใส่LINE_IDของคุณ" target="_blank" class="flex items-center justify-center gap-3 w-full bg-[#06C755] hover:bg-[#05b34c] text-white py-4 rounded-xl font-semibold shadow-lg shadow-green-600/20 transition">
+                    <a href="https://line.me/ti/p/~ใส่LINE_IDของคุณ" target="_blank" rel="noopener" class="flex items-center justify-center gap-3 w-full bg-[#06C755] hover:bg-[#05b34c] text-white py-4 rounded-xl font-semibold shadow-lg shadow-green-600/20 transition">
                         <i class="fa-brands fa-line text-xl"></i>
                         แชทผ่าน Line Official / ID
                     </a>
 
-                    <a href="mailto:zx1000rr@gmail.com?subject=ติดต่อพัฒนาเว็บไซต์ระบบCMS" class="flex items-center justify-center gap-3 w-full bg-slate-900 hover:bg-slate-800 text-white py-4 rounded-xl font-semibold shadow-lg transition">
+                    <a href="mailto:zx1000rr@gmail.com?subject=ติดต่อประเมินราคาเว็บไซต์" class="flex items-center justify-center gap-3 w-full bg-slate-900 hover:bg-slate-800 text-white py-4 rounded-xl font-semibold shadow-lg transition">
                         <i class="fa-solid fa-envelope text-xl"></i>
                         ส่งอีเมลหาเราโดยตรง
                     </a>
@@ -429,17 +498,57 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2">
-                <i class="fa-solid fa-code text-blue-500 text-xl"></i>
-                <span class="text-xl font-bold text-white">prachuap online</span>
+    <footer class="bg-slate-900 text-slate-400 pt-16 pb-12 border-t border-t-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-slate-800">
+                
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-code text-blue-500 text-2xl"></i>
+                        <span class="text-2xl font-bold text-white tracking-wide">Prachuap Online</span>
+                    </div>
+                    <p class="text-sm leading-relaxed text-slate-400">
+                        บริการรับทำเว็บไซต์ครบวงจร ออกแบบสวยงาม รองรับมือถือ 
+                        และพัฒนาระบบหลังบ้านตามความต้องการในราคาที่จับต้องได้
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold text-base mb-4 tracking-wider uppercase">เมนูเว็บไซต์</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <div class="flex flex-col space-y-2.5">
+                            <a href="index.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> Home</a>
+                            <a href="promotion.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> โปรโมชั่น</a>
+                            <a href="service.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> บริการอื่นๆ</a>
+                            <a href="domain.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> ราคา ชื่อเว็บ</a>
+                        </div>
+                        <div class="flex flex-col space-y-2.5">
+                            <a href="category.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> ตัวอย่างเว็บ</a>
+                            <a href="cms.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> พัฒนาเว็บเดิม</a>
+                            <a href="about.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> เกี่ยวกับเรา</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-3 text-sm">
+                    <h3 class="text-white font-semibold text-base mb-4 tracking-wider uppercase">ติดต่อเรา</h3>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-blue-500 w-4"></i> 063-889-0295</p>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-blue-500 w-4"></i> zx1000rr@gmail.com</p>
+                </div>
+
             </div>
-            <p class="text-sm">&copy; 2026 prachuap online Studio. All rights reserved.</p>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-slate-500">&copy; 2026 Prachuap Online Studio. All rights reserved.</p>
+                <div class="flex gap-4 text-slate-500 text-lg">
+                    <a href="#" class="hover:text-white transition" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-white transition" aria-label="Line"><i class="fa-brands fa-line"></i></a>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- JavaScript สำหรับเมนูมือถือ -->
+    <!-- JavaScript สำหรับระบบเปิด-ปิด Sidebar -->
     <script>
         const menuButton = document.getElementById('mobile-menu-button');
         const closeButton = document.getElementById('mobile-close-button');
@@ -449,19 +558,24 @@
         const navLinks = document.querySelectorAll('.mobile-nav-link');
 
         function openMenu() {
-            sidebar.classList.remove('pointer-events-none');
-            backdrop.classList.remove('opacity-0');
-            backdrop.classList.add('opacity-100');
-            menuPanel.classList.remove('translate-x-full');
-            menuPanel.classList.add('translate-x-0');
+            sidebar.classList.remove('hidden');
+            setTimeout(() => {
+                backdrop.classList.remove('opacity-0');
+                backdrop.classList.add('opacity-100');
+                menuPanel.classList.remove('translate-x-full');
+                menuPanel.classList.add('translate-x-0');
+            }, 10);
         }
 
         function closeMenu() {
-            sidebar.classList.add('pointer-events-none');
             backdrop.classList.remove('opacity-100');
             backdrop.classList.add('opacity-0');
             menuPanel.classList.remove('translate-x-0');
             menuPanel.classList.add('translate-x-full');
+            
+            setTimeout(() => {
+                sidebar.classList.add('hidden');
+            }, 300);
         }
 
         menuButton.addEventListener('click', openMenu);
