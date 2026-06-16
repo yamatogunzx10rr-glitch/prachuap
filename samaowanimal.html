@@ -24,7 +24,7 @@
             --accent-gold: #dfb15b;       /* สีทองแชมเปญเพิ่มความแพง */
             --soft-blue-gray: #f4f7f6;   /* พื้นหลังเทาอมฟ้าสะอาดตา */
             --pure-white: #ffffff;
-            --text-main: #2c3e50;         /* สีตัวอักษรหลักโทนเข้มสุภาพ */
+            --text-main: #2c3e50;          /* สีตัวอักษรหลักโทนเข้มสุภาพ */
             --text-muted: #7f8c8d;        /* สีตัวอักษรรอง */
         }
 
@@ -560,6 +560,68 @@
             letter-spacing: 0.5px;
         }
 
+        /* --- 🌟 Added: Floating Contact Bar (ปุ่มลัดขวาจอ) --- */
+        .floating-contact-bar {
+            position: fixed;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 9999;
+        }
+
+        .floating-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            color: var(--pure-white);
+            text-decoration: none;
+            font-size: 1.6rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        /* สีตามแบรนด์และดีไซน์เว็บ */
+        .floating-btn.line { background-color: #06C755; }
+        .floating-btn.msg { background-color: #0084FF; }
+        .floating-btn.phone { background: linear-gradient(135deg, var(--accent-gold), #cfa14b); }
+
+        /* เอฟเฟกต์ดันซ้ายเวลาเอาเมาส์ไปวาง */
+        .floating-btn:hover {
+            transform: scale(1.1) translateX(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        /* ข้อความ Tooltip แสดงเมื่อ Hover */
+        .floating-btn::after {
+            content: attr(data-label);
+            position: absolute;
+            right: 70px;
+            background-color: var(--secondary-dark);
+            color: var(--pure-white);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .floating-btn:hover::after {
+            opacity: 1;
+            visibility: visible;
+            right: 65px;
+        }
+
         /* Responsive */
         @media (max-width: 1200px) {
             .services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -569,10 +631,37 @@
             .about-wrapper, .contact-grid { flex-direction: column; gap: 40px; }
             .about-cards, .services-grid, .trust-grid { grid-template-columns: 1fr; }
             .banner h1 { font-size: 2.8rem; }
+            
+            /* ปรับแต่งปุ่มลัดบนมือถือให้อยู่มุมขวาล่างเพื่อไม่ให้บังเนื้อหาและกดง่ายขึ้น */
+            .floating-contact-bar {
+                right: 15px;
+                top: auto;
+                bottom: 30px;
+                transform: none;
+                gap: 10px;
+            }
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+            .floating-btn::after { display: none; } /* ปิด Tooltip บนมือถือ */
         }
     </style>
 </head>
 <body>
+
+    <div class="floating-contact-bar">
+        <a href="#" class="floating-btn line" data-label="แชท Line" target="_blank">
+            <i class="fa-brands fa-line"></i>
+        </a>
+        <a href="#" class="floating-btn msg" data-label="ส่งข้อความ Messenger" target="_blank">
+            <i class="fa-brands fa-facebook-messenger"></i>
+        </a>
+        <a href="tel:08X-XXXXXXX" class="floating-btn phone" data-label="โทรออกด่วน">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
 
     <div class="main-wrapper">
 
