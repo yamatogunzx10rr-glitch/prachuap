@@ -596,10 +596,11 @@
         });
 
         function handleSearch() {
-            const domainInput = document.getElementById('domain-search-input').value;
-            if(domainInput.trim() === "") {
+            const raw = document.getElementById('domain-search-input').value;
+            if(raw.trim() === "") {
                 alert("กรุณากรอกชื่อโดเมนที่ต้องการค้นหาครับ");
             } else {
+                const domainInput = raw.replace(/[^a-zA-Z0-9.\-]/g, '');
                 alert("ระบบกำลังตรวจสอบชื่อโดเมน: " + domainInput + " ... (ฟังก์ชันจำลองเชื่อมระบบตรวจสอบข้อมูล)");
             }
         }
