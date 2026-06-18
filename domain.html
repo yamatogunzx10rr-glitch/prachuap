@@ -567,6 +567,10 @@
         const navLinks = document.querySelectorAll('.mobile-nav-link');
 
         function openMenu() {
+            if (!sidebar || !backdrop || !menuPanel) {
+                console.error('Mobile menu elements not found: cannot open menu.');
+                return;
+            }
             sidebar.classList.remove('hidden');
             setTimeout(() => {
                 backdrop.classList.remove('opacity-0');
@@ -577,6 +581,10 @@
         }
 
         function closeMenu() {
+            if (!sidebar || !backdrop || !menuPanel) {
+                console.error('Mobile menu elements not found: cannot close menu.');
+                return;
+            }
             backdrop.classList.remove('opacity-100');
             backdrop.classList.add('opacity-0');
             menuPanel.classList.remove('translate-x-0');
@@ -587,16 +595,33 @@
             }, 300);
         }
 
-        menuButton.addEventListener('click', openMenu);
-        closeButton.addEventListener('click', closeMenu);
-        backdrop.addEventListener('click', closeMenu);
+        if (menuButton) {
+            menuButton.addEventListener('click', openMenu);
+        } else {
+            console.error('Element #mobile-menu-button not found.');
+        }
+        if (closeButton) {
+            closeButton.addEventListener('click', closeMenu);
+        } else {
+            console.error('Element #mobile-close-button not found.');
+        }
+        if (backdrop) {
+            backdrop.addEventListener('click', closeMenu);
+        } else {
+            console.error('Element #mobile-backdrop not found.');
+        }
 
         navLinks.forEach(link => {
             link.addEventListener('click', closeMenu);
         });
 
         function handleSearch() {
-            const domainInput = document.getElementById('domain-search-input').value;
+            var inputEl = document.getElementById('domain-search-input');
+            if (!inputEl) {
+                console.error('Element #domain-search-input not found.');
+                return;
+            }
+            var domainInput = inputEl.value;
             if(domainInput.trim() === "") {
                 alert("กรุณากรอกชื่อโดเมนที่ต้องการค้นหาครับ");
             } else {

@@ -311,7 +311,6 @@
 </section>
 
 <script>
-    // ฟังก์ชันส่วนกลางสำหรับสร้าง HTML ของการ์ดแต่ละใบ
     function createCardHtml(img) {
         return `
             <article class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-xl hover:border-blue-200 transition duration-300 flex flex-col justify-between">
@@ -326,22 +325,31 @@
         `;
     }
 
-    // 1. ข้อมูลและสั่งแสดงผลหมวดหมู่ โรงแรม
-    const hotelImages = [
+    function renderGrid(gridId, images) {
+        var grid = document.getElementById(gridId);
+        if (!grid) {
+            console.error('Grid element #' + gridId + ' not found; skipping render.');
+            return;
+        }
+        grid.innerHTML = images.map(createCardHtml).join('');
+    }
+
+    // 1. โรงแรม
+    var hotelImages = [
         { src: 'images/aubkham.jpg', alt: 'ตัวอย่างออกแบบเว็บไซต์โรงแรม รีสอร์ต aubkham', title: 'โรงแรมอวบคำ' }
     ];
-    document.getElementById('hotel-grid').innerHTML = hotelImages.map(createCardHtml).join('');
+    renderGrid('hotel-grid', hotelImages);
 
-    // 2. ข้อมูลและสั่งแสดงผลหมวดหมู่ สัตว์เลี้ยง
-    const petImages = [
+    // 2. สัตว์เลี้ยง
+    var petImages = [
         { src: 'images/eguana.jpg', alt: 'ออกแบบเว็บไซต์สัตว์เลี้ยง อิกัวน่า eguana', title: 'สัตว์เลี้ยง Eguana' },
         { src: 'images/pragud.jpg', alt: 'ออกแบบเว็บไซต์ฟาร์มปลากัด pragud', title: 'ปลากัดสวยงาม' },
         { src: 'images/samoawanimal.jpg', alt: 'ออกแบบเว็บไซต์โรงพยาบาลสัตว์ สัตวแพทย์ samoawanimal', title: 'สมอเว็ท สัตว์แพทย์' }
     ];
-    document.getElementById('pet-grid').innerHTML = petImages.map(createCardHtml).join('');
+    renderGrid('pet-grid', petImages);
 
-    // 3. ข้อมูลและสั่งแสดงผลหมวดหมู่ อาหารและคาเฟ่
-    const foodImages = [
+    // 3. อาหารและคาเฟ่
+    var foodImages = [
         { src: 'images/steaktorung.jpg', alt: 'ออกแบบเว็บไซต์ร้านสเต็ก โต้รุ่ง steaktorung', title: 'สเต็กโต้รุ่ง' },
         { src: 'images/hiakiseafood.jpg', alt: 'ออกแบบเว็บไซต์ร้านอาหารทะเล ไฮกี้ซีฟู้ด hiakiseafood', title: 'ไฮกี้ ซีฟู้ด' },
         { src: 'images/jahee.jpg', alt: 'ออกแบบเว็บไซต์ร้านอาหาร เจ๊ฮี jahee', title: 'ร้านอาหารเจ๊ฮี' },
@@ -351,16 +359,16 @@
         { src: 'images/prigkangsali.jpg', alt: 'ออกแบบเว็บไซต์พริกแกงสาลี โรงงานพริกแกง prigkangsali', title: 'พริกแกงสาลี' },
         { src: 'images/tongtung.jpg', alt: 'ออกแบบเว็บไซต์ร้านอาหาร ตองตึง tongtung', title: 'ร้านอาหารตองตึง' }
     ];
-    document.getElementById('food-grid').innerHTML = foodImages.map(createCardHtml).join('');
+    renderGrid('food-grid', foodImages);
 
-    // 4. ข้อมูลและสั่งแสดงผลหมวดหมู่ ธุรกิจและบริการ
-    const businessImages = [
+    // 4. ธุรกิจและบริการ
+    var businessImages = [
         { src: 'images/rungsang.jpg', alt: 'ออกแบบเว็บไซต์ธุรกิจ รุ่งแสง rungsang', title: 'รุ่งแสง' },
         { src: 'images/sansaiwatsadu.jpg', alt: 'ออกแบบเว็บไซต์ร้านวัสดุก่อสร้าง สันทรายวัสดุ sansaiwatsadu', title: 'สันทรายวัสดุ' },
         { src: 'images/thidasalon.jpg', alt: 'ออกแบบเว็บไซต์ร้านเสริมสวย ธิดาซาลอน thidasalon', title: 'ธิดา ซาลอน' },
         { src: 'images/yacob-coconut.jpg', alt: 'ออกแบบเว็บไซต์ธุรกิจมะพร้าว ยาค็อบโคโค่นัท yacob-coconut', title: 'Yacob Coconut' }
     ];
-    document.getElementById('business-grid').innerHTML = businessImages.map(createCardHtml).join('');
+    renderGrid('business-grid', businessImages);
 </script>
 
     <!-- Contact Section -->
@@ -476,6 +484,10 @@
         const navLinks = document.querySelectorAll('.mobile-nav-link');
 
         function openMenu() {
+            if (!sidebar || !backdrop || !menuPanel) {
+                console.error('Mobile menu elements not found: cannot open menu.');
+                return;
+            }
             sidebar.classList.remove('hidden');
             setTimeout(() => {
                 backdrop.classList.remove('opacity-0');
@@ -486,6 +498,10 @@
         }
 
         function closeMenu() {
+            if (!sidebar || !backdrop || !menuPanel) {
+                console.error('Mobile menu elements not found: cannot close menu.');
+                return;
+            }
             backdrop.classList.remove('opacity-100');
             backdrop.classList.add('opacity-0');
             menuPanel.classList.remove('translate-x-0');
@@ -496,9 +512,21 @@
             }, 300);
         }
 
-        menuButton.addEventListener('click', openMenu);
-        closeButton.addEventListener('click', closeMenu);
-        backdrop.addEventListener('click', closeMenu);
+        if (menuButton) {
+            menuButton.addEventListener('click', openMenu);
+        } else {
+            console.error('Element #mobile-menu-button not found.');
+        }
+        if (closeButton) {
+            closeButton.addEventListener('click', closeMenu);
+        } else {
+            console.error('Element #mobile-close-button not found.');
+        }
+        if (backdrop) {
+            backdrop.addEventListener('click', closeMenu);
+        } else {
+            console.error('Element #mobile-backdrop not found.');
+        }
 
         navLinks.forEach(link => {
             link.addEventListener('click', closeMenu);
