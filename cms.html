@@ -86,95 +86,10 @@
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
-<!-- Floating Contact Buttons (ลอยด้านขวาของจอ) -->
-    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3.5">
-        <!-- ปุ่ม Line -->
-        <a href="https://line.me/ti/p/~adminkasem" target="_blank" rel="noopener" 
-           class="flex items-center justify-center w-14 h-14 bg-[#06C755] text-white rounded-full shadow-xl hover:bg-[#05b34c] transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group relative"
-           title="แชทผ่าน Line">
-            <i class="fa-brands fa-line text-3xl"></i>
-            <!-- ข้อความ Tooltip แสดงเมื่อเอาเมาส์ชี้ (แสดงเฉพาะบนจอคอม) -->
-            <span class="absolute right-16 bg-slate-900 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-md border border-slate-700">
-                Line: adminkasem
-            </span>
-        </a>
+    <div id="floating-buttons"></div>
+    <div id="navbar"></div>
+    <div id="mobile-sidebar"></div>
 
-        <!-- ปุ่มโทรศัพท์ -->
-        <a href="tel:0638890295" 
-           class="flex items-center justify-center w-14 h-14 bg-blue-600 text-white rounded-full shadow-xl hover:bg-blue-700 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group relative"
-           title="โทรหาเรา">
-            <i class="fa-solid fa-phone text-2xl animate-pulse"></i>
-            <!-- ข้อความ Tooltip แสดงเมื่อเอาเมาส์ชี้ (แสดงเฉพาะบนจอคอม) -->
-            <span class="absolute right-16 bg-slate-900 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-md border border-slate-700">
-                โทร: 063-889-0295
-            </span>
-        </a>
-    </div>
-    <!-- Navbar -->
-    <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20">
-                
-                <div class="flex items-center">
-                    <a href="index.html" class="flex-shrink-0 flex items-center">
-                        <!-- ใส่ alt ที่ระบุ Keyword ชัดเจนส่งผลดีต่อ Google Image Search -->
-                        <img src="logoprachuap.jpg" alt="Prachuap Online บริการรับทำเว็บไซต์ครบวงจร" class="h-12 w-auto object-contain py-1">
-                    </a>
-                </div>
-
-                <!-- Desktop Menu -->
-                <div class="hidden xl:flex items-center space-x-5">
-                    <a href="index.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">Home</a>
-                    <a href="promotion.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">โปรโมชั่น</a>
-                    <a href="service.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">บริการอื่นๆ</a>
-                    <a href="domain.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">ราคา ชื่อเว็บ</a>
-                    <a href="category.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">ตัวอย่างเว็บ</a>
-                    <a href="cms.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">รับพัฒนาเว็บเดิม</a>
-                    <a href="about.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">เกี่ยวกับเรา</a>
-                    
-                    <a href="#contact" class="bg-blue-600 text-white px-4 py-2.5 rounded-xl font-bold text-sm hover:bg-blue-700 transition shadow-md shadow-blue-600/20 flex items-center gap-2">
-                        <i class="fa-solid fa-comments"></i> ติดต่อเรา
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="flex items-center xl:hidden">
-                    <button id="mobile-menu-button" class="text-slate-600 hover:text-blue-600 focus:outline-none p-2 text-2xl transition" aria-label="เปิดเมนูนำทาง">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
-
-            </div>
-        </div>
-    </nav>
-
-    <!-- Mobile Sidebar Menu -->
-    <div id="mobile-sidebar" class="fixed inset-0 z-50 overflow-hidden hidden transition-all duration-300">
-        <div id="mobile-backdrop" class="absolute inset-0 bg-slate-900/50 opacity-0 transition-opacity duration-300"></div>
-        
-        <div id="mobile-menu-panel" class="absolute inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl flex flex-col p-6 translate-x-full transition-transform duration-300 ease-in-out">
-            <div class="flex items-center justify-between mb-8">
-                <span class="font-bold text-lg text-slate-900">เมนูนำทาง</span>
-                <button id="mobile-close-button" class="text-slate-500 hover:text-slate-800 text-xl p-2" aria-label="ปิดเมนู">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            
-            <div class="flex flex-col space-y-4">
-                <a href="index.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">Home</a>
-                <a href="promotion.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">โปรโมชั่น</a>
-                <a href="service.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">บริการอื่นๆ</a>
-                <a href="domain.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">ราคา ชื่อเว็บ</a>
-                <a href="category.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">ตัวอย่างเว็บ</a>
-                <a href="cms.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">รับพัฒนาเว็บเดิม</a>
-                <a href="about.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">เกี่ยวกับเรา</a>
-                
-                <a href="#contact" class="mobile-nav-link bg-blue-600 text-white text-center px-5 py-3 rounded-xl font-bold text-base hover:bg-blue-700 transition shadow-md shadow-blue-600/20 flex items-center justify-center gap-2 mt-4">
-                    <i class="fa-solid fa-comments"></i> ติดต่อเรา
-                </a>
-            </div>
-        </div>
-    </div>
 
     <!-- Hero Section -->
     <header class="bg-gradient-to-b from-blue-50 via-slate-50 to-slate-50 py-20 border-b border-slate-100">
@@ -468,147 +383,17 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-100">
-                <div>
-                    <h2 class="text-3xl font-bold text-slate-900">ติดต่อรับทำเว็บไซต์และประเมินราคาฟรี</h2>
-                    <p class="mt-4 text-slate-600">พูดคุยแลกเปลี่ยนไอเดียและรายละเอียดความต้องการทำเว็บได้ตลอดเวลา ไม่มีค่าใช้จ่ายเบื้องต้น</p>
-                    
-                    <div class="mt-12 space-y-6">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-sm text-slate-400 font-medium">เบอร์โทรศัพท์ติดต่อ</h3>
-                                <p class="text-base font-semibold text-slate-900">063-889-0295</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-sm text-slate-400 font-medium">อีเมลเพื่อติดต่องาน</h3>
-                                <p class="text-base font-semibold text-slate-900">zx1000rr@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="space-y-4 bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                    <h3 class="text-lg font-bold text-slate-900 mb-4 text-center sm:text-left">เลือกช่องทางที่คุณสะดวกคุย</h3>
-                    
-                    <a href="https://line.me/ti/p/~ใส่LINE_IDของคุณ" target="_blank" rel="noopener" class="flex items-center justify-center gap-3 w-full bg-[#06C755] hover:bg-[#05b34c] text-white py-4 rounded-xl font-semibold shadow-lg shadow-green-600/20 transition">
-                        <i class="fa-brands fa-line text-xl"></i>
-                        แชทผ่าน Line Official / ID
-                    </a>
+        <div id="contact-section"></div>
 
-                    <a href="mailto:zx1000rr@gmail.com?subject=ติดต่อประเมินราคาเว็บไซต์" class="flex items-center justify-center gap-3 w-full bg-slate-900 hover:bg-slate-800 text-white py-4 rounded-xl font-semibold shadow-lg transition">
-                        <i class="fa-solid fa-envelope text-xl"></i>
-                        ส่งอีเมลหาเราโดยตรง
-                    </a>
+    <div id="site-footer"></div>
 
-                    <a href="tel:0638890295" class="flex items-center justify-center gap-3 w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl font-semibold shadow-lg shadow-blue-600/20 transition">
-                        <i class="fa-solid fa-phone text-xl"></i>
-                        โทรคุยตอนนี้ (063-889-0295)
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 pt-16 pb-12 border-t border-t-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-slate-800">
-                
-                <div class="space-y-4">
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-code text-blue-500 text-2xl"></i>
-                        <span class="text-2xl font-bold text-white tracking-wide">Prachuap Online</span>
-                    </div>
-                    <p class="text-sm leading-relaxed text-slate-400">
-                        บริการรับทำเว็บไซต์ครบวงจร ออกแบบสวยงาม รองรับมือถือ 
-                        และพัฒนาระบบหลังบ้านตามความต้องการในราคาที่จับต้องได้
-                    </p>
-                </div>
-
-                <div>
-                    <h3 class="text-white font-semibold text-base mb-4 tracking-wider uppercase">เมนูเว็บไซต์</h3>
-                    <div class="grid grid-cols-2 gap-3 text-sm">
-                        <div class="flex flex-col space-y-2.5">
-                            <a href="index.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> Home</a>
-                            <a href="promotion.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> โปรโมชั่น</a>
-                            <a href="service.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> บริการอื่นๆ</a>
-                            <a href="domain.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> ราคา ชื่อเว็บ</a>
-                        </div>
-                        <div class="flex flex-col space-y-2.5">
-                            <a href="category.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> ตัวอย่างเว็บ</a>
-                            <a href="cms.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> พัฒนาเว็บเดิม</a>
-                            <a href="about.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> เกี่ยวกับเรา</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="space-y-3 text-sm">
-                    <h3 class="text-white font-semibold text-base mb-4 tracking-wider uppercase">ติดต่อเรา</h3>
-                    <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-blue-500 w-4"></i> 063-889-0295</p>
-                    <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-blue-500 w-4"></i> zx1000rr@gmail.com</p>
-                </div>
-
-            </div>
-
-            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-                <p class="text-xs text-slate-500">&copy; 2026 Prachuap Online Studio. All rights reserved.</p>
-                <div class="flex gap-4 text-slate-500 text-lg">
-                    <a href="#" class="hover:text-white transition" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" class="hover:text-white transition" aria-label="Line"><i class="fa-brands fa-line"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript สำหรับระบบเปิด-ปิด Sidebar -->
+    <script src="shared/components.js"></script>
     <script>
-        const menuButton = document.getElementById('mobile-menu-button');
-        const closeButton = document.getElementById('mobile-close-button');
-        const sidebar = document.getElementById('mobile-sidebar');
-        const backdrop = document.getElementById('mobile-backdrop');
-        const menuPanel = document.getElementById('mobile-menu-panel');
-        const navLinks = document.querySelectorAll('.mobile-nav-link');
-
-        function openMenu() {
-            sidebar.classList.remove('hidden');
-            setTimeout(() => {
-                backdrop.classList.remove('opacity-0');
-                backdrop.classList.add('opacity-100');
-                menuPanel.classList.remove('translate-x-full');
-                menuPanel.classList.add('translate-x-0');
-            }, 10);
-        }
-
-        function closeMenu() {
-            backdrop.classList.remove('opacity-100');
-            backdrop.classList.add('opacity-0');
-            menuPanel.classList.remove('translate-x-0');
-            menuPanel.classList.add('translate-x-full');
-            
-            setTimeout(() => {
-                sidebar.classList.add('hidden');
-            }, 300);
-        }
-
-        menuButton.addEventListener('click', openMenu);
-        closeButton.addEventListener('click', closeMenu);
-        backdrop.addEventListener('click', closeMenu);
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', closeMenu);
+        PrachuapComponents.renderAll({
+            title: 'ติดต่อประเมินราคาทำเว็บไซต์ฟรี',
+            description: 'พูดคุยแลกเปลี่ยนไอเดียและรายละเอียดความต้องการได้ตลอดเวลา ไม่มีค่าใช้จ่ายเบื้องต้น'
         });
     </script>
-
+    <script src="shared/mobile-menu.js"></script>
 </body>
 </html>
