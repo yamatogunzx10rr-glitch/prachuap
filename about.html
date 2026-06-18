@@ -429,16 +429,24 @@
         const navLinks = document.querySelectorAll('.mobile-nav-link');
 
         function openMenu() {
+            if (!sidebar || !backdrop || !menuPanel) {
+                console.error('Mobile menu elements not found: cannot open menu.');
+                return;
+            }
             sidebar.classList.remove('hidden');
             setTimeout(() => {
                 backdrop.classList.remove('opacity-0');
                 backdrop.classList.add('opacity-100');
                 menuPanel.classList.remove('translate-x-full');
                 menuPanel.classList.add('translate-x-0');
-            }, 10); // หน่วงเวลาเล็กน้อยเพื่อให้ CSS Transition ทำงานสวยงาม
+            }, 10);
         }
 
         function closeMenu() {
+            if (!sidebar || !backdrop || !menuPanel) {
+                console.error('Mobile menu elements not found: cannot close menu.');
+                return;
+            }
             backdrop.classList.remove('opacity-100');
             backdrop.classList.add('opacity-0');
             menuPanel.classList.remove('translate-x-0');
@@ -446,12 +454,24 @@
             
             setTimeout(() => {
                 sidebar.classList.add('hidden');
-            }, 300); // รอให้ Animation สไลด์ปิดเสร็จก่อนแล้วค่อยซ่อนถาวร
+            }, 300);
         }
 
-        menuButton.addEventListener('click', openMenu);
-        closeButton.addEventListener('click', closeMenu);
-        backdrop.addEventListener('click', closeMenu);
+        if (menuButton) {
+            menuButton.addEventListener('click', openMenu);
+        } else {
+            console.error('Element #mobile-menu-button not found.');
+        }
+        if (closeButton) {
+            closeButton.addEventListener('click', closeMenu);
+        } else {
+            console.error('Element #mobile-close-button not found.');
+        }
+        if (backdrop) {
+            backdrop.addEventListener('click', closeMenu);
+        } else {
+            console.error('Element #mobile-backdrop not found.');
+        }
 
         navLinks.forEach(link => {
             link.addEventListener('click', closeMenu);

@@ -140,11 +140,11 @@
                 </div>
             </div>
             <div class="bg-white p-8 rounded-2xl text-gray-800">
-                <form class="space-y-4">
-                    <input type="text" placeholder="ชื่อของคุณ" class="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-amber-500">
-                    <input type="email" placeholder="อีเมล" class="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-amber-500">
-                    <textarea placeholder="ข้อความถึงเรา" rows="4" class="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
-                    <button class="w-full bg-amber-500 text-white py-4 rounded-lg font-bold hover:bg-amber-600 transition">ส่งข้อความ</button>
+                <form id="contact-form" class="space-y-4">
+                    <input type="text" placeholder="ชื่อของคุณ" class="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                    <input type="email" placeholder="อีเมล" class="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                    <textarea placeholder="ข้อความถึงเรา" rows="4" class="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-amber-500" required></textarea>
+                    <button type="submit" class="w-full bg-amber-500 text-white py-4 rounded-lg font-bold hover:bg-amber-600 transition">ส่งข้อความ</button>
                 </form>
             </div>
         </div>
@@ -153,6 +153,18 @@
     <footer class="py-8 text-center text-gray-500 border-t">
         <p>&copy; 2026 VIAN ESTATE. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        var contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('ขอบคุณสำหรับข้อความของคุณ! เราจะติดต่อกลับโดยเร็วที่สุด');
+            });
+        } else {
+            console.error('Element #contact-form not found.');
+        }
+    </script>
 
 </body>
 </html>
