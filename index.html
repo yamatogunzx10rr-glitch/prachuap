@@ -1,1064 +1,1003 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T7QR2JV7');</script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ครัวบ้านพ่อ - โรงงานผลิตลูกชิ้นได้มาตรฐาน ฮาลาล</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>รับทำเว็บไซต์ ประจวบฯ ครบวงจร เริ่มต้น 999.- | Prachuap Online</title>
+    <meta name="description" content="บริการรับทำเว็บไซต์ครบวงจร ในจังหวัดประจวบคีรีขันธ์ ออกแบบสวยงาม รองรับมือถือ ทำหน้า Landing Page ยิงแอด ร้านค้าออนไลน์ E-Commerce และระบบราชการ ติด On-Page SEO พร้อมแข่งขันหน้าแรก Google">
+    <meta name="keywords" content="รับทำเว็บไซต์ ประจวบ, รับทำเว็บไซต์ ประจวบคีรีขันธ์, ทำเว็บราคาถูก, รับทำ Landing Page, ทำเว็บร้านค้าออนไลน์, ออกแบบเว็บไซต์, prachuap online">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://prachuap.online/"> <!-- เปลี่ยนเป็น URL จริงของคุณ -->
+
+    <!-- Open Graph / Facebook (เพิ่ม CTR เวลาแชร์) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://prachuap.online/">
+    <meta property="og:title" content="รับทำเว็บไซต์ ประจวบฯ ครบวงจร เริ่มต้น 999.- | Prachuap Online">
+    <meta property="og:description" content="สร้างเว็บไซต์ให้ธุรกิจของคุณเติบโตอย่างมืออาชีพ ตอบโจทย์ทุกธุรกิจ ดีไซน์ทันสมัย โหลดเร็ว ติดหน้าแรกง่ายขึ้น">
+    <meta property="og:image" content="https://prachuap.online/banner.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://prachuap.online/">
+    <meta property="twitter:title" content="รับทำเว็บไซต์ ประจวบฯ ครบวงจร เริ่มต้น 999.- | Prachuap Online">
+    <meta property="twitter:description" content="สร้างเว็บไซต์ให้ธุรกิจของคุณเติบโตอย่างมืออาชีพ ตอบโจทย์ทุกธุรกิจ ดีไซน์ทันสมัย โหลดเร็ว ติดหน้าแรกง่ายขึ้น">
+    <meta property="twitter:image" content="https://prachuap.online/banner.jpg">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Prompt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Base Reset & Variables */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Sarabun', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        :root {
-            --primary-green: #2d5a27;
-            --light-green: #eef5ed;
-            --dark-brown: #4a3319;
-            --light-brown: #8c6239;
-            --cream: #f7f4eb;
-            --white: #ffffff;
-            --text-dark: #222222;
-            --text-light: #555555;
-            --accent-orange: #d97706;
-        }
-
         body {
-            background-color: var(--cream);
-            color: var(--text-dark);
-            line-height: 1.6;
+            font-family: 'Prompt', sans-serif;
         }
-
-        /* Top Bar Contact Info */
-        .top-bar {
-            background-color: var(--dark-brown);
-            color: var(--white);
-            text-align: center;
-            padding: 8px 15px;
-            font-size: 14px;
-        }
-        .top-bar span {
-            margin: 0 15px;
-        }
-        .top-bar a {
-            color: #ffdf7e;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* Header Navigation */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-        }
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .logo-text {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--primary-green);
-        }
-        .logo-sub {
-            font-size: 12px;
-            color: var(--light-brown);
-            display: block;
-        }
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: var(--dark-brown);
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: var(--primary-green);
-        }
-
-      /* Banner Section ปรับปรุงรองรับภาพ 1920x1080 (16:9) */
-.hero-banner {
-    width: 100%;
-    /* ปรับความสูงขั้นต่ำให้สมดุล และใช้ aspect-ratio คุมสัดส่วนภาพ */
-    min-height: 550px; 
-    aspect-ratio: 1920 / 1080;
-    background: linear-gradient(rgba(45, 90, 39, 0.45), rgba(74, 51, 25, 0.45)), url('images/lookchin/banner.jpg') no-repeat center center;
-    background-size: cover;
-    background-attachment: scroll; /* หรือใช้ fixed ถ้าต้องการเอฟเฟกต์ Parallax */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--white);
-    padding: 40px 20px;
-}
-.hero-content {
-    background: rgba(0, 0, 0, 0.65); /* เพิ่มความเข้มพื้นหลังเล็กน้อยเพื่อให้ตัวหนังสืออ่านง่ายขึ้นบนภาพใหญ่ */
-    padding: 40px 50px;
-    border-radius: 12px;
-    border: 2px solid #dfc394;
-    max-width: 850px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    backdrop-filter: blur(3px); /* เพิ่มลูกเล่นกระจกฝ้าให้ดูพรีเมี่ยม */
-}
-.hero-content h1 {
-    font-size: 48px; /* ปรับขนาดให้เด่นขึ้นรับกับแบนเนอร์ขนาดใหญ่ */
-    margin-bottom: 18px;
-    color: #ffd885;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-    letter-spacing: 1px;
-}
-.hero-content p {
-    font-size: 19px;
-    margin-bottom: 25px;
-    font-weight: 400;
-}
-.halal-badge {
-    display: inline-block;
-    background-color: var(--primary-green);
-    color: white;
-    padding: 8px 25px;
-    border-radius: 25px;
-    font-weight: bold;
-    font-size: 18px;
-    border: 2px solid var(--white);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-/* ปรับปรุงการแสดงผลบนมือถือให้แบนเนอร์ไม่ผอมเกินไป */
-@media (max-width: 768px) {
-    .hero-banner {
-        min-height: 400px;
-        aspect-ratio: auto; /* บนมือถือปล่อยให้ยืดหยุ่นตามเนื้อหา */
-    }
-    .hero-content {
-        padding: 25px 20px;
-    }
-    .hero-content h1 {
-        font-size: 32px;
-    }
-    .hero-content p {
-        font-size: 16px;
-    }
-    .halal-badge {
-        font-size: 15px;
-        padding: 6px 18px;
-    }
-}
-
-        /* Common Section Styles */
-        section {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 32px;
-            color: var(--primary-green);
-            margin-bottom: 10px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--light-brown);
-            border-radius: 2px;
-        }
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-light);
-            margin-bottom: 40px;
-            font-size: 16px;
-        }
-
-        /* Products Grid */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 25px;
-        }
-        .product-card {
-            background-color: var(--white);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid #e1dacb;
-            display: flex;
-            flex-direction: column;
-        }
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        .product-img-box {
-            position: relative;
-            height: 200px;
-            background-color: #f0f0f0;
-            overflow: hidden;
-        }
-        .product-img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .halal-tag {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background-color: var(--primary-green);
-            color: var(--white);
-            font-size: 11px;
-            padding: 3px 8px;
-            border-radius: 3px;
-            font-weight: bold;
-        }
-        .product-info {
-            padding: 20px;
-            text-align: center;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .product-name {
-            font-size: 18px;
-            font-weight: bold;
-            color: var(--dark-brown);
-            margin-bottom: 10px;
-        }
-        .product-price {
-            font-size: 22px;
-            color: var(--accent-orange);
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-        .product-price span {
-            font-size: 14px;
-            color: var(--text-light);
-            font-weight: normal;
-        }
-        .order-btn {
-            background-color: var(--primary-green);
-            color: var(--white);
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            width: 100%;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .order-btn:hover {
-            background-color: var(--dark-brown);
-        }
-
-        /* Other Products Section */
-        .other-products {
-            background-color: var(--light-green);
-            padding: 60px 20px;
-            margin-top: 40px;
-            border-radius: 12px;
-            border: 1px solid #d4ebd2;
-        }
-        .other-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 20px;
-        }
-        .other-card {
-            background-color: var(--white);
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            border-left: 5px solid var(--light-brown);
-        }
-        .other-title {
-            font-size: 16px;
-            font-weight: bold;
-            color: var(--dark-brown);
-            margin-bottom: 10px;
-        }
-        .other-tag {
-            background-color: var(--light-brown);
-            color: var(--white);
-            font-size: 12px;
-            padding: 2px 10px;
-            border-radius: 12px;
-            display: inline-block;
-        }
-
-        /* Franchise Section */
-        .franchise-section {
-            background-color: #fffdf9;
-            border-top: 1px solid #eee7d7;
-            border-bottom: 1px solid #eee7d7;
-        }
-        .franchise-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .franchise-card {
-            background-color: var(--white);
-            border: 2px solid #ebdcb9;
-            border-radius: 12px;
-            padding: 35px 25px;
-            text-align: center;
-            position: relative;
-            transition: transform 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-        }
-        .franchise-card:hover {
-            transform: scale(1.03);
-            border-color: var(--primary-green);
-        }
-        .franchise-card.popular {
-            border-color: var(--primary-green);
-            box-shadow: 0 8px 25px rgba(45, 90, 39, 0.15);
-        }
-        .franchise-badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--primary-green);
-            color: var(--white);
-            padding: 4px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-        }
-        .franchise-name {
-            font-size: 22px;
-            font-weight: bold;
-            color: var(--dark-brown);
-            margin-bottom: 15px;
-        }
-        .franchise-price {
-            font-size: 36px;
-            color: var(--primary-green);
-            font-weight: 800;
-            margin-bottom: 20px;
-        }
-        .franchise-price span {
-            font-size: 16px;
-            color: var(--text-light);
-            font-weight: normal;
-        }
-        .franchise-desc {
-            color: var(--text-light);
-            font-size: 15px;
-            margin-bottom: 25px;
-            min-height: 50px;
-        }
-        .franchise-features {
-            text-align: left;
-            margin-bottom: 30px;
-            border-top: 1px dashed #e1dacb;
-            padding-top: 20px;
-        }
-        .franchise-features li {
-            list-style: none;
-            margin-bottom: 10px;
-            font-size: 14px;
-            color: var(--text-dark);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .franchise-features li::before {
-            content: '✓';
-            color: var(--primary-green);
-            font-weight: bold;
-        }
-
-        /* Marketing Support Section */
-        .marketing-section {
-            background-color: var(--primary-green);
-            color: var(--white);
-            border-radius: 16px;
-            padding: 50px;
-            margin-top: 40px;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(45, 90, 39, 0.2);
-        }
-        .marketing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .marketing-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 25px;
-            border-radius: 8px;
-            border-top: 4px solid #ffd885;
-        }
-        .marketing-card h3 {
-            font-size: 20px;
-            color: #ffd885;
-            margin-bottom: 15px;
-        }
-        .marketing-card p {
-            font-size: 15px;
-            color: #e2f0df;
-        }
-
-        /* Trust & Credibility Section */
-        .trust-section {
-            background-color: var(--white);
-            padding: 60px 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-            border: 1px solid #eee7d7;
-        }
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-            text-align: center;
-        }
-        .trust-item {
-            padding: 20px;
-        }
-        .trust-icon {
-            font-size: 45px;
-            color: var(--light-brown);
-            margin-bottom: 15px;
-        }
-        .trust-item h3 {
-            font-size: 18px;
-            color: var(--dark-brown);
-            margin-bottom: 10px;
-        }
-        .trust-item p {
-            font-size: 14px;
-            color: var(--text-light);
-        }
-
-        /* Footer Section */
-        footer {
-            background-color: var(--dark-brown);
-            color: var(--white);
-            padding: 50px 20px 20px 20px;
-            margin-top: 80px;
-            border-top: 5px solid var(--primary-green);
-        }
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .footer-about h3, .footer-contact h3, .footer-links h3 {
-            font-size: 20px;
-            color: #ffd885;
-            margin-bottom: 20px;
-        }
-        .footer-about p {
-            font-size: 14px;
-            color: #d1c2b3;
-        }
-        .footer-links ul {
-            list-style: none;
-        }
-        .footer-links ul li {
-            margin-bottom: 10px;
-        }
-        .footer-links ul li a {
-            color: #d1c2b3;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s;
-        }
-        .footer-links ul li a:hover {
-            color: var(--white);
-        }
-        .footer-contact p {
-            font-size: 14px;
-            color: #d1c2b3;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            font-size: 13px;
-            color: #a89685;
-        }
-
-        /* Responsive Settings */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .hero-banner {
-                height: 350px;
-            }
-            .hero-content h1 {
-                font-size: 28px;
-            }
-            .hero-content p {
-                font-size: 15px;
-            }
-            .marketing-section {
-                padding: 30px 20px;
-            }
+        html {
+            scroll-behavior: smooth;
         }
     </style>
-</head>
-<body>
 
-    <!-- Top Bar Contact Info -->
-    <div class="top-bar">
-        <span>📍 พิกัด: ดอนทราย เมืองประจวบคีรีขันธ์ 77000</span>
-        <span>📞 สนใจติดต่อ/สั่งซื้อ: <a href="tel:0919871234">091-987-1234</a></span>
+    <!-- JSON-LD Structured Data / Schema Markup (ช่วยให้ Google เข้าใจโครงสร้างบริการและธุรกิจเด่นชัดขึ้น) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Prachuap Online Studio",
+      "image": "https://prachuap.online/logoprachuap.jpg",
+      "description": "บริการรับทำเว็บไซต์ครบวงจร ออกแบบสวยงาม รองรับมือถือ และพัฒนาเว็บระบบ On-Page SEO ในประจวบคีรีขันธ์",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mueang Prachuap Khiri Khan",
+        "addressRegion": "Prachuap Khiri Khan",
+        "addressCountry": "TH"
+      },
+      "telephone": "063-889-0295",
+      "priceRange": "฿999 - ฿14,999",
+      "url": "https://prachuap.online/"
+    }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+<!-- Floating Contact Buttons (ลอยด้านขวาของจอ) -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3.5">
+        <!-- ปุ่ม Line -->
+        <a href="https://line.me/ti/p/~adminkasem" target="_blank" rel="noopener" 
+           class="flex items-center justify-center w-14 h-14 bg-[#06C755] text-white rounded-full shadow-xl hover:bg-[#05b34c] transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group relative"
+           title="แชทผ่าน Line">
+            <i class="fa-brands fa-line text-3xl"></i>
+            <!-- ข้อความ Tooltip แสดงเมื่อเอาเมาส์ชี้ (แสดงเฉพาะบนจอคอม) -->
+            <span class="absolute right-16 bg-slate-900 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-md border border-slate-700">
+                Line: adminkasem
+            </span>
+        </a>
+
+        <!-- ปุ่มโทรศัพท์ -->
+        <a href="tel:0638890295" 
+           class="flex items-center justify-center w-14 h-14 bg-blue-600 text-white rounded-full shadow-xl hover:bg-blue-700 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group relative"
+           title="โทรหาเรา">
+            <i class="fa-solid fa-phone text-2xl animate-pulse"></i>
+            <!-- ข้อความ Tooltip แสดงเมื่อเอาเมาส์ชี้ (แสดงเฉพาะบนจอคอม) -->
+            <span class="absolute right-16 bg-slate-900 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-md border border-slate-700">
+                โทร: 063-889-0295
+            </span>
+        </a>
+    </div>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T7QR2JV7"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center" title="หน้าแรก Prachuap Online">
+                        <img src="logoprachuap.jpg" alt="Prachuap Online ลำดับหนึ่งบริการรับทำเว็บไซต์" class="h-12 w-auto object-contain py-1">
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden xl:flex items-center space-x-5">
+                    <a href="index.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">Home</a>
+                    <a href="promotion.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">โปรโมชั่น</a>
+                    <a href="service.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">บริการอื่นๆ</a>
+                    <a href="domain.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">ราคา ชื่อเว็บ</a>
+                    <a href="category.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">ตัวอย่างเว็บ</a>
+                    <a href="cms.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">รับพัฒนาเว็บเดิม</a>
+                    <a href="about.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">เกี่ยวกับเรา</a>
+                    
+                    <a href="#contact" class="bg-blue-600 text-white px-4 py-2.5 rounded-xl font-bold text-sm hover:bg-blue-700 transition shadow-md shadow-blue-600/20 flex items-center gap-2">
+                        <i class="fa-solid fa-comments"></i> ติดต่อเรา
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center xl:hidden">
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-blue-600 focus:outline-none p-2 text-2xl transition" aria-label="เปิดเมนูนำทาง">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Sidebar Menu -->
+    <div id="mobile-sidebar" class="fixed inset-0 z-50 overflow-hidden hidden pointer-events-none transition-all duration-300">
+        <div id="mobile-backdrop" class="absolute inset-0 bg-slate-900/50 opacity-0 transition-opacity duration-300 pointer-events-auto"></div>
+        
+        <div id="mobile-menu-panel" class="absolute inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl flex flex-col p-6 translate-x-full transition-transform duration-300 ease-in-out pointer-events-auto">
+            <div class="flex items-center justify-between mb-8">
+                <span class="font-bold text-lg text-slate-900">เมนูนำทาง</span>
+                <button id="mobile-close-button" class="text-slate-500 hover:text-slate-800 text-xl p-2" aria-label="ปิดเมนู">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">Home</a>
+                <a href="promotion.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">โปรโมชั่น</a>
+                <a href="service.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">บริการอื่นๆ</a>
+                <a href="domain.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">ราคา ชื่อเว็บ</a>
+                <a href="category.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">ตัวอย่างเว็บ</a>
+                <a href="cms.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">รับพัฒนาเว็บเดิม</a>
+                <a href="about.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">เกี่ยวกับเรา</a>
+                
+                <a href="#contact" class="mobile-nav-link bg-blue-600 text-white text-center px-5 py-3 rounded-xl font-bold text-base hover:bg-blue-700 transition shadow-md shadow-blue-600/20 flex items-center justify-center gap-2 mt-4">
+                    <i class="fa-solid fa-comments"></i> ติดต่อเรา
+                </a>
+            </div>
+        </div>
     </div>
 
-    <!-- Header & Navigation -->
-    <header>
-        <div class="nav-container">
-            <div class="logo-area">
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-900 pt-16 pb-24 text-white overflow-hidden">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-400/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3"></div>
+        <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-500/20 rounded-full blur-2xl -translate-x-1/4 translate-y-1/4"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-yellow-400 text-slate-900 font-black px-4 py-1.5 rounded-full text-sm uppercase tracking-wide shadow-md animate-bounce">
+                        <i class="fa-solid fa-fire"></i> โปรโมชั่นสุดคุ้ม!
+                    </div>
+                    
+                    <!-- H1: จุดเน้น Keyword หลักของหน้าเว็บ (มีจุดเดียวเพื่อประสิทธิภาพสูงสุดสำหรับ Bot ค้นหา) -->
+                    <h1 class="text-4xl sm:text-6xl font-black text-white leading-none tracking-tight">
+                        รับทำเว็บไซต์ 30 นาทีเสร็จ <br>
+                        <span class="text-slate-950 bg-white px-4 py-1 my-2 inline-block rounded-2xl transform -rotate-1 shadow-lg text-3xl sm:text-4xl">ราคาประหยัด จบเพียง</span> 
+                        <span class="text-yellow-400 text-6xl sm:text-7xl block sm:inline font-extrabold ml-0 sm:ml-2 drop-shadow-[0_4px_6px_rgba(0,0,0,0.4)]">999.-</span>
+                        <span class="text-sm bg-blue-900 border border-blue-500 text-sky-300 font-bold px-3 py-1 rounded-full align-middle ml-2 inline-block">เท่านั้น!</span>
+                    </h1>
+
+                    <div class="inline-block bg-yellow-400 text-slate-900 font-bold text-lg sm:text-xl px-6 py-2 rounded-xl shadow-md">
+                        รับทำเว็บไซต์ครบวงจร ตอบโจทย์ทุกธุรกิจ
+                    </div>
+
+                    <p class="text-blue-100 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
+                        สร้างเว็บไซต์ให้ธุรกิจของคุณเติบโตอย่างมืออาชีพ รองรับโครงสร้าง On-Page SEO เพิ่มโอกาสติดหน้าแรก Google และขยายยอดขายอย่างไร้ขีดจำกัด
+                    </p>
+
+                    <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#contact" class="inline-flex justify-center items-center px-8 py-4 rounded-xl text-lg font-bold text-slate-900 bg-yellow-400 hover:bg-yellow-300 shadow-xl shadow-yellow-400/20 transition-all transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-comment-dots mr-2 text-xl"></i> ทักแชทเลย! ให้เราช่วยสร้างเว็บ
+                        </a>
+                        <a href="pack999.html" class="inline-flex justify-center items-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-blue-800/80 hover:bg-blue-800 border border-blue-500/50 transition">
+                            ดูรายละเอียดบริการ
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 flex flex-col items-center justify-center relative">
+                    <div class="relative w-full max-w-lg transition duration-500 transform hover:scale-[1.02]">
+                        <img src="banner.jpg" alt="บริการรับทำเว็บไซต์ครบวงจร Prachuap Online Studio Showcase" title="รับทำเว็บไซต์ ประจวบคีรีขันธ์" class="w-full h-auto drop-shadow-[0_20px_35px_rgba(0,0,0,0.3)] rounded-xl object-contain">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Features Grid -->
+            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-white/10 pt-10">
+                <div class="flex flex-col items-center text-center p-4 bg-white/5 rounded-2xl border border-white/5 backdrop-blur-sm group hover:bg-white/10 transition">
+                    <div class="w-12 h-12 bg-yellow-400 text-slate-900 rounded-xl flex items-center justify-center text-xl font-bold mb-3 shadow-lg">
+                        <i class="fa-solid fa-pen-ruler"></i>
+                    </div>
+                    <h2 class="text-base font-bold text-white">ออกแบบสวยทันสมัย</h2>
+                    <p class="text-xs text-blue-200 mt-1">ดีไซน์สวย ใช้งานง่ายเป็นระบบ</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-4 bg-white/5 rounded-2xl border border-white/5 backdrop-blur-sm group hover:bg-white/10 transition">
+                    <div class="w-12 h-12 bg-yellow-400 text-slate-900 rounded-xl flex items-center justify-center text-xl font-bold mb-3 shadow-lg">
+                        <i class="fa-solid fa-display"></i>
+                    </div>
+                    <h2 class="text-base font-bold text-white">รองรับทุกอุปกรณ์</h2>
+                    <p class="text-xs text-blue-200 mt-1">มือถือ, แท็บเล็ต, PC แสดงผลเป๊ะ</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-4 bg-white/5 rounded-2xl border border-white/5 backdrop-blur-sm group hover:bg-white/10 transition">
+                    <div class="w-12 h-12 bg-yellow-400 text-slate-900 rounded-xl flex items-center justify-center text-xl font-bold mb-3 shadow-lg">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    </div>
+                    <h2 class="text-base font-bold text-white">รองรับระบบ SEO เต็มระบบ</h2>
+                    <p class="text-xs text-blue-200 mt-1">ติดอันดับง่าย ค้นเจอไวบน Google</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-4 bg-white/5 rounded-2xl border border-white/5 backdrop-blur-sm group hover:bg-white/10 transition">
+                    <div class="w-12 h-12 bg-yellow-400 text-slate-900 rounded-xl flex items-center justify-center text-xl font-bold mb-3 shadow-lg">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <h2 class="text-base font-bold text-white">ดูแลหลังบ้านใช้งานง่าย</h2>
+                    <p class="text-xs text-blue-200 mt-1">จัดการเนื้อหา อัพเดตข้อมูลเองได้สบาย</p>
+                </div>
+            </div>
+
+            <div class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-8 text-sm text-blue-100 border-t border-white/5 pt-6">
+                <div class="flex items-center gap-2.5">
+                    <i class="fa-solid fa-circle-check text-yellow-400 text-lg"></i>
+                    <span><strong>รับประกันผลงาน:</strong> แก้ไขงานให้จนกว่าคุณจะพึงพอใจ</span>
+                </div>
+                <div class="hidden sm:block text-white/30">|</div>
+                <div class="flex items-center gap-2.5">
+                    <i class="fa-solid fa-clock text-yellow-400 text-lg"></i>
+                    <span><strong>ส่งงานตรงเวลา:</strong> พร้อมเปิดระบบใช้งานจริงทันใจ</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">บริการรับทำเว็บไซต์ ตอบโจทย์ทุกความต้องการ</h2>
+                <p class="mt-4 text-slate-600">เราใส่ใจในทุกขั้นตอนเพื่อส่งมอบสิ่งที่ดีที่สุด ไม่ว่าจะเป็นระบบการใช้งานหรือโครงสร้างหลังบ้านรองรับ SEO</p>
+            </div>
+
+            <!-- Flash Sale Promo Bar -->
+            <div class="max-w-4xl mx-auto mb-20 bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-800 rounded-3xl p-8 sm:p-10 shadow-xl shadow-blue-600/20 text-white relative overflow-hidden transform hover:scale-[1.01] transition duration-300">
+                <div class="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+                <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-sky-400/20 rounded-full blur-2xl"></div>
+                
+                <div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
+                    <div class="text-center md:text-left">
+                        <span class="inline-block bg-sky-400 text-slate-900 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-3">🔥 Flash Sale Promotion</span>
+                        <h3 class="text-2xl sm:text-3xl font-bold">โปรโมชั่นทำเว็บไซต์เปิดร้านค้า</h3>
+                        <p class="text-blue-100 mt-2 text-sm sm:text-base max-w-md">รับทำหน้า Landing Page สำเร็จรูป ดีไซน์สวยงาม โหลดเร็ว คุ้มค่าและรวดเร็ว เหมาะสำหรับการนำไปยิงแอด Facebook, TikTok หรือ Google Ads เพื่อสร้างยอดขายด่วน!</p>
+                    </div>
+                    <div class="text-center border-t border-white/20 pt-6 md:pt-0 md:border-t-0 md:border-l md:pl-10 flex flex-col items-center min-w-[220px]">
+                        <span class="text-sm text-blue-200 line-through font-medium">ปกติ ฿2,999</span>
+                        <div class="flex items-baseline gap-1 mt-1">
+                            <span class="text-sm font-semibold text-sky-300">จ่ายเพียง</span>
+                            <span class="text-4xl sm:text-5xl font-black text-white tracking-tight">฿999</span>
+                        </div>
+                        <a href="#contact" class="mt-5 inline-flex items-center justify-center w-full px-6 py-3 bg-white text-blue-700 font-bold rounded-xl shadow-lg hover:bg-sky-50 transition transform active:scale-95">
+                            จองสิทธิ์โปรโมชั่นนี้
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Items -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-xl transition group flex flex-col justify-between h-full">
+                    <div>
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-xl font-bold mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Corporate &amp; Landing Page</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm mb-6">เว็บไซต์แนะนำบริษัท หรือหน้าเว็บขายสินค้าหน้าเดียว (Single Page Website) ดีไซน์หรูหรา เพิ่มความน่าเชื่อถือให้กับแบรนด์ของคุณอย่างเป็นระบบ</p>
+                    </div>
+                    <a href="category.html" class="inline-flex items-center justify-center bg-white border border-slate-200 text-slate-700 font-semibold text-sm py-2.5 px-4 rounded-xl shadow-sm hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 transition-all duration-200 w-full text-center">
+                        ดูตัวอย่าง
+                        <i class="fa-solid fa-arrow-right ml-2 text-xs opacity-70 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-xl transition group flex flex-col justify-between h-full">
+                    <div>
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-xl font-bold mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">E-Commerce System</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm mb-6">ระบบร้านค้าออนไลน์ ตะกร้าสินค้า และระบบการชำระเงินที่สะดวกสบาย รัดกุม ปลอดภัย เชื่อมต่อง่าย จัดการออเดอร์สบายใจ รองรับการทำตลาดออนไลน์เต็มพิกัด</p>
+                    </div>
+                    <a href="category.html" class="inline-flex items-center justify-center bg-white border border-slate-200 text-slate-700 font-semibold text-sm py-2.5 px-4 rounded-xl shadow-sm hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 transition-all duration-200 w-full text-center">
+                        ดูตัวอย่าง
+                        <i class="fa-solid fa-arrow-right ml-2 text-xs opacity-70 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-xl transition group flex flex-col justify-between h-full">
+                    <div>
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-xl font-bold mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">SEO &amp; Speed Optimization</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm mb-6">ปรับแต่งโครงสร้าง Code ให้สะอาดและถูกหลักเกณฑ์ของ Google โหลดรวดเร็วทันใจด้วย Core Web Vitals เพื่อสถิติติดอันดับหน้าแรกที่ดียิ่งขึ้น</p>
+                    </div>
+                    <a href="category.html" class="inline-flex items-center justify-center bg-white border border-slate-200 text-slate-700 font-semibold text-sm py-2.5 px-4 rounded-xl shadow-sm hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 transition-all duration-200 w-full text-center">
+                        ดูตัวอย่าง
+                        <i class="fa-solid fa-arrow-right ml-2 text-xs opacity-70 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-24 bg-slate-100/70 border-y border-slate-200/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-blue-600 font-bold tracking-widest uppercase text-xs">Categories Specialize</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">หมวดหมู่บริการทำเว็บไซต์ที่เราเชี่ยวชาญ</h2>
+                <p class="mt-4 text-slate-600">เราปรับเปลี่ยนรูปแบบและฟังก์ชันการทำงานให้ลงตัวกับอุตสาหกรรมและประเภทธุรกิจของคุณโดยเฉพาะ</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Category 1 -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group flex flex-col h-full justify-between">
+                    <div>
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                                <i class="fa-solid fa-utensils"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-semibold text-slate-400 uppercase">Category 01</span>
+                                <h3 class="text-lg font-bold text-slate-900">รับทำเว็บไซต์ ร้านอาหาร</h3>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">แสดงเมนูอาหารดิจิทัลแสนอร่อย มีระบบจองโต๊ะล่วงหน้า ฟังก์ชันปักหมุดแผนที่นำทางอย่างถูกต้อง และเชื่อมต่อปุ่มสั่งอาหารบริการเดลิเวอรีชั้นนำ</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Digital Menu</span>
+                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Table Booking</span>
+                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Google Maps</span>
+                        </div>
+                    </div>
+                    <a href="category.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 text-sm font-semibold text-blue-600 bg-blue-50 hover:bg-blue-600 hover:text-white rounded-xl transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+                        <span>ดูตัวอย่างเว็บไซต์</span>
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group flex flex-col h-full justify-between">
+                    <div>
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                                <i class="fa-solid fa-mug-hot"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-semibold text-slate-400 uppercase">Category 02</span>
+                                <h3 class="text-lg font-bold text-slate-900">รับทำเว็บไซต์ ร้านกาแฟ / คาเฟ่</h3>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">ถ่ายทอดบรรยากาศสุดคลาสสิกของคาเฟ่ แนะนำเมนูซิกเนเจอร์ประจำฤดูกาล ระบบสมาชิกสะสมแต้มออนไลน์ และลิงก์สั่งซื้อด่วนผ่าน Line Official Account</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Cafe Vibe</span>
+                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Menu Gallery</span>
+                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Line Integration</span>
+                        </div>
+                    </div>
+                    <a href="category.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 text-sm font-semibold text-blue-600 bg-blue-50 hover:bg-blue-600 hover:text-white rounded-xl transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+                        <span>ดูตัวอย่างเว็บไซต์</span>
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group flex flex-col h-full justify-between">
+                    <div>
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                                <i class="fa-solid fa-hotel"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-semibold text-slate-400 uppercase">Category 03</span>
+                                <h3 class="text-lg font-bold text-slate-900">รับทำเว็บไซต์ โรงแรม / รีสอร์ท</h3>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">ยกระดับที่พักด้วยระบบจองห้องพักตรง (Direct Booking) ไม่ผ่านคนกลาง ดีไซน์สวยงามน่าเชื่อถือ แกลเลอรีแชร์บรรยากาศ และระบบเปรียบเทียบห้องพักที่ครบถ้วน</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Direct Booking</span>
+                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Room Gallery</span>
+                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Reviews Display</span>
+                        </div>
+                    </div>
+                    <a href="category.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 text-sm font-semibold text-blue-600 bg-blue-50 hover:bg-blue-600 hover:text-white rounded-xl transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+                        <span>ดูตัวอย่างเว็บไซต์</span>
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+                <!-- Category 4 -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group flex flex-col h-full justify-between">
+                    <div>
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                                <i class="fa-solid fa-box-open"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-semibold text-slate-400 uppercase">Category 04</span>
+                                <h3 class="text-lg font-bold text-slate-900">เว็บไซต์ ของแห้งของฝาก / อีคอมเมิร์ซ</h3>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">ระบบจัดซื้อสินค้าอีคอมเมิร์ซเต็มพิกัด คำนวณราคาสินค้ารวมน้ำหนักจัดส่งอัตโนมัติ ระบบชำระเงินสแกน QR Code และเชื่อมระบบพัสดุขนส่งรวดเร็ว</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">E-Commerce</span>
+                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Shipping Calc</span>
+                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">QR Payment</span>
+                        </div>
+                    </div>
+                    <a href="category.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 text-sm font-semibold text-blue-600 bg-blue-50 hover:bg-blue-600 hover:text-white rounded-xl transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+                        <span>ดูตัวอย่างเว็บไซต์</span>
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+                <!-- Category 5 -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group flex flex-col h-full justify-between">
+                    <div>
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                                <i class="fa-solid fa-landmark"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-semibold text-slate-400 uppercase">Category 05</span>
+                                <h3 class="text-lg font-bold text-slate-900">รับทำเว็บไซต์ หน่วยงานราชการ</h3>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">จัดสร้างตรงตามมาตรฐานและกฎเกณฑ์ภาครัฐ (ITA) การจัดหมวดหมู่ข่าวสารจัดหาจัดซื้อ ดาวน์โหลดเอกสาร เว็บบอร์ดประชาสัมพันธ์เพื่อประชาชนปลอดภัยสูง</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">ITA Standard</span>
+                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">E-Service Docs</span>
+                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Highly Secure</span>
+                        </div>
+                    </div>
+                    <a href="category.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 text-sm font-semibold text-blue-600 bg-blue-50 hover:bg-blue-600 hover:text-white rounded-xl transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+                        <span>ดูตัวอย่างเว็บไซต์</span>
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+                <!-- Category 6 -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group flex flex-col h-full justify-between">
+                    <div>
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-semibold text-slate-400 uppercase">Category 06</span>
+                                <h3 class="text-lg font-bold text-slate-900">รับทำเว็บไซต์ บริการซ่อม / ศูนย์บริการ</h3>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">เว็บไซต์สำหรับธุรกิจช่างหรือศูนย์ซ่อม มีระบบเปิดตั๋วรับเรื่องแจ้งซ่อมออนไลน์ ตรวจเช็กและติดตามสถานะงาน นัดหมายช่าง ตลอดจนแสดงรีวิวจริง</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Ticket System</span>
+                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Job Status Tracking</span>
+                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Booking Calendar</span>
+                        </div>
+                    </div>
+                    <a href="category.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 text-sm font-semibold text-blue-600 bg-blue-50 hover:bg-blue-600 hover:text-white rounded-xl transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+                        <span>ดูตัวอย่างเว็บไซต์</span>
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+                <!-- Special Custom Category -->
+                <div class="bg-gradient-to-r from-blue-900 to-indigo-950 rounded-2xl p-8 sm:p-10 border border-slate-800 text-white lg:col-span-3 hover:shadow-2xl hover:shadow-blue-950/20 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden group">
+                    <div class="absolute -right-20 -top-20 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl"></div>
+                    <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+                        <div class="flex items-center gap-5">
+                            <div class="w-16 h-16 bg-white/10 text-sky-400 rounded-2xl flex items-center justify-center text-3xl shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                                <i class="fa-solid fa-wand-magic-sparkles animate-pulse"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-semibold text-blue-300 uppercase tracking-widest">Category 07</span>
+                                <h3 class="text-2xl font-bold mt-1">เว็บไซต์ระบบเฉพาะทางอื่นๆ สั่งทำพิเศษ (Custom Web Application)</h3>
+                                <p class="text-blue-100/80 text-sm mt-2 max-w-2xl leading-relaxed">
+                                    หากธุรกิจของคุณอยู่นอกเหนือจากระบบที่กล่าวมาข้างต้น ไม่ต้องกังวล! ทีมผู้เชี่ยวชาญ UI/UX และ Developer ของเราพร้อมร่วมวิเคราะห์ ออกแบบ และพัฒนาระบบพิเศษเฉพาะตัว ให้เหมาะกับไอเดียของคุณอย่างไร้ขอบเขต
+                                </p>
+                            </div>
+                        </div>
+                        <a href="#contact" class="bg-white text-slate-900 px-6 py-3.5 rounded-xl text-sm font-bold shadow-lg hover:bg-slate-100 transition whitespace-nowrap">
+                            <i class="fa-solid fa-comments mr-2"></i> ปรึกษาไอเดียฟรี
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Highlights -->
+    <section id="portfolio" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">ตัวอย่างผลงานออกแบบเว็บไซต์ของเรา</h2>
+                <p class="mt-4 text-slate-600">ผลงานล่าสุดที่เราได้รับความไว้วางใจในการออกแบบและพัฒนา</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 group hover:shadow-xl transition">
+    <div class="h-48 relative overflow-hidden flex items-center justify-center text-white font-medium text-lg bg-cover bg-center" 
+         style="background-image: url('images/market/prigkangsali.jpg');">
+        
+        <div class="absolute inset-0 bg-black/40 transition group-hover:bg-black/60"></div>
+        
+        <span class="relative z-10 font-semibold drop-shadow-md">sariprikang</span>
+        
+        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition flex items-center justify-center z-20">
+            <a href="category.html" class="bg-white text-slate-900 px-4 py-2 rounded-lg text-sm font-semibold shadow-md hover:bg-slate-100 transition">
+                ดูรายละเอียด
+            </a>
+        </div>
+    </div>
+    
+    <div class="p-6">
+        <span class="text-xs font-semibold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-md">Hot curry</span>
+        <h3 class="text-lg font-bold text-slate-900 mt-2">เว็บไซต์เครื่องแกงออนไลน์</h3>
+        <p class="text-xs text-slate-500 mt-1">ยกระดับให้ร้านค้า เพิ่มยอดขาย ต่อยอดออนไลน์</p>
+    </div>
+</div>
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 group hover:shadow-xl transition">
+    <div class="h-48 relative overflow-hidden flex items-center justify-center text-white font-medium text-lg bg-cover bg-center" 
+         style="background-image: url('images/rest/tongtung.jpg');">
+        
+        <div class="absolute inset-0 bg-black/40 transition group-hover:bg-black/60"></div>
+        
+        <span class="relative z-10 font-semibold drop-shadow-md">Tongtung</span>
+        
+        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition flex items-center justify-center z-20">
+            <a href="category.html" class="bg-white text-slate-900 px-4 py-2 rounded-lg text-sm font-semibold shadow-md hover:bg-slate-100 transition">
+                ดูรายละเอียด
+            </a>
+        </div>
+    </div>
+    
+    <div class="p-6">
+        <span class="text-xs font-semibold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-md">ภัตคาร</span>
+        <h3 class="text-lg font-bold text-slate-900 mt-2">ตองตึงเชียงราย</h3>
+        <p class="text-xs text-slate-500 mt-1">สั่งซื้อผ่านไลน์ msg call ปลอดภัย</p>
+    </div>
+</div>
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 group hover:shadow-xl transition">
+    <div class="h-48 relative overflow-hidden flex items-center justify-center text-white font-medium text-lg bg-cover bg-center" 
+         style="background-image: url('images/cafe/preawcafe.jpg');">
+        
+        <div class="absolute inset-0 bg-black/40 transition group-hover:bg-black/60"></div>
+        
+        <span class="relative z-10 font-semibold drop-shadow-md">Prewcafe</span>
+        
+        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition flex items-center justify-center z-20">
+            <a href="category.html" class="bg-white text-slate-900 px-4 py-2 rounded-lg text-sm font-semibold shadow-md hover:bg-slate-100 transition">
+                ดูรายละเอียด
+            </a>
+        </div>
+    </div>
+    
+    <div class="p-6">
+        <span class="text-xs font-semibold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-md">สร้างแบรนด์</span>
+        <h3 class="text-lg font-bold text-slate-900 mt-2">มุมมองที่มากขึ้น สั่งของอร่อย</h3>
+        <p class="text-xs text-slate-500 mt-1">ตอบโจทย์การขาย บริหารดาต้า ไม่โโนหัก GP</p>
+    </div>
+</div>
+
+               
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Business Needs a Website -->
+    <section id="why-website" class="py-24 bg-white relative overflow-hidden">
+        <div class="absolute top-1/4 left-0 w-96 h-96 bg-blue-50 rounded-full blur-3xl -z-10 opacity-60"></div>
+        <div class="absolute bottom-1/4 right-0 w-96 h-96 bg-sky-50 rounded-full blur-3xl -z-10 opacity-60"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-blue-600 font-bold tracking-widest uppercase text-xs px-3 py-1 bg-blue-50 rounded-full">Business Growth</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">ทำไมยุคนี้... ธุรกิจของคุณต้องมีเว็บไซต์เป็นของตัวเอง?</h2>
+                <p class="mt-4 text-slate-600">มากกว่าแค่หน้าตาออนไลน์ แต่คือเครื่องมือขับเคลื่อนยอดขายและสร้างความได้เปรียบทางการแข่งขันที่ยั่งยืน</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Why Cards -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-400 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-shield-check"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">เพิ่มความน่าเชื่อถือขั้นสุด</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">ธุรกิจที่มีเว็บไซต์จดโดเมนเป็นของตัวเอง จะดูเป็นมืออาชีพ มีตัวตนชัดเจน และสร้างความมั่นใจให้ลูกค้ากล้าโอนเงินซื้อสินค้าได้ง่ายขึ้น</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-400 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">ลูกค้าค้นเจอทันทีบน Google</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">เมื่อลูกค้ามีปัญหาหรือต้องการสินค้า และค้นหาบน Google โครงสร้างเว็บที่รองรับ SEO จะช่วยให้ธุรกิจของคุณไปแสดงผลอยู่ต่อหน้าพวกเขา</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-400 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-shop"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">เปิดหน้าร้านขายของ 24 ชั่วโมง</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">ไม่ต้องนอนเฝ้าแชท เว็บไซต์ทำหน้าที่เป็นพนักงานขายระบบออโตเมติกคอยต้อนรับ รับออเดอร์ และปิดการขายแทนคุณได้ตลอดวันทุกคืน</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-400 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-folder-open"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">รวมข้อมูลสินค้า & บริการที่เดียว</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">จัดหมวดหมู่ข้อมูล รีวิว แผนที่ และราคาไว้อย่างเป็นระเบียบ ลูกค้าหาข้อมูลได้เองทันที โดยที่คุณไม่ต้องคอยส่งรูปซ้ำๆ ในแชท</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-400 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">สร้างภาพลักษณ์และอัตลักษณ์แบรนด์</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">คุณสามารถกำหนดธีม สีสัน และการจัดวาง (UI/UX) ถ่ายทอดความหรูหรา น่าเชื่อถือ หรือความสร้างสรรค์ของแบรนด์ได้อย่างไร้ขีดจำกัด</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-400 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">ขยายฐานลูกค้าออนไลน์ไร้พรมแดน</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">ทลายข้อจำกัดเรื่องทำเลที่ตั้ง ทั่วประเทศหรือทั่วโลกสามารถเข้าถึงธุรกิจของคุณ ขยายโอกาสการขายไปยังกลุ่มตลาดใหม่ๆ ได้ตลอดเวลา</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-400 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-circle-nodes"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">เป็นเจ้าของข้อมูลระบบ 100%</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">ปลอดภัยจากการโดนปิดกั้นการมองเห็น หรือโดนแบนบัญชีจาก Social Media เพราะเว็บไซต์คืออสังหาริมทรัพย์ดิจิทัลที่คุณเป็นเจ้าของอย่างแท้จริง</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-400 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">วิเคราะห์ข้อมูลลูกค้าต่อยอดโฆษณา</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">สามารถฝังเครื่องมือติดตามพฤติกรรมลูกค้า เพื่อนำไปทำ Re-targeting ยิงโฆษณา (Facebook Pixel / Google Tag) กลับไปหาคนที่เคยเข้าเว็บได้อย่างแม่นยำ</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-400 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">ลดต้นทุนการบริหารธุรกิจระยะยาว</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">ประเมินแล้วคุ้มค่ากว่าการพิมพ์โบรชัวร์กระดาษ หรือการจ้างพนักงานหน้าร้านจำนวนมาก เว็บไซต์ดูแลรักษาง่ายและกระจายข้อมูลสู่คนนับหมื่นได้ในคลิกเดียว</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Connect Promotion Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="bg-blue-50 rounded-3xl p-8 md:p-12 grid md:grid-cols-2 gap-8 items-center shadow-sm border border-blue-100/50">
                 <div>
-                    <span class="logo-text">ครัวบ้านพ่อ</span>
-                    <span class="logo-sub">ลูกชิ้นพรีเมี่ยม ผลิตเอง ได้มาตรฐาน ฮาลาล</span>
+                    <div class="inline-flex items-center gap-1.5 bg-blue-600 text-white font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-4 shadow-sm shadow-blue-600/10">
+                        <i class="fa-solid fa-rocket"></i> Exclusive Benefit
+                    </div>
+                    <h3 class="text-3xl font-bold text-blue-900 mb-2">แอพประจวบคอนเนค</h3>
+                    <p class="text-blue-700 font-medium mb-6">เพิ่มช่องทางธุรกิจ สู่ลูกค้ากลุ่มใหม่ที่ทรงพลังที่สุดในจังหวัดประจวบคีรีขันธ์</p>
+                    
+                    <ul class="space-y-3 text-sm text-gray-700 mb-8">
+                        <li class="flex items-center space-x-2">
+                            <i class="fa-solid fa-circle-check text-blue-600"></i> 
+                            <span>แอพรวมธุรกิจในจังหวัดประจวบคีรีขันธ์ ดึงทราฟฟิกท้องถิ่นตรงสู่คุณ</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fa-solid fa-circle-check text-blue-600"></i> 
+                            <span>เพิ่มโอกาสให้ลูกค้าค้นหาคุณง่ายขึ้น ทั้งบนเว็บและบนสมาร์ทโฟน</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fa-solid fa-circle-check text-blue-600"></i> 
+                            <span>โปรโมทธุรกิจของคุณให้เป็นที่รู้จักมากขึ้น ด้วยระบบการตลาดในเครือข่ายของเรา</span>
+                        </li>
+                        <li class="flex items-center space-x-2 font-semibold text-blue-800">
+                            <i class="fa-solid fa-gift text-amber-500"></i> 
+                            <span>สิทธิพิเศษสุดฮอต! ลงข้อมูลธุรกิจฟรี! รับสิทธิหน้าแรกหมวด เมื่อใช้บริการทำเว็บไซต์กับเรา</span>
+                        </li>
+                    </ul>
+
+                    <div class="flex flex-wrap gap-6 items-center">
+                        <div>
+                            <p class="text-xs text-gray-500 mb-2 font-medium">ดาวน์โหลดแอพได้แล้ววันนี้</p>
+                            <div class="flex space-x-2">
+                                <span class="bg-black text-white px-4 py-1.5 rounded-md text-xs font-semibold inline-block cursor-pointer hover:bg-slate-800 transition shadow-md"><i class="fa-brands fa-apple mr-1"></i> App Store</span>
+                                <span class="bg-black text-white px-4 py-1.5 rounded-md text-xs font-semibold inline-block cursor-pointer hover:bg-slate-800 transition shadow-md"><i class="fa-brands fa-google-play mr-1"></i> Google Play</span>
+                            </div>
+                        </div>
+                        <div class="w-16 h-16 bg-white border border-gray-200 rounded-xl flex items-center justify-center text-[10px] text-gray-400 font-bold shadow-inner">QR CODE</div>
+                    </div>
                 </div>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#about">รู้จักเรา</a></li>
-                    <li><a href="#products">เมนูลูกชิ้น</a></li>
-                    <li><a href="#other-products">สินค้าอื่นๆ</a></li>
-                    <li><a href="#franchise">แฟรนไชส์</a></li>
-                    <li><a href="#marketing">ระบบสนับสนุน</a></li>
-                    <li><a href="#trust">ความน่าเชื่อถือ</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Hero Banner Section -->
-    <section class="hero-banner" id="about" style="max-width:100%; padding:0;">
-        <div class="hero-content">
-            <h1>ครัวบ้านพ่อ</h1>
-            <p>ธุรกิจลูกชิ้นคุณภาพสูง มีโรงงานผลิตเองได้มาตรฐาน สะอาด ถูกหลักอนามัย มั่นใจได้ด้วยมาตรฐานฮาลาล 100% คัดสรรวัตถุดิบชั้นดีเพื่อส่งต่อความอร่อยในทุกๆ คำ</p>
-            <div class="halal-badge">حلال ได้รับมาตรฐาน ฮาลาล 100%</div>
-        </div>
-    </section>
-
-    <!-- Main Products Section -->
-    <section id="products">
-        <h2 class="section-title">เมนูลูกชิ้น ครัวบ้านพ่อ</h2>
-        <p class="section-subtitle">ลูกชิ้นสดใหม่ ส่งตรงจากโรงงาน ผลิตภัณฑ์คุณภาพ ราคาเดียว 56 บาททุกเมนู</p>
+                <div class="flex justify-center">
+                    <div class="lg:col-span-6 flex flex-col items-center justify-center relative">
+    <div class="relative w-full max-w-lg rounded-2xl overflow-hidden drop-shadow-[0_20px_35px_rgba(0,0,0,0.3)] transition duration-500 transform hover:scale-[1.02] group">
         
-        <div class="products-grid">
-            <!-- Product 1 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/beef.jpg" alt="ลูกชิ้นเนื้อ">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นเนื้อ</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/beefage.jpg" alt="ลูกชิ้นเนื้อไข่เค็ม">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นเนื้อไข่เค็ม</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/beefcheese.jpg" alt="ลูกชิ้นเนื้อชีส">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นเนื้อชีส</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/beefn.jpg" alt="ลูกชิ้นเนื้อเอ็น">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นเนื้อเอ็น</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-
-            <!-- Product 5 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/beefpan.jpg" alt="ลูกชิ้นเนื้อแผ่น">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นเนื้อแผ่น</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-
-            <!-- Product 6 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/beefsea.jpg" alt="ลูกชิ้นเนื้อสาหร่ายทะเล">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นเนื้อสาหร่ายทะเล</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-
-            <!-- Product 7 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/beeftang.jpg" alt="ลูกชิ้นเนื้อแท่ง">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นเนื้อแท่ง</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-
-            <!-- Product 8 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/beefwagil.jpg" alt="ลูกชิ้นเนื้อวากิว">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นเนื้อวากิว</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-
-            <!-- Product 9 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/chickenage.jpg" alt="ลูกชิ้นไก่ ไข่เค็ม">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นไก่ ไข่เค็ม</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-
-            <!-- Product 10 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/chickencheese.jpg" alt="ลูกชิ้นไก่ชีส">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นไก่ชีส</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-
-            <!-- Product 11 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/chickenchilli.jpg" alt="ลูกชิ้นไก่พริก">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นไก่พริก</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-
-            <!-- Product 12 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/chickenlow.jpg" alt="ลูกชิ้นไก่เกลือน้อย">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นไก่เกลือน้อย</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-
-            <!-- Product 13 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/chickenn.jpg" alt="ลูกชิ้นไก่เอ็น">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นไก่เอ็น</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-
-            <!-- Product 14 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/chickentang.jpg" alt="ลูกชิ้นไก่แท่ง">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นไก่แท่ง</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-
-            <!-- Product 15 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/chicklow.jpg" alt="ลูกชิ้นไก่ เกลือน้อย">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นไก่ เกลือน้อย (สูตรพิเศษ)</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-
-            <!-- Product 16 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/cuckpaper.jpg" alt="ลูกชิ้นไก่พริกไทดำ">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นไก่พริกไทดำ</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-
-            <!-- Product 17 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/duck.jpg" alt="ลูกชิ้นเป็ด">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นเป็ด</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-
-            <!-- Product 18 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/duckage.jpg" alt="ลูกชิ้นเป็ดไข่เค็ม">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นเป็ดไข่เค็ม</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-
-            <!-- Product 19 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/duckcheese.jpg" alt="ลูกชิ้นเป็ดชีส">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นเป็ดชีส</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-
-            <!-- Product 20 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/duckn.jpg" alt="ลูกชิ้นเป็ดเอ็น">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นเป็ดเอ็น</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-
-            <!-- Product 21 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/duckpan.jpg" alt="ลูกชิ้นเป็ดแผ่น">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นเป็ดแผ่น</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-
-            <!-- Product 22 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/ducksea.jpg" alt="ลูกชิ้นเป็ดสาหร่ายทะเล">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นเป็ดสาหร่ายทะเล</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-
-            <!-- Product 23 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/ducktang.jpg" alt="ลูกชิ้นเป็ดแท่ง">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นเป็ดแท่ง</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-
-            <!-- Product 24 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <span class="halal-tag">ฮาลาล</span>
-                    <img src="images/lookchin/moohprig.jpg" alt="ลูกชิ้นเป็ดพริก">
-                </div>
-                <div class="product-info">
-                    <div class="product-name">ลูกชิ้นเป็ดพริก</div>
-                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
-                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Other Products Inside the Main Section -->
-        <div class="other-products" id="other-products">
-            <h3 style="text-align: center; font-size: 24px; color: var(--dark-brown); margin-bottom: 25px;">น้ำจิ้มสูตรเด็ด & อุปกรณ์พร้อมขาย</h3>
-            <div class="other-grid">
-                <div class="other-card">
-                    <div class="other-title">น้ำจิ้มพริก</div>
-                    <div class="other-tag">รสเด็ดเข้มข้น</div>
-                </div>
-                <div class="other-card">
-                    <div class="other-title">น้ำจิ้มแจ่ว</div>
-                    <div class="other-tag">แซ่บสไตล์อีสาน</div>
-                </div>
-                <div class="other-card">
-                    <div class="other-title">น้ำจิ้มหวานเด็ก</div>
-                    <div class="other-tag">กลมกล่อม ทานง่าย</div>
-                </div>
-                <div class="other-card">
-                    <div class="other-title">ไม้เสียบลูกชิ้นแหลม</div>
-                    <div class="other-tag">อุปกรณ์คุณภาพ</div>
-                </div>
-                <div class="other-card">
-                    <div class="other-title">ไม้เสียบทู่</div>
-                    <div class="other-tag">ปลอดภัย ได้มาตรฐาน</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Franchise Section -->
-    <section class="franchise-section" id="franchise">
-        <h2 class="section-title">บริการแฟรนไชส์ ครัวบ้านพ่อ</h2>
-        <p class="section-subtitle">เริ่มต้นธุรกิจของคุณเองได้ง่ายๆ ด้วยแพ็คเกจการลงทุนที่หลากหลาย พร้อมขายทันที</p>
+        <img src="app.jpg" alt="บริการรับทำเว็บไซต์ครบวงจร Prachuap Online Studio Showcase" title="รับทำเว็บไซต์ ประจวบคีรีขันธ์" class="w-full aspect-[4/3] object-cover">
         
-        <div class="franchise-grid">
-            <!-- Package 1 -->
-            <div class="franchise-card">
-                <div class="franchise-name">ชุดเริ่มต้นพร้อมขาย</div>
-                <div class="franchise-price">4,900 <span>บาท</span></div>
-                <div class="franchise-desc">แผงขายเบาสำหรับเริ่มต้น เหมาะสำหรับผู้ที่มีพื้นที่จำกัด หรืออยากทดลองตลาด ลงทุนน้อย คืนทุนไว</div>
-                <ul class="franchise-features">
-                    <li>แผงขายโครงสร้างน้ำหนักเบา เคลื่อนย้ายง่าย</li>
-                    <li>วัตถุดิบลูกชิ้นคละรสชาติชุดแรก</li>
-                    <li>น้ำจิ้มสูตรเด็ด และอุปกรณ์พื้นฐาน</li>
-                    <li>พร้อมเปิดร้านขายได้ทันที</li>
-                </ul>
-                <a href="tel:0919871234" class="order-btn" style="background-color: var(--light-brown);">สนใจแพ็คเกจนี้</a>
-            </div>
-
-            <!-- Package 2 -->
-            <div class="franchise-card popular">
-                <div class="franchise-badge">ยอดนิยม</div>
-                <div class="franchise-name">ชุดซุ้มเล็กมาตรฐาน</div>
-                <div class="franchise-price">9,999 <span>บาท</span></div>
-                <div class="franchise-desc">ซุ้มขนาดเล็ก ดีไซน์สวยงาม จัดเก็บและพับเก็บง่าย มาพร้อมเครื่องมือและอุปกรณ์การขายครบครัน</div>
-                <ul class="franchise-features">
-                    <li>ซุ้มคีออสขนาดเล็ก พับเก็บง่าย ประหยัดพื้นที่</li>
-                    <li>หม้อนึ่ง/เตาปิ้ง และอุปกรณ์ครบชุด</li>
-                    <li>วัตถุดิบและน้ำจิ้มพร้อมขายจำนวนมาก</li>
-                    <li>ป้ายตกแต่งร้านค้าดึงดูดสายตา</li>
-                </ul>
-                <a href="tel:0919871234" class="order-btn">สนใจแพ็คเกจนี้</a>
-            </div>
-
-            <!-- Package 3 -->
-            <div class="franchise-card">
-                <div class="franchise-name">ชุดพรีเมี่ยมจัดเต็ม</div>
-                <div class="franchise-price">14,999 <span>บาท</span></div>
-                <div class="franchise-desc">ซุ้มหรือแผงค้าขนาดใหญ่ ดีไซน์หรูหราพรีเมี่ยม ดึงดูดลูกค้าได้ดีเยี่ยม พร้อมอุปกรณ์เกรดเอครบวงจร</div>
-                <ul class="franchise-features">
-                    <li>ซุ้ม/แผงค้าขนาดใหญ่ ดีไซน์พรีเมี่ยมสะดุดตา</li>
-                    <li>ชุดอุปกรณ์การขายและจัดส่งระดับมืออาชีพ</li>
-                    <li>วัตถุดิบชุดใหญ่ และสิทธิ์การใช้แบรนด์เต็มรูปแบบ</li>
-                    <li>การสนับสนุนและปรึกษาการจัดหน้าร้าน</li>
-                </ul>
-                <a href="tel:0919871234" class="order-btn" style="background-color: var(--light-brown);">สนใจแพ็คเกจนี้</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Marketing Support Section -->
-    <section id="marketing" style="max-width: 100%; padding: 20px;">
-        <div class="marketing-section">
-            <h2 class="section-title" style="color: #ffd885; text-align: center;">เรามีการตลาดดูแลคุณอย่างมืออาชีพ</h2>
-            <p style="text-align: center; color: #f0fdf4; max-width: 700px; margin: 0 auto 20px auto;">หมดกังวลเรื่องการหาลูกค้า แม้คุณจะมือเปอะ ไม่มีเวลาโพสโซเชียล ทีมงานครัวบ้านพ่อพร้อมเคียงข้างและสนับสนุนในทุกขั้นตอน</p>
-            
-            <div class="marketing-grid">
-                <div class="marketing-card">
-                    <h3>จัดการตลาดให้เสร็จสรรพ</h3>
-                    <p>แม้คุณจะยุ่งกับการขายจนไม่มีเวลาโพสโปรโมท เรามีทีมงานดูแลโปรโมทร้านและทำการตลาดในพื้นที่ให้คุณอย่างต่อเนื่อง</p>
-                </div>
-                <div class="marketing-card">
-                    <h3>ระบบโปรโมชั่นสนับสนุน</h3>
-                    <p>มีแผนการจัดโปรโมชั่นประจำเดือนและตามฤดูกาล เพื่อช่วยกระตุ้นยอดขายและดึงดูดลูกค้าใหม่ๆ ให้เข้ามาซื้อซ้ำ</p>
-                </div>
-                <div class="marketing-card">
-                    <h3>ระบบคูปองสะสมแต้ม</h3>
-                    <p>เครื่องมือสร้างความภักดีของลูกค้าด้วยระบบคูปองและสิทธิพิเศษ ช่วยให้ลูกค้ากลับมาซื้อที่ร้านของคุณอย่างเป็นประจำ</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trust & Credibility Section -->
-    <section class="trust-section" id="trust">
-        <h2 class="section-title">ทำไมต้องเลือก "ครัวบ้านพ่อ"</h2>
-        <p class="section-subtitle">ความไว้วางใจและมาตรฐานที่เรามอบให้กับลูกค้าและพาร์ทเนอร์แฟรนไชส์ทุกคน</p>
+        <div class="absolute inset-0 bg-slate-900/10 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none"></div>
         
-        <div class="trust-grid">
-            <div class="trust-item">
-                <div class="trust-icon">🏭</div>
-                <h3>โรงงานผลิตเอง</h3>
-                <p>เราควบคุมการผลิตทุกขั้นตอนจากโรงงานของเราเอง มั่นใจได้ในเรื่องของความสดใหม่ ความสะอาด และรสชาติที่เป็นเอกลักษณ์</p>
+    </div>
+</div>
+                </div>
             </div>
-            <div class="trust-item">
-                <div class="trust-icon">🕌</div>
-                <h3>มาตรฐานฮาลาล</h3>
-                <p>ผลิตภัณฑ์ทุกชนิดผ่านการรับรองและกระบวนการผลิตตามมาตรฐานฮาลาล ถูกหลักศาสนา สะอาด ปลอดภัยสำหรับทุกคน</p>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">แพ็กเกจราคาค่าบริการทำเว็บไซต์ที่คุ้มค่า</h2>
+                <p class="mt-4 text-slate-600">ประเมินอย่างตรงไปตรงมา สอดคล้องตามฟังก์ชันที่เลือกใช้จริง</p>
             </div>
-            <div class="trust-item">
-                <div class="trust-icon">🤝</div>
-                <h3>ระบบดูแลพาร์ทเนอร์</h3>
-                <p>เราไม่ทอดทิ้งคุณ มีทีมงานคอยให้คำปรึกษา แนะนำการขาย และสนับสนุนสื่อการตลาดตลอดอายุการเป็นพันธมิตร</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                <!-- Landing Page Plan -->
+                <div class="bg-slate-50 p-8 rounded-2xl border-2 border-emerald-500 flex flex-col justify-between relative overflow-hidden shadow-lg">
+                    <div class="absolute top-0 right-0 bg-emerald-500 text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl uppercase tracking-wider animate-pulse">
+                        คุ้มที่สุด!
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Landing Page</h3>
+                        <p class="text-slate-500 text-sm mt-1">สําหรับเพจยิงแอด/หน้าเว็บเดี่ยว</p>
+                        <div class="mt-6 border-b border-dashed border-slate-200 pb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="text-slate-400 line-through text-base">฿4,900</span>
+                                <span class="text-xs bg-rose-100 text-rose-600 font-bold px-2 py-0.5 rounded-md">-80% OFF</span>
+                            </div>
+                            <div class="flex items-baseline text-rose-600 mt-1">
+                                <span class="text-5xl font-black tracking-tight">฿999</span>
+                                <span class="text-sm font-semibold text-slate-500 ml-2">/ พิเศษเฉพาะวันนี้</span>
+                            </div>
+                            <p class="text-xs text-rose-500 font-medium mt-2 flex items-center gap-1">
+                                <i class="fa-solid fa-clock"></i> จำกัด 10 สิทธิ์แรกเท่านั้น (เหลือ 3 สิทธิ์สุดท้าย)
+                            </p>
+                        </div>
+                        <ul class="mt-4 space-y-4 text-sm text-slate-600">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-500"></i> เว็บหน้าเดี่ยวครอบคลุมเนื้อหาครบ</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-500"></i> ปรับปรุง Mobile Responsive 100%</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-500"></i> ปุ่มเชื่อมโยง Line/โทร สั่งซื้อไว</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-500"></i> SEO พื้นฐาน &amp; </li>
+                        </ul>
+                    </div>
+                    <a href="999.html" target="_blank" class="mt-8 block w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white py-3.5 rounded-xl font-bold text-base shadow-md shadow-emerald-200 transition-all transform hover:-translate-y-0.5">
+                        จองสิทธิ์ราคาพิเศษ ฿999 ด่วน!
+                    </a>
+                </div>
+
+                <!-- Corporate Plan -->
+                <div class="bg-slate-900 p-8 rounded-2xl border-2 border-amber-500 flex flex-col justify-between relative shadow-2xl shadow-blue-900/20 overflow-hidden">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 px-5 py-1 rounded-full text-xs font-black uppercase tracking-widest animate-bounce">
+                        HOT DEAL!
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Standard Corporate</h3>
+                        <p class="text-slate-400 text-sm mt-1">ดีไซน์เว็บหลายหน้าขององค์กรธุรกิจ</p>
+                        <div class="mt-6 border-b border-dashed border-slate-800 pb-5">
+                            <div class="flex items-center gap-2">
+                                <span class="text-slate-500 line-through text-base">฿12,900</span>
+                                <span class="text-xs bg-red-500/20 text-red-400 border border-red-500/30 font-bold px-2 py-0.5 rounded">SAVE 75%</span>
+                            </div>
+                            <div class="flex items-baseline text-amber-400 mt-1">
+                                <span class="text-5xl font-black tracking-tight">฿2,999</span>
+                                <span class="text-xs font-semibold text-slate-400 ml-2">/ เฉพาะจองวันนี้</span>
+                            </div>
+                            <p class="text-xs text-orange-400 font-medium mt-2.5 flex items-center gap-1">
+                                <i class="fa-solid fa-fire-flame-curved"></i> ด่วน! โควตาราคานี้เหลือเพียง 2 บริษัทสุดท้าย
+                            </p>
+                        </div>
+                        <ul class="mt-5 space-y-4 text-sm text-slate-300">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-blue-400"></i> สูงสุด 5 หน้าข้อมูลแยกเป็นสัดส่วน</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-blue-400"></i> วางโครงสร้างสไตล์ On-Page SEO</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-blue-400"></i> แกลเลอรี อัลบั้มผลงาน / หน้าข่าว</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-blue-400"></i> ฟรี SEO ทุกหน้าเพจ</li>
+                        </ul>
+                    </div>
+                    <a href="2999.html" class="mt-8 block w-full text-center bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 py-3.5 rounded-xl font-black text-base shadow-lg shadow-orange-500/20 transition-all transform hover:-translate-y-0.5 active:scale-95">
+                        รับสิทธิ์ราคาพิเศษ ฿2,999 ทันที
+                    </a>
+                </div>
+
+                <!-- Custom E-Commerce Plan -->
+                <div class="bg-gradient-to-b from-slate-50 to-indigo-50/30 p-8 rounded-2xl border-2 border-indigo-600 flex flex-col justify-between relative shadow-xl overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-indigo-600 text-white text-xs font-black px-4 py-1.5 rounded-bl-xl uppercase tracking-wider">
+                        MEGA DEAL
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Custom / E-Commerce</h3>
+                        <p class="text-slate-500 text-sm mt-1">ร้านค้าสมบูรณ์หรือแอประบบเฉพาะ</p>
+                        <div class="mt-6 border-b border-dashed border-slate-200 pb-5">
+                            <div class="flex items-center gap-2">
+                                <span class="text-slate-400 line-through text-base">เริ่มต้น ฿25,000</span>
+                                <span class="text-xs bg-indigo-100 text-indigo-700 font-extrabold px-2 py-0.5 rounded-full">ประหยัด ฿10,001</span>
+                            </div>
+                            <div class="flex items-baseline text-indigo-600 mt-1">
+                                <span class="text-5xl font-black tracking-tight">฿14,999</span>
+                                <span class="text-xs font-bold text-slate-500 ml-2">/ ราคาเน็ตไม่มีบวกเพิ่ม</span>
+                            </div>
+                            <p class="text-xs text-amber-600 font-semibold mt-2.5 flex items-center gap-1">
+                                <i class="fa-solid fa-star text-amber-500"></i> โปรโมชันพิเศษสุดจำกัดเฉพาะ 3 แบรนด์แรกของเดือนนี้
+                            </p>
+                        </div>
+                        <ul class="mt-5 space-y-4 text-sm text-slate-600">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-500"></i> ลงสินค้ามากกว่า 50 รายการ</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-500"></i> SEO ขั้นสูง ทุกสินค้า</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-500"></i> ตกแต่ง UI/UX พิเศษเพื่อกลุ่มแบรนด์เนม</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-500"></i> คอร์สสอนการใช้จัดการหลังบ้าน</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="mt-8 block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white py-3.5 rounded-xl font-bold text-base shadow-lg shadow-indigo-600/20 transition-all transform hover:-translate-y-0.5">
+                        รับสิทธิ์ราคาพิเศษ ฿14,999 (คุยรายละเอียด)
+                    </a>
+                </div>
             </div>
-            <div class="trust-item">
-                <div class="trust-icon">💰</div>
-                <h3>ลงทุนต่ำ คืนทุนไว</h3>
-                <p>โมเดลธุรกิจที่ออกแบบมาเพื่อช่วยเหลือผู้เริ่มต้น ราคาจับต้องได้ มีกำไรต่อหน่วยสูง ทำให้สามารถคืนทุนได้ในระยะเวลาอันสั้น</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-100">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900">ติดต่อประเมินราคาทำเว็บไซต์ฟรี</h2>
+                    <p class="mt-4 text-slate-600">พูดคุยแลกเปลี่ยนไอเดียและรายละเอียดความต้องการได้ตลอดเวลา ไม่มีค่าใช้จ่ายเบื้องต้นเพื่อประสิทธิภาพสูงสุดของธุรกิจคุณ</p>
+                    
+                    <div class="mt-12 space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="text-sm text-slate-400">เบอร์โทรศัพท์ติดต่อ</span>
+                                <p class="text-base font-semibold text-slate-900">063-889-0295</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-sm text-slate-400">อีเมลเพื่อติดต่องาน</span>
+                                <p class="text-base font-semibold text-slate-900">zx1000rr@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-4 bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                    <h3 class="text-lg font-bold text-slate-900 mb-4 text-center sm:text-left">เลือกช่องทางที่คุณสะดวกคุย</h3>
+                    
+                    <a href="https://line.me/ti/p/~ใส่LINE_IDของคุณ" target="_blank" rel="noopener" class="flex items-center justify-center gap-3 w-full bg-[#06C755] hover:bg-[#05b34c] text-white py-4 rounded-xl font-semibold shadow-lg shadow-green-600/20 transition">
+                        <i class="fa-brands fa-line text-xl"></i>
+                        แชทผ่าน Line Official / ID
+                    </a>
+
+                    <a href="mailto:zx1000rr@gmail.com?subject=ติดต่อประเมินราคาเว็บไซต์" class="flex items-center justify-center gap-3 w-full bg-slate-900 hover:bg-slate-800 text-white py-4 rounded-xl font-semibold shadow-lg transition">
+                        <i class="fa-solid fa-envelope text-xl"></i>
+                        ส่งอีเมลหาเราโดยตรง
+                    </a>
+
+                    <a href="tel:0638890295" class="flex items-center justify-center gap-3 w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl font-semibold shadow-lg shadow-blue-600/20 transition">
+                        <i class="fa-solid fa-phone text-xl"></i>
+                        โทรคุยตอนนี้ (063-889-0295)
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-about">
-                <h3>ครัวบ้านพ่อ</h3>
-                <p>โรงงานผลิตและจัดจำหน่ายลูกชิ้นพรีเมี่ยม มุ่งมั่นสร้างสรรค์ผลิตภัณฑ์ที่ได้มาตรฐาน ฮาลาล รสชาติอร่อยถูกปาก ในราคาที่คุ้มค่า พร้อมส่งเสริมอาชีพและสร้างรายได้ให้กับชุมชนผ่านระบบแฟรนไชส์ที่มั่นคง</p>
+    <footer class="bg-slate-900 text-slate-400 pt-16 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-slate-800">
+                
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-code text-blue-500 text-2xl"></i>
+                        <span class="text-2xl font-bold text-white tracking-wide">prachuap online</span>
+                    </div>
+                    <p class="text-sm leading-relaxed text-slate-400">
+                        บริการรับทำเว็บไซต์ครบวงจร ออกแบบสวยงาม รองรับมือถือ 
+                        และพัฒนาระบบตามความต้องการในราคาที่จับต้องได้ ติดหน้าแรก Google ไว
+                    </p>
+                </div>
+
+                <div>
+                    <span class="text-white font-semibold text-base mb-4 tracking-wider uppercase block">เมนูเว็บไซต์</span>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <div class="flex flex-col space-y-2.5">
+                            <a href="index.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> Home</a>
+                            <a href="promotion.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> โปรโมชั่น</a>
+                            <a href="service.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> บริการอื่นๆ</a>
+                            <a href="domain.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> ราคา ชื่อเว็บ</a>
+                        </div>
+                        <div class="flex flex-col space-y-2.5">
+                            <a href="category.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> ตัวอย่างเว็บ</a>
+                            <a href="cms.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> พัฒนาเว็บเดิม</a>
+                            <a href="about.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> เกี่ยวกับเรา</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-3 text-sm">
+                    <span class="text-white font-semibold text-base mb-4 tracking-wider uppercase block">ติดต่อเรา</span>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-blue-500 w-4"></i> 063-889-0295</p>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-blue-500 w-4"></i> zx1000rr@gmail.com</p>
+                </div>
+
             </div>
-            <div class="footer-links">
-                <h3>ลิงค์ที่สำคัญ</h3>
-                <ul>
-                    <li><a href="#about">รู้จักเรา</a></li>
-                    <li><a href="#products">เมนูลูกชิ้น</a></li>
-                    <li><a href="#franchise">ข้อมูลแฟรนไชส์</a></li>
-                    <li><a href="#marketing">ระบบดูแลการตลาด</a></li>
-                </ul>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-slate-500">&copy; 2026 prachuap online Studio. All rights reserved.</p>
+                <div class="flex gap-4 text-slate-500 text-lg">
+                    <a href="#" class="hover:text-white transition" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-white transition" aria-label="Line"><i class="fa-brands fa-line"></i></a>
+                </div>
             </div>
-            <div class="footer-contact">
-                <h3>ติดต่อเรา</h3>
-                <p>📍 ที่อยู่: ดอนทราย เมืองประจวบคีรีขันธ์ 77000</p>
-                <p>📞 เบอร์โทรศัพท์: 091 987 1234</p>
-                <p>🕒 เวลาทำการ: เปิดบริการทุกวัน 08:00 น. - 18:00 น.</p>
-            </div>
-        </div>
-        <div class="copyright">
-            &copy; 2026 ครัวบ้านพ่อ - โรงงานลูกชิ้นมาตรฐานฮาลาล ประจวบคีรีขันธ์. All Rights Reserved.
         </div>
     </footer>
+
+    <!-- JavaScript สำหรับควบคุม ระบบเปิด-ปิด Sidebar -->
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const closeButton = document.getElementById('mobile-close-button');
+        const sidebar = document.getElementById('mobile-sidebar');
+        const backdrop = document.getElementById('mobile-backdrop');
+        const menuPanel = document.getElementById('mobile-menu-panel');
+        const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function openMenu() {
+            sidebar.classList.remove('hidden');
+            setTimeout(() => {
+                sidebar.classList.remove('pointer-events-none');
+                backdrop.classList.remove('opacity-0');
+                backdrop.classList.add('opacity-100');
+                menuPanel.classList.remove('translate-x-full');
+                menuPanel.classList.add('translate-x-0');
+            }, 10);
+        }
+
+        function closeMenu() {
+            backdrop.classList.remove('opacity-100');
+            backdrop.classList.add('opacity-0');
+            menuPanel.classList.remove('translate-x-0');
+            menuPanel.classList.add('translate-x-full');
+            
+            setTimeout(() => {
+                sidebar.classList.add('hidden');
+                sidebar.classList.add('pointer-events-none');
+            }, 300);
+        }
+
+        menuButton.addEventListener('click', openMenu);
+        closeButton.addEventListener('click', closeMenu);
+        backdrop.addEventListener('click', closeMenu);
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    </script>
 
 </body>
 </html>
