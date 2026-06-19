@@ -256,6 +256,23 @@
         
         <div id="food-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6"></div>
     </section>
+	<!-- เพิ่ม Section คาเฟ่ แยกออกมาโดยเฉพาะ -->
+    <section id="cafe" class="scroll-mt-36">
+        <div class="flex justify-between items-center mb-8 border-b border-slate-200 pb-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center text-amber-700">
+                    <i class="fa-solid fa-mug-saucer text-lg"></i>
+                </div>
+                <h2 class="text-xl font-bold text-slate-900">หมวดหมู่ รับทำเว็บไซต์คาเฟ่ ร้านกาแฟ เบเกอรี่ <span class="text-sm font-normal text-slate-500 ml-2">(8 ตัวอย่าง)</span></h2>
+            </div>
+            <a href="#contact" class="text-sm font-semibold text-amber-600 hover:text-amber-800 flex items-center gap-1 group">
+                สนใจทำเว็บไซต์แนวนี้ <i class="fa-solid fa-arrow-right text-xs transition transform group-hover:translate-x-1"></i>
+            </a>
+        </div>
+        
+        <!-- Grid แสดงผลสำหรับคาเฟ่ -->
+        <div id="cafe-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6"></div>
+    </section>
 
     <section id="business" class="scroll-mt-36">
         <div class="flex justify-between items-center mb-8 border-b border-slate-200 pb-4">
@@ -312,6 +329,7 @@
 
 <script>
     // ฟังก์ชันส่วนกลางสำหรับสร้าง HTML ของการ์ดแต่ละใบ
+    // ฟังก์ชันส่วนกลางสำหรับสร้าง HTML ของการ์ดแต่ละใบ
     function createCardHtml(img) {
         return `
             <article class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-xl hover:border-blue-200 transition duration-300 flex flex-col justify-between">
@@ -326,39 +344,107 @@
         `;
     }
 
-    // 1. ข้อมูลและสั่งแสดงผลหมวดหมู่ โรงแรม
+    // 1. หมวดหมู่ โรงแรม รีสอร์ต และการท่องเที่ยว
     const hotelImages = [
-        { src: 'images/aubkham.jpg', alt: 'ตัวอย่างออกแบบเว็บไซต์โรงแรม รีสอร์ต aubkham', title: 'โรงแรมอวบคำ' }
+        { src: 'images/hotel/bamboo.jpg', alt: 'ตัวอย่างเว็บที่พัก แบมบู รีสอร์ต', title: 'Bamboo Resort' },
+        { src: 'images/hotel/bangnanglom.jpg', alt: 'ตัวอย่างเว็บที่พัก บางนางลม', title: 'บ้านบางนางลม' },
+        { src: 'images/hotel/categoryban.jpg', alt: 'ตัวอย่างเว็บรีสอร์ต บ้านพักเป็นหลัง', title: 'บ้านพักตากอากาศ' },
+        { src: 'images/hotel/chongkrajog.jpg', alt: 'ตัวอย่างเว็บที่พัก ช่องกระจก', title: 'ที่พักวิวช่องกระจก' },
+        { src: 'images/hotel/mangosteen.jpg', alt: 'ตัวอย่างเว็บรีสอร์ต บ้านมังคุด', title: 'บ้านสวนมังคุด' },
+        { src: 'images/hotel/ramutan.jpg', alt: 'ตัวอย่างเว็บรีสอร์ต บ้านเงาะ', title: 'บ้านสวนเงาะ' },
+        { src: 'images/hotel/tamonglai.jpg', alt: 'ตัวอย่างเว็บที่พัก ตามงไล', title: 'ตามงไล รีสอร์ต' },
+        { src: 'images/hotel/turien.jpg', alt: 'ตัวอย่างเว็บรีสอร์ต บ้านทุเรียน', title: 'บ้านสวนทุเรียน' },
+        { src: 'images/travel/aubkham.jpg', alt: 'ตัวอย่างเว็บท่องเที่ยว พิพิธภัณฑ์อูบคำ', title: 'คุ้มอูบคำ' },
+        { src: 'images/travel/tanonsusuk.jpg', alt: 'ตัวอย่างเว็บท่องเที่ยว ถนนสู้ศึก', title: 'ถนนสายวัฒนธรรมสู้ศึก' },
+        { src: 'images/travel/wagor.jpg', alt: 'ตัวอย่างเว็บท่องเที่ยว หว้ากอ', title: 'อุทยานวิทยาศาสตร์หว้ากอ' },
+        { src: 'images/travel/yacob-coconut.jpg', alt: 'ตัวอย่างเว็บท่องเที่ยว สวนมะพร้าวยาค็อบ', title: 'สวนมะพร้าว Yacob' }
     ];
     document.getElementById('hotel-grid').innerHTML = hotelImages.map(createCardHtml).join('');
 
-    // 2. ข้อมูลและสั่งแสดงผลหมวดหมู่ สัตว์เลี้ยง
+    // 2. หมวดหมู่ สัตว์เลี้ยง สัตวแพทย์ และฟาร์ม
     const petImages = [
-        { src: 'images/eguana.jpg', alt: 'ออกแบบเว็บไซต์สัตว์เลี้ยง อิกัวน่า eguana', title: 'สัตว์เลี้ยง Eguana' },
-        { src: 'images/pragud.jpg', alt: 'ออกแบบเว็บไซต์ฟาร์มปลากัด pragud', title: 'ปลากัดสวยงาม' },
-        { src: 'images/samoawanimal.jpg', alt: 'ออกแบบเว็บไซต์โรงพยาบาลสัตว์ สัตวแพทย์ samoawanimal', title: 'สมอเว็ท สัตว์แพทย์' }
+        { src: 'images/animal/bird.jpg', alt: 'ตัวอย่างเว็บฟาร์มนกแก้ว นกสวยงาม', title: 'ฟาร์มนกสวยงาม' },
+        { src: 'images/animal/eguana.jpg', alt: 'ตัวอย่างเว็บจำหน่ายสัตว์แปลก เอ็กโซติกเพ็ท', title: 'สัตว์เลี้ยง Exotic' },
+        { src: 'images/animal/pragud.jpg', alt: 'ตัวอย่างเว็บฟาร์มปลากัดไทยโบราณ', title: 'ปลากัดสวยงาม' },
+        { src: 'images/animal/pragud1.jpg', alt: 'ตัวอย่างเว็บประกวดปลากัดสวยงาม', title: 'ปลากัดสายพันธุ์พัฒนา' },
+        { src: 'images/doc/samoawanimal.jpg', alt: 'ตัวอย่างเว็บโรงพยาบาลสัตว์ สัตวแพทย์', title: 'สามอ่าวสัตวแพทย์' }
     ];
     document.getElementById('pet-grid').innerHTML = petImages.map(createCardHtml).join('');
 
-    // 3. ข้อมูลและสั่งแสดงผลหมวดหมู่ อาหารและคาเฟ่
+    // 3. หมวดหมู่ ร้านอาหาร (คัดเอา Cafe ออกไปแล้ว)
     const foodImages = [
-        { src: 'images/steaktorung.jpg', alt: 'ออกแบบเว็บไซต์ร้านสเต็ก โต้รุ่ง steaktorung', title: 'สเต็กโต้รุ่ง' },
-        { src: 'images/hiakiseafood.jpg', alt: 'ออกแบบเว็บไซต์ร้านอาหารทะเล ไฮกี้ซีฟู้ด hiakiseafood', title: 'ไฮกี้ ซีฟู้ด' },
-        { src: 'images/jahee.jpg', alt: 'ออกแบบเว็บไซต์ร้านอาหาร เจ๊ฮี jahee', title: 'ร้านอาหารเจ๊ฮี' },
-        { src: 'images/jokenanthaka.jpg', alt: 'ออกแบบเว็บไซต์ร้านโจ๊ก นันทกา jokenanthaka', title: 'โจ๊กนันทกา' },
-        { src: 'images/tamsungtorung.jpg', alt: 'ออกแบบเว็บไซต์ร้านอาหารตามสั่ง โต้รุ่ง tamsungtorung', title: 'อาหารตามสั่งโต้รุ่ง' },
-        { src: 'images/preawcafe.jpg', alt: 'ออกแบบเว็บไซต์ร้านกาแฟ เปรี้ยวคาเฟ่ preawcafe', title: 'เปรี้ยว คาเฟ่' },
-        { src: 'images/prigkangsali.jpg', alt: 'ออกแบบเว็บไซต์พริกแกงสาลี โรงงานพริกแกง prigkangsali', title: 'พริกแกงสาลี' },
-        { src: 'images/tongtung.jpg', alt: 'ออกแบบเว็บไซต์ร้านอาหาร ตองตึง tongtung', title: 'ร้านอาหารตองตึง' }
+        { src: 'images/rest/hiakiseafood.jpg', alt: 'ตัวอย่างเว็บร้านอาหาร ไฮกี้ซีฟู้ด', title: 'ไฮกี้ ซีฟู้ด' },
+        { src: 'images/rest/jahee.jpg', alt: 'ตัวอย่างเว็บร้านอาหาร เจ๊ฮี', title: 'ร้านอาหารเจ๊ฮี' },
+        { src: 'images/rest/jokenanthaka.jpg', alt: 'ตัวอย่างเว็บร้านโจ๊ก นันทกา', title: 'โจ๊กนันทกา' },
+        { src: 'images/rest/somtumklongwan2.jpg', alt: 'ตัวอย่างเว็บร้านส้มตำ คลองวาฬ', title: 'ส้มตำคลองวาฬ' },
+        { src: 'images/rest/steaktorung.jpg', alt: 'ตัวอย่างเว็บร้านสเต็กโต้รุ่ง', title: 'สเต็กโต้รุ่ง' },
+        { src: 'images/rest/tamsungtorung.jpg', alt: 'ตัวอย่างเว็บร้านอาหารตามสั่งโต้รุ่ง', title: 'อาหารตามสั่งโต้รุ่ง' },
+        { src: 'images/rest/tongtung.jpg', alt: 'ตัวอย่างเว็บร้านอาหาร ตองตึง', title: 'ร้านอาหารตองตึง' },
+        { src: 'images/rest/noodle.jpg', alt: 'ตัวอย่างเว็บร้านก๋วยเตี๋ยวรสเด็ด', title: 'ร้านก๋วยเตี๋ยวรสเด็ด' }
     ];
     document.getElementById('food-grid').innerHTML = foodImages.map(createCardHtml).join('');
 
-    // 4. ข้อมูลและสั่งแสดงผลหมวดหมู่ ธุรกิจและบริการ
+    // 4. หมวดหมู่ คาเฟ่ และร้านกาแฟ (แยก Grid ออกมาจากร้านอาหารอย่างชัดเจน)
+    const cafeImages = [
+        { src: 'images/cafe/coffee.jpg', alt: 'ตัวอย่างเว็บคาเฟ่ เมนูกาแฟสด', title: 'Fresh Coffee' },
+        { src: 'images/cafe/coffee1.jpg', alt: 'ตัวอย่างเว็บร้านกาแฟสไตล์มินิมอล', title: 'Minimal Cafe' },
+        { src: 'images/cafe/coffee2.jpg', alt: 'ตัวอย่างเว็บเมล็ดกาแฟคั่วบด', title: 'Coffee Beans' },
+        { src: 'images/cafe/darkcafe.jpg', alt: 'ตัวอย่างเว็บร้านกาแฟสไตล์ดาร์กโมเดิร์น', title: 'Dark Cafe' },
+        { src: 'images/cafe/greentea1.jpg', alt: 'ตัวอย่างเว็บเมนูชาเขียวมัทฉะ', title: 'Matcha Latte' },
+        { src: 'images/cafe/greentea2.jpg', alt: 'ตัวอย่างเว็บร้านชาเขียวญี่ปุ่น', title: 'Premium Green Tea' },
+        { src: 'images/cafe/greentea3.jpg', alt: 'ตัวอย่างเว็บเครื่องดื่มชาเขียวเย็น', title: 'Matcha Iced Tea' },
+        { src: 'images/cafe/preawcafe.jpg', alt: 'ตัวอย่างเว็บร้านเปรี้ยวคาเฟ่', title: 'Preaw Cafe' }
+    ];
+    document.getElementById('cafe-grid').innerHTML = cafeImages.map(createCardHtml).join('');
+
+    // 5. หมวดหมู่ ยานยนต์ บริการซ่อม สุขภาพ ค้าขาย และธุรกิจอื่นๆ
     const businessImages = [
-        { src: 'images/rungsang.jpg', alt: 'ออกแบบเว็บไซต์ธุรกิจ รุ่งแสง rungsang', title: 'รุ่งแสง' },
-        { src: 'images/sansaiwatsadu.jpg', alt: 'ออกแบบเว็บไซต์ร้านวัสดุก่อสร้าง สันทรายวัสดุ sansaiwatsadu', title: 'สันทรายวัสดุ' },
-        { src: 'images/thidasalon.jpg', alt: 'ออกแบบเว็บไซต์ร้านเสริมสวย ธิดาซาลอน thidasalon', title: 'ธิดา ซาลอน' },
-        { src: 'images/yacob-coconut.jpg', alt: 'ออกแบบเว็บไซต์ธุรกิจมะพร้าว ยาค็อบโคโค่นัท yacob-coconut', title: 'Yacob Coconut' }
+        // โซนรถยนต์ & จักรยาน
+        { src: 'images/car/carbenz.jpg', alt: 'ตัวอย่างเว็บโชว์รูมรถยนต์ Mercedes Benz', title: 'โชว์รูม Benz พรีเมียม' },
+        { src: 'images/car/carbmw.jpg', alt: 'ตัวอย่างเว็บซื้อขายรถยนต์ BMW', title: 'โชว์รูม BMW สภาพดี' },
+        { src: 'images/car/cardealer.jpg', alt: 'ตัวอย่างเว็บเต็นท์รถยนต์มือสอง', title: 'Car Dealer ศูนย์รวมรถ' },
+        { src: 'images/car/cardealerblack.jpg', alt: 'ตัวอย่างเว็บดีลเลอร์รถยนต์ Black Edition', title: 'Black Edition Luxury' },
+        { src: 'images/car/cardealerblue.jpg', alt: 'ตัวอย่างเว็บซื้อขายรถยนต์สีน้ำเงิน', title: 'Smart Blue Edition' },
+        { src: 'images/car/cardealerclean.jpg', alt: 'ตัวอย่างเว็บศูนย์คาร์แคร์ ล้างขัดเคลือบแก้ว', title: 'Car Detailing & Clean' },
+        { src: 'images/car/cardealergray.jpg', alt: 'ตัวอย่างเว็บโชว์รูมรถยนต์สีเทาโมเดิร์น', title: 'Modern Gray Luxury' },
+        { src: 'images/car/cardealerhonda.jpg', alt: 'ตัวอย่างเว็บตัวแทนจำหน่ายรถยนต์ Honda', title: 'โชว์รูมรถยนต์ Honda' },
+        { src: 'images/bike/bike.jpg', alt: 'ตัวอย่างเว็บร้านขายจักรยานเสือภูเขา', title: 'จักรยานเสือภูเขา' },
+        { src: 'images/bike/bike1.jpg', alt: 'ตัวอย่างเว็บร้านจักรยานเสือหมอบ', title: 'จักรยานเสือหมอบทางเรียบ' },
+        { src: 'images/bike/bike2.jpg', alt: 'ตัวอย่างเว็บร้านซ่อมและปรับแต่งจักรยาน', title: 'อะไหล่และอุปกรณ์จักรยาน' },
+        { src: 'images/bike/bike3.jpg', alt: 'ตัวอย่างเว็บร้านจักรยานแฟชั่นปั่นเมือง', title: 'จักรยาน City Bike' },
+        // โซนบริการซ่อม & ขนส่ง
+        { src: 'images/ser/carser.jpg', alt: 'ตัวอย่างเว็บอู่ซ่อมรถยนต์ครบวงจร', title: 'ศูนย์ซ่อมบำรุงรถยนต์' },
+        { src: 'images/ser/logis.jpg', alt: 'ตัวอย่างบริษัทขนส่งสินค้า โลจิสติกส์', title: 'บริการขนส่งและโลจิสติกส์' },
+        { src: 'images/ser/logis1.jpg', alt: 'ตัวอย่างเว็บระบบขนส่งสินค้าข้ามแดน', title: 'Worldwide Logistics' },
+        { src: 'images/ser/rungsang.jpg', alt: 'ตัวอย่างเว็บธุรกิจ รุ่งแสงบริการ', title: 'รุ่งแสงบริการ' },
+        { src: 'images/ser/sangarun.jpg', alt: 'ตัวอย่างเว็บธุรกิจ แสนอรุณการช่าง', title: 'แสงอรุณการช่าง' },
+        { src: 'images/ser/sansaiwatsadu.jpg', alt: 'ตัวอย่างเว็บร้านวัสดุก่อสร้าง สันทรายวัสดุ', title: 'สันทรายวัสดุก่อสร้าง' },
+        { src: 'images/ser/udom.jpg', alt: 'ตัวอย่างเว็บร้าน อุดมการค้า/อุดมบริการ', title: 'อุดมบริการและอะไหล่' },
+        // โซนสุขภาพ & การแพทย์
+        { src: 'images/service/massage.jpg', alt: 'ตัวอย่างเว็บร้านนวดแผนไทย', title: 'บริการนวดแผนไทยโบราณ' },
+        { src: 'images/service/massage1.jpg', alt: 'ตัวอย่างเว็บร้านนวดน้ำมันอโรม่า', title: 'นวดน้ำมันอโรม่าผ่อนคลาย' },
+        { src: 'images/service/massage2.jpg', alt: 'ตัวอย่างเว็บนวดประคบสมุนไพร', title: 'นวดประคบสมุนไพร' },
+        { src: 'images/service/massage3.jpg', alt: 'ตัวอย่างเว็บร้านนวดสปาครบวงจร', title: 'Foot & Body Massage' },
+        { src: 'images/service/spahuahin.jpg', alt: 'ตัวอย่างเว็บสปา หัวหิน', title: 'Hua Hin Luxury Spa' },
+        { src: 'images/service/spabali.jpg', alt: 'ตัวอย่างเว็บสปาสไตล์บาหลี', title: 'Bali Massage & Spa' },
+        { src: 'images/service/spatravel.jpg', alt: 'ตัวอย่างเว็บสปาเพื่อการพักผ่อน', title: 'Travel & Spa Wellness' },
+        { src: 'images/doc/caremen.jpg', alt: 'ตัวอย่างเว็บคลินิกสุขภาพบุรุษ', title: 'บริการดูแลสุขภาพบุรุษ' },
+        { src: 'images/doc/carewomen.jpg', alt: 'ตัวอย่างเว็บคลินิกสุขภาพสตรี', title: 'บริการดูแลสุขภาพสตรี' },
+        { src: 'images/doc/mennurse.jpg', alt: 'ตัวอย่างเว็บจัดหาพยาบาลดูแลผู้ป่วย', title: 'บริการพยาบาลเฝ้าไข้' },
+        { src: 'images/doc/nurse.jpg', alt: 'ตัวอย่างเว็บศูนย์ดูแลผู้สูงอายุ', title: 'ศูนย์การพยาบาลและการดูแล' },
+        { src: 'images/doc/needdle.jpg', alt: 'ตัวอย่างเว็บคลินิกฝังเข็มแพทย์แผนจีน', title: 'คลินิกฝังเข็มแพทย์แผนจีน' },
+        { src: 'images/doc/herb.jpg', alt: 'ตัวอย่างเว็บร้านขายยาสมุนไพรไทย', title: 'ศูนย์สมุนไพรเพื่อสุขภาพ' },
+        // โซนสินค้าทั่วไป & ตลาดสด
+        { src: 'images/market/seafood.jpg', alt: 'ตัวอย่างเว็บจำหน่ายอาหารทะเลสด', title: 'ตลาดอาหารทะเลสด' },
+        { src: 'images/market/seafood1.jpg', alt: 'ตัวอย่างเว็บอาหารทะเลแปรรูป', title: 'ซีฟู้ดเดลิเวอรี่' },
+        { src: 'images/market/seafood3.jpg', alt: 'ตัวอย่างเว็บร้านอาหารทะเล', title: 'เมนูซีฟู้ดพรีเมียม' },
+        { src: 'images/market/beef.jpg', alt: 'ตัวอย่างเว็บร้านขายเนื้อวัวเกรดพรีเมียม', title: 'เนื้อวัวคัดเกรดพรีเมียม' },
+        { src: 'images/market/pig.jpg', alt: 'ตัวอย่างเว็บเขียงหมูออนไลน์', title: 'เนื้อหมูสดอนามัย' },
+        { src: 'images/market/vetget.jpg', alt: 'ตัวอย่างเว็บร้านขายผักสดออร์แกนิก', title: 'ผักสดสวนครัวออร์แกนิก' },
+        { src: 'images/market/pine.jpg', alt: 'ตัวอย่างเว็บสวนสับปะรด', title: 'สับปะรดสดจากสวน' },
+        { src: 'images/market/age.jpg', alt: 'ตัวอย่างเว็บสินค้าการเกษตร', title: 'ผลผลิตทางการเกษตร' },
+        { src: 'images/market/prigang.jpg', alt: 'ตัวอย่างเว็บร้านขายพริกแกงใต้', title: 'เครื่องแกงปักษ์ใต้' },
+        { src: 'images/market/prigkangsali.jpg', alt: 'ตัวอย่างเว็บโรงงานพริกแกงสาลี', title: 'พริกแกงสาลี' }
     ];
     document.getElementById('business-grid').innerHTML = businessImages.map(createCardHtml).join('');
 </script>
