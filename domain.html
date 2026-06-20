@@ -190,24 +190,108 @@
             <span class="text-blue-600 text-sm font-semibold tracking-wider bg-blue-50 px-4 py-1.5 rounded-full uppercase">Domain Name Registration</span>
             <!-- H1: ปรับ Keyword เน้นๆ ให้ค้นหาเจอราคาชื่อเว็บและจดโดเมน -->
             <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 mt-4 tracking-tight">เช็คราคาชื่อเว็บ ค้นหาและจดโดเมนราคาถูก</h1>
-            <p class="text-lg text-slate-600 mt-3 max-w-2xl mx-auto">เริ่มต้นซื้อชื่อเว็บไซต์เพื่อสร้างตัวตนออนไลน์ มั่นใจได้กับผู้นำบริการจดทะเบียนโดเมนมาตรฐานสากล เริ่มต้นเพียง 50 บาท/ปี</p>
-            
-            <div class="mt-10 bg-white p-2.5 rounded-2xl sm:rounded-full shadow-xl shadow-blue-900/5 border border-slate-200 max-w-2xl mx-auto flex flex-col sm:flex-row gap-2">
-                <input type="text" id="domain-search-input" class="flex-1 bg-transparent px-6 py-3.5 text-slate-800 placeholder-slate-400 focus:outline-none font-medium text-base rounded-full" placeholder="พิมพ์ชื่อโดเมนที่คุณต้องการ เช่น yourdomain.com">
-                <button onclick="handleSearch()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3.5 rounded-xl sm:rounded-full transition duration-150 whitespace-nowrap shadow-md shadow-blue-600/10">
-                    <i class="fa-solid fa-magnifying-glass mr-2"></i> ค้นหาโดเมน
-                </button>
+			<!-- ส่วนของ UI ค้นหา (Tailwind CSS สไตล์หรูหราเข้ากับเว็บคุณ) -->
+<div class="max-w-3xl mx-auto my-12 p-8 bg-white rounded-2xl shadow-xl border border-gray-100">
+    <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">ค้นหาชื่อโดเมนที่คุณต้องการ</h2>
+    
+    <div class="flex flex-col md:flex-row gap-3">
+        <div class="flex-1 relative">
+            <input type="text" id="domainInput" placeholder="พิมพ์ชื่อโดเมนที่ต้องการ (เช่น mywebsite)" 
+                   class="w-full px-5 py-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-lg">
+        </div>
+        <div class="w-full md:w-40">
+            <select id="tldSelect" class="w-full h-full px-4 py-4 border border-gray-300 rounded-xl bg-gray-50 focus:outline-none text-lg font-medium text-gray-700">
+                <option value=".com">.com</option>
+                <option value=".shop">.shop</option>
+                <option value=".online">.online</option>
+                <option value=".net">.net</option>
+                <option value=".co.th">.co.th</option>
+            </select>
+        </div>
+        <button onclick="checkDomain()" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-lg transition duration-200 shadow-md">
+            ค้นหา
+        </button>
+    </div>
+
+    <!-- ส่วนแสดงผลลัพธ์ -->
+    <div id="searchResult" class="mt-8 hidden">
+        <div id="resultBox" class="p-5 rounded-xl border flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                <p id="resultDomain" class="text-xl font-bold text-gray-800"></p>
+                <p id="resultStatus" class="text-sm mt-1"></p>
             </div>
+            <div id="resultAction">
+                <!-- ปุ่มแอคชัน เช่น ลิงก์ไปสั่งซื้อทาง Line หรือสั่งซื้อบนระบบ -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+async function checkDomain() {
+    const domainName = document.getElementById('domainInput').value.trim().toLowerCase();
+    const tld = document.getElementById('tldSelect').value;
+    const resultBox = document.getElementById('searchResult');
+    const resultDomain = document.getElementById('resultDomain');
+    const resultStatus = document.getElementById('resultStatus');
+    const resultDiv = document.getElementById('resultBox');
+    const resultAction = document.getElementById('resultAction');
+
+    if (!domainName) {
+        alert('กรุณากรอกชื่อโดเมนที่ต้องการค้นหา');
+        return;
+    }
+
+    // ล้างอักขระพิเศษกรณีผู้ใช้พิมพ์จุดมาด้วย
+    const cleanDomain = domainName.replace(/\..*$/, '');
+    const fullDomain = cleanDomain + tld;
+
+    // แสดงสถานะกำลังโหลด
+    resultBox.classList.remove('hidden');
+    resultDomain.innerText = `กำลังตรวจสอบ ${fullDomain}...`;
+    resultStatus.innerText = 'โปรดรอสักครู่';
+    resultDiv.className = "p-5 rounded-xl border bg-gray-50 border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-4";
+    resultAction.innerHTML = '';
+
+    try {
+        // ใช้สาธารณะ API ของ RDAP ในการเช็คเบื้องต้น
+        const response = await fetch(`https://rdap.org/domain/${fullDomain}`);
+        
+        if (response.status === 404) {
+            // 404 แปลว่าไม่พบข้อมูลโดเมนนี้ในระบบ = โดเมนยังว่าง จดได้!
+            resultDomain.innerText = `🎉 ${fullDomain}`;
+            resultStatus.innerText = 'ยินดีด้วย! ชื่อโดเมนนี้ยังว่างอยู่ คุณสามารถเป็นเจ้าของได้ทันที';
+            resultDiv.className = "p-5 rounded-xl border bg-green-50 border-green-200 flex flex-col sm:flex-row justify-between items-center gap-4";
+            resultAction.innerHTML = `<a href="https://line.me/ti/p/~adminkasem" target="_blank" class="px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg text-sm transition">จดโดเมนนี้เลย</a>`;
+        } else if (response.ok) {
+            // If response is 200 OK แปลว่ามีคนจดไปแล้ว
+            resultDomain.innerText = `❌ ${fullDomain}`;
+            resultStatus.innerText = 'ขออภัยด้วยครับ ชื่อโดเมนนี้มีผู้ครอบครองแล้ว ลองค้นหาชื่ออื่นดูนะ';
+            resultDiv.className = "p-5 rounded-xl border bg-red-50 border-red-200 flex flex-col sm:flex-row justify-between items-center gap-4";
+            resultAction.innerHTML = `<span class="text-sm font-medium text-red-600">ไม่สามารถจดได้</span>`;
+        } else {
+            throw new Error('API error');
+        }
+    } catch (error) {
+        resultDomain.innerText = 'เกิดข้อผิดพลาด';
+        resultStatus.innerText = 'ไม่สามารถเชื่อมต่อระบบเช็คโดเมนได้ชั่วคราว กรุณาลองใหม่อีกครั้ง';
+        resultDiv.className = "p-5 rounded-xl border bg-yellow-50 border-yellow-200 flex flex-col sm:flex-row justify-between items-center gap-4";
+    }
+}
+</script>
+            <p class="text-lg text-slate-600 mt-3 max-w-2xl mx-auto">เริ่มต้นซื้อชื่อเว็บไซต์เพื่อสร้างตัวตนออนไลน์ มั่นใจได้กับผู้นำบริการจดทะเบียนโดเมนมาตรฐานสากล เริ่มต้นเพียง 70 บาท/ปี</p>
+            
+           
 
             <div class="mt-10 flex flex-wrap justify-center gap-3 sm:gap-4">
                 <div class="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-xl text-sm font-medium text-slate-700 border border-slate-200 shadow-sm flex items-center gap-2">
                     <i class="fa-solid fa-circle-check text-green-500"></i> จดง่าย ภายใน 1 นาที
                 </div>
                 <div class="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-xl text-sm font-medium text-slate-700 border border-slate-200 shadow-sm flex items-center gap-2">
-                    <i class="fa-solid fa-shield-halved text-blue-500"></i> Free WHOIS Privacy
+                    <i class="fa-solid fa-shield-halved text-blue-500"></i> Free บริการ
                 </div>
                 <div class="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-xl text-sm font-medium text-slate-700 border border-slate-200 shadow-sm flex items-center gap-2">
-                    <i class="fa-solid fa-arrows-rotate text-purple-500"></i> ต่ออายุราคามิตรภาพ
+                    <i class="fa-solid fa-arrows-rotate text-purple-500"></i> ต่ออายุราคาสากล
                 </div>
             </div>
         </div>
@@ -487,7 +571,7 @@
                 <div class="space-y-4 bg-slate-50 rounded-2xl p-6 border border-slate-100">
                     <h3 class="text-lg font-bold text-slate-900 mb-4 text-center sm:text-left">เลือกช่องทางที่คุณสะดวกคุย</h3>
                     
-                    <a href="https://line.me/ti/p/~ใส่LINE_IDของคุณ" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 w-full bg-[#06C755] hover:bg-[#05b34c] text-white py-4 rounded-xl font-semibold shadow-lg shadow-green-600/20 transition">
+                    <a href="https://line.me/ti/p/~adminyam" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 w-full bg-[#06C755] hover:bg-[#05b34c] text-white py-4 rounded-xl font-semibold shadow-lg shadow-green-600/20 transition">
                         <i class="fa-brands fa-line text-xl"></i>
                         แชทผ่าน Line Official / ID
                     </a>
