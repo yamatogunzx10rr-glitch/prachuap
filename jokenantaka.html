@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โจ๊กหม้อดินเชียงราย - นันทกา | ตำนานความอร่อยกว่า 30 ปี</title>
+    <!-- Google Fonts: นำเข้าฟอนต์สไตล์คลาสสิก ย้อนยุค ดูอบอุ่น -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Sarabun:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome สำหรับ Icon ติดต่อ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* โทนสีอุ่น ไอหมอกฤดูหนาวเชียงราย */
+        :root {
+            --mist-bg: #f4ece1; /* สีครีมหมอกอุ่น */
+            --clay-orange: #d37a53; /* สีส้มอิฐหม้อดิน */
+            --warm-brown: #5c3a21; /* สีน้ำตาลเข้มอบอุ่น */
+            --soft-white: #faf6f0; /* สีขาวนวล */
+            --text-dark: #3a2e2b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: var(--mist-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .brand-name {
+            font-family: 'Charm', cursive; /* ฟอนต์ดูโบราณ มีความอ่อนช้อย */
+            color: var(--warm-brown);
+            font-weight: 700;
+        }
+
+        /* --- Section: Top Menu --- */
+        header {
+            background-color: rgba(92, 58, 33, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .brand-name {
+            color: var(--soft-white);
+            font-size: 1.8rem;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            color: var(--soft-white);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+            font-weight: bold;
+        }
+
+        .nav-menu a:hover {
+            color: var(--clay-orange);
+        }
+
+       /* --- Section: Banner (ปรับขนาดตามอัตราส่วน 1920x800 px) --- */
+        .banner {
+            width: 100%;
+            max-width: 1920px; /* ขยายกว้างสุดตามขนาดไฟล์จริง */
+            margin: 0 auto;    /* จัดให้อยู่กึ่งกลางหน้าจอ */
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 1920 / 800; /* ล็อกอัตราส่วนภาพให้เป๊ะตามไฟล์ */
+            box-shadow: 0 4px 20px rgba(92, 58, 33, 0.15);
+        }
+
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* ป้องกันภาพบิดเบี้ยวและตัดส่วนที่เกินให้พอดี */
+            display: block;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(92, 58, 33, 0.75));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .banner-overlay h1 {
+            color: var(--soft-white);
+            font-size: 3.8rem; /* ขยายตัวอักษรให้เข้ากับขนาดแบนเนอร์ที่ใหญ่ขึ้น */
+            margin-bottom: 12px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        }
+
+        .banner-overlay p {
+            font-size: 1.35rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+            letter-spacing: 1px;
+        }
+
+        /* ปรับแต่งสำหรับหน้าจอมือถือและแท็บเล็ต */
+        @media (max-width: 1024px) {
+            .banner-overlay h1 {
+                font-size: 2.5rem;
+            }
+            .banner-overlay p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .banner-overlay h1 {
+                font-size: 1.8rem;
+                margin-bottom: 5px;
+            }
+            .banner-overlay p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* ปรับแต่งสำหรับหน้าจอมือถือให้ยืดหยุ่นตามอัตราส่วน */
+        @media (max-width: 864px) {
+            .banner {
+                height: auto;
+                aspect-ratio: 864 / 515; /* รักษาอัตราส่วนภาพเมื่อย่อจอ */
+            }
+            .banner-overlay h1 {
+                font-size: 2rem;
+            }
+            .banner-overlay p {
+                font-size: 1rem;
+            }
+        }
+
+        /* --- Section: Promotion --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--clay-orange);
+            margin: 10px auto 0;
+        }
+
+        .promo-box {
+            background-color: var(--soft-white);
+            border-left: 5px solid var(--clay-orange);
+            padding: 30px;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .promo-box h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        /* --- Section: Food Menu (Cards) --- */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-card {
+            background-color: var(--soft-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(92, 58, 33, 0.1);
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(92, 58, 33, 0.15);
+        }
+
+        .menu-img-wrapper {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background-color: #e0e0e0;
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .menu-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .menu-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .menu-info h3 {
+            font-family: 'Sarabun', sans-serif;
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        /* --- Section: Map --- */
+        .map-wrapper {
+            background-color: var(--soft-white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* อัตราส่วน 16:9 ให้เปิดในมือถือแล้วสวยงาม */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* --- Section: Sticky Contact Icons (เกาะติดด้านขวาจอ) --- */
+        .sticky-contact {
+            position: fixed;
+            right: 20px;
+            bottom: 50%;
+            transform: translateY(50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 9999;
+        }
+
+        .sticky-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .sticky-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .btn-phone {
+            background-color: #2ecc71;
+        }
+
+        .btn-facebook {
+            background-color: #1877f2;
+        }
+
+        /* --- Section: Footer --- */
+        footer {
+            background-color: var(--warm-brown);
+            color: var(--soft-white);
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 4px solid var(--clay-orange);
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        footer .footer-brand {
+            font-family: 'Charm', cursive;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--clay-orange);
+        }
+
+        /* สำหรับหน้าจอมือถือ */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .banner-overlay h1 {
+                font-size: 2.2rem;
+            }
+            .section-title {
+                font-size: 2.2rem;
+            }
+            .sticky-contact {
+                right: 10px;
+            }
+            .sticky-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Menu -->
+    <header>
+        <nav class="nav-container">
+            <a href="#" class="brand-name">โจ๊กหม้อดินเชียงราย - นันทกา</a>
+            <ul class="nav-menu">
+                <li><a href="#">หน้าหลัก</a></li>
+                <li><a href="#promotion">โปรโมชั่น</a></li>
+                <li><a href="#menu">รายการอาหาร</a></li>
+                <li><a href="#map">แผนที่ร้าน</a></li>
+                <li><a href="#footer">ติดต่อ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <img src="images/jokenantaka/banner.jpg" alt="โจ๊กหม้อดินเชียงราย นันทกา Banner" width="1920" height="800">
+        <div class="banner-overlay">
+            <h1>โจ๊กหม้อดินเชียงราย - นันทกา</h1>
+            <p>สัมผัสไออุ่นท่ามกลางสายหมอกฤดูหนาว กับสูตรต้นตำรับยาวนานกว่า 30 ปี</p>
+        </div>
+    </section>
+
+    <!-- Promotion Section -->
+    <section id="promotion" class="container">
+        <h2 class="section-title">โปรโมชั่นพิเศษ</h2>
+        <div class="promo-box">
+            <h3>ฉลองครบรอบ 30 ปีแห่งความอร่อย</h3>
+            <p>แวะมาสัมผัสความอบอุ่นกับโจ๊กหม้อดินร้อนๆ ในบรรยากาศหน้าหนาวเชียงราย ได้แล้ววันนี้!</p>
+        </div>
+    </section>
+
+    <!-- Food Menu Section -->
+    <section id="menu" class="container">
+        <h2 class="section-title">รายการอาหาร</h2>
+        <div class="menu-grid">
+            
+            <!-- Card 1 -->
+            <div class="menu-card">
+                <div class="menu-img-wrapper"><img src="images/jokenantaka/joke1.jpg" alt="โจ๊กหมู ไข่ สามชั้น"></div>
+                <div class="menu-info"><h3>โจ๊กหมู ไข่ สามชั้น</h3></div>
+            </div>
+            <!-- Card 2 -->
+            <div class="menu-card">
+                <div class="menu-img-wrapper"><img src="images/jokenantaka/joke2.jpg" alt="โจ๊กหมู ไข่ยี่ยวม้า"></div>
+                <div class="menu-info"><h3>โจ๊กหมู ไข่เยี่ยวม้า</h3></div>
+            </div>
+            <!-- Card 3 -->
+            <div class="menu-card">
+                <div class="menu-img-wrapper"><img src="images/jokenantaka/joke3.jpg" alt="โจ๊กทะเล"></div>
+                <div class="menu-info"><h3>โจ๊กทะเล</h3></div>
+            </div>
+            <!-- Card 4 -->
+            <div class="menu-card">
+                <div class="menu-img-wrapper"><img src="images/jokenantaka/joke4.jpg" alt="โจ๊กหมู ตับ"></div>
+                <div class="menu-info"><h3>โจ๊กหมู ตับ</h3></div>
+            </div>
+            <!-- Card 5 -->
+            <div class="menu-card">
+                <div class="menu-img-wrapper"><img src="images/jokenantaka/joke5.jpg" alt="โจ๊กหมู เครื่องใน"></div>
+                <div class="menu-info"><h3>โจ๊กหมู เครื่องใน</h3></div>
+            </div>
+            <!-- Card 6 -->
+            <div class="menu-card">
+                <div class="menu-img-wrapper"><img src="images/jokenantaka/joke6.jpg" alt="โจ๊กหมู ตับ ปาโก๋"></div>
+                <div class="menu-info"><h3>โจ๊กหมู ตับ ปาโก๋</h3></div>
+            </div>
+            <!-- Card 7 -->
+            <div class="menu-card">
+                <div class="menu-img-wrapper"><img src="images/jokenantaka/joke7.jpg" alt="โจ๊กไก่ ไข่"></div>
+                <div class="menu-info"><h3>โจ๊กไก่ ไข่</h3></div>
+            </div>
+            <!-- Card 8 -->
+            <div class="menu-card">
+                <div class="menu-img-wrapper"><img src="images/jokenantaka/joke8.jpg" alt="โจ๊กไก่ตุ๋นเห็ดหอม ไข่ ปาโก๋"></div>
+                <div class="menu-info"><h3>โจ๊กไก่ตุ๋นเห็ดหอม ไข่ ปาโก๋</h3></div>
+            </div>
+            <!-- Card 9 -->
+            <div class="menu-card">
+                <div class="menu-img-wrapper"><img src="images/jokenantaka/joke9.jpg" alt="โจ๊กเครื่องในหมู ไข่"></div>
+                <div class="menu-info"><h3>โจ๊กเครื่องในหมู ไข่</h3></div>
+            </div>
+            <!-- Card 10 -->
+            <div class="menu-card">
+                <div class="menu-img-wrapper"><img src="images/jokenantaka/joke10.jpg" alt="โจ๊กหมูสามชั้นตุ๋น เห็ดหอม ปาโก๋"></div>
+                <div class="menu-info"><h3>โจ๊กหมูสามชั้นตุ๋น เห็ดหอม ปาโก๋</h3></div>
+            </div>
+            <!-- Card 11 -->
+            <div class="menu-card">
+                <div class="menu-img-wrapper"><img src="images/jokenantaka/joke11.jpg" alt="โจ๊กหมูสามชั้นตุ๋น หมูบด เห็ดหอม ปาโก๋"></div>
+                <div class="menu-info"><h3>โจ๊กหมูสามชั้นตุ๋น หมูบด เห็ดหอม ปาโก๋</h3></div>
+            </div>
+            <!-- Card 12 -->
+            <div class="menu-card">
+                <div class="menu-img-wrapper"><img src="images/jokenantaka/joke12.jpg" alt="โจ๊กหมูสามชั้นตุ๋น ซีกโครง เห็ดหอม ปาโก๋"></div>
+                <div class="menu-info"><h3>โจ๊กหมูสามชั้นตุ๋น ซีกโครง เห็ดหอม ปาโก๋</h3></div>
+            </div>
+            <!-- Card 13 -->
+            <div class="menu-card">
+                <div class="menu-img-wrapper"><img src="images/jokenantaka/joke13.jpg" alt="ข้าวต้มปลา"></div>
+                <div class="menu-info"><h3>ข้าวต้มปลา</h3></div>
+            </div>
+            <!-- Card 14 -->
+            <div class="menu-card">
+                <div class="menu-img-wrapper"><img src="images/jokenantaka/joke14.jpg" alt="ข้าวต้มกุ้ง"></div>
+                <div class="menu-info"><h3>ข้าวต้มกุ้ง</h3></div>
+            </div>
+            <!-- Card 15 -->
+            <div class="menu-card">
+                <div class="menu-img-wrapper"><img src="images/jokenantaka/joke15.jpg" alt="เย็นตาโฟเส้นใหญ่"></div>
+                <div class="menu-info"><h3>เย็นตาโฟเส้นใหญ่</h3></div>
+            </div>
+            <!-- Card 16 -->
+            <div class="menu-card">
+                <div class="menu-img-wrapper"><img src="images/jokenantaka/joke16.jpg" alt="เย็นตาโฟเส้นเล็กทะเล"></div>
+                <div class="menu-info"><h3>เย็นตาโฟเส้นเล็กทะเล</h3></div>
+            </div>
+            <!-- Card 17 -->
+            <div class="menu-card">
+                <div class="menu-img-wrapper"><img src="images/jokenantaka/joke17.jpg" alt="บ่ะหมี่ต้มยำ"></div>
+                <div class="menu-info"><h3>บ่ะหมี่ต้มยำ</h3></div>
+            </div>
+            <!-- Card 18 -->
+            <div class="menu-card">
+                <div class="menu-img-wrapper"><img src="images/jokenantaka/joke18.jpg" alt="บ่ะหมี่ต้มยำทะเล"></div>
+                <div class="menu-info"><h3>บ่ะหมี่ต้มยำทะเล</h3></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" class="container">
+        <h2 class="section-title">แผนที่ร้าน</h2>
+        <div class="map-wrapper">
+            <div class="iframe-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4664.843382747052!2d99.828728!3d19.9069803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30d706669ceab377%3A0x1f2f92b95fbbfcdb!2z4LmC4LiI4LmK4LiB4Lir4Lih4LmJ4Lit4LiU4Li04LiZ4LiZ4Lix4LiZ4LiX4LiB4Liy!5e1!3m2!1sth!2sth!4v1782219165840!5m2!1sth!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky Contact Icons (เกาะติดด้านขวาจอ) -->
+    <div class="sticky-contact">
+        <a href="tel:0832004063" class="sticky-btn btn-phone" title="โทรหาเรา">
+            <i class="fas fa-phone"></i>
+        </a>
+        <a href="https://www.facebook.com/JokeMorDin" target="_blank" class="sticky-btn btn-facebook" title="ส่งข้อความ Facebook">
+            <i class="fab fa-facebook-messenger"></i>
+        </a>
+    </div>
+
+    <!-- Footer Section -->
+    <footer id="footer">
+        <div class="footer-brand">โจ๊กหม้อดินเชียงราย - นันทกา</div>
+        <p><i class="fas fa-map-marker-alt"></i> ที่อยู่ สี่แยกขัวดำ เยื้องโรงเรียนสามัคคีฯ, Chiang Rai, Thailand, 57000</p>
+        <p><i class="fas fa-clock"></i> เปิด 6.00 - 21.00 น. ทุกวัน</p>
+        <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.7;">&copy; 2026 โจ๊กหม้อดินเชียงราย - นันทกา. All Rights Reserved. (30 Years Anniversary)</p>
+    </footer>
+
+</body>
+</html>
