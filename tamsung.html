@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตามสั่งป้าเคิ้ก - มื้อเย็นอร่อยถูกใจ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-evening: #121824; /* สีท้องฟ้ายามเย็นเข้ม */
+            --bg-card: #1e2640; /* สีการ์ดน้ำเงินนุ่ม */
+            --accent-warm: #ff9f43; /* สีส้มไฟร้านอาหาร */
+            --accent-red: #ff6b6b; /* สีแดงกระตุ้นความอยากอาหาร */
+            --accent-yellow: #feca57; /* สีเหลืองทองไข่ดาว */
+            --text-light: #f8f9fa;
+            --text-muted: #a4b0be;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-evening);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ส่วนหัวและแบนเนอร์ (กำหนดความกว้างเต็มที่ 1672px) */
+        header {
+            position: relative;
+            text-align: center;
+            background: linear-gradient(rgba(18, 24, 36, 0.001), rgba(18, 24, 36, 0.95)), url('images/tamsung/banner.jpg') no-repeat center center;
+            background-size: cover;
+            
+            /* กำหนดความกว้างและความสูงตามสัดส่วนภาพ 1672 x 941 พิกเซล */
+            width: 100%;
+            max-width: 1672px; 
+            height: 941px; /* ล็อคความสูงตามขนาดรูปภาพหลัก */
+            
+            /* จัดบาลานซ์ให้อยู่กึ่งกลางหน้าจอเสมอ */
+            margin: 0 auto; 
+            padding: 20px;
+            
+            /* ใช้ Flexbox ดึงข้อความมาไว้ตรงกลางแบนเนอร์ */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        /* เพิ่ม Media Query เพื่อให้แบนเนอร์ย่อตามสัดส่วนอย่างสวยงามเมื่อดูในมือถือหรือจอที่เล็กกว่า 1672px */
+        @media (max-width: 1672px) {
+            header {
+                /* คำนวณอัตราส่วนความสูงตามความกว้างหน้าจอจริง อิงจากสัดส่วน (941/1672) * 100 */
+                height: calc(100vw * (941 / 1672)); 
+                min-height: 400px; /* ป้องกันไม่ให้เตี้ยเกินไปบนหน้าจอมือถือ */
+            }
+        }
+
+        .logo-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--accent-warm);
+            text-shadow: 2px 4px 15px rgba(0,0,0,0.8);
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            text-shadow: 1px 2px 8px rgba(0,0,0,0.8);
+            margin-bottom: 30px;
+        }
+
+        /* โซนโปรโมชั่นแบบใหม่ (ฟรีไข่ดาว) */
+        .promo-section {
+            max-width: 1200px;
+            margin: -40px auto 40px auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .promo-box {
+            background: linear-gradient(135deg, #ff4d4d, #ff9f43);
+            border: 3px solid var(--accent-yellow);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(255, 77, 77, 0.4), inset 0 0 15px rgba(255,255,255,0.2);
+            animation: glow 2.5s infinite alternate;
+        }
+
+        .promo-badge {
+            background-color: var(--bg-evening);
+            color: var(--accent-yellow);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .promo-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .promo-title i {
+            color: var(--accent-yellow);
+        }
+
+        .promo-desc {
+            font-size: 1.2rem;
+            color: #fff;
+            opacity: 0.95;
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 10px 25px rgba(255, 77, 77, 0.4); }
+            100% { box-shadow: 0 10px 35px rgba(254, 202, 87, 0.6); }
+        }
+
+        /* โซนรายการอาหาร */
+        .menu-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--accent-warm);
+            border-bottom: 2px solid var(--accent-warm);
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .menu-card {
+            background-color: var(--bg-card);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(255, 159, 67, 0.2);
+        }
+
+        .menu-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--accent-warm);
+        }
+
+        .menu-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .menu-name {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .menu-price {
+            color: var(--accent-warm);
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        /* แผนที่ฝัง */
+        .map-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .map-wrapper {
+            position: relative;
+            padding-bottom: 400px; 
+            height: 0;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 2px solid var(--accent-warm);
+        }
+
+        .map-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ฟุตเตอร์แบบออกแบบใหม่หมดจด */
+        footer {
+            background-color: #0b0f17;
+            border-top: 3px solid var(--accent-warm);
+            padding: 60px 20px 20px 20px;
+            margin-top: 80px;
+            color: var(--text-light);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-about h3, .footer-hours h3, .footer-contact h3 {
+            color: var(--accent-warm);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer-about h3::after, .footer-hours h3::after, .footer-contact h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-red);
+        }
+
+        .footer-about p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .footer-hours ul, .footer-contact ul {
+            list-style: none;
+        }
+
+        .footer-hours li, .footer-contact li {
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+
+        .footer-hours i, .footer-contact i {
+            color: var(--accent-warm);
+            width: 20px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* ไอคอนเกาะติดข้างจอด้านขวา (Sticky Sidebar) */
+        .sticky-social {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            z-index: 1000;
+        }
+
+        .sticky-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 55px;
+            height: 55px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            border-radius: 10px 0 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .sticky-icon:hover {
+            width: 70px;
+            padding-right: 15px;
+        }
+
+        .icon-line { background-color: #06C755; }
+        .icon-phone { background-color: #34ace0; }
+        .icon-msg { background-color: #0084FF; }
+
+        /* การปรับแต่งหน้าจอโทรศัพท์ */
+        @media (max-width: 768px) {
+            header { min-height: 400px; padding-top: 80px; }
+            .logo-title { font-size: 2.5rem; }
+            .tagline { font-size: 1.1rem; }
+            .promo-title { font-size: 1.5rem; }
+            .promo-desc { font-size: 1rem; }
+            .sticky-icon { width: 45px; height: 45px; font-size: 1.2rem; }
+            .sticky-icon:hover { width: 55px; }
+            .footer-container { gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="logo-title">ตามสั่งป้าเคิ้ก</h1>
+        <p class="tagline">อร่อยจัดจ้าน ฝากท้องยามเย็น ยินดีต้อนรับค่ะ</p>
+    </header>
+
+    <section class="promo-section">
+        <div class="promo-box">
+            <span class="promo-badge"><i class="fa-solid fa-star"></i> Hot Promotion <i class="fa-solid fa-star"></i></span>
+            <h2 class="promo-title">
+                <i class="fa-solid fa-egg"></i> โปรโมชั่นวันนี้ ฟรี! ไข่ดาวทุกจาน <i class="fa-solid fa-egg"></i>
+            </h2>
+            <p class="promo-desc">อิ่มอร่อยคุ้มค่ายามเย็น สั่งเมนูจานเดี่ยวชนิดใดก็ได้ รับไข่ดาวทอดร้อนๆ ฟรีทันที!</p>
+        </div>
+    </section>
+
+    <main class="menu-container">
+        <center><h2 class="section-title">เมนูแนะนำมื้อเย็นนี้</h2></center>
+        <div class="menu-grid">
+            
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung1.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+1'">
+                <div class="menu-info"><div class="menu-name">กะเพราหมูกรอบราดข้าว</div><div class="menu-price">฿55</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung2.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+2'">
+                <div class="menu-info"><div class="menu-name">ข้าวผัดต้มยำทะเลแห้ง</div><div class="menu-price">฿60</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung3.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+3'">
+                <div class="menu-info"><div class="menu-name">ผัดพริกแกงหมูป่าราดข้าว</div><div class="menu-price">฿55</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung4.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+4'">
+                <div class="menu-info"><div class="menu-name">ข้าวไข่เจียวทรงเครื่อง</div><div class="menu-price">฿40</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung5.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+5'">
+                <div class="menu-info"><div class="menu-name">คะน้าหมูกรอบราดข้าว</div><div class="menu-price">฿55</div></div>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung6.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+6'">
+                <div class="menu-info"><div class="menu-name">ไก่ผัดเม็ดมะม่วงราดข้าว</div><div class="menu-price">฿60</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung7.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+7'">
+                <div class="menu-info"><div class="menu-name">ข้าวผัดปูโต้รุ่ง</div><div class="menu-price">฿65</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung8.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+8'">
+                <div class="menu-info"><div class="menu-name">ต้มยำทะเลน้ำข้น (กับข้าว)</div><div class="menu-price">฿120</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung9.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+9'">
+                <div class="menu-info"><div class="menu-name">หมูกระเทียมพริกไทยราดข้าว</div><div class="menu-price">฿50</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung10.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+10'">
+                <div class="menu-info"><div class="menu-name">ผัดซีอิ๊วเส้นใหญ่หมูหมัก</div><div class="menu-price">฿50</div></div>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung11.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+11'">
+                <div class="menu-info"><div class="menu-name">ราดหน้ายอดผักกุ้งสด</div><div class="menu-price">฿55</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung12.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+12'">
+                <div class="menu-info"><div class="menu-name">สุกี้แห้งทะเลรวมมิตร</div><div class="menu-price">฿60</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung13.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+13'">
+                <div class="menu-info"><div class="menu-name">ผัดฉ่าทะเลราดข้าว</div><div class="menu-price">฿60</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung14.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+14'">
+                <div class="menu-info"><div class="menu-name">แกงจืดเต้าหู้หมูสับสาหร่าย</div><div class="menu-price">฿80</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung15.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+15'">
+                <div class="menu-info"><div class="menu-name">แขนงหมูกรอบราดข้าว</div><div class="menu-price">฿55</div></div>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung16.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+16'">
+                <div class="menu-info"><div class="menu-name">ผัดผงกะหรี่ทะเลราดข้าว</div><div class="menu-price">฿65</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung17.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+17'">
+                <div class="menu-info"><div class="menu-name">เส้นใหญ่ผัดขี้เมาทะเล</div><div class="menu-price">฿60</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung18.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+18'">
+                <div class="menu-info"><div class="menu-name">ข้าวผัดแหนม</div><div class="menu-price">฿50</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung19.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+19'">
+                <div class="menu-info"><div class="menu-name">ผัดเปรี้ยวหวานไก่ราดข้าว</div><div class="menu-price">฿50</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung20.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+20'">
+                <div class="menu-info"><div class="menu-name">ต้มแซ่บกระดูกอ่อน (กับข้าว)</div><div class="menu-price">฿100</div></div>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung21.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+21'">
+                <div class="menu-info"><div class="menu-name">หมูมะนาวจี๊ดจ๊าด</div><div class="menu-price">฿90</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung22.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+22'">
+                <div class="menu-info"><div class="menu-name">ผัดพริกหยวกตับหมูราดข้าว</div><div class="menu-price">฿50</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung23.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+23'">
+                <div class="menu-info"><div class="menu-name">ข้าวต้มหมูสับทรงเครื่อง</div><div class="menu-price">฿45</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung24.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+24'">
+                <div class="menu-info"><div class="menu-name">กะเพราเนื้อสับไข่ดาว</div><div class="menu-price">฿65</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung25.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+25'">
+                <div class="menu-info"><div class="menu-name">ไข่ตุ๋นหม้อไฟทะเล</div><div class="menu-price">฿99</div></div>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung26.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+26'">
+                <div class="menu-info"><div class="menu-name">ยำวุ้นเส้นโบราณ</div><div class="menu-price">฿80</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung27.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+27'">
+                <div class="menu-info"><div class="menu-name">ลาบหมูรสแซ่บ</div><div class="menu-price">฿80</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung28.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+28'">
+                <div class="menu-info"><div class="menu-name">ผัดผักบุ้งไฟแดง (กับข้าว)</div><div class="menu-price">฿50</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung29.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+29'">
+                <div class="menu-info"><div class="menu-name">กะเพราคลุกข้าวไข่ดาว</div><div class="menu-price">฿55</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung30.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+30'">
+                <div class="menu-info"><div class="menu-name">หมูสามชั้นทอดน้ำปลาราดข้าว</div><div class="menu-price">฿60</div></div>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung31.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+31'">
+                <div class="menu-info"><div class="menu-name">ข้าวผัดอเมริกันยามเย็น</div><div class="menu-price">฿69</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung32.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+32'">
+                <div class="menu-info"><div class="menu-name">ผัดเผ็ดปลาดุกทอดกรอบราดข้าว</div><div class="menu-price">฿60</div></div>
+            </div>
+            <div class="menu-card">
+                <img src="images/tamsung/tamsung33.jpg" alt="เมนูอาหาร" class="menu-img" onerror="this.src='https://placehold.co/400x300/1e2640/ff9f43?text=Menu+33'">
+                <div class="menu-info"><div class="menu-name">มาม่าผัดขี้เมาหมูสับ</div><div class="menu-price">฿50</div></div>
+            </div>
+
+        </div>
+    </main>
+
+    <section class="map-section">
+        <h2 class="section-title">พิกัดร้าน (ตลาดโต้รุ่งเมืองประจวบ)</h2>
+        <div class="map-wrapper">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.373961129329!2d99.7963363!3d11.8093952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30eff11f95be895b%3A0xcfc1702f741d4094!2z4LiV4Lil4Liy4LiU4LmC4LiV4Lij4Li44LmI4LiH4LmE4LiU4LmJ4Lib4Lij4Liw4LmA4LiX4Lio4LmE4LiX4LiiICjguYLguKrguKPgu7bguYjguIc推)!5e0!3m2!1sth!2sth!4v1717999999999!5m2!1sth!2sth" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>ตามสั่งป้าเคิ้ก</h3>
+                <p>ร้านอาหารตามสั่งรสเด็ดประจำตลาดโต้รุ่งเมืองประจวบคีรีขันธ์ คัดสรรวัตถุดิบสดใหม่ ให้เยอะ อิ่มอร่อยสะใจในราคามิตรภาพ ฝากท้องยามเย็นกับเราไม่มีผิดหวังแน่นอนค่ะ</p>
+            </div>
+            <div class="footer-hours">
+                <h3>เวลาเปิด-ปิด</h3>
+                <ul>
+                    <li><i class="fa-regular fa-clock"></i> เปิดบริการทุกวัน: 16:00 น. - 23:00 น.</li>
+                    <li><i class="fa-solid fa-bell"></i> ครัวปิด: 22:30 น.</li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>ติดต่อเรา</h3>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot"></i> ล็อกที่ 12 ตลาดโต้รุ่งเมืองประจวบ จ.ประจวบคีรีขันธ์</li>
+                    <li><i class="fa-solid fa-phone"></i> โทร. 083-123-4567</li>
+                    <li><i class="fa-brands fa-line"></i> Line: @pakearktamsung</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ร้านตามสั่งป้าเคิ้ก โต้รุ่งเมืองประจวบ. All Rights Reserved. (หน้าตัวอย่างสำหรับการนำเสนอลูกค้า)</p>
+        </div>
+    </footer>
+
+    <div class="sticky-social">
+        <a href="#" class="sticky-icon icon-line" target="_blank" title="Line">
+            <i class="fa-brands fa-line"></i>
+        </a>
+        <a href="tel:0831234567" class="sticky-icon icon-phone" title="โทรเลย">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+        <a href="#" class="sticky-icon icon-msg" target="_blank" title="ส่งข้อความ">
+            <i class="fa-brands fa-facebook-messenger"></i>
+        </a>
+    </div>
+
+</body>
+</html>
