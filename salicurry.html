@@ -1,0 +1,483 @@
+﻿<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>พริกแกงสาลี่ | ตลาดเช้าเมืองประจวบ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --chili: #b91c1c;
+      --chili-dark: #7f1d1d;
+      --turmeric: #f2b705;
+      --leaf: #2f6f44;
+      --mint: #dff4df;
+      --paper: #fff8e8;
+      --ink: #2b1b12;
+      --muted: #70533f;
+      --line: rgba(127, 29, 29, .18);
+      --shadow: 0 18px 40px rgba(79, 35, 18, .16);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Kanit", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 4%, rgba(242, 183, 5, .22), transparent 28%),
+        linear-gradient(180deg, #fff6d9 0%, #fffaf0 45%, #f6ead1 100%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 248, 232, .92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: clamp(1.25rem, 3.4vw, 1.9rem);
+      color: var(--chili-dark);
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg, var(--chili), #e04a1a 60%, var(--turmeric));
+      box-shadow: 0 10px 24px rgba(185, 28, 28, .28);
+      font-size: 24px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: .98rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover { color: var(--chili); }
+
+    .hero {
+      min-height: 640px;
+      display: grid;
+      align-items: end;
+      background:
+        linear-gradient(90deg, rgba(46, 23, 12, .82) 0%, rgba(46, 23, 12, .54) 48%, rgba(46, 23, 12, .12) 100%),
+        url("images/salicurry/banner.jpg") center/cover no-repeat;
+      color: #fffdf5;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 155px;
+      background: linear-gradient(0deg, #fffaf0 0%, rgba(255, 250, 240, 0) 100%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 128px 0 86px;
+    }
+
+    .market-tag {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      border: 1px solid rgba(255, 255, 255, .34);
+      background: rgba(255, 255, 255, .16);
+      border-radius: 999px;
+      font-weight: 500;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, .14);
+    }
+
+    h1 {
+      margin: 22px 0 14px;
+      font-size: clamp(3rem, 10vw, 7.6rem);
+      line-height: .98;
+      letter-spacing: 0;
+      max-width: 860px;
+      text-shadow: 0 8px 32px rgba(0, 0, 0, .25);
+    }
+
+    .hero-copy {
+      max-width: 680px;
+      font-size: clamp(1.08rem, 2.2vw, 1.45rem);
+      line-height: 1.65;
+      color: #fff4ce;
+      margin: 0 0 24px;
+    }
+
+    .promo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 100%;
+      padding: 13px 18px;
+      border-radius: 8px;
+      background: #ffe08a;
+      color: #611515;
+      font-weight: 700;
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .25);
+    }
+
+    .promo span:first-child {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--chili);
+      color: white;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+    }
+
+    section {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 64px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4.8vw, 3.5rem);
+      line-height: 1.08;
+      color: var(--chili-dark);
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 470px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 1.05rem;
+    }
+
+    .market-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: -38px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .market-note {
+      border-radius: 8px;
+      padding: 18px;
+      background: rgba(255, 255, 255, .88);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .market-note strong {
+      display: block;
+      color: var(--chili-dark);
+      font-size: 1.16rem;
+      margin-bottom: 4px;
+    }
+
+    .market-note span { color: var(--muted); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      overflow: hidden;
+      border-radius: 8px;
+      background: #fffdf7;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 28px rgba(79, 35, 18, .11);
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 38px rgba(127, 29, 29, .18);
+    }
+
+    .card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / .82;
+      object-fit: cover;
+      background: linear-gradient(135deg, #ffe0a3, #c43b22 52%, #375f2f);
+    }
+
+    .card-body { padding: 14px 14px 16px; }
+
+    .card h3 {
+      margin: 0 0 7px;
+      font-size: 1.05rem;
+      line-height: 1.3;
+      color: var(--chili-dark);
+      min-height: 2.6em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .92rem;
+      line-height: 1.55;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 9px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      color: #174923;
+      background: var(--mint);
+      font-size: .84rem;
+      font-weight: 600;
+    }
+
+    .location-band {
+      width: 100%;
+      padding: 64px 0 82px;
+      background: linear-gradient(180deg, rgba(47, 111, 68, .12), rgba(185, 28, 28, .08));
+    }
+
+    .location-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: .78fr 1.22fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .location-copy {
+      padding: 8px 0;
+    }
+
+    .location-copy h2 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 4.5vw, 3.25rem);
+      line-height: 1.1;
+      color: var(--chili-dark);
+    }
+
+    .location-copy p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 1.05rem;
+    }
+
+    .map {
+      min-height: 420px;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: #f6ead1;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      border: 0;
+      display: block;
+    }
+
+    footer {
+      padding: 34px 16px;
+      text-align: center;
+      color: #fff4ce;
+      background: #4c160f;
+    }
+
+    .float-actions {
+      position: fixed;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 30;
+      display: grid;
+      gap: 10px;
+    }
+
+    .float-actions a {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      font-weight: 700;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .22);
+      transition: transform .2s ease;
+    }
+
+    .float-actions a:hover { transform: translateX(-4px); }
+    .line { background: #06c755; }
+    .phone { background: #b91c1c; }
+    .msg { background: #2563eb; }
+
+    .float-actions svg {
+      width: 25px;
+      height: 25px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    @media (max-width: 980px) {
+      .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .location-inner { grid-template-columns: 1fr; }
+      .market-strip { grid-template-columns: 1fr; margin-top: 0; padding-top: 28px; }
+      .section-head { align-items: start; flex-direction: column; }
+      .hero { min-height: 580px; }
+    }
+
+    @media (max-width: 680px) {
+      .nav { min-height: 64px; }
+      .nav-links { display: none; }
+      .hero { min-height: 540px; }
+      .hero-inner { padding: 96px 0 62px; }
+      .promo { align-items: flex-start; }
+      section { padding: 46px 0; }
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
+      .card-body { padding: 12px; }
+      .card h3 { font-size: .98rem; }
+      .float-actions { right: 10px; gap: 8px; }
+      .float-actions a { width: 46px; height: 46px; }
+      .location-band { padding: 48px 0 64px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <nav class="nav" aria-label="เมนูหลัก">
+      <a href="#top" class="brand" aria-label="พริกแกงสาลี่">
+        <span class="brand-mark">พ</span>
+        <span>พริกแกงสาลี่</span>
+      </a>
+      <div class="nav-links">
+        <a href="#products">รายการสินค้า</a>
+        <a href="#location">แผนที่ร้าน</a>
+        <a href="tel:0800000000">โทรหาเรา</a>
+      </div>
+    </nav>
+  </div>
+
+  <header id="top" class="hero">
+    <div class="hero-inner">
+      <div class="market-tag">ตลาดเช้าคึกคัก หอมเครื่องแกงตำสด</div>
+      <h1>พริกแกงสาลี่</h1>
+      <p class="hero-copy">ร้านพริกแกงตำสด รสจัดจ้านแบบครัวไทย เลือกเครื่องแน่น หอมสมุนไพร เหมาะทั้งทำกินที่บ้านและต่อยอดเมนูร้านอาหาร</p>
+      <div class="promo"><span>ฟรี</span><span>โปรโมชั่นวันนี้ 10/6/26 ฟรี ขนมปังกระเทียม</span></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="market-strip" aria-label="จุดเด่นร้าน">
+      <div class="market-note"><strong>ตำสดทุกเช้า</strong><span>เครื่องแกงหอมสดใหม่ เหมือนเดินเลือกของในตลาดเช้า</span></div>
+      <div class="market-note"><strong>รสไทยถึงเครื่อง</strong><span>เผ็ด หอม เข้มข้น ปรับใช้ได้หลายเมนู</span></div>
+      <div class="market-note"><strong>พร้อมส่งต่อครัว</strong><span>เหมาะสำหรับครัวบ้าน ร้านอาหาร และแม่ค้าพ่อค้า</span></div>
+    </section>
+
+    <section id="products">
+      <div class="section-head">
+        <h2>รายการพริกแกง</h2>
+        <p>คัดรายการยอดนิยม 15 รายการ แสดงเป็นการ์ดสินค้าให้ลูกค้าเห็นภาพรวมก่อนทำเว็บไซต์จริง</p>
+      </div>
+      <div class="grid">
+        <article class="card"><img src="images/salicurry/prigkang1.jpg" alt="พริกแกงมัสมั่น"><div class="card-body"><span class="badge">ขายดี</span><h3>พริกแกงมัสมั่น</h3><p>หอมเครื่องเทศ รสละมุน เข้มข้นกำลังดี</p></div></article>
+        <article class="card"><img src="images/salicurry/prigkang2.jpg" alt="พริกแกงมัสมั่น"><div class="card-body"><span class="badge">แนะนำ</span><h3>พริกแกงมัสมั่น</h3><p>เหมาะกับแกงกะทิ เนื้อนุ่ม กลิ่นหอมหวาน</p></div></article>
+        <article class="card"><img src="images/salicurry/prigkang3.jpg" alt="พริกแกงเหลือง"><div class="card-body"><span class="badge">รสจัด</span><h3>พริกแกงเหลือง</h3><p>สีสวยจัดจ้าน หอมขมิ้นแบบภาคใต้</p></div></article>
+        <article class="card"><img src="images/salicurry/prigkang4.jpg" alt="พริกแกงส้ม"><div class="card-body"><span class="badge">ทำง่าย</span><h3>พริกแกงส้ม</h3><p>เปรี้ยวเผ็ดกลมกล่อม ใส่ผักสดได้หลากหลาย</p></div></article>
+        <article class="card"><img src="images/salicurry/prigkang5.jpg" alt="พริกแกงพะแนง"><div class="card-body"><span class="badge">หอมมัน</span><h3>พริกแกงพะแนง</h3><p>เข้มข้น หอมถั่วและเครื่องแกงพอดีคำ</p></div></article>
+        <article class="card"><img src="images/salicurry/prigkang6.jpg" alt="พริกแกงคั่วกลิ้ง"><div class="card-body"><span class="badge">เผ็ดร้อน</span><h3>พริกแกงคั่วกลิ้ง</h3><p>หอมสมุนไพร เผ็ดถึงใจสำหรับเมนูผัดแห้ง</p></div></article>
+        <article class="card"><img src="images/salicurry/prigkang7.jpg" alt="พริกแกงขนมจีนน้ำยา"><div class="card-body"><span class="badge">ครัวไทย</span><h3>พริกแกงขนมจีนน้ำยา</h3><p>กลิ่นหอมเข้ม ทำหม้อน้ำยาได้รสครบ</p></div></article>
+        <article class="card"><img src="images/salicurry/prigkang8.jpg" alt="พริกแกงฮังเล"><div class="card-body"><span class="badge">เหนือแท้</span><h3>พริกแกงฮังเล</h3><p>หอมเครื่องเทศ อบอุ่นแบบอาหารเหนือ</p></div></article>
+        <article class="card"><img src="images/salicurry/prigkang9.jpg" alt="พริกแกงอ่อม"><div class="card-body"><span class="badge">สมุนไพร</span><h3>พริกแกงอ่อม</h3><p>รสบ้านๆ หอมผักชีลาวและเครื่องแกงสด</p></div></article>
+        <article class="card"><img src="images/salicurry/prigkang10.jpg" alt="พริกแกงลาบ"><div class="card-body"><span class="badge">แซ่บ</span><h3>พริกแกงลาบ</h3><p>เครื่องลาบหอมจัด ทำเมนูยำและลาบสะดวก</p></div></article>
+        <article class="card"><img src="images/salicurry/prigkang11.jpg" alt="พริกแกงคั่ว"><div class="card-body"><span class="badge">สารพัดเมนู</span><h3>พริกแกงคั่ว</h3><p>พื้นฐานแน่น ใช้ผัดหรือแกงได้หลายอย่าง</p></div></article>
+        <article class="card"><img src="images/salicurry/prigkang12.jpg" alt="พริกแกงคั่วกลิ้งใต้"><div class="card-body"><span class="badge">ใต้เข้ม</span><h3>พริกแกงคั่วกลิ้งใต้</h3><p>เผ็ดร้อน หอมพริกไทยและสมุนไพรจัดเต็ม</p></div></article>
+        <article class="card"><img src="images/salicurry/prigkang13.jpg" alt="พริกแกงไตปลา"><div class="card-body"><span class="badge">ถึงเครื่อง</span><h3>พริกแกงไตปลา</h3><p>เข้มข้นสำหรับแกงไตปลา รสใต้แท้</p></div></article>
+        <article class="card"><img src="images/salicurry/prigkang14.jpg" alt="พริกแห้ง"><div class="card-body"><span class="badge">วัตถุดิบ</span><h3>พริกแห้ง</h3><p>สีสวย กลิ่นหอม ใช้ตำแกงหรือปรุงรส</p></div></article>
+        <article class="card"><img src="images/salicurry/prigkang15.jpg" alt="พริกแห้งใหญ่"><div class="card-body"><span class="badge">คัดพิเศษ</span><h3>พริกแห้งใหญ่</h3><p>เม็ดใหญ่ สีแดงสวย เหมาะทำเครื่องแกง</p></div></article>
+      </div>
+    </section>
+
+    <div id="location" class="location-band">
+      <div class="location-inner">
+        <div class="location-copy">
+          <h2>มาหาเราได้ที่ตลาดเช้าเมืองประจวบ</h2>
+          <p>บรรยากาศร้านเป็นกันเอง เดินเลือกพริกแกงหอมๆ ในตลาดเช้า เหมาะกับลูกค้าที่อยากเห็นหน้าร้านและตำแหน่งก่อนติดต่อสั่งซื้อ</p>
+          <p><strong>พริกแกงสาลี่</strong><br>ตลาดเช้าเมืองประจวบ จังหวัดประจวบคีรีขันธ์</p>
+        </div>
+        <div class="map" aria-label="แผนที่ตลาดเช้าเมืองประจวบ">
+          <iframe src="https://www.google.com/maps?q=%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B9%80%E0%B8%8A%E0%B9%89%E0%B8%B2%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%88%E0%B8%A7%E0%B8%9A&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="float-actions" aria-label="ช่องทางติดต่อด่วน">
+    <a class="line" href="https://line.me/R/ti/p/@prigkang-salee" title="ติดต่อทางไลน์" aria-label="ติดต่อทางไลน์">LINE</a>
+    <a class="phone" href="tel:0800000000" title="โทร" aria-label="โทร">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+    </a>
+    <a class="msg" href="sms:0800000000" title="ส่งข้อความ" aria-label="ส่งข้อความ">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+    </a>
+  </div>
+
+  <footer>
+    © 2026 พริกแกงสาลี่ | พริกแกงตำสด ตลาดเช้าเมืองประจวบ
+  </footer>
+</body>
+</html>
