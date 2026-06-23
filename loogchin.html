@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ครัวบ้านพ่อ - โรงงานผลิตลูกชิ้นได้มาตรฐาน ฮาลาล</title>
+    <style>
+        /* Base Reset & Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Sarabun', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-green: #2d5a27;
+            --light-green: #eef5ed;
+            --dark-brown: #4a3319;
+            --light-brown: #8c6239;
+            --cream: #f7f4eb;
+            --white: #ffffff;
+            --text-dark: #222222;
+            --text-light: #555555;
+            --accent-orange: #d97706;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Top Bar Contact Info */
+        .top-bar {
+            background-color: var(--dark-brown);
+            color: var(--white);
+            text-align: center;
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+        .top-bar span {
+            margin: 0 15px;
+        }
+        .top-bar a {
+            color: #ffdf7e;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-green);
+        }
+        .logo-sub {
+            font-size: 12px;
+            color: var(--light-brown);
+            display: block;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-brown);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: var(--primary-green);
+        }
+
+      /* Banner Section ปรับปรุงรองรับภาพ 1920x1080 (16:9) */
+.hero-banner {
+    width: 100%;
+    /* ปรับความสูงขั้นต่ำให้สมดุล และใช้ aspect-ratio คุมสัดส่วนภาพ */
+    min-height: 550px; 
+    aspect-ratio: 1920 / 1080;
+    background: linear-gradient(rgba(45, 90, 39, 0.45), rgba(74, 51, 25, 0.45)), url('images/lookchin/banner.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: scroll; /* หรือใช้ fixed ถ้าต้องการเอฟเฟกต์ Parallax */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    padding: 40px 20px;
+}
+.hero-content {
+    background: rgba(0, 0, 0, 0.65); /* เพิ่มความเข้มพื้นหลังเล็กน้อยเพื่อให้ตัวหนังสืออ่านง่ายขึ้นบนภาพใหญ่ */
+    padding: 40px 50px;
+    border-radius: 12px;
+    border: 2px solid #dfc394;
+    max-width: 850px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    backdrop-filter: blur(3px); /* เพิ่มลูกเล่นกระจกฝ้าให้ดูพรีเมี่ยม */
+}
+.hero-content h1 {
+    font-size: 48px; /* ปรับขนาดให้เด่นขึ้นรับกับแบนเนอร์ขนาดใหญ่ */
+    margin-bottom: 18px;
+    color: #ffd885;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    letter-spacing: 1px;
+}
+.hero-content p {
+    font-size: 19px;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+.halal-badge {
+    display: inline-block;
+    background-color: var(--primary-green);
+    color: white;
+    padding: 8px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 18px;
+    border: 2px solid var(--white);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ปรับปรุงการแสดงผลบนมือถือให้แบนเนอร์ไม่ผอมเกินไป */
+@media (max-width: 768px) {
+    .hero-banner {
+        min-height: 400px;
+        aspect-ratio: auto; /* บนมือถือปล่อยให้ยืดหยุ่นตามเนื้อหา */
+    }
+    .hero-content {
+        padding: 25px 20px;
+    }
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    .hero-content p {
+        font-size: 16px;
+    }
+    .halal-badge {
+        font-size: 15px;
+        padding: 6px 18px;
+    }
+}
+
+        /* Common Section Styles */
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--light-brown);
+            border-radius: 2px;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+        }
+        .product-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e1dacb;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .product-img-box {
+            position: relative;
+            height: 200px;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+        .product-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .halal-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--primary-green);
+            color: var(--white);
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .product-info {
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--dark-brown);
+            margin-bottom: 10px;
+        }
+        .product-price {
+            font-size: 22px;
+            color: var(--accent-orange);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .product-price span {
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: normal;
+        }
+        .order-btn {
+            background-color: var(--primary-green);
+            color: var(--white);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .order-btn:hover {
+            background-color: var(--dark-brown);
+        }
+
+        /* Other Products Section */
+        .other-products {
+            background-color: var(--light-green);
+            padding: 60px 20px;
+            margin-top: 40px;
+            border-radius: 12px;
+            border: 1px solid #d4ebd2;
+        }
+        .other-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .other-card {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--light-brown);
+        }
+        .other-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--dark-brown);
+            margin-bottom: 10px;
+        }
+        .other-tag {
+            background-color: var(--light-brown);
+            color: var(--white);
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        /* Franchise Section */
+        .franchise-section {
+            background-color: #fffdf9;
+            border-top: 1px solid #eee7d7;
+            border-bottom: 1px solid #eee7d7;
+        }
+        .franchise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .franchise-card {
+            background-color: var(--white);
+            border: 2px solid #ebdcb9;
+            border-radius: 12px;
+            padding: 35px 25px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+        .franchise-card:hover {
+            transform: scale(1.03);
+            border-color: var(--primary-green);
+        }
+        .franchise-card.popular {
+            border-color: var(--primary-green);
+            box-shadow: 0 8px 25px rgba(45, 90, 39, 0.15);
+        }
+        .franchise-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 4px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .franchise-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--dark-brown);
+            margin-bottom: 15px;
+        }
+        .franchise-price {
+            font-size: 36px;
+            color: var(--primary-green);
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        .franchise-price span {
+            font-size: 16px;
+            color: var(--text-light);
+            font-weight: normal;
+        }
+        .franchise-desc {
+            color: var(--text-light);
+            font-size: 15px;
+            margin-bottom: 25px;
+            min-height: 50px;
+        }
+        .franchise-features {
+            text-align: left;
+            margin-bottom: 30px;
+            border-top: 1px dashed #e1dacb;
+            padding-top: 20px;
+        }
+        .franchise-features li {
+            list-style: none;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .franchise-features li::before {
+            content: '✓';
+            color: var(--primary-green);
+            font-weight: bold;
+        }
+
+        /* Marketing Support Section */
+        .marketing-section {
+            background-color: var(--primary-green);
+            color: var(--white);
+            border-radius: 16px;
+            padding: 50px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(45, 90, 39, 0.2);
+        }
+        .marketing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .marketing-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 4px solid #ffd885;
+        }
+        .marketing-card h3 {
+            font-size: 20px;
+            color: #ffd885;
+            margin-bottom: 15px;
+        }
+        .marketing-card p {
+            font-size: 15px;
+            color: #e2f0df;
+        }
+
+        /* Trust & Credibility Section */
+        .trust-section {
+            background-color: var(--white);
+            padding: 60px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border: 1px solid #eee7d7;
+        }
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        .trust-item {
+            padding: 20px;
+        }
+        .trust-icon {
+            font-size: 45px;
+            color: var(--light-brown);
+            margin-bottom: 15px;
+        }
+        .trust-item h3 {
+            font-size: 18px;
+            color: var(--dark-brown);
+            margin-bottom: 10px;
+        }
+        .trust-item p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: var(--dark-brown);
+            color: var(--white);
+            padding: 50px 20px 20px 20px;
+            margin-top: 80px;
+            border-top: 5px solid var(--primary-green);
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-about h3, .footer-contact h3, .footer-links h3 {
+            font-size: 20px;
+            color: #ffd885;
+            margin-bottom: 20px;
+        }
+        .footer-about p {
+            font-size: 14px;
+            color: #d1c2b3;
+        }
+        .footer-links ul {
+            list-style: none;
+        }
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        .footer-links ul li a {
+            color: #d1c2b3;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        .footer-links ul li a:hover {
+            color: var(--white);
+        }
+        .footer-contact p {
+            font-size: 14px;
+            color: #d1c2b3;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 13px;
+            color: #a89685;
+        }
+
+        /* Responsive Settings */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero-banner {
+                height: 350px;
+            }
+            .hero-content h1 {
+                font-size: 28px;
+            }
+            .hero-content p {
+                font-size: 15px;
+            }
+            .marketing-section {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar Contact Info -->
+    <div class="top-bar">
+        <span>📍 พิกัด: ดอนทราย เมืองประจวบคีรีขันธ์ 77000</span>
+        <span>📞 สนใจติดต่อ/สั่งซื้อ: <a href="tel:0919871234">091-987-1234</a></span>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <div>
+                    <span class="logo-text">ครัวบ้านพ่อ</span>
+                    <span class="logo-sub">ลูกชิ้นพรีเมี่ยม ผลิตเอง ได้มาตรฐาน ฮาลาล</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">รู้จักเรา</a></li>
+                    <li><a href="#products">เมนูลูกชิ้น</a></li>
+                    <li><a href="#other-products">สินค้าอื่นๆ</a></li>
+                    <li><a href="#franchise">แฟรนไชส์</a></li>
+                    <li><a href="#marketing">ระบบสนับสนุน</a></li>
+                    <li><a href="#trust">ความน่าเชื่อถือ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section class="hero-banner" id="about" style="max-width:100%; padding:0;">
+        <div class="hero-content">
+            <h1>ครัวบ้านพ่อ</h1>
+            <p>ธุรกิจลูกชิ้นคุณภาพสูง มีโรงงานผลิตเองได้มาตรฐาน สะอาด ถูกหลักอนามัย มั่นใจได้ด้วยมาตรฐานฮาลาล 100% คัดสรรวัตถุดิบชั้นดีเพื่อส่งต่อความอร่อยในทุกๆ คำ</p>
+            <div class="halal-badge">حلال ได้รับมาตรฐาน ฮาลาล 100%</div>
+        </div>
+    </section>
+
+    <!-- Main Products Section -->
+    <section id="products">
+        <h2 class="section-title">เมนูลูกชิ้น ครัวบ้านพ่อ</h2>
+        <p class="section-subtitle">ลูกชิ้นสดใหม่ ส่งตรงจากโรงงาน ผลิตภัณฑ์คุณภาพ ราคาเดียว 56 บาททุกเมนู</p>
+        
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/beef.jpg" alt="ลูกชิ้นเนื้อ">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นเนื้อ</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/beefage.jpg" alt="ลูกชิ้นเนื้อไข่เค็ม">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นเนื้อไข่เค็ม</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/beefcheese.jpg" alt="ลูกชิ้นเนื้อชีส">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นเนื้อชีส</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/beefn.jpg" alt="ลูกชิ้นเนื้อเอ็น">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นเนื้อเอ็น</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/beefpan.jpg" alt="ลูกชิ้นเนื้อแผ่น">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นเนื้อแผ่น</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/beefsea.jpg" alt="ลูกชิ้นเนื้อสาหร่ายทะเล">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นเนื้อสาหร่ายทะเล</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/beeftang.jpg" alt="ลูกชิ้นเนื้อแท่ง">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นเนื้อแท่ง</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/beefwagil.jpg" alt="ลูกชิ้นเนื้อวากิว">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นเนื้อวากิว</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+
+            <!-- Product 9 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/chickenage.jpg" alt="ลูกชิ้นไก่ ไข่เค็ม">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นไก่ ไข่เค็ม</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+
+            <!-- Product 10 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/chickencheese.jpg" alt="ลูกชิ้นไก่ชีส">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นไก่ชีส</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+
+            <!-- Product 11 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/chickenchilli.jpg" alt="ลูกชิ้นไก่พริก">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นไก่พริก</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+
+            <!-- Product 12 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/chickenlow.jpg" alt="ลูกชิ้นไก่เกลือน้อย">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นไก่เกลือน้อย</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+
+            <!-- Product 13 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/chickenn.jpg" alt="ลูกชิ้นไก่เอ็น">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นไก่เอ็น</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+
+            <!-- Product 14 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/chickentang.jpg" alt="ลูกชิ้นไก่แท่ง">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นไก่แท่ง</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+
+            <!-- Product 15 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/chicklow.jpg" alt="ลูกชิ้นไก่ เกลือน้อย">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นไก่ เกลือน้อย (สูตรพิเศษ)</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+
+            <!-- Product 16 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/cuckpaper.jpg" alt="ลูกชิ้นไก่พริกไทดำ">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นไก่พริกไทดำ</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+
+            <!-- Product 17 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/duck.jpg" alt="ลูกชิ้นเป็ด">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นเป็ด</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+
+            <!-- Product 18 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/duckage.jpg" alt="ลูกชิ้นเป็ดไข่เค็ม">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นเป็ดไข่เค็ม</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+
+            <!-- Product 19 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/duckcheese.jpg" alt="ลูกชิ้นเป็ดชีส">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นเป็ดชีส</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+
+            <!-- Product 20 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/duckn.jpg" alt="ลูกชิ้นเป็ดเอ็น">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นเป็ดเอ็น</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+
+            <!-- Product 21 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/duckpan.jpg" alt="ลูกชิ้นเป็ดแผ่น">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นเป็ดแผ่น</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+
+            <!-- Product 22 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/ducksea.jpg" alt="ลูกชิ้นเป็ดสาหร่ายทะเล">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นเป็ดสาหร่ายทะเล</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+
+            <!-- Product 23 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/ducktang.jpg" alt="ลูกชิ้นเป็ดแท่ง">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นเป็ดแท่ง</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+
+            <!-- Product 24 -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <span class="halal-tag">ฮาลาล</span>
+                    <img src="images/lookchin/moohprig.jpg" alt="ลูกชิ้นเป็ดพริก">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ลูกชิ้นเป็ดพริก</div>
+                    <div class="product-price">56.- <span>/ แพ็ค</span></div>
+                    <a href="tel:0919871234" class="order-btn">สั่งซื้อสินค้า</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Other Products Inside the Main Section -->
+        <div class="other-products" id="other-products">
+            <h3 style="text-align: center; font-size: 24px; color: var(--dark-brown); margin-bottom: 25px;">น้ำจิ้มสูตรเด็ด & อุปกรณ์พร้อมขาย</h3>
+            <div class="other-grid">
+                <div class="other-card">
+                    <div class="other-title">น้ำจิ้มพริก</div>
+                    <div class="other-tag">รสเด็ดเข้มข้น</div>
+                </div>
+                <div class="other-card">
+                    <div class="other-title">น้ำจิ้มแจ่ว</div>
+                    <div class="other-tag">แซ่บสไตล์อีสาน</div>
+                </div>
+                <div class="other-card">
+                    <div class="other-title">น้ำจิ้มหวานเด็ก</div>
+                    <div class="other-tag">กลมกล่อม ทานง่าย</div>
+                </div>
+                <div class="other-card">
+                    <div class="other-title">ไม้เสียบลูกชิ้นแหลม</div>
+                    <div class="other-tag">อุปกรณ์คุณภาพ</div>
+                </div>
+                <div class="other-card">
+                    <div class="other-title">ไม้เสียบทู่</div>
+                    <div class="other-tag">ปลอดภัย ได้มาตรฐาน</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Franchise Section -->
+    <section class="franchise-section" id="franchise">
+        <h2 class="section-title">บริการแฟรนไชส์ ครัวบ้านพ่อ</h2>
+        <p class="section-subtitle">เริ่มต้นธุรกิจของคุณเองได้ง่ายๆ ด้วยแพ็คเกจการลงทุนที่หลากหลาย พร้อมขายทันที</p>
+        
+        <div class="franchise-grid">
+            <!-- Package 1 -->
+            <div class="franchise-card">
+                <div class="franchise-name">ชุดเริ่มต้นพร้อมขาย</div>
+                <div class="franchise-price">4,900 <span>บาท</span></div>
+                <div class="franchise-desc">แผงขายเบาสำหรับเริ่มต้น เหมาะสำหรับผู้ที่มีพื้นที่จำกัด หรืออยากทดลองตลาด ลงทุนน้อย คืนทุนไว</div>
+                <ul class="franchise-features">
+                    <li>แผงขายโครงสร้างน้ำหนักเบา เคลื่อนย้ายง่าย</li>
+                    <li>วัตถุดิบลูกชิ้นคละรสชาติชุดแรก</li>
+                    <li>น้ำจิ้มสูตรเด็ด และอุปกรณ์พื้นฐาน</li>
+                    <li>พร้อมเปิดร้านขายได้ทันที</li>
+                </ul>
+                <a href="tel:0919871234" class="order-btn" style="background-color: var(--light-brown);">สนใจแพ็คเกจนี้</a>
+            </div>
+
+            <!-- Package 2 -->
+            <div class="franchise-card popular">
+                <div class="franchise-badge">ยอดนิยม</div>
+                <div class="franchise-name">ชุดซุ้มเล็กมาตรฐาน</div>
+                <div class="franchise-price">9,999 <span>บาท</span></div>
+                <div class="franchise-desc">ซุ้มขนาดเล็ก ดีไซน์สวยงาม จัดเก็บและพับเก็บง่าย มาพร้อมเครื่องมือและอุปกรณ์การขายครบครัน</div>
+                <ul class="franchise-features">
+                    <li>ซุ้มคีออสขนาดเล็ก พับเก็บง่าย ประหยัดพื้นที่</li>
+                    <li>หม้อนึ่ง/เตาปิ้ง และอุปกรณ์ครบชุด</li>
+                    <li>วัตถุดิบและน้ำจิ้มพร้อมขายจำนวนมาก</li>
+                    <li>ป้ายตกแต่งร้านค้าดึงดูดสายตา</li>
+                </ul>
+                <a href="tel:0919871234" class="order-btn">สนใจแพ็คเกจนี้</a>
+            </div>
+
+            <!-- Package 3 -->
+            <div class="franchise-card">
+                <div class="franchise-name">ชุดพรีเมี่ยมจัดเต็ม</div>
+                <div class="franchise-price">14,999 <span>บาท</span></div>
+                <div class="franchise-desc">ซุ้มหรือแผงค้าขนาดใหญ่ ดีไซน์หรูหราพรีเมี่ยม ดึงดูดลูกค้าได้ดีเยี่ยม พร้อมอุปกรณ์เกรดเอครบวงจร</div>
+                <ul class="franchise-features">
+                    <li>ซุ้ม/แผงค้าขนาดใหญ่ ดีไซน์พรีเมี่ยมสะดุดตา</li>
+                    <li>ชุดอุปกรณ์การขายและจัดส่งระดับมืออาชีพ</li>
+                    <li>วัตถุดิบชุดใหญ่ และสิทธิ์การใช้แบรนด์เต็มรูปแบบ</li>
+                    <li>การสนับสนุนและปรึกษาการจัดหน้าร้าน</li>
+                </ul>
+                <a href="tel:0919871234" class="order-btn" style="background-color: var(--light-brown);">สนใจแพ็คเกจนี้</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketing Support Section -->
+    <section id="marketing" style="max-width: 100%; padding: 20px;">
+        <div class="marketing-section">
+            <h2 class="section-title" style="color: #ffd885; text-align: center;">เรามีการตลาดดูแลคุณอย่างมืออาชีพ</h2>
+            <p style="text-align: center; color: #f0fdf4; max-width: 700px; margin: 0 auto 20px auto;">หมดกังวลเรื่องการหาลูกค้า แม้คุณจะมือเปอะ ไม่มีเวลาโพสโซเชียล ทีมงานครัวบ้านพ่อพร้อมเคียงข้างและสนับสนุนในทุกขั้นตอน</p>
+            
+            <div class="marketing-grid">
+                <div class="marketing-card">
+                    <h3>จัดการตลาดให้เสร็จสรรพ</h3>
+                    <p>แม้คุณจะยุ่งกับการขายจนไม่มีเวลาโพสโปรโมท เรามีทีมงานดูแลโปรโมทร้านและทำการตลาดในพื้นที่ให้คุณอย่างต่อเนื่อง</p>
+                </div>
+                <div class="marketing-card">
+                    <h3>ระบบโปรโมชั่นสนับสนุน</h3>
+                    <p>มีแผนการจัดโปรโมชั่นประจำเดือนและตามฤดูกาล เพื่อช่วยกระตุ้นยอดขายและดึงดูดลูกค้าใหม่ๆ ให้เข้ามาซื้อซ้ำ</p>
+                </div>
+                <div class="marketing-card">
+                    <h3>ระบบคูปองสะสมแต้ม</h3>
+                    <p>เครื่องมือสร้างความภักดีของลูกค้าด้วยระบบคูปองและสิทธิพิเศษ ช่วยให้ลูกค้ากลับมาซื้อที่ร้านของคุณอย่างเป็นประจำ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Credibility Section -->
+    <section class="trust-section" id="trust">
+        <h2 class="section-title">ทำไมต้องเลือก "ครัวบ้านพ่อ"</h2>
+        <p class="section-subtitle">ความไว้วางใจและมาตรฐานที่เรามอบให้กับลูกค้าและพาร์ทเนอร์แฟรนไชส์ทุกคน</p>
+        
+        <div class="trust-grid">
+            <div class="trust-item">
+                <div class="trust-icon">🏭</div>
+                <h3>โรงงานผลิตเอง</h3>
+                <p>เราควบคุมการผลิตทุกขั้นตอนจากโรงงานของเราเอง มั่นใจได้ในเรื่องของความสดใหม่ ความสะอาด และรสชาติที่เป็นเอกลักษณ์</p>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">🕌</div>
+                <h3>มาตรฐานฮาลาล</h3>
+                <p>ผลิตภัณฑ์ทุกชนิดผ่านการรับรองและกระบวนการผลิตตามมาตรฐานฮาลาล ถูกหลักศาสนา สะอาด ปลอดภัยสำหรับทุกคน</p>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">🤝</div>
+                <h3>ระบบดูแลพาร์ทเนอร์</h3>
+                <p>เราไม่ทอดทิ้งคุณ มีทีมงานคอยให้คำปรึกษา แนะนำการขาย และสนับสนุนสื่อการตลาดตลอดอายุการเป็นพันธมิตร</p>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">💰</div>
+                <h3>ลงทุนต่ำ คืนทุนไว</h3>
+                <p>โมเดลธุรกิจที่ออกแบบมาเพื่อช่วยเหลือผู้เริ่มต้น ราคาจับต้องได้ มีกำไรต่อหน่วยสูง ทำให้สามารถคืนทุนได้ในระยะเวลาอันสั้น</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>ครัวบ้านพ่อ</h3>
+                <p>โรงงานผลิตและจัดจำหน่ายลูกชิ้นพรีเมี่ยม มุ่งมั่นสร้างสรรค์ผลิตภัณฑ์ที่ได้มาตรฐาน ฮาลาล รสชาติอร่อยถูกปาก ในราคาที่คุ้มค่า พร้อมส่งเสริมอาชีพและสร้างรายได้ให้กับชุมชนผ่านระบบแฟรนไชส์ที่มั่นคง</p>
+            </div>
+            <div class="footer-links">
+                <h3>ลิงค์ที่สำคัญ</h3>
+                <ul>
+                    <li><a href="#about">รู้จักเรา</a></li>
+                    <li><a href="#products">เมนูลูกชิ้น</a></li>
+                    <li><a href="#franchise">ข้อมูลแฟรนไชส์</a></li>
+                    <li><a href="#marketing">ระบบดูแลการตลาด</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>ติดต่อเรา</h3>
+                <p>📍 ที่อยู่: ดอนทราย เมืองประจวบคีรีขันธ์ 77000</p>
+                <p>📞 เบอร์โทรศัพท์: 091 987 1234</p>
+                <p>🕒 เวลาทำการ: เปิดบริการทุกวัน 08:00 น. - 18:00 น.</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 ครัวบ้านพ่อ - โรงงานลูกชิ้นมาตรฐานฮาลาล ประจวบคีรีขันธ์. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
