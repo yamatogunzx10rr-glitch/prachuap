@@ -1,51 +1,813 @@
-ลำดับ	ชื่อที่พัก	พิกัด (Google Maps)	เบอร์โทรศัพท์	ราคาเริ่มต้น (ประมาณการ)
-1	อ่างทอง บีช รีสอร์ท	 	081-123-XXXX	1,500
-2	บ้านสวนมะพร้าว อ่างทอง	 	082-222-XXXX	1,000
-3	ไร่เกษตรสุข อ่างทอง	 	083-333-XXXX	800
-4	อ่างทอง ฮิลล์ไซด์	 	084-444-XXXX	1,200
-5	เรือนไม้ริมเล อ่างทอง	 	085-555-XXXX	1,300
-6	ทุ่งอ่างทอง แคมป์ปิ้ง	 	086-666-XXXX	450
-7	บ้านพักชมคลื่น อ่างทอง	 	087-777-XXXX	1,100
-8	อ่างทอง กรีนวิว	 	088-888-XXXX	900
-9	บ้านสวนร่มไม้ อ่างทอง	 	089-999-XXXX	850
-10	ชมวิวทะเล อ่างทอง รีสอร์ท	 	081-000-XXXX	1,600
-11	บ้านพักริมทาง อ่างทอง	 	082-111-XXXX	600
-12	สบายดี อ่างทอง	 	083-222-XXXX	850
-13	กระท่อมน้อย ริมหาด	 	084-333-XXXX	500
-14	อ่างทอง ฟาร์มสเตย์	 	085-444-XXXX	1,200
-15	บ้านพักใจกลางสวนปาล์ม	 	086-555-XXXX	750
-16	อ่างทอง เมาเท่นวิว	 	087-666-XXXX	1,600
-17	ไร่สับปะรดสี อ่างทอง	 	088-777-XXXX	900
-18	บ้านสวนชมไพร อ่างทอง	 	089-888-XXXX	1,100
-19	อ่างทอง พลาซ่า	 	081-999-XXXX	1,200
-20	บ้านไม้หอม อ่างทอง	 	082-000-XXXX	850
-21	พนาวัลย์ อ่างทอง	 	083-111-XXXX	1,900
-22	อ่างทอง ลอดจ์	 	084-222-XXXX	1,400
-23	บ้านป่า อ่างทอง	 	085-333-XXXX	1,200
-24	ไร่ปลายฟ้า อ่างทอง	 	086-444-XXXX	1,500
-25	อ่างทอง การ์เด้น	 	087-555-XXXX	1,000
-26	บ้านพักริมบึง อ่างทอง	 	088-666-XXXX	700
-27	อ่างทอง คันทรีไซด์	 	089-777-XXXX	1,300
-28	เรือนไทยอ่างทอง	 	081-888-XXXX	2,200
-29	บ้านสวนอินทผลัม อ่างทอง	 	082-999-XXXX	1,250
-30	อ่างทอง ซันเซ็ท	 	083-000-XXXX	1,100
-31	โฮมสเตย์ชุมชนอ่างทอง	 	084-111-XXXX	500
-32	บ้านไร่ชายเขา อ่างทอง	 	085-222-XXXX	1,400
-33	กิ่งไผ่ อ่างทอง	 	086-333-XXXX	700
-34	สวนป่าอ่างทอง	 	087-444-XXXX	1,200
-35	บ้านริมหาด อ่างทอง	 	088-555-XXXX	1,300
-36	อ่างทอง ริเวอร์ไซด์	 	089-666-XXXX	1,400
-37	ไร่นกยูง อ่างทอง	 	081-777-XXXX	900
-38	บ้านสวนทิพย์ อ่างทอง	 	082-888-XXXX	1,100
-39	อ่างทอง พีค รีสอร์ท	 	083-999-XXXX	2,200
-40	มะลิ อ่างทอง	 	084-000-XXXX	800
-41	บ้านสวนเพียงพอ อ่างทอง	 	085-111-XXXX	700
-42	อ่างทอง อีโค่ สเตย์	 	086-222-XXXX	1,800
-43	กระท่อมไม้ไผ่ อ่างทอง	 	087-333-XXXX	500
-44	บ้านสวนแสงแดด อ่างทอง	 	088-444-XXXX	1,000
-45	อ่างทอง วิวล์	 	089-555-XXXX	1,250
-46	ไร่ลุงสมชาย อ่างทอง	 	081-666-XXXX	650
-47	บ้านไร่ไออรุณ อ่างทอง	 	082-777-XXXX	1,600
-48	อ่างทอง ฟอเรสต์	 	083-888-XXXX	1,750
-49	บ้านสวนสันติสุข อ่างทอง	 	084-999-XXXX	900
-50	ก้าวแรก อ่างทอง	 	085-000-XXXX	1,100
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ภัตตาคารตองตึง เชียงราย - รสชาติเหนือแท้ ท่ามกลางสวนไม้ดอกและประตูเมืองเก่า</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- Design System --- */
+        :root {
+            --brick-orange: #C85A32;
+            --brick-dark: #8F3A1A;
+            --old-orange: #E28743;
+            --old-white: #F9F6F0;
+            --clay-gray: #EAE3D2;
+            --dark-charcoal: #2B2625;
+            --garden-green: #3D5240;
+            --text-muted: #6E6865;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Anuphan', sans-serif;
+            background-color: var(--old-white);
+            color: var(--dark-charcoal);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Noto Serif Thai', serif;
+            font-weight: 700;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: rgba(249, 246, 240, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border-bottom: 3px solid var(--brick-orange);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            color: var(--brick-orange);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 0.9rem;
+            display: block;
+            color: var(--garden-green);
+            font-family: 'Anuphan', sans-serif;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-charcoal);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--brick-orange);
+        }
+
+        /* --- Hero Banner --- */
+        .hero {
+            background: linear-gradient(rgba(43, 38, 37, 0.5), rgba(43, 38, 37, 0.7)), url('images/tongtung/banner.jpg');
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 60vh;
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--old-white);
+            border-bottom: 8px solid var(--brick-dark);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+            color: var(--clay-gray);
+        }
+
+        .btn-primary {
+            background-color: var(--brick-orange);
+            color: var(--old-white);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background 0.3s;
+            display: inline-block;
+            border: 1px solid var(--old-orange);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--brick-dark);
+        }
+
+        /* --- Promotion Section --- */
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--brick-dark);
+            margin-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--old-orange);
+            margin: 0 auto;
+        }
+
+        .promo-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1max));
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .promo-card {
+            background: linear-gradient(135deg, var(--brick-orange), var(--brick-dark));
+            color: var(--old-white);
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border: 2px solid var(--clay-gray);
+        }
+
+        .promo-card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        .promo-badge {
+            background-color: var(--garden-green);
+            color: white;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 15px;
+            border-radius: 20px;
+        }
+
+        .promo-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .promo-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 15px 0;
+            color: var(--clay-gray);
+        }
+
+        /* --- Menu Section --- */
+        .bg-clay {
+            background-color: var(--clay-gray);
+            background-image: radial-gradient(var(--old-orange) 0.5px, transparent 0.5px), radial-gradient(var(--old-orange) 0.5px, var(--clay-gray) 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.95;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-card {
+            background-color: var(--old-white);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-bottom: 4px solid var(--garden-green);
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+
+        .menu-img-wrapper {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background-color: var(--clay-gray);
+            position: relative;
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .menu-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .menu-info {
+            padding: 20px;
+        }
+
+        .menu-title {
+            font-size: 1.2rem;
+            color: var(--brick-dark);
+            margin-bottom: 8px;
+        }
+
+        .menu-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            height: 60px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        .menu-footer {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px dashed var(--clay-gray);
+            padding-top: 10px;
+        }
+
+        .menu-price {
+            font-weight: 700;
+            color: var(--brick-orange);
+            font-size: 1.1rem;
+        }
+
+        .menu-tag {
+            font-size: 0.75rem;
+            background-color: var(--old-orange);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+
+        /* --- Map Section --- */
+        .map-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background-color: var(--old-white);
+        }
+
+        .map-info {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: var(--dark-charcoal);
+            color: var(--old-white);
+        }
+
+        .map-info h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--old-orange);
+        }
+
+        .map-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .map-container {
+            width: 100%;
+            min-height: 400px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- Sticky Floating Contact Sidebar --- */
+        .sticky-contact {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            z-index: 2000;
+        }
+
+        .sticky-btn {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+            margin-bottom: 2px;
+            border-radius: 5px 0 0 5px;
+            box-shadow: -2px 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .sticky-btn:hover {
+            width: 60px;
+            padding-right: 10px;
+        }
+
+        .sticky-line { background-color: #06C755; }
+        .sticky-phone { background-color: var(--brick-orange); }
+        .sticky-msg { background-color: #0084FF; }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #1E1A19;
+            color: var(--clay-gray);
+            padding: 60px 0 20px 0;
+            border-top: 5px solid var(--brick-orange);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--old-white);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--brick-orange);
+        }
+
+        .footer-col p, .footer-col ul {
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--clay-gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--old-orange);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 15px; }
+            .hero-content h1 { font-size: 2.3rem; }
+            .map-section { grid-template-columns: 1fr; }
+            .map-info { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <div>
+                    ภัตตาคารตองตึง
+                    <span>CHIANG RAI CUISINE</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">หน้าแรก</a></li>
+                <li><a href="#promotions">โปรโมชั่น</a></li>
+                <li><a href="#menu">รายการอาหาร</a></li>
+                <li><a href="#contact">ติดต่อเรา</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>รสชาติล้านนาโบราณ ในสวนไม้ดอกเมืองหนาว</h1>
+            <p>สัมผัสเสน่ห์อาหารเหนือแท้ๆ ท่ามกลางกลิ่นอายสถาปัตยกรรมประตูเมืองเก่าเชียงราย ละเมียดละไมทุกคำกับวัตถุดิบท้องถิ่นที่คัดสรรอย่างตั้งใจ</p>
+            <a href="#menu" class="btn-primary">ดูรายการอาหาร</a>
+        </div>
+    </section>
+
+    <!-- Floating Sticky Contact Sidebar -->
+    <div class="sticky-contact">
+        <a href="https://line.me" target="_blank" class="sticky-btn sticky-line" title="Line แอดไลน์"><i class="fab fa-line"></i></a>
+        <a href="tel:053000000" class="sticky-btn sticky-phone" title="โทรจองโต๊ะ"><i class="fas fa-phone"></i></a>
+        <a href="https://m.me" target="_blank" class="sticky-btn sticky-msg" title="Inbox Messenger"><i class="fab fa-facebook-messenger"></i></a>
+    </div>
+
+    <!-- Promotions Section -->
+    <section id="promotions" class="container section-padding">
+        <div class="section-title">
+            <h2>โปรโมชั่นสุดพิเศษ</h2>
+            <p>ความอร่อยคุ้มค่าที่ตองตึงจัดเตรียมไว้ให้คุณ</p>
+        </div>
+        <div class="promo-container">
+            <!-- Promo 1 -->
+            <div class="promo-card">
+                <span class="promo-badge">ชุดสุดคุ้ม</span>
+                <h3>ขันโตกตองตึงเมืองเก่า</h3>
+                <p>รวมฮิตอาหารเหนือยอดนิยม (แกงฮังเล, ไส่วั่ว, น้ำพริกหนุ่ม/อ่อง, แคบหมู และผักเคียงสวนไม้ดอก)</p>
+                <div class="promo-price">฿499</div>
+                <p><small>*สำหรับทาน 2-3 ท่าน (เฉพาะจันทร์ - ศุกร์)</small></p>
+            </div>
+            <!-- Promo 2 -->
+            <div class="promo-card" style="background: linear-gradient(135deg, var(--garden-green), var(--dark-charcoal)); border-color: var(--old-orange);">
+                <span class="promo-badge" style="background-color: var(--brick-orange);">ต้อนรับฤดูกาล</span>
+                <h3>เซ็ตแกงผักหวานไข่มดแดง</h3>
+                <p>จับคู่กับแกงขนุนมงคลและข้าวเหนียวเขี้ยวงูร้อนๆ สัมผัสรสชาติแห่งฤดูกาลเชียงรายแท้ๆ</p>
+                <div class="promo-price">฿389</div>
+                <p><small>*สินค้ามีจำนวนจำกัดในแต่ละวัน</small></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu List Section -->
+    <section id="menu" class="bg-clay section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>สำรับกับข้าวตองตึง</h2>
+                <p>พิถีพิถันทุกขั้นตอนตามสูตรคุณยาย ส่งต่อความอร่อยจากรุ่นสู่รุ่น</p>
+            </div>
+
+            <div class="menu-grid">
+                
+                <!-- Card 1 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper"><img src="images/tongtung/tongtung1.jpg" alt="แกงฮังเล"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-title">แกงฮังเล</h3>
+                        <p class="menu-desc">หมูสามชั้นเคี่ยวจนนุ่มละลายในปาก ผสานเครื่องแกงฮังเลเข้มข้น หอมกลิ่นกระเทียมโทนและขิงซอย</p>
+                        <div class="menu-footer"><span class="menu-price">฿180</span><span class="menu-tag">แนะนำ</span></div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper"><img src="images/tongtung/tongtung2.jpg" alt="ลาบคั่วหมู"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-title">ลาบคั่วหมู</h3>
+                        <p class="menu-desc">ลาบหมูสับละเอียดคั่วแห้ง หอมกลิ่นมะแขว่นและเครื่องเทศเหนือรสจัดจ้าน โรยหน้าด้วยผักไผ่กระเทียมเจียว</p>
+                        <div class="menu-footer"><span class="menu-price">฿150</span><span class="menu-tag">รสจัด</span></div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper"><img src="images/tongtung/tongtung3.jpg" alt="ไส้อั่วหมู"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-title">ไส้อั่วหมู</h3>
+                        <p class="menu-desc">ไส้อั่วสมุนไพรสูตรตองตึง ย่างเตาถ่านจนหอมกรุ่น เนื้อแน่น มันน้อย หอมสมุนไพรตะไคร้ใบมะกรูด</p>
+                        <div class="menu-footer"><span class="menu-price">฿140</span><span class="menu-tag">ขายดี</span></div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper"><img src="images/tongtung/tongtung4.jpg" alt="น้ำเงี้ยวหมู"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-title">น้ำเงี้ยวหมู</h3>
+                        <p class="menu-desc">ขนมจีนน้ำเงี้ยวสูตรเชียงรายแท้ น้ำแกงเข้มข้นด้วยดอกงิ้วและมะเขือส้ม ใส่หมูสับและเลือดหมูนุ่มพอดีคำ</p>
+                        <div class="menu-footer"><span class="menu-price">฿80</span><span class="menu-tag">สูตรดั้งเดิม</span></div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper"><img src="images/tongtung/tongtung5.jpg" alt="น้ำเงี้ยวหมูซีกโครง"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-title">น้ำเงี้ยวหมูซี่โครง</h3>
+                        <p class="menu-desc">น้ำเงี้ยวเข้มข้นพิเศษ เพิ่มความฟินด้วยซี่โครงหมูอ่อนที่เคี่ยวจนเปื่อยนุ่ม กระดูกล่อนทานง่าย</p>
+                        <div class="menu-footer"><span class="menu-price">฿100</span><span class="menu-tag">แนะนำ</span></div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper"><img src="images/tongtung/tongtung6.jpg" alt="น้ำเงี้ยวหมูเส้นใหญ่"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-title">น้ำเงี้ยวหมูเส้นใหญ่</h3>
+                        <p class="menu-desc">ความลงตัวแบบพื้นบ้าน นำเส้นใหญ่เหนียวนุ่มมาทานคู่กับน้ำเงี้ยวหมูสับรสจัดจ้าน อร่อยไปอีกแบบ</p>
+                        <div class="menu-footer"><span class="menu-price">฿85</span><span class="menu-tag">ยอดฮิต</span></div>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper"><img src="images/tongtung/tongtung7.jpg" alt="น้ำเงี้ยวเนื้อ"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-title">น้ำเงี้ยวเนื้อ</h3>
+                        <p class="menu-desc">เอาใจคนรักเนื้อ ด้วยน้ำเงี้ยวเนื้อสับและเนื้อตุ๋นเข้มข้น หอมเครื่องแกงจัดจ้าน ไร้กลิ่นคาว</p>
+                        <div class="menu-footer"><span class="menu-price">฿120</span><span class="menu-tag">สำหรับคนรักเนื้อ</span></div>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper"><img src="images/tongtung/tongtung8.jpg" alt="ข้าวซอยไก่"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-title">ข้าวซอยไก่</h3>
+                        <p class="menu-desc">เส้นนุ่มและเส้นกรอบในน้ำแกงกะทิข้าวซอยรสเข้มข้น เสิร์ฟพร้อมน่องไก่ชิ้นโต นุ่มชุ่มฉ่ำเครื่องเทศ</p>
+                        <div class="menu-footer"><span class="menu-price">฿95</span><span class="menu-tag">ต้องลอง</span></div>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper"><img src="images/tongtung/tongtung9.jpg" alt="แกงโฮะ"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-title">แกงโฮะ</h3>
+                        <p class="menu-desc">แกงคั่วแห้งรวมมิตรวุ้นเส้น หน่อไม้ดอง และผักนานาชนิด ผัดรวมกับแกงฮังเลจนเข้าเนื้อ หอมละมุน</p>
+                        <div class="menu-footer"><span class="menu-price">฿130</span><span class="menu-tag">พื้นบ้าน</span></div>
+                    </div>
+                </div>
+
+                <!-- Card 10 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper"><img src="images/tongtung/tongtung10.jpg" alt="แกงแค"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-title">แกงแคหมู/ไก่</h3>
+                        <p class="menu-desc">แกงป่าสไตล์เหนือที่รวบรวมผักพื้นบ้านสารพัดชนิด มีประโยชน์ต่อสุขภาพ รสเผ็ดร้อนหอมกลิ่นจักค่าน</p>
+                        <div class="menu-footer"><span class="menu-price">฿140</span><span class="menu-tag">สุขภาพ</span></div>
+                    </div>
+                </div>
+
+                <!-- Card 11 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper"><img src="images/tongtung/tongtung11.jpg" alt="แกงอ่อมเหนือ"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-title">แกงอ่อมเหนือ</h3>
+                        <p class="menu-desc">แกงอ่อมเนื้อหมู/เนื้อวัว เครื่องเทศแน่นๆ น้ำขลุกขลิกรสเข้มข้น หอมกลิ่นใบมะกรูดและผักชีฝรั่ง</p>
+                        <div class="menu-footer"><span class="menu-price">฿150</span><span class="menu-tag">รสเข้ม</span></div>
+                    </div>
+                </div>
+
+                <!-- Card 12 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper"><img src="images/tongtung/tongtung12.jpg" alt="แกงขนุน"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-title">แกงขนุน (แกงบะหนุน)</h3>
+                        <p class="menu-desc">แกงมงคลพื้นบ้านเชียงราย ใส่ขนุนอ่อนต้มจนนุ่ม ซี่โครงหมู และมะเขือเทศ ให้รสเปรี้ยวเค็มเผ็ดกลมกล่อม</p>
+                        <div class="menu-bottom"><div class="menu-footer"><span class="menu-price">฿130</span><span class="menu-tag">มงคล</span></div></div>
+                    </div>
+                </div>
+
+                <!-- Card 13 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper"><img src="images/tongtung/tongtung13.jpg" alt="แกงหน่อไม้"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-title">แกงหน่อไม้</h3>
+                        <p class="menu-desc">แกงหน่อไม้สดใส่ใบย่านาง รสหวานธรรมชาติจากหน่อไม้ เพิ่มความหอมด้วยผักชะอมและใบแมงลัก</p>
+                        <div class="menu-footer"><span class="menu-price">฿120</span><span class="menu-tag">พื้นบ้าน</span></div>
+                    </div>
+                </div>
+
+                <!-- Card 14 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper"><img src="images/tongtung/tongtung14.jpg" alt="จอผักกาด"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-title">จอผักกาด</h3>
+                        <p class="menu-desc">ผักกาดจอนำมาต้มใส่ซี่โครงหมู ปรุงรสด้วยน้ำมะขามเปียกและถั่วเน่าแผ่น ซดน้ำร้อนๆ เปรี้ยวหวานเค็มลงตัว</p>
+                        <div class="menu-footer"><span class="menu-price">฿110</span><span class="menu-tag">ซดน้ำ</span></div>
+                    </div>
+                </div>
+
+                <!-- Card 15 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper"><img src="images/tongtung/tongtung15.jpg" alt="แกงผักหวานไข่มดแดง"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-title">แกงผักหวานไข่มดแดง</h3>
+                        <p class="menu-desc">เมนูหาทานยาก ผักหวานป่าสดกรอบต้มในน้ำแกงใสรสกลมกล่อม พร้อมไข่มดแดงเต่งตึงเคี้ยวมัน</p>
+                        <div class="menu-footer"><span class="menu-price">฿220</span><span class="menu-tag">ฤดูกาล</span></div>
+                    </div>
+                </div>
+
+                <!-- Card 16 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper"><img src="images/tongtung/tongtung16.jpg" alt="แกงสะแล"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-title">แกงสะแล</h3>
+                        <p class="menu-desc">แกงพื้นบ้านจากต้นสะแล ผลสะแลกรุบกรอบต้มกับปลาแห้งหรือกระดูกหมู รสชาติท้องถิ่นเชียงรายขนานแท้</p>
+                        <div class="menu-footer"><span class="menu-price">฿160</span><span class="menu-tag">หากยาก</span></div>
+                    </div>
+                </div>
+
+                <!-- Card 17 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper"><img src="images/tongtung/tongtung17.jpg" alt="น้ำพริกหนุ่ม"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-title">น้ำพริกหนุ่ม</h3>
+                        <p class="menu-desc">พริกหนุ่ม ยอม และกระเทียมย่างเตาถ่านจนหอม ตำเหยาะเกลือรสชาติกลมกล่อม เสิร์ฟพร้อมผักลวกและแคบหมู</p>
+                        <div class="menu-footer"><span class="menu-price">฿90</span><span class="menu-tag">คลาสสิก</span></div>
+                    </div>
+                </div>
+
+                <!-- Card 18 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper"><img src="images/tongtung/tongtung18.jpg" alt="น้ำพริกอ่อง"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-title">น้ำพริกอ่อง</h3>
+                        <p class="menu-desc">น้ำพริกหมูสับใส่มะเขือส้ม รสชาติเปรี้ยวหวานเค็มนำ ทานง่าย เหมาะสำหรับทุกเพศทุกวัย</p>
+                        <div class="menu-footer"><span class="menu-price">฿90</span><span class="menu-tag">ยอดนิยม</span></div>
+                    </div>
+                </div>
+
+                <!-- Card 19 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper"><img src="images/tongtung/tongtung19.jpg" alt="น้ำพริกน้ำย้อย"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-title">น้ำพริกน้ำย้อย</h3>
+                        <p class="menu-desc">น้ำพริกแห้งรสเด็ด หอมกระเทียมเจียวและหอมแดงกรอบ คลุกเคล้าพริกแห้งคั่ว ทานคู่กับขนมจีนหรือข้าวสวย</p>
+                        <div class="menu-footer"><span class="menu-price">฿80</span><span class="menu-tag">แซ่บกรอบ</span></div>
+                    </div>
+                </div>
+
+                <!-- Card 20 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper"><img src="images/tongtung/tongtung20.jpg" alt="น้ำพริกตาแดง"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-title">น้ำพริกตาแดง</h3>
+                        <p class="menu-desc">น้ำพริกรสจัดจ้าน เผ็ดร้อนถึงใจ หอมกลิ่นปลาร้าสุกและมะแขว่น จิ้มกับผักนึ่งและข้าวเหนียวร้อนๆ</p>
+                        <div class="menu-footer"><span class="menu-price">฿80</span><span class="menu-tag"> เผ็ดจัด</span></div>
+                    </div>
+                </div>
+
+                <!-- Card 21 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper"><img src="images/tongtung/tongtung21.jpg" alt="น้ำพริกข่า"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-title">น้ำพริกข่า</h3>
+                        <p class="menu-desc">น้ำพริกแห้งที่มีเอกลักษณ์จากข่าแก่คั่วและพริกแห้ง ให้กลิ่นหอมร้อนแรง นิยมทานคู่กับเห็ดนึ่งหรือเนื้อนึ่ง</p>
+                        <div class="menu-footer"><span class="menu-price">฿85</span><span class="menu-tag"> สมุนไพร</span></div>
+                    </div>
+                </div>
+
+                <!-- Card 22 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper"><img src="images/tongtung/tongtung22.jpg" alt="หลู้"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-title">หลู้หมูคั่วสุก</h3>
+                        <p class="menu-desc">เมนูพื้นบ้านรสเข้มข้น ปรุงด้วยเครื่องเทศและสมุนไพรดับคาว (ทางร้านบริการแบบคั่วสุก สะอาด ปลอดภัยเพื่อสุขอนามัย)</p>
+                        <div class="menu-footer"><span class="menu-price">฿150</span><span class="menu-tag"> คออาหารเหนือ</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Map & Contact Section -->
+    <section id="contact" class="map-section">
+        <div class="map-info">
+            <h3>แวะมาแอ่วหาเราที่ "ตองตึง"</h3>
+            <p><i class="fas fa-map-marker-alt" style="color: var(--old-orange);"></i> ถนนประตูเมืองเก่า อำเภอเมือง เชียงราย 57000</p>
+            <p><i class="fas fa-phone" style="color: var(--old-orange);"></i> 053-XXX-XXX</p>
+            <p><i class="fas fa-envelope" style="color: var(--old-orange);"></i> contact@tongtungchiangrai.com</p>
+            <p><i class="fas fa-clock" style="color: var(--old-orange);"></i> เปิดให้บริการทุกวัน: 10:00 น. - 22:00 น.</p>
+        </div>
+        <div class="map-container">
+            <!-- แผนที่แบบฝัง Google Map (ตำแหน่งสมมุติในเชียงราย สามารถเปลี่ยน src ภายหลังได้) -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3749.6482159844203!2d99.8290343!3d19.9076983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30d70650c82fb667%3A0x8e8eb4ab97194a89!2sChiang%20Rai%20Night%20Bazaar!5e0!3m2!1sth!2sth!4v1680000000000!5m2!1sth!2sth" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4 style="font-family: 'Noto Serif Thai'; color: var(--old-orange);">ภัตตาคารตองตึง</h4>
+                <p style="margin-top:15px; color: #aaa;">ร้านอาหารเหนือสไตล์โมเดิร์นคลาสสิก ที่รวมบรรยากาศประตูเมืองเก่าและสวนดอกไม้เมืองหนาวของเชียงรายไว้ในที่เดียว</p>
+            </div>
+            <div class="footer-col">
+                <h4>ลิงก์ด่วน</h4>
+                <ul>
+                    <li><a href="#home">หน้าแรก</a></li>
+                    <li><a href="#promotions">โปรโมชั่น</a></li>
+                    <li><a href="#menu">รายการอาหาร</a></li>
+                    <li><a href="#contact">แผนที่ & การติดต่อ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>ติดตามเรา</h4>
+                <div style="display:flex; gap:15px; font-size:1.5rem; margin-top:15px;">
+                    <a href="#" style="color: var(--clay-gray);"><i class="fab fa-facebook"></i></a>
+                    <a href="#" style="color: var(--clay-gray);"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="color: var(--clay-gray);"><i class="fab fa-line"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ภัตตาคารตองตึง เชียงราย - All Rights Reserved. Designed for GitHub Pages</p>
+        </div>
+    </footer>
+
+</body>
+</html>
