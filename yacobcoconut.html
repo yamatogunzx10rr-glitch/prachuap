@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สวนมะพร้าวยาคอป (Jacob's Coconut Farm) - สวนมะพร้าวอินทรีย์ มาตรฐาน GMP</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (สารบัญ และ Prompt) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cocoGreen: '#2e7d32', /* เขียวใบมะพร้าว */
+                        cocoLightGreen: '#e8f5e9', /* เขียวอ่อนพาสเทล */
+                        cocoBrown: '#6d4c41', /* น้ำตาลกะลามะพร้าว */
+                        cocoDark: '#1b5e20',
+                    },
+                    fontFamily: {
+                        sans: ['Prompt', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="bg-white/95 backdrop-blur shadow-md sticky top-0 z-40 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3">
+                <img src="images/yacob/logo.jpg" alt="โลโก้ สวนมะพร้าวยาคอป" class="w-[100px] h-[100px] object-cover rounded-full shadow-sm">
+                <div>
+                    <span class="block text-xl font-bold text-cocoGreen leading-tight">สวนมะพร้าวยาคอป</span>
+                    <span class="block text-xs text-cocoBrown font-medium">Jacob's Coconut Farm</span>
+                </div>
+            </a>
+            <div class="hidden md:flex space-x-6 font-medium text-gray-600">
+                <a href="#home" class="hover:text-cocoGreen transition">หน้าแรก</a>
+                <a href="#about" class="hover:text-cocoGreen transition">เกี่ยวกับเรา</a>
+                <a href="#biocontrol" class="hover:text-cocoGreen transition">นวัตกรรมสีเขียว</a>
+                <a href="#product" class="hover:text-cocoGreen transition">สินค้าและบริการ</a>
+                <a href="#contact" class="hover:text-cocoGreen transition">ติดต่อเรา</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO BANNER SECTION -->
+    <header id="home" class="relative bg-gray-900 text-white overflow-hidden">
+        <img src="images/yacob/banner1.jpg" alt="สวนมะพร้าวยาคอป แบนเนอร์" class="w-full h-[400px] md:h-[800px] object-cover opacity-80">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-center">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <span class="bg-cocoGreen text-white text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 inline-block">มาตรฐาน GMP ปลอดสารพิษ 100%</span>
+                <h1 class="text-3xl md:text-6xl font-bold mb-4 drop-shadow-md">ยินดีต้อนรับสู่ "สวนมะพร้าวยาคอป"</h1>
+                <p class="text-lg md:text-2xl font-light mb-8 max-w-2xl mx-auto drop-shadow">สวนมะพร้าวอินทรีย์ที่สร้างด้วยหัวใจและความรักในธรรมชาติ บุกเบิกโดยชาวต่างชาติผู้มีใจรักในผืนดินไทย</p>
+                <a href="#about" class="bg-white text-cocoGreen hover:bg-cocoGreen hover:text-white font-semibold px-8 py-3 rounded-full shadow-lg transition duration-300 inline-block">ทำความรู้จักเรา</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-6xl mx-auto px-4 py-12 space-y-24">
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="scroll-mt-24">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-6">
+                    <div class="border-l-4 border-cocoGreen pl-4">
+                        <h2 class="text-3xl font-bold text-cocoGreen">จุดเริ่มต้นของเรา</h2>
+                        <p class="text-gray-500 text-sm">Jacob's Coconut Farm</p>
+                    </div>
+                    <p class="leading-relaxed text-gray-600">
+                        จากความหลงใหลในวิถีชีวิตที่เรียบง่ายและความงดงามของธรรมชาติ สู่จุดเริ่มต้นของ <strong class="text-cocoGreen">สวนมะพร้าวยาคอป</strong> สวนมะพร้าวน้ำหอมและมะพร้าวแกงที่บุกเบิกและดูแลโดยชาวต่างชาติผู้มีใจรักในผืนดินและวิถีเกษตรกรรมอย่างแท้จริง
+                    </p>
+                    <p class="leading-relaxed text-gray-600">
+                        ด้วยความตั้งใจที่จะส่งมอบสิ่งที่ดีที่สุดและปลอดภัยที่สุดให้แก่ผู้บริโภค เราจึงมุ่งมั่นทำเกษตรกรรมยั่งยืนจนได้รับการรับรองมาตรฐาน GMP ปลอดสารพิษ จากกระทรวงเกษตรและสหกรณ์
+                    </p>
+                    <div class="bg-cocoLightGreen p-5 rounded-2xl border-l-4 border-cocoGreen">
+                        <p class="italic text-cocoDark font-medium">"อาหารที่ดี ต้องเริ่มจากผืนดินที่ปลอดภัย" ทุกต้นมะพร้าวในสวนของเราจึงเติบโตขึ้นท่ามกลางระบบนิเวศที่สมดุล ปราศจากสารเคมีปนเปื้อน 100%</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="images/yacob/about.jpg" alt="เกี่ยวกับสวนมะพร้าวยาคอป" class="w-full max-w-[825px] h-auto rounded-2xl shadow-xl object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- CATEGORIES / AGRITOURISM SECTION -->
+        <section class="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold text-cocoGreen mb-3">🌴 แหล่งท่องเที่ยวเชิงเกษตร (Agritourism)</h2>
+                <p class="text-gray-600">สวนมะพร้าวยาคอปไม่ได้เป็นเพียงแค่พื้นที่เพาะปลูก แต่เราเปิดประตูต้อนรับทุกคนให้เข้ามาสัมผัสประสบการณ์อ้อมกอดของธรรมชาติ</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+                    <img src="images/yacob/category.jpg" alt="สูดอากาศบริสุทธิ์" class="w-full h-[301px] object-cover">
+                    <div class="p-5 text-center">
+                        <h3 class="font-bold text-lg text-cocoBrown mb-2">สูดอากาศบริสุทธิ์</h3>
+                        <p class="text-sm text-gray-650">เดินผ่อนคลายและชมร่มเงาของทิวต้นมะพร้าวที่เขียวขจีโอบล้อมรอบตัวคุณ</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+                    <img src="images/yacob/category1.jpg" alt="เรียนรู้วิถีชาวสวน" class="w-full h-[301px] object-cover">
+                    <div class="p-5 text-center">
+                        <h3 class="font-bold text-lg text-cocoBrown mb-2">เรียนรู้วิถีชาวสวน</h3>
+                        <p class="text-sm text-gray-650">สัมผัสเบื้องหลังและขั้นตอนการดูแลรักษาสวนมะพร้าวแบบอินทรีย์แท้ๆ</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+                    <img src="images/yacob/category2.jpg" alt="ชิมรสชาติจากต้น" class="w-full h-[301px] object-cover">
+                    <div class="p-5 text-center">
+                        <h3 class="font-bold text-lg text-cocoBrown mb-2">ชิมรสชาติจากต้น</h3>
+                        <p class="text-sm text-gray-650">ลิ้มรสความสดชื่นของน้ำมะพร้าวน้ำหอมแท้ๆ หอม หวาน ธรรมชาติ ไร้สารเคมี</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BIOLOGICAL CONTROL SECTION -->
+        <section id="biocontrol" class="grid md:grid-cols-2 gap-12 items-center bg-cocoLightGreen/50 p-8 md:p-12 rounded-3xl scroll-mt-24">
+            <div class="space-y-6">
+                <div class="inline-flex items-center space-x-2 bg-cocoGreen text-white px-4 py-1 rounded-full text-xs font-semibold">
+                    <i class="fa-solid fa-bug"></i> <span>Biological Control</span>
+                </div>
+                <h2 class="text-3xl font-bold text-cocoDark">🐝 นวัตกรรมสีเขียว: การกำจัดศัตรูพืชด้วย "แตนเบียน"</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    หนึ่งในไฮไลท์สำคัญของสวนเรา คือการพึ่งพาธรรมชาติในการดูแลธรรมชาติเอง เราหลีกเลี่ยงการใช้ยาฆ่าแมลงโดยสิ้นเชิง แต่เลือกใช้ <strong>"แมลงแตนเบียน" (Parasitoid Wasps)</strong> ฮีโร่ตัวจิ๋วในการควบคุมและกำจัดศัตรูมะพร้าว อาทิ หนอนหัวดำ หรือแมลงดำหนาม
+                </p>
+                <div class="bg-white p-5 rounded-2xl shadow-sm space-y-2 border-l-4 border-cocoBrown">
+                    <h4 class="font-bold text-cocoBrown">แตนเบียนทำงานอย่างไร?</h4>
+                    <p class="text-sm text-gray-600">แตนเบียนจะทำหน้าที่ตามล่าและวางไข่ในตัวหนอนหรือดักแด้ของศัตรูมะพร้าว ทำให้ศัตรูพืชหยุดการเจริญเติบโตและตายไปในที่สุด ถือเป็นวิธีทางชีวภาพที่ปลอดภัยต่อมนุษย์ ไม่ทิ้งสารตกค้าง และช่วยรักษาสมดุลของระบบนิเวศอย่างยั่งยืน</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm space-y-6">
+                <h3 class="text-xl font-bold text-cocoGreen flex items-center gap-2">
+                    <i class="fa-solid fa-flask-vial"></i> ศูนย์เรียนรู้การเพาะเลี้ยงแมลงแตนเบียน
+                </h3>
+                <p class="text-sm text-gray-600">สำหรับผู้ที่สนใจและกลุ่มเกษตรกร สวนมะพร้าวยาคอปยังเปิดเป็นพื้นที่แบ่งปันความรู้ "การเพาะเลี้ยงแมลงแตนเบียน" โดยจะพาไปเรียนรู้อย่างละเอียด:</p>
+                
+                <ul class="space-y-3 text-sm text-gray-700">
+                    <li class="flex items-start gap-3">
+                        <span class="bg-cocoLightGreen text-cocoGreen rounded-full w-6 h-6 flex items-center justify-center font-bold flex-shrink-0 text-xs">1</span>
+                        <span><strong>การเตรียมพ่อพันธุ์-แม่พันธุ์แตนเบียน:</strong> คัดสรรสายพันธุ์ที่สมบูรณ์แข็งแรง</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="bg-cocoLightGreen text-cocoGreen rounded-full w-6 h-6 flex items-center justify-center font-bold flex-shrink-0 text-xs">2</span>
+                        <span><strong>เทคนิคการเพาะเลี้ยงในห้องควบคุม:</strong> เพื่อให้เจริญเติบโตและขยายพันธุ์ได้อย่างสมบูรณ์ที่สุด</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="bg-cocoLightGreen text-cocoGreen rounded-full w-6 h-6 flex items-center justify-center font-bold flex-shrink-0 text-xs">3</span>
+                        <span><strong>วิธีการปล่อยสู่สวนมะพร้าว:</strong> การปล่อยเข้าสวนอย่างถูกวิธีเพื่อให้เกิดประสิทธิภาพสูงสุดในการควบคุมโรค</span>
+                    </li>
+                </ul>
+
+                <p class="text-xs text-cocoBrown bg-amber-50 p-3 rounded-xl border border-amber-200">
+                    👋 เรายินดีต้อนรับทั้งนักท่องเที่ยว นักเรียน นักศึกษา และเกษตรกรที่ต้องการเปลี่ยนผ่านสู่วิธีการทำเกษตรอินทรีย์ เพื่อมาร่วมสร้างโลกที่เขียวและปลอดภัยไปด้วยกัน
+                </p>
+            </div>
+        </section>
+
+        <!-- PRODUCT SECTION -->
+        <section id="product" class="text-center space-y-6 scroll-mt-24">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold text-cocoGreen">ผลผลิตจากความใส่ใจ</h2>
+                <p class="text-gray-600 text-sm mt-2">สดใหม่ ปลอดสารเคมี ส่งตรงจากต้นถึงมือคุณ</p>
+            </div>
+            <div class="flex justify-center">
+                <img src="images/yacob/product.jpg" alt="ผลผลิตสวนมะพร้าวยาคอป" class="w-full max-w-[825px] h-auto rounded-2xl shadow-lg object-cover">
+            </div>
+        </section>
+
+        <!-- CONTACT & MAP SECTION -->
+        <section id="contact" class="grid md:grid-cols-2 gap-8 bg-white p-8 rounded-3xl shadow-sm border border-gray-100 scroll-mt-24">
+            <div class="space-y-6">
+                <h2 class="text-2xl font-bold text-cocoGreen border-b pb-4">ติดต่อเรา</h2>
+                <p class="text-gray-600">แวะมาหาเราที่ สวนมะพร้าวยาคอป แล้วคุณจะรู้ว่า "ธรรมชาติที่แท้จริง" รสชาติเป็นอย่างไร สวนของเรายินดีต้อนรับทุกท่านครับ</p>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div class="text-cocoGreen text-xl mt-1"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">ที่อยู่สวน</h4>
+                            <p class="text-sm text-gray-600">27 เกาะหลัก 3 ตำบล เกาะหลัก เมือง ประจวบคีรีขันธ์ 77000</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="text-cocoGreen text-xl mt-1"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">เบอร์โทรศัพท์</h4>
+                            <p class="text-sm text-gray-600"><a href="tel:0941497548" class="hover:underline">094-1497548</a></p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="text-cocoGreen text-xl mt-1"><i class="fa-brands fa-line"></i></div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Line Official / Social Media</h4>
+                            <p class="text-sm text-gray-600">ค้นหาเบอร์โทรศัพท์หรือติดต่อผ่านช่องทางด่วนด้านข้าง</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Google Maps Embed -->
+            <div class="rounded-2xl overflow-hidden shadow-inner h-[300px] md:h-auto min-h-[300px] border">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.127814833215!2d99.7820468!3d11.8962635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30f94f997cb66b9f%3A0xc304a0e98038f5f4!2zMjcg4LmA4LiB4Liy4Liw4Lir4Lil4Lix4LiBIDMg4LiV4LmI4Lit4Lia4LilIOC5gOC4geC4suC4sOC4quC4pSDguYDguKHgubguI3guYTguJnguKPguLLguKPguKHguKMgNzcwMDA!5e0!3m2!1sth!2sth!4v1710000000000!5m2!1sth!2sth" 
+                    class="w-full h-full border-0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="mt-12 bg-cocoDark text-white relative">
+        <div class="flex justify-center">
+            <img src="images/yacob/bannerfooter.jpg" alt="แบนเนอร์ท้ายเว็บไซต์" class="w-full max-w-[825px] h-auto object-cover block">
+        </div>
+        <div class="bg-black/20 py-6 text-center text-sm font-light text-gray-200">
+            <p>&copy; 2026 สวนมะพร้าวยาคอป (Jacob's Coconut Farm). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- STICKY FLOATING CONTACT BUTTONS (RIGHT SIDE) -->
+    <div class="fixed right-4 bottom-8 flex flex-col gap-3 z-50">
+        <!-- LINE -->
+        <a href="https://line.me/R/ti/p/~0941497548" target="_blank" rel="noopener text" class="bg-[#06C755] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform group relative" title="ติดต่อทาง Line">
+            <i class="fa-brands fa-line text-2xl"></i>
+            <span class="absolute right-14 bg-black/80 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition duration-300 whitespace-nowrap">Line Us</span>
+        </a>
+        <!-- Messenger -->
+        <a href="https://m.me/" target="_blank" rel="noopener text" class="bg-[#0084FF] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform group relative" title="ติดต่อทาง Messenger">
+            <i class="fa-brands fa-facebook-messenger text-2xl"></i>
+            <span class="absolute right-14 bg-black/80 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition duration-300 whitespace-nowrap">Message Us</span>
+        </a>
+        <!-- โทรศัพท์ -->
+        <a href="tel:0941497548" class="bg-cocoGreen text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform group relative" title="โทรหาเรา">
+            <i class="fa-solid fa-phone text-xl"></i>
+            <span class="absolute right-14 bg-black/80 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition duration-300 whitespace-nowrap">094-1497548</span>
+        </a>
+    </div>
+
+</body>
+</html>
