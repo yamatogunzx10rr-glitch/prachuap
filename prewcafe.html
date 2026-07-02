@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAEW cafe - แพรว คาเฟ่ | รสชาติเข้มข้น ถึงใจ หรูหรามีระดับ</title>
+    <!-- Google Fonts - Prompt & Kanit สำหรับความเท่และหรูหรา -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,700;1,900&family=Prompt:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0b0b0b;
+            --card-bg: #161616;
+            --accent-color: #d4af37; /* สีทองหรูหรา */
+            --accent-hover: #fff3cd;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Prompt', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* Header / Navigation */
+        header {
+            background-color: rgba(11, 11, 11, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Kanit', sans-serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            color: var(--text-main);
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-menu a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 400;
+            transition: 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Banner Section */
+        .banner-section {
+            margin-top: 75px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            width: 100%;
+        }
+
+        .banner-wrapper {
+            width: 100%;
+            max-width: 1672px;
+            aspect-ratio: 1672 / 941;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        }
+
+        .banner-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+        
+        .banner-wrapper:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Sticky Contact Sidebar (ขวาจอ) */
+        .sticky-contact {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 999;
+        }
+
+        .sticky-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .sticky-btn:hover {
+            transform: scale(1.15);
+        }
+
+        .sticky-btn.line { background-color: #06C755; }
+        .sticky-btn.msg { background-color: #0084FF; }
+        .sticky-btn.phone { background-color: var(--accent-color); color: #000; }
+
+        .sticky-btn .tooltip {
+            position: absolute;
+            right: 70px;
+            background-color: #222;
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+            border: 1px solid var(--accent-color);
+        }
+
+        .sticky-btn:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Promotion Section */
+        .promo-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Kanit', sans-serif;
+            font-weight: 900;
+            font-size: 2.5rem;
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        .section-title span {
+            color: var(--accent-color);
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .promo-container {
+            background: linear-gradient(145deg, #1f1f1f, #111111);
+            border: 2px dashed var(--accent-color);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+        }
+
+        .promo-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .promo-badge {
+            background-color: var(--accent-color);
+            color: #000;
+            font-family: 'Kanit', sans-serif;
+            font-weight: 900;
+            padding: 8px 25px;
+            font-size: 1.5rem;
+            border-radius: 50px;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(212,175,55,0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .promo-day-card {
+            background-color: rgba(255,255,255,0.03);
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .promo-day-card:hover {
+            border-color: var(--accent-color);
+            background-color: rgba(212,175,55,0.05);
+            transform: translateY(-5px);
+        }
+
+        .day-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+        }
+
+        .day-menu {
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: #fff;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .menu-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+            border: 1px solid #222;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-color);
+            box-shadow: 0 12px 25px rgba(212,175,55,0.15);
+        }
+
+        .menu-img-box {
+            width: 100%;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            background-color: #222;
+        }
+
+        .menu-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .menu-card:hover .menu-img-box img {
+            transform: scale(1.08);
+        }
+
+        .menu-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .menu-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #eaeaea;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-price-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-top: 1px solid #282828;
+            padding-top: 10px;
+        }
+
+        .price-tag {
+            font-family: 'Kanit', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--accent-color);
+        }
+
+        /* Map Section */
+        .map-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .map-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* อัตราส่วน 16:9 ให้ยืดหยุ่นตามหน้าจอ */
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            border: 2px solid #222;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+
+        .map-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #050505;
+            padding: 5px 20px 30px 20px;
+            border-top: 1px solid #1a1a1a;
+            color: var(--text-muted);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            font-family: 'Kanit', sans-serif;
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: #fff;
+            letter-spacing: 1px;
+            margin-top: 20px;
+        }
+        
+        .footer-logo span {
+            color: var(--accent-color);
+        }
+
+        .footer-address {
+            font-size: 0.95rem;
+            max-width: 600px;
+            line-height: 1.6;
+            color: #cccccc;
+        }
+
+        .footer-phone {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .social-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: #111;
+            border: 1px solid #333;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-btn:hover {
+            background-color: var(--accent-color);
+            color: #000;
+            transform: translateY(-3px);
+            border-color: var(--accent-color);
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            color: #555;
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none; /* ซ่อนเมนูแบบธรรมดาบนมือถือเพื่อความสะอาด */
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .promo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .sticky-contact {
+                right: 10px;
+                gap: 10px;
+            }
+            .sticky-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">PRAEW <span>cafe</span></div>
+            <nav class="nav-menu">
+                <a href="#home">หน้าแรก</a>
+                <a href="#promotion">โปรโมชั่นประจำวัน</a>
+                <a href="#menu">เมนูเครื่องดื่ม</a>
+                <a href="#location">พิกัดร้าน</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner Section -->
+    <section id="home" class="banner-section">
+        <div class="banner-wrapper">
+            <img src="images/preawcafe/banner.jpg" alt="PRAEW cafe Banner" width="1672" height="941">
+        </div>
+    </section>
+
+    <!-- Sticky Contact Sidebar (เกาะติดขวาจอ) -->
+    <div class="sticky-contact">
+        <!-- ไลน์ (ใส่ลิงก์ไลน์ของคุณที่ href) -->
+        <a href="https://line.me" target="_blank" class="sticky-btn line">
+            <i class="fab fa-line"></i>
+            <span class="tooltip">แชท Line</span>
+        </a>
+        <!-- Messenger (ใส่ลิงก์เพจของคุณที่ href) -->
+        <a href="https://m.me/100065029821042" target="_blank" class="sticky-btn msg">
+            <i class="fab fa-facebook-messenger"></i>
+            <span class="tooltip">ส่งข้อความ Messenger</span>
+        </a>
+        <!-- โทรศัพท์ -->
+        <a href="tel:0822296162" class="sticky-btn phone">
+            <i class="fas fa-phone"></i>
+            <span class="tooltip">โทรสอบถาม</span>
+        </a>
+    </div>
+
+    <!-- Promotion Section -->
+    <section id="promotion" class="promo-section">
+        <div class="section-title">TODAY'S <span>PROMOTION</span></div>
+        <div class="promo-container">
+            <div class="promo-header">
+                <div class="promo-badge">ซื้อ 1 แถม 1</div>
+            </div>
+            <div class="promo-grid">
+                <div class="promo-day-card">
+                    <div class="day-name">วันจันทร์</div>
+                    <div class="day-menu">เอสเพรสโซ่</div>
+                </div>
+                <div class="promo-day-card">
+                    <div class="day-name">วันอังคาร</div>
+                    <div class="day-menu">มัฉฉ่ะลาเต้เย็น</div>
+                </div>
+                <div class="promo-day-card">
+                    <div class="day-name">วันพุธ</div>
+                    <div class="day-menu">อเมกาโน่เย็น</div>
+                </div>
+                <div class="promo-day-card">
+                    <div class="day-name">วันพฤหัสบดี</div>
+                    <div class="day-menu">กาแฟโบราณ</div>
+                </div>
+                <div class="promo-day-card">
+                    <div class="day-name">วันศุกร์</div>
+                    <div class="day-menu">ลาเต้ฮาเซลนัท</div>
+                </div>
+                <div class="promo-day-card">
+                    <div class="day-name">วันเสาร์</div>
+                    <div class="day-menu">กาแฟน้ำมะพร้าว</div>
+                </div>
+                <div class="promo-day-card">
+                    <div class="day-name">วันอาทิตย์</div>
+                    <div class="day-menu">ชาแอพเปิ้ล</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="section-title">OUR <span>MENU</span></div>
+        <div class="menu-grid">
+            
+            <!-- การ์ดรายการเครื่องดื่ม ทั้งหมดราคา 35 บาท -->
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/amecanoice.jpg" alt="อเมกาโน่เย็น" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">อเมกาโน่เย็น</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/amecanoicedubbleshort.jpg" alt="อเมกาโน่ดับเบิลช๊อต" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">อเมกาโน่ดับเบิลช๊อต</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/appletea.jpg" alt="ชาเอพเปิ้ล" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">ชาเอพเปิ้ล</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/beecoffee.jpg" alt="กาแฟน้ำผึ้ง" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">กาแฟน้ำผึ้ง</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/blackteaice.jpg" alt="ชาดำเย็น" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">ชาดำเย็น</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/borancoffee.jpg" alt="กาแฟโบราณ" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">กาแฟโบราณ</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/calamelmuc.jpg" alt="คาราเมลมัคคีอาโต้" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">คาราเมลมัคคีอาโต้</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/capu.jpg" alt="คาปูชิโน่" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">คาปูชิโน่</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/coconutcoffee.jpg" alt="กาแฟน้ำมะพร้าว" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">กาแฟน้ำมะพร้าว</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/ColdBrewd.jpg" alt="กาแฟโคเบรว" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">กาแฟโคเบรว</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/dbespesoice.jpg" alt="เอสเพสโช่เย็นดับเบิ้ลช๊อต" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">เอสเพสโช่เย็นดับเบิ้ลช๊อต</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/espesoice.jpg" alt="เอสเพรสโซ่ไม่นม" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">เอสเพรสโซ่ไม่นม</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/espesoicedubble.jpg" alt="เอสเพรสโซ่ดับเบิลช๊อต" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">เอสเพรสโซ่ดับเบิลช๊อต</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/greenteamacha.jpg" alt="ชาเขียวมัฉฉะ" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">ชาเขียวมัฉฉะ</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/Hazelnut-Latte.jpg" alt="ลาเต้ฮาเซลนัท" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">ลาเต้ฮาเซลนัท</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/late.jpg" alt="ลาเต้" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">ลาเต้</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/lemontea.jpg" alt="ชามะนาว" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">ชามะนาว</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/longblack.jpg" alt="ลองแบลค" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">ลองแบลค</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/machaice.jpg" alt="ชาเขียวเย็น" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">ชาเขียวเย็น</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/mintcoffee.jpg" alt="กาแฟมิ้นท์" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">กาแฟมิ้นท์</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/mocca.jpg" alt="ม๊อคค่า" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">ม๊อคค่า</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/olieng.jpg" alt="โอเลี้ยง" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">โอเลี้ยง</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/peachtea.jpg" alt="ชาพีช" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">ชาพีช</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/thaitea.jpg" alt="ชาไทย" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">ชาไทย</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-img-box"><img src="images/preawcafe/vanilalate.jpg" alt="วนิลา ลาเต้" loading="lazy"></div>
+                <div class="menu-info">
+                    <div class="menu-title">วนิลา ลาเต้</div>
+                    <div class="menu-price-row"><div class="price-tag">35 ฿</div></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="location" class="map-section">
+        <div class="section-title">FIND <span>US</span></div>
+        <div class="map-wrapper">
+            <!-- แผนที่แบบฝัง แพรว : PRAEW cafe -->
+            <iframe src="https://www.google.com/maps/embed?pb=!3m2!1sth!2sth!4v1782962784995!5m2!1sth!2sth!6m8!1m7!1scXEFRuE2u9DdKlCT135djA!2m2!1d19.89814353621297!2d99.82785326067379!3f264.2621284253151!4f2.1114401138184746!5f0.7820865974627469" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">PRAEW <span>cafe</span></div>
+            <div class="footer-address">
+                ร้านกาแฟแพรวคาเฟ่ หน้าร้านอาหารตองตึง 1/1 หมู่14 ถนนสนามบินเก่า ตำบล รอบเวียง อำเภอเมืองเชียงราย เชียงราย 57000
+            </div>
+            <div>
+                <a href="tel:0822296162" class="footer-phone"><i class="fas fa-phone-alt"></i> 082 229 6162</a>
+            </div>
+            
+            <!-- Social Icons -->
+            <div class="footer-socials">
+                <a href="https://www.facebook.com/people/%E0%B9%81%E0%B8%9E%E0%B8%A3%E0%B8%A7-PRAEW-cafe/100065029821042/#_" target="_blank" class="social-btn" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+            <div class="copyright">
+                &copy; 2026 PRAEW cafe. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
