@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รถดี คีรีขันธ์ (roddeekririkhan) - รถมือสองคุณภาพดี</title>
+    <!-- Font Awesome สำหรับ Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Sarabun) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #d32f2f; /* แดงน่าเชื่อถือ */
+            --secondary-color: #ffffff;
+            --dark-color: #1a1a1a;
+            --light-bg: #f8f9fa;
+            --gray-text: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Sarabun', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-color);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--secondary-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--dark-color);
+        }
+
+        /* Hero Banner ปรับปรุงเพื่อรองรับภาพขนาด 1672x941 px */
+        .hero {
+            width: 100%;
+            height: 56vw; 
+            min-height: 400px;
+            max-height: 700px; 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/carroddee/banner.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 22px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+            font-weight: 400;
+        }
+
+        /* ปรับขนาดตัวอักษรเมื่อดูบนมือถือ */
+        @media (max-width: 768px) {
+            .hero {
+                height: 300px;
+            }
+            .hero-content h1 {
+                font-size: 32px;
+            }
+            .hero-content p {
+                font-size: 16px;
+            }
+        }
+
+        /* Floating Sidebar Buttons */
+        .floating-contact {
+            position: fixed;
+            right: 20px;
+            bottom: 50%;
+            transform: translateY(50%);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 9999;
+        }
+
+        .float-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .float-line { background-color: #06C755; }
+        .float-phone { background-color: var(--primary-color); }
+        .float-msg { background-color: #0084FF; }
+
+        /* Container & Section */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+
+        /* Promotion Section */
+        .promotion {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(211,47,47,0.2);
+            margin-bottom: 40px;
+        }
+
+        .promo-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .promo-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px 40px;
+            border-radius: 10px;
+            border: 1px dashed white;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        /* ============================================================
+           ระบบจัดการ Grid ไอคอนยี่ห้อรถ - เรียงแถวละ 5 โลโก้พอดี (ขนาด 70%)
+           ============================================================ */
+        .brand-scroll-wrapper {
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        .brand-icon-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* บังคับเรียงแถวละ 5 โลโก้ */
+            gap: 20px;
+            width: 100%;
+        }
+
+        .brand-icon-card {
+            background-color: white;
+            border: 1px solid #eee;
+            border-radius: 14px;
+            padding: 15px 10px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+            width: 100%; /* เปลี่ยนให้กว้างเต็มช่อง Grid */
+        }
+
+        .brand-icon-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary-color);
+            box-shadow: 0 6px 12px rgba(213, 47, 47, 0.12);
+        }
+
+        .brand-avatar {
+            width: 115px; /* ขนาด 70% พอเหมาะสวยงาม */
+            height: 115px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px auto;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .brand-avatar img {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+        }
+
+        .brand-icon-card:hover .brand-avatar {
+            transform: scale(1.05);
+        }
+
+        .brand-name {
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--dark-color);
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive สำหรับหน้าจอที่เล็กลง */
+        @media (max-width: 992px) {
+            .brand-icon-grid {
+                grid-template-columns: repeat(4, 1fr); /* หน้าจอกลางเหลือ 4 คอลัมน์ */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .brand-icon-grid {
+                grid-template-columns: repeat(3, 1fr); /* แท็บเล็ตเหลือ 3 คอลัมน์ */
+                gap: 12px;
+            }
+            .brand-avatar {
+                width: 90px;
+                height: 90px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brand-icon-grid {
+                grid-template-columns: repeat(2, 1fr); /* มือถือจอเล็กเรียง 2 คอลัมน์ */
+                gap: 10px;
+            }
+        }
+
+        /* Tabs Section */
+        .tabs-container {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .tab-btn {
+            padding: 12px 30px;
+            border: 2px solid var(--primary-color);
+            background-color: white;
+            color: var(--primary-color);
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Car Grid Card */
+        .car-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 25px;
+        }
+
+        .car-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: 1px solid #eee;
+        }
+
+        .car-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .car-img-box {
+            position: relative;
+            height: 180px;
+            background-color: #ddd;
+        }
+
+        .car-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .car-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            font-size: 12px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .car-info {
+            padding: 20px;
+        }
+
+        .car-brand {
+            font-size: 14px;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .car-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 5px 0 10px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .car-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: var(--gray-text);
+            margin-bottom: 15px;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 10px;
+        }
+
+        .car-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-align: right;
+        }
+
+        /* Modal Popup */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background-color: white;
+            width: 100%;
+            max-width: 700px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            z-index: 10;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+
+        /* Simple Slider */
+        .slider-container {
+            position: relative;
+            height: 350px;
+            background-color: #000;
+        }
+
+        .slider-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: none;
+        }
+
+        .slider-img.active {
+            display: block;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 4px;
+        }
+
+        .prev-btn { left: 10px; }
+        .next-btn { right: 10px; }
+
+        .modal-body {
+            padding: 25px;
+        }
+
+        .modal-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .modal-price {
+            font-size: 26px;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            background-color: var(--light-bg);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .spec-item i {
+            color: var(--primary-color);
+            margin-right: 8px;
+            width: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 20px 20px 20px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-info h3 {
+            font-size: 22px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        .footer-info p {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .footer-info p i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .map-container {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .map-container iframe {
+            width: 100% !important;
+            height: 250px !important;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #888;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-car-side"></i> roddee<span>krerikhan</span>
+            </a>
+            <div style="font-weight: 600;"><i class="fa-solid fa-phone text-primary" style="color:var(--primary-color)"></i> โทร. 064-9589163</div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>รถดี คีรีขันธ์</h1>
+            <p>ศูนย์รวมรถมือสองคุณภาพเยี่ยม มั่นใจ ปลอดภัย ทุกการขับขี่</p>
+        </div>
+    </section>
+
+    <!-- Floating Contacts (Right Sidebar) -->
+    <div class="floating-contact">
+        <a href="https://line.me" target="_blank" class="float-btn float-line" title="Line"><i class="fa-brands fa-line"></i></a>
+        <a href="tel:0649589163" class="float-btn float-phone" title="โทรเลย"><i class="fa-solid fa-phone"></i></a>
+        <a href="sms:0649589163" class="float-btn float-msg" title="ส่งข้อความ"><i class="fa-solid fa-comment-sms"></i></a>
+    </div>
+
+    <div class="container">
+	
+        <!-- Promotion Section -->
+        <section class="promotion">
+            <h2>โปรโมชั่นสุดพิเศษประจำเดือน! 🎁</h2>
+            <div class="promo-grid">
+                <div class="promo-item"><i class="fa-solid fa-oil-can"></i> ฟรีน้ำมันเครื่องใหม่</div>
+                <div class="promo-item"><i class="fa-solid fa-gas-pump"></i> ฟรีน้ำมันรถเต็มถัง 1,000 บาท</div>
+            </div>
+        </section>
+
+        <!-- Section ไอคอนยี่ห้อรถ -->
+        <section style="margin-bottom: 60px; overflow: hidden;">
+            <h2 class="section-title">เลือกชมตามยี่ห้อรถ</h2>
+            <div class="brand-scroll-wrapper">
+                <div class="brand-icon-grid">
+                    <!-- Ford -->
+                    <div class="brand-icon-card" onclick="filterByBrand('ford')">
+                        <div class="brand-avatar">
+                            <img src="images/carroddee/logo/ford.png" alt="Ford">
+                        </div>
+                        <span class="brand-name">FORD</span>
+                    </div>
+                    <!-- Honda -->
+                    <div class="brand-icon-card" onclick="filterByBrand('honda')">
+                        <div class="brand-avatar">
+                            <img src="images/carroddee/logo/honda.png" alt="Honda">
+                        </div>
+                        <span class="brand-name">HONDA</span>
+                    </div>
+                    <!-- Isuzu -->
+                    <div class="brand-icon-card" onclick="filterByBrand('isuzu')">
+                        <div class="brand-avatar">
+                            <img src="images/carroddee/logo/isuzu.png" alt="Isuzu" style="object-fit: contain; padding: 2px;">
+                        </div>
+                        <span class="brand-name">ISUZU</span>
+                    </div>
+                    <!-- MG -->
+                    <div class="brand-icon-card" onclick="filterByBrand('mg')">
+                        <div class="brand-avatar">
+                            <img src="images/carroddee/logo/mg.png" alt="MG">
+                        </div>
+                        <span class="brand-name">MG</span>
+                    </div>
+                    <!-- Mitsubishi -->
+                    <div class="brand-icon-card" onclick="filterByBrand('mitsubishi')">
+                        <div class="brand-avatar">
+                            <img src="images/carroddee/logo/mitsubishi.png" alt="Mitsubishi">
+                        </div>
+                        <span class="brand-name">MITSUBISHI</span>
+                    </div>
+                    <!-- Nissan -->
+                    <div class="brand-icon-card" onclick="filterByBrand('nissan')">
+                        <div class="brand-avatar">
+                            <img src="images/carroddee/logo/nissan.png" alt="Nissan">
+                        </div>
+                        <span class="brand-name">NISSAN</span>
+                    </div>
+                    <!-- Riddara -->
+                    <div class="brand-icon-card" onclick="filterByBrand('riddara')">
+                        <div class="brand-avatar">
+                            <img src="images/carroddee/logo/riddara.png" alt="Riddara" style="border-radius: 50%; object-fit: cover;">
+                        </div>
+                        <span class="brand-name">RIDDARA</span>
+                    </div>
+                    <!-- Toyota -->
+                    <div class="brand-icon-card" onclick="filterByBrand('toyota')">
+                        <div class="brand-avatar">
+                            <img src="images/carroddee/logo/toyota.png" alt="Toyota">
+                        </div>
+                        <span class="brand-name">TOYOTA</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Arrivals Section -->
+        <section style="margin-bottom: 60px;">
+            <h2 class="section-title">รถเข้าใหม่แนะนำ</h2>
+            <div class="car-grid" id="new-arrivals-grid">
+                <!-- เจนเนอเรทจาก JS 4 การ์ด -->
+            </div>
+        </section>
+
+        <!-- All Cars with Tabs Section -->
+        <section>
+            <h2 class="section-title">รถยนต์ทั้งหมดของเรา</h2>
+            
+            <!-- Tabs -->
+            <div class="tabs-container">
+                <button class="tab-btn active" onclick="filterCar('all')">ทั้งหมด</button>
+                <button class="tab-btn" onclick="filterCar('sedan')">รถเก๋ง</button>
+                <button class="tab-btn" onclick="filterCar('pickup')">รถกระบะ</button>
+                <button class="tab-btn" onclick="filterCar('suv')">รถครอบครัว</button>
+            </div>
+
+            <!-- Car Lists Grid -->
+            <div class="car-grid" id="all-cars-grid">
+                <!-- เจนเนอเรทรถทั้งหมดจากข้อมูลโฟลเดอร์ -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal Detail Popup -->
+    <div class="modal" id="carModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            
+            <!-- Simple Slider -->
+            <div class="slider-container">
+                <img id="slide1" class="slider-img active" src="" alt="">
+                <img id="slide2" class="slider-img" src="" alt="">
+                <img id="slide3" class="slider-img" src="" alt="">
+                <button class="slider-btn prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="slider-btn next-btn" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+
+            <div class="modal-body">
+                <div id="modal-brand" class="car-brand">BRAND</div>
+                <div id="modal-name" class="modal-title">Car Model Name</div>
+                <div id="modal-price" class="modal-price">500,000 บาท</div>
+                
+                <div class="specs-grid">
+                    <div class="spec-item"><i class="fa-solid fa-gauge"></i> <strong>เลขไมล์:</strong> <span id="modal-mileage">45,000 กม.</span></div>
+                    <div class="spec-item"><i class="fa-solid fa-car"></i> <strong>ประเภท:</strong> <span id="modal-type">รถเก๋ง</span></div>
+                    <div class="spec-item"><i class="fa-solid fa-gears"></i> <strong>ระบบเกียร์:</strong> อัตโนมัติ (Auto)</div>
+                    <div class="spec-item"><i class="fa-solid fa-calendar-days"></i> <strong>ปีรถ:</strong> 2022-2023</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-info">
+                <h3>รถดี คีรีขันธ์ (roddeekririkhan)</h3>
+                <p>ศูนย์จำหน่ายรถยนต์มือสองคุณภาพพรีเมียมในประจวบคีรีขันธ์ รถทุกคันผ่านการตรวจเช็กสภาพอย่างละเอียด มั่นใจได้ในความปลอดภัยและบริการหลังการขายที่ยอดเยี่ยม</p>
+                <p style="margin-top: 20px;"><i class="fa-solid fa-location-dot"></i> 139/1 ต ตำบล อ่าวน้อย อำเภอเมืองประจวบคีรีขันธ์ ประจวบคีรีขันธ์ 77210</p>
+                <p><i class="fa-solid fa-phone"></i> โทร: 064-9589163</p>
+            </div>
+            <div class="footer-info">
+                <h3>ที่ตั้งร้าน (Google Maps)</h3>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4844.704321302479!2d99.7870256758775!3d11.888940037687478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30fe826d45cc1fa7%3A0x2ef78aafaa88a93f!2z4Lij4LiW4LiU4Li1IOC4hOC4teC4o-C4teC4guC4seC4meC4mOC5jA!5e1!3m2!1sth!2sth!4v1783052184232!5m2!1sth!2sth" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 roddeekririkhan. All Rights Reserved. ออกแบบและพัฒนาด้วยโทนสีสุภาพ น่าเชื่อถือ
+        </div>
+    </footer>
+
+    <!-- JavaScript สำหรับระบบจัดการข้อมูลรถ คัดกรอง และสไลด์โชว์ -->
+    <script>
+        // ข้อมูลรถทั้งหมด อัปเดตรุ่นรถและเส้นทางภาพ (Image Path) ตรงตามโฟลเดอร์ร้อยเปอร์เซ็นต์
+const carsData = [
+    // === ISUZU (3 รุ่น) ===
+    { id: 101, name: "Isuzu D-Max", brand: "isuzu", type: "pickup", img: "images/carroddee/isuzu/d-max.jpg", extraImgs: ["images/carroddee/isuzu/d-maxx.jpg", "images/carroddee/isuzu/mu-x.jpg"], mileage: "65,000" },
+    { id: 102, name: "Isuzu D-Max X-Series", brand: "isuzu", type: "pickup", img: "images/carroddee/isuzu/d-maxx.jpg", extraImgs: ["images/carroddee/isuzu/d-max.jpg", "images/carroddee/isuzu/mu-x.jpg"], mileage: "48,000" },
+    { id: 103, name: "Isuzu Mu-X", brand: "isuzu", type: "suv", img: "images/carroddee/isuzu/mu-x.jpg", extraImgs: ["images/carroddee/isuzu/d-max.jpg", "images/carroddee/isuzu/d-maxx.jpg"], mileage: "52,000" },
+
+    // === MG (16 รุ่น) ===
+    { id: 201, name: "MG Maxus 7", brand: "mg", type: "suv", img: "images/carroddee/mg/maxus7.jpg", extraImgs: ["images/carroddee/mg/maxus9.jpg", "images/carroddee/mg/mghs.jpg"], mileage: "12,000" },
+    { id: 202, name: "MG Maxus 9", brand: "mg", type: "suv", img: "images/carroddee/mg/maxus9.jpg", extraImgs: ["images/carroddee/mg/maxus7.jpg", "images/carroddee/mg/mghs.jpg"], mileage: "18,500" },
+    { id: 203, name: "MG 3", brand: "mg", type: "sedan", img: "images/carroddee/mg/mg3.jpg", extraImgs: ["images/carroddee/mg/mg5.jpg", "images/carroddee/mg/mg4.jpg"], mileage: "45,000" },
+    { id: 204, name: "MG 4 Electric", brand: "mg", type: "sedan", img: "images/carroddee/mg/mg4.jpg", extraImgs: ["images/carroddee/mg/mgep.jpg", "images/carroddee/mg/mges.jpg"], mileage: "15,000" },
+    { id: 205, name: "MG 5", brand: "mg", type: "sedan", img: "images/carroddee/mg/mg5.jpg", extraImgs: ["images/carroddee/mg/mg3.jpg", "images/carroddee/mg/mgzs.jpg"], mileage: "28,000" },
+    { id: 206, name: "MG Cyberster", brand: "mg", type: "sedan", img: "images/carroddee/mg/mgcybester.jpg", extraImgs: ["images/carroddee/mg/mg5.jpg", "images/carroddee/mg/mg4.jpg"], mileage: "3,000" },
+    { id: 207, name: "MG EP", brand: "mg", type: "sedan", img: "images/carroddee/mg/mgep.jpg", extraImgs: ["images/carroddee/mg/mges.jpg", "images/carroddee/mg/mg4.jpg"], mileage: "32,000" },
+    { id: 208, name: "MG ES", brand: "mg", type: "sedan", img: "images/carroddee/mg/mges.jpg", extraImgs: ["images/carroddee/mg/mgep.jpg", "images/carroddee/mg/mg4.jpg"], mileage: "14,000" },
+    { id: 209, name: "MG Extender", brand: "mg", type: "pickup", img: "images/carroddee/mg/mgextender.jpg", extraImgs: ["images/carroddee/mg/mgzs.jpg", "images/carroddee/mg/mghs.jpg"], mileage: "58,000" },
+    { id: 210, name: "MG HS", brand: "mg", type: "suv", img: "images/carroddee/mg/mghs.jpg", extraImgs: ["images/carroddee/mg/mgvshev.jpg", "images/carroddee/mg/mgzs.jpg"], mileage: "42,000" },
+    { id: 211, name: "MG IM L5", brand: "mg", type: "sedan", img: "images/carroddee/mg/mgim5.jpg", extraImgs: ["images/carroddee/mg/mgim6.jpg", "images/carroddee/mg/mg4.jpg"], mileage: "5,000" },
+    { id: 212, name: "MG IM L6", brand: "mg", type: "sedan", img: "images/carroddee/mg/mgim6.jpg", extraImgs: ["images/carroddee/mg/mgim5.jpg", "images/carroddee/mg/mg4.jpg"], mileage: "4,200" },
+    { id: 213, name: "MG S5 EV", brand: "mg", type: "suv", img: "images/carroddee/mg/mgs5ev.jpg", extraImgs: ["images/carroddee/mg/mgzs.jpg", "images/carroddee/mg/mgurban.jpg"], mileage: "8,000" },
+    { id: 214, name: "MG Urban", brand: "mg", type: "suv", img: "images/carroddee/mg/mgurban.jpg", extraImgs: ["images/carroddee/mg/mgzs.jpg", "images/carroddee/mg/mgvshev.jpg"], mileage: "21,000" },
+    { id: 215, name: "MG VS HEV", brand: "mg", type: "suv", img: "images/carroddee/mg/mgvshev.jpg", extraImgs: ["images/carroddee/mg/mgzs.jpg", "images/carroddee/mg/mghs.jpg"], mileage: "19,000" },
+    { id: 216, name: "MG ZS", brand: "mg", type: "suv", img: "images/carroddee/mg/mgzs.jpg", extraImgs: ["images/carroddee/mg/mgvshev.jpg", "images/carroddee/mg/mghs.jpg"], mileage: "36,000" },
+
+    // === MITSUBISHI (7 รุ่น) ===
+    { id: 301, name: "Mitsubishi Attrage", brand: "mitsubishi", type: "sedan", img: "images/carroddee/mitsubishi/attrage.jpg", extraImgs: ["images/carroddee/mitsubishi/mirage.jpg", "images/carroddee/mitsubishi/xpander.jpg"], mileage: "44,000" },
+    { id: 302, name: "Mitsubishi Mirage", brand: "mitsubishi", type: "sedan", img: "images/carroddee/mitsubishi/mirage.jpg", extraImgs: ["images/carroddee/mitsubishi/attrage.jpg", "images/carroddee/mitsubishi/xpander.jpg"], mileage: "39,000" },
+    { id: 303, name: "Mitsubishi Outlander", brand: "mitsubishi", type: "suv", img: "images/carroddee/mitsubishi/outlander.jpg", extraImgs: ["images/carroddee/mitsubishi/pajerosport.jpg", "images/carroddee/mitsubishi/xforcehev.jpg"], mileage: "27,000" },
+    { id: 304, name: "Mitsubishi Pajero Sport", brand: "mitsubishi", type: "suv", img: "images/carroddee/mitsubishi/pajerosport.jpg", extraImgs: ["images/carroddee/mitsubishi/triton.jpg", "images/carroddee/mitsubishi/xpander.jpg"], mileage: "61,000" },
+    { id: 305, name: "Mitsubishi Triton", brand: "mitsubishi", type: "pickup", img: "images/carroddee/mitsubishi/triton.jpg", extraImgs: ["images/carroddee/mitsubishi/pajerosport.jpg", "images/carroddee/mitsubishi/xpander.jpg"], mileage: "55,000" },
+    { id: 306, name: "Mitsubishi Xforce HEV", brand: "mitsubishi", type: "suv", img: "images/carroddee/mitsubishi/xforcehev.jpg", extraImgs: ["images/carroddee/mitsubishi/xpander.jpg", "images/carroddee/mitsubishi/outlander.jpg"], mileage: "11,000" },
+    { id: 307, name: "Mitsubishi Xpander", brand: "mitsubishi", type: "suv", img: "images/carroddee/mitsubishi/xpander.jpg", extraImgs: ["images/carroddee/mitsubishi/pajerosport.jpg", "images/carroddee/mitsubishi/xforcehev.jpg"], mileage: "34,000" },
+
+    // === NISSAN (9 รุ่น) ===
+    { id: 401, name: "Nissan Almera", brand: "nissan", type: "sedan", img: "images/carroddee/nissan/almera.jpg", extraImgs: ["images/carroddee/nissan/nissankicks.jpg", "images/carroddee/nissan/navara.jpg"], mileage: "29,000" },
+    { id: 402, name: "Nissan Navara", brand: "nissan", type: "pickup", img: "images/carroddee/nissan/navara.jpg", extraImgs: ["images/carroddee/nissan/nissanterra.jpg", "images/carroddee/nissan/almera.jpg"], mileage: "63,000" },
+    { id: 403, name: "Nissan GT-R", brand: "nissan", type: "sedan", img: "images/carroddee/nissan/nissangt-r.jpg", extraImgs: ["images/carroddee/nissan/almera.jpg", "images/carroddee/nissan/x-trail.jpg"], mileage: "8,000" },
+    { id: 404, name: "Nissan Kicks", brand: "nissan", type: "suv", img: "images/carroddee/nissan/nissankicks.jpg", extraImgs: ["images/carroddee/nissan/almera.jpg", "images/carroddee/nissan/x-trail.jpg"], mileage: "22,500" },
+    { id: 405, name: "Nissan Leaf", brand: "nissan", type: "sedan", img: "images/carroddee/nissan/nissanleaf.jpg", extraImgs: ["images/carroddee/nissan/almera.jpg", "images/carroddee/nissan/nissankicks.jpg"], mileage: "19,000" },
+    { id: 406, name: "Nissan Terra", brand: "nissan", type: "suv", img: "images/carroddee/nissan/nissanterra.jpg", extraImgs: ["images/carroddee/nissan/navara.jpg", "images/carroddee/nissan/x-trail.jpg"], mileage: "45,000" },
+    { id: 407, name: "Nissan Urvan", brand: "nissan", type: "suv", img: "images/carroddee/nissan/nissanurvan.jpg", extraImgs: ["images/carroddee/nissan/serena.jpg", "images/carroddee/nissan/nissanterra.jpg"], mileage: "72,000" },
+    { id: 408, name: "Nissan Serena", brand: "nissan", type: "suv", img: "images/carroddee/nissan/serena.jpg", extraImgs: ["images/carroddee/nissan/nissanurvan.jpg", "images/carroddee/nissan/x-trail.jpg"], mileage: "31,000" },
+    { id: 409, name: "Nissan X-Trail", brand: "nissan", type: "suv", img: "images/carroddee/nissan/x-trail.jpg", extraImgs: ["images/carroddee/nissan/nissanterra.jpg", "images/carroddee/nissan/nissankicks.jpg"], mileage: "51,000" },
+
+    // === RIDDARA (1 รุ่น) ===
+    { id: 501, name: "Riddara RD6", brand: "riddara", type: "pickup", img: "images/carroddee/riddara/riddarard6.jpg", extraImgs: ["images/carroddee/riddara/riddarard6.jpg"], mileage: "2,500" },
+
+    // === TOYOTA (17 รุ่น) ===
+    { id: 601, name: "Toyota Alphard", brand: "toyota", type: "suv", img: "images/carroddee/toyota/alphard.jpg", extraImgs: ["images/carroddee/toyota/vellfire.jpg", "images/carroddee/toyota/majesty.jpg"], mileage: "26,000" },
+    { id: 602, name: "Toyota Avanza", brand: "toyota", type: "suv", img: "images/carroddee/toyota/avanza.jpg", extraImgs: ["images/carroddee/toyota/innova.jpg", "images/carroddee/toyota/toyotayariscross.jpg"], mileage: "47,000" },
+    { id: 603, name: "Toyota Camry", brand: "toyota", type: "sedan", img: "images/carroddee/toyota/camry.jpg", extraImgs: ["images/carroddee/toyota/toyotaaltis.jpg", "images/carroddee/toyota/vios.jpg"], mileage: "35,200" },
+    { id: 604, name: "Toyota Commuter", brand: "toyota", type: "suv", img: "images/carroddee/toyota/commuter.jpg", extraImgs: ["images/carroddee/toyota/hiace.jpg", "images/carroddee/toyota/majesty.jpg"], mileage: "89,000" },
+    { id: 605, name: "Toyota Fortuner", brand: "toyota", type: "suv", img: "images/carroddee/toyota/fortuner.jpg", extraImgs: ["images/carroddee/toyota/revo.jpg", "images/carroddee/toyota/toyotacorollacross.jpg"], mileage: "52,000" },
+    { id: 606, name: "Toyota Hiace", brand: "toyota", type: "suv", img: "images/carroddee/toyota/hiace.jpg", extraImgs: ["images/carroddee/toyota/commuter.jpg", "images/carroddee/toyota/majesty.jpg"], mileage: "95,000" },
+    { id: 607, name: "Toyota Hilux Champ", brand: "toyota", type: "pickup", img: "images/carroddee/toyota/hiliuxchamp.jpg", extraImgs: ["images/carroddee/toyota/revo.jpg", "images/carroddee/toyota/hiluxtravo.jpg"], mileage: "12,000" },
+    { id: 608, name: "Toyota Hilux Revo Revo", brand: "toyota", type: "pickup", img: "images/carroddee/toyota/hiluxtravo.jpg", extraImgs: ["images/carroddee/toyota/revo.jpg", "images/carroddee/toyota/hiliuxchamp.jpg"], mileage: "38,000" },
+    { id: 609, name: "Toyota Innova", brand: "toyota", type: "suv", img: "images/carroddee/toyota/innova.jpg", extraImgs: ["images/carroddee/toyota/avanza.jpg", "images/carroddee/toyota/alphard.jpg"], mileage: "41,000" },
+    { id: 610, name: "Toyota Majesty", brand: "toyota", type: "suv", img: "images/carroddee/toyota/majesty.jpg", extraImgs: ["images/carroddee/toyota/alphard.jpg", "images/carroddee/toyota/vellfire.jpg"], mileage: "29,000" },
+    { id: 611, name: "Toyota Revo", brand: "toyota", type: "pickup", img: "images/carroddee/toyota/revo.jpg", extraImgs: ["images/carroddee/toyota/hiluxtravo.jpg", "images/carroddee/toyota/fortuner.jpg"], mileage: "68,000" },
+    { id: 612, name: "Toyota Corolla Altis", brand: "toyota", type: "sedan", img: "images/carroddee/toyota/toyotaaltis.jpg", extraImgs: ["images/carroddee/toyota/camry.jpg", "images/carroddee/toyota/vios.jpg"], mileage: "43,000" },
+    { id: 613, name: "Toyota Corolla Cross", brand: "toyota", type: "suv", img: "images/carroddee/toyota/toyotacorollacross.jpg", extraImgs: ["images/carroddee/toyota/fortuner.jpg", "images/carroddee/toyota/toyotayariscross.jpg"], mileage: "25,000" },
+    { id: 614, name: "Toyota GR Yaris / GR 86", brand: "toyota", type: "sedan", img: "images/carroddee/toyota/toyotagr.jpg", extraImgs: ["images/carroddee/toyota/camry.jpg", "images/carroddee/toyota/yarisativhevgrsport.jpg"], mileage: "6,000" },
+    { id: 615, name: "Toyota Yaris Cross", brand: "toyota", type: "suv", img: "images/carroddee/toyota/toyotayariscross.jpg", extraImgs: ["images/carroddee/toyota/toyotacorollacross.jpg", "images/carroddee/toyota/vios.jpg"], mileage: "14,500" },
+    { id: 616, name: "Toyota Vellfire", brand: "toyota", type: "suv", img: "images/carroddee/toyota/vellfire.jpg", extraImgs: ["images/carroddee/toyota/alphard.jpg", "images/carroddee/toyota/majesty.jpg"], mileage: "31,000" },
+    { id: 617, name: "Toyota Vios", brand: "toyota", type: "sedan", img: "images/carroddee/toyota/vios.jpg", extraImgs: ["images/carroddee/toyota/toyotaaltis.jpg", "images/carroddee/toyota/yarisativhevgrsport.jpg"], mileage: "52,000" },
+    { id: 618, name: "Toyota Yaris Ativ HEV GR Sport", brand: "toyota", type: "sedan", img: "images/carroddee/toyota/yarisativhevgrsport.jpg", extraImgs: ["images/carroddee/toyota/toyotagr.jpg", "images/carroddee/toyota/toyotaaltis.jpg"], mileage: "9,800" },
+
+    // === HONDA (10 รุ่นเดิมจากรอบก่อนหน้า) ===
+    { id: 701, name: "Honda Civic", brand: "honda", type: "sedan", img: "images/carroddee/honda/hondacivic.jpg", extraImgs: ["images/carroddee/honda/hondaaccord.jpg", "images/carroddee/honda/hondacity.jpg"], mileage: "24,500" },
+    { id: 702, name: "Honda Accord", brand: "honda", type: "sedan", img: "images/carroddee/honda/hondaaccord.jpg", extraImgs: ["images/carroddee/honda/hondacivic.jpg", "images/carroddee/honda/hondacity.jpg"], mileage: "38,000" },
+    { id: 703, name: "Honda City", brand: "honda", type: "sedan", img: "images/carroddee/honda/hondacity.jpg", extraImgs: ["images/carroddee/honda/hondacivic.jpg", "images/carroddee/honda/hondawr-v.jpg"], mileage: "19,200" },
+    { id: 704, name: "Honda CR-V", brand: "honda", type: "suv", img: "images/carroddee/honda/hondacr-v.jpg", extraImgs: ["images/carroddee/honda/hondahr-v.jpg", "images/carroddee/honda/hondabr-v.jpg"], mileage: "43,000" },
+    { id: 705, name: "Honda HR-V", brand: "honda", type: "suv", img: "images/carroddee/honda/hondahr-v.jpg", extraImgs: ["images/carroddee/honda/hondacr-v.jpg", "images/carroddee/honda/hondawr-v.jpg"], mileage: "29,500" },
+    { id: 706, name: "Honda BR-V", brand: "honda", type: "suv", img: "images/carroddee/honda/hondabr-v.jpg", extraImgs: ["images/carroddee/honda/hondamobilio.jpg", "images/carroddee/honda/hondacr-v.jpg"], mileage: "51,000" },
+    { id: 707, name: "Honda WR-V", brand: "honda", type: "suv", img: "images/carroddee/honda/hondawr-v.jpg", extraImgs: ["images/carroddee/honda/hondahr-v.jpg", "images/carroddee/honda/hondacity.jpg"], mileage: "12,000" },
+    { id: 708, name: "Honda Mobilio", brand: "honda", type: "suv", img: "images/carroddee/honda/hondamobilio.jpg", extraImgs: ["images/carroddee/honda/hondabr-v.jpg", "images/carroddee/honda/hondastepwgn.jpg"], mileage: "62,400" },
+    { id: 709, name: "Honda StepWGN", brand: "honda", type: "suv", img: "images/carroddee/honda/hondastepwgn.jpg", extraImgs: ["images/carroddee/honda/hondamobilio.jpg", "images/carroddee/honda/hondae.jpg"], mileage: "45,000" },
+    { id: 710, name: "Honda e", brand: "honda", type: "sedan", img: "images/carroddee/honda/hondae.jpg", extraImgs: ["images/carroddee/honda/hondacity.jpg", "images/carroddee/honda/hondacivic.jpg"], mileage: "8,500" }
+];
+
+        const fixedPrice = "500,000 บาท";
+        let currentSlideIndex = 0;
+        let activeSliderImages = [];
+
+        // แสดงผลรถเข้าใหม่ 4 คันแรก
+        function displayNewArrivals() {
+            const grid = document.getElementById('new-arrivals-grid');
+            grid.innerHTML = "";
+            const newCars = carsData.slice(0, 4);
+            
+            newCars.forEach(car => {
+                grid.innerHTML += createCarCard(car, "เข้าใหม่");
+            });
+        }
+
+        // แสดงผลรถทั้งหมดหรือแยกตาม Tab
+        function displayAllCars(filteredCars) {
+            const grid = document.getElementById('all-cars-grid');
+            grid.innerHTML = "";
+            
+            filteredCars.forEach(car => {
+                let displayTag = "รถยนต์";
+                if(car.type === 'sedan') displayTag = "รถเก๋ง";
+                else if(car.type === 'pickup') displayTag = "กระบะ";
+                else if(car.type === 'suv') displayTag = "รถครอบครัว";
+                
+                grid.innerHTML += createCarCard(car, displayTag);
+            });
+        }
+
+        function createCarCard(car, tagText) {
+            return `
+                <div class="car-card" onclick="openModal(${car.id})">
+                    <div class="car-img-box">
+                        <img src="${car.img}" alt="${car.name}" onerror="this.src='https://via.placeholder.com/400x250?text=No+Image'">
+                        <div class="car-tag">${tagText}</div>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-brand">โฟลเดอร์: ${car.brand}</div>
+                        <div class="car-name">${car.name}</div>
+                        <div class="car-meta">
+                            <span><i class="fa-solid fa-gauge"></i> ${car.mileage} กม.</span>
+                            <span><i class="fa-solid fa-gas-pump"></i> เบนซิน/ดีเซล</span>
+                        </div>
+                        <div class="car-price">${fixedPrice}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // คัดกรองรถตามประเภท Tab
+        function filterCar(type) {
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            if(event && event.target && event.target.classList.contains('tab-btn')) {
+                event.target.classList.add('active');
+            }
+
+            if (type === 'all') {
+                displayAllCars(carsData);
+            } else {
+                const filtered = carsData.filter(car => car.type === type);
+                displayAllCars(filtered);
+            }
+        }
+
+        // ฟังก์ชันสำหรับกรองรถตามยี่ห้อ (โฟลเดอร์) เมื่อคลิกที่ไอคอนยี่ห้อรถ
+        function filterByBrand(brandName) {
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            const filtered = carsData.filter(car => car.brand === brandName);
+            displayAllCars(filtered);
+            
+            document.getElementById('all-cars-grid').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // ระบบเปิด Popup รายละเอียดรถ
+        function openModal(carId) {
+            const car = carsData.find(c => c.id === carId);
+            if (!car) return;
+
+            document.getElementById('modal-brand').innerText = "โฟลเดอร์แบรนด์: " + car.brand;
+            document.getElementById('modal-name').innerText = car.name;
+            document.getElementById('modal-price').innerText = fixedPrice;
+            document.getElementById('modal-mileage').innerText = car.mileage + " กม.";
+            
+            let typeName = "รถครอบครัว";
+            if(car.type === 'sedan') typeName = "รถเก๋ง";
+            if(car.type === 'pickup') typeName = "รถกระบะ";
+            document.getElementById('modal-type').innerText = typeName;
+
+            activeSliderImages = [car.img, ...car.extraImgs];
+            currentSlideIndex = 0;
+            
+            updateSlider();
+
+            document.getElementById('carModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('carModal').style.display = 'none';
+        }
+
+        // ระบบสไลด์รูปภาพใน Popup
+        function changeSlide(direction) {
+            currentSlideIndex += direction;
+            if (currentSlideIndex >= activeSliderImages.length) currentSlideIndex = 0;
+            if (currentSlideIndex < 0) currentSlideIndex = activeSliderImages.length - 1;
+            updateSlider();
+        }
+
+        function updateSlider() {
+            for (let i = 1; i <= 3; i++) {
+                const imgElement = document.getElementById(`slide${i}`);
+                if (activeSliderImages[i-1]) {
+                    imgElement.src = activeSliderImages[i-1];
+                    imgElement.onerror = function() { this.src = 'https://via.placeholder.com/600x350?text=Car+Image'; };
+                    if (i-1 === currentSlideIndex) {
+                        imgElement.classList.add('active');
+                    } else {
+                        imgElement.classList.remove('active');
+                    }
+                } else {
+                    imgElement.classList.remove('active');
+                }
+            }
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('carModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        window.onload = function() {
+            displayNewArrivals();
+            displayAllCars(carsData);
+        };
+    </script>
+</body>
+</html>
