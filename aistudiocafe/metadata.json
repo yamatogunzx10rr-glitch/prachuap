@@ -1,6 +1,0 @@
-{
-  "name": "Coffee Cafe",
-  "description": "An elegant, interactive cafe website featuring our menu, custom coffee selections, brewing methods, and seat booking.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
