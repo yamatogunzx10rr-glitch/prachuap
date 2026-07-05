@@ -15,7 +15,6 @@
             --bg-card: #1e2640; /* สีการ์ดน้ำเงินนุ่ม */
             --accent-warm: #ff9f43; /* สีส้มไฟร้านอาหาร */
             --accent-red: #ff6b6b; /* สีแดงกระตุ้นความอยากอาหาร */
-            --accent-yellow: #feca57; /* สีเหลืองทองไข่ดาว */
             --text-light: #f8f9fa;
             --text-muted: #a4b0be;
         }
@@ -33,111 +32,60 @@
             line-height: 1.6;
         }
 
-        /* ส่วนหัวและแบนเนอร์ (กำหนดความกว้างเต็มที่ 1672px) */
-        header {
-            position: relative;
-            text-align: center;
-            background: linear-gradient(rgba(18, 24, 36, 0.001), rgba(18, 24, 36, 0.95)), url('images/tamsung/banner.jpg') no-repeat center center;
-            background-size: cover;
-            
-            /* กำหนดความกว้างและความสูงตามสัดส่วนภาพ 1672 x 941 พิกเซล */
-            width: 100%;
-            max-width: 1672px; 
-            height: 941px; /* ล็อคความสูงตามขนาดรูปภาพหลัก */
-            
-            /* จัดบาลานซ์ให้อยู่กึ่งกลางหน้าจอเสมอ */
-            margin: 0 auto; 
-            padding: 20px;
-            
-            /* ใช้ Flexbox ดึงข้อความมาไว้ตรงกลางแบนเนอร์ */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            box-sizing: border-box;
-        }
-
-        /* เพิ่ม Media Query เพื่อให้แบนเนอร์ย่อตามสัดส่วนอย่างสวยงามเมื่อดูในมือถือหรือจอที่เล็กกว่า 1672px */
-        @media (max-width: 1672px) {
-            header {
-                /* คำนวณอัตราส่วนความสูงตามความกว้างหน้าจอจริง อิงจากสัดส่วน (941/1672) * 100 */
-                height: calc(100vw * (941 / 1672)); 
-                min-height: 400px; /* ป้องกันไม่ให้เตี้ยเกินไปบนหน้าจอมือถือ */
-            }
-        }
+        /* การตั้งค่าพื้นฐาน (Desktop/Laptop) */
+header {
+    position: relative;
+    text-align: center;
+    /* แนะนำให้เพิ่ม min-height เพื่อคุมความสูงของแบนเนอร์ให้คงที่แม้คอนเทนต์ข้างในจะน้อย */
+    min-height: 941px; 
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    background: linear-gradient(rgba(18, 24, 36, 0.4), rgba(18, 24, 36, 0.95)), 
+                url('images/tamsung/banner.jpg') no-repeat center center / cover;
+}
+/* การตั้งค่าสำหรับมือถือ (หน้าจอไม่เกิน 768px) */
+@media (max-width: 768px) {
+    header {
+        /* ลดความสูงและ Padding ลงเพื่อให้เหมาะกับหน้าจอมือถือ */
+        min-height: 300px;
+        padding: 60px 15px;
+    }
+}
 
         .logo-title {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 700;
             color: var(--accent-warm);
-            text-shadow: 2px 4px 15px rgba(0,0,0,0.8);
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.7);
             margin-bottom: 10px;
         }
 
         .tagline {
-            font-size: 1.3rem;
-            color: var(--text-light);
-            text-shadow: 1px 2px 8px rgba(0,0,0,0.8);
+            font-size: 1.2rem;
+            color: var(--text-muted);
             margin-bottom: 30px;
         }
 
-        /* โซนโปรโมชั่นแบบใหม่ (ฟรีไข่ดาว) */
-        .promo-section {
-            max-width: 1200px;
-            margin: -40px auto 40px auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .promo-box {
-            background: linear-gradient(135deg, #ff4d4d, #ff9f43);
-            border: 3px solid var(--accent-yellow);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(255, 77, 77, 0.4), inset 0 0 15px rgba(255,255,255,0.2);
-            animation: glow 2.5s infinite alternate;
-        }
-
-        .promo-badge {
-            background-color: var(--bg-evening);
-            color: var(--accent-yellow);
-            padding: 5px 15px;
+        /* ส่วนโปรโมชั่นประจำวัน */
+        .promo-banner {
+            background: linear-gradient(135deg, var(--accent-red), #ee5253);
+            padding: 15px 30px;
             border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
             display: inline-block;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(238, 82, 83, 0.4);
+            animation: pulse 2s infinite;
         }
 
-        .promo-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .promo-title i {
-            color: var(--accent-yellow);
-        }
-
-        .promo-desc {
-            font-size: 1.2rem;
-            color: #fff;
-            opacity: 0.95;
-        }
-
-        @keyframes glow {
-            0% { box-shadow: 0 10px 25px rgba(255, 77, 77, 0.4); }
-            100% { box-shadow: 0 10px 35px rgba(254, 202, 87, 0.6); }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
         }
 
         /* โซนรายการอาหาร */
@@ -213,7 +161,7 @@
 
         .map-wrapper {
             position: relative;
-            padding-bottom: 400px; 
+            padding-bottom: 450px; /* อัตราส่วนความสูงของแผนที่ */
             height: 0;
             overflow: hidden;
             border-radius: 20px;
@@ -230,73 +178,14 @@
             border: 0;
         }
 
-        /* ฟุตเตอร์แบบออกแบบใหม่หมดจด */
+        /* ฟุตเตอร์ */
         footer {
             background-color: #0b0f17;
-            border-top: 3px solid var(--accent-warm);
-            padding: 60px 20px 20px 20px;
-            margin-top: 80px;
-            color: var(--text-light);
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-about h3, .footer-hours h3, .footer-contact h3 {
-            color: var(--accent-warm);
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 8px;
-        }
-
-        .footer-about h3::after, .footer-hours h3::after, .footer-contact h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--accent-red);
-        }
-
-        .footer-about p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .footer-hours ul, .footer-contact ul {
-            list-style: none;
-        }
-
-        .footer-hours li, .footer-contact li {
-            color: var(--text-muted);
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.95rem;
-        }
-
-        .footer-hours i, .footer-contact i {
-            color: var(--accent-warm);
-            width: 20px;
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
             text-align: center;
+            padding: 30px;
+            margin-top: 60px;
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
 
         /* ไอคอนเกาะติดข้างจอด้านขวา (Sticky Sidebar) */
@@ -335,14 +224,10 @@
 
         /* การปรับแต่งหน้าจอโทรศัพท์ */
         @media (max-width: 768px) {
-            header { min-height: 400px; padding-top: 80px; }
-            .logo-title { font-size: 2.5rem; }
-            .tagline { font-size: 1.1rem; }
-            .promo-title { font-size: 1.5rem; }
-            .promo-desc { font-size: 1rem; }
+            .logo-title { font-size: 2.2rem; }
+            .promo-banner { font-size: 1rem; width: 90%; }
             .sticky-icon { width: 45px; height: 45px; font-size: 1.2rem; }
             .sticky-icon:hover { width: 55px; }
-            .footer-container { gap: 30px; }
         }
     </style>
 </head>
@@ -351,17 +236,11 @@
     <header>
         <h1 class="logo-title">ตามสั่งป้าเคิ้ก</h1>
         <p class="tagline">อร่อยจัดจ้าน ฝากท้องยามเย็น ยินดีต้อนรับค่ะ</p>
-    </header>
-
-    <section class="promo-section">
-        <div class="promo-box">
-            <span class="promo-badge"><i class="fa-solid fa-star"></i> Hot Promotion <i class="fa-solid fa-star"></i></span>
-            <h2 class="promo-title">
-                <i class="fa-solid fa-egg"></i> โปรโมชั่นวันนี้ ฟรี! ไข่ดาวทุกจาน <i class="fa-solid fa-egg"></i>
-            </h2>
-            <p class="promo-desc">อิ่มอร่อยคุ้มค่ายามเย็น สั่งเมนูจานเดี่ยวชนิดใดก็ได้ รับไข่ดาวทอดร้อนๆ ฟรีทันที!</p>
+        
+        <div class="promo-banner">
+            <i class="fa-solid fa-fire"></i> โปรโมชั่นวันนี้ 10/6/26 ทุกไข่ 7 บาทเท่านั้น! <i class="fa-solid fa-fire"></i>
         </div>
-    </section>
+    </header>
 
     <main class="menu-container">
         <center><h2 class="section-title">เมนูแนะนำมื้อเย็นนี้</h2></center>
@@ -517,30 +396,7 @@
     </section>
 
     <footer>
-        <div class="footer-container">
-            <div class="footer-about">
-                <h3>ตามสั่งป้าเคิ้ก</h3>
-                <p>ร้านอาหารตามสั่งรสเด็ดประจำตลาดโต้รุ่งเมืองประจวบคีรีขันธ์ คัดสรรวัตถุดิบสดใหม่ ให้เยอะ อิ่มอร่อยสะใจในราคามิตรภาพ ฝากท้องยามเย็นกับเราไม่มีผิดหวังแน่นอนค่ะ</p>
-            </div>
-            <div class="footer-hours">
-                <h3>เวลาเปิด-ปิด</h3>
-                <ul>
-                    <li><i class="fa-regular fa-clock"></i> เปิดบริการทุกวัน: 16:00 น. - 23:00 น.</li>
-                    <li><i class="fa-solid fa-bell"></i> ครัวปิด: 22:30 น.</li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>ติดต่อเรา</h3>
-                <ul>
-                    <li><i class="fa-solid fa-location-dot"></i> ล็อกที่ 12 ตลาดโต้รุ่งเมืองประจวบ จ.ประจวบคีรีขันธ์</li>
-                    <li><i class="fa-solid fa-phone"></i> โทร. 083-123-4567</li>
-                    <li><i class="fa-brands fa-line"></i> Line: @pakearktamsung</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 ร้านตามสั่งป้าเคิ้ก โต้รุ่งเมืองประจวบ. All Rights Reserved. (หน้าตัวอย่างสำหรับการนำเสนอลูกค้า)</p>
-        </div>
+        <p>&copy; 2026 ร้านตามสั่งป้าเคิ้ก โต้รุ่งเมืองประจวบ. All Rights Reserved. (หน้าตัวอย่างสำหรับนำเสนอลูกค้า)</p>
     </footer>
 
     <div class="sticky-social">
