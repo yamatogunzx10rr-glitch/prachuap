@@ -54,17 +54,20 @@
     </nav>
 
     <!-- HERO BANNER SECTION -->
-    <header id="home" class="relative bg-gray-900 text-white overflow-hidden">
-        <img src="images/yacob/banner1.jpg" alt="สวนมะพร้าวยาคอป แบนเนอร์" class="w-full h-[400px] md:h-[800px] object-cover opacity-80">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-center">
-            <div class="max-w-4xl mx-auto px-6 text-center">
-                <span class="bg-cocoGreen text-white text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 inline-block">มาตรฐาน GMP ปลอดสารพิษ 100%</span>
-                <h1 class="text-3xl md:text-6xl font-bold mb-4 drop-shadow-md">ยินดีต้อนรับสู่ "สวนมะพร้าวยาคอป"</h1>
-                <p class="text-lg md:text-2xl font-light mb-8 max-w-2xl mx-auto drop-shadow">สวนมะพร้าวอินทรีย์ที่สร้างด้วยหัวใจและความรักในธรรมชาติ บุกเบิกโดยชาวต่างชาติผู้มีใจรักในผืนดินไทย</p>
-                <a href="#about" class="bg-white text-cocoGreen hover:bg-cocoGreen hover:text-white font-semibold px-8 py-3 rounded-full shadow-lg transition duration-300 inline-block">ทำความรู้จักเรา</a>
-            </div>
+   <header id="home" class="relative bg-gray-900 text-white overflow-hidden">
+    <!-- ใช้คลาส aspect-[1672/941] แทนการฟิกซ์ความสูง -->
+    <img src="images/yacob/banner1.jpg" alt="สวนมะพร้าวยาคอป แบนเนอร์" class="w-full aspect-[1672/941] object-cover opacity-80">
+    
+    <!-- เติม justify-center เพื่อให้เนื้อหาอยู่กึ่งกลางภาพเสมอ -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-center justify-center">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <span class="bg-cocoGreen text-white text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 inline-block">มาตรฐาน GMP ปลอดสารพิษ 100%</span>
+            <h1 class="text-3xl md:text-6xl font-bold mb-4 drop-shadow-md">ยินดีต้อนรับสู่ "สวนมะพร้าวยาคอป"</h1>
+            <p class="text-lg md:text-2xl font-light mb-8 max-w-2xl mx-auto drop-shadow">สวนมะพร้าวอินทรีย์ที่สร้างด้วยหัวใจและความรักในธรรมชาติ บุกเบิกโดยชาวต่างชาติผู้มีใจรักในผืนดินไทย</p>
+            <a href="#about" class="bg-white text-cocoGreen hover:bg-cocoGreen hover:text-white font-semibold px-8 py-3 rounded-full shadow-lg transition duration-300 inline-block">ทำความรู้จักเรา</a>
         </div>
-    </header>
+    </div>
+</header>
 
     <!-- MAIN CONTENT CONTAINER -->
     <main class="max-w-6xl mx-auto px-4 py-12 space-y-24">
