@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>คำนวณขนาดโซลาร์เซลล์ & ใบเสนอราคาเบื้องต้น</title>
+  <style>
+    * { box-sizing: border-box; font-family: 'Kanit', 'Segoe UI', sans-serif; }
+    body { background-color: #f8fafc; margin: 0; padding: 20px; display: flex; justify-content: center; }
+    
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      max-width: 480px;
+      width: 100%;
+      padding: 24px;
+    }
+
+    h2 { color: #1e293b; font-size: 20px; margin-top: 0; text-align: center; }
+    p.subtitle { color: #64748b; font-size: 14px; text-align: center; margin-bottom: 24px; }
+
+    /* Step Bar */
+    .step-container { display: flex; justify-content: space-between; margin-bottom: 24px; position: relative; }
+    .step-container::before {
+      content: ''; position: absolute; top: 50%; left: 0; right: 0; height: 2px;
+      background: #e2e8f0; z-index: 1; transform: translateY(-50%);
+    }
+    .step {
+      width: 32px; height: 32px; border-radius: 50%; background: #e2e8f0; color: #64748b;
+      display: flex; align-items: center; justify-content: center; font-weight: bold;
+      position: relative; z-index: 2; font-size: 14px;
+    }
+    .step.active { background: #0284c7; color: #ffffff; }
+
+    /* Form Fields */
+    .form-group { margin-bottom: 18px; }
+    label { display: block; font-size: 14px; font-weight: 600; color: #334155; margin-bottom: 8px; }
+    
+    .btn-group { display: flex; gap: 8px; }
+    .btn-option {
+      flex: 1; padding: 10px; border: 1px solid #cbd5e1; background: #fff;
+      border-radius: 8px; cursor: pointer; text-align: center; font-size: 14px; color: #475569;
+    }
+    .btn-option.selected { border-color: #0284c7; background-color: #f0f9ff; color: #0284c7; font-weight: bold; }
+
+    input[type="number"], input[type="text"] {
+      width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 15px; outline: none;
+    }
+    input:focus { border-color: #0284c7; }
+
+    .btn-submit {
+      width: 100%; padding: 14px; background: #0284c7; color: white; border: none;
+      border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 10px;
+    }
+    .btn-submit:hover { background: #0369a1; }
+
+    /* Results */
+    .result-box { display: none; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; margin-top: 15px; }
+    .result-row { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 14px; }
+    .result-row strong { color: #0284c7; }
+    .highlight { font-size: 18px; color: #16a34a; font-weight: bold; }
+    
+    .btn-back {
+      background: none; border: none; color: #64748b; cursor: pointer; font-size: 14px; width: 100%; margin-top: 12px; text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2>คำนวณขนาดโซลาร์เซลล์ & ใบเสนอราคา</h2>
+  <p class="subtitle">กรอกข้อมูลสั้น ๆ 2 ขั้นตอน แล้วรับแพ็กเกจที่เหมาะสมได้ทันที</p>
+
+  <!-- Step Indicator -->
+  <div class="step-container">
+    <div class="step active" id="step1-dot">1</div>
+    <div class="step" id="step2-dot">2</div>
+  </div>
+
+  <!-- STEP 1: FORM -->
+  <div id="step1-form">
+    <div class="form-group">
+      <label>ประเภทสถานที่ตั้ง</label>
+      <div class="btn-group">
+        <div class="btn-option selected" onclick="selectOption('type', 'home', this)">ที่อยู่อาศัย</div>
+        <div class="btn-option" onclick="selectOption('type', 'business', this)">ภาคธุรกิจ</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>ช่วงเวลาการใช้ไฟฟ้า (เฉลี่ย)</label>
+      <div class="btn-group">
+        <div class="btn-option selected" onclick="selectOption('ratio', '50', this)">กลางวัน 50% / กลางคืน 50%</div>
+        <div class="btn-option" onclick="selectOption('ratio', '70', this)">เน้นกลางวัน (70%)</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>แรงดันไฟฟ้า (Phase)</label>
+      <div class="btn-group" id="phaseGroup">
+        <div class="btn-option selected" onclick="selectOption('phase', '1', this)">1 เฟส</div>
+        <div class="btn-option" onclick="selectOption('phase', '3', this)">3 เฟส</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="bill">ค่าไฟฟ้าต่อเดือน (บาท)</label>
+      <input type="number" id="bill" placeholder="ใส่ยอดรวมต่อเดือนจากใบแจ้งค่าไฟ เช่น 5000">
+    </div>
+
+    <button class="btn-submit" onclick="calculateSolar()">คำนวณ</button>
+  </div>
+
+  <!-- STEP 2: RESULT -->
+  <div id="step2-result" style="display: none;">
+    <div class="result-box" style="display: block;">
+      <div class="result-row">
+        <span>ขนาดระบบโซลาร์แนะนำ:</span>
+        <strong id="resSystemSize" class="highlight">- kWp</strong>
+      </div>
+      <div class="result-row">
+        <span>ค่าไฟก่อนติดตั้ง:</span>
+        <span id="resOldBill">- บาท/เดือน</span>
+      </div>
+      <div class="result-row">
+        <span>ค่าไฟที่ลดลงโดยประมาณ:</span>
+        <strong id="resSavings" style="color: #16a34a;">- บาท/เดือน</strong>
+      </div>
+      <div class="result-row">
+        <span>แบตเตอรี่แนะนำ:</span>
+        <span id="resBattery">-</span>
+      </div>
+    </div>
+
+    <!-- Contact Form Modeled after ipowerinter -->
+    <div style="margin-top: 20px;">
+      <label style="text-align: center; margin-bottom: 12px;">สนใจขอใบเสนอราคา</label>
+      <div class="form-group"><input type="text" placeholder="ชื่อ-นามสกุล*"></div>
+      <div class="form-group"><input type="text" placeholder="เบอร์ติดต่อ*"></div>
+      <button class="btn-submit" style="background: #16a34a;">ขอใบเสนอราคา</button>
+    </div>
+
+    <button class="btn-back" onclick="goBack()">ย้อนกลับไปแก้ไขข้อมูล</button>
+  </div>
+</div>
+
+<script>
+  let formData = {
+    type: 'home',
+    ratio: '50',
+    phase: '1'
+  };
+
+  function selectOption(key, val, el) {
+    formData[key] = val;
+    const parent = el.parentElement;
+    parent.querySelectorAll('.btn-option').forEach(btn => btn.classList.remove('selected'));
+    el.classList.add('selected');
+
+    // ถ้าเป็นภาคธุรกิจ ให้ล็อคเป็น 3 เฟสอัตโนมัติแบบ ipowerinter
+    if(key === 'type' && val === 'business') {
+      const phaseBtns = document.querySelectorAll('#phaseGroup .btn-option');
+      phaseBtns[0].classList.remove('selected');
+      phaseBtns[1].classList.add('selected');
+      formData.phase = '3';
+    }
+  }
+
+  function calculateSolar() {
+    const bill = parseFloat(document.getElementById('bill').value);
+    if (!bill || bill <= 0) {
+      alert('กรุณากรอกค่าไฟฟ้าต่อเดือนให้ถูกต้อง');
+      return;
+    }
+
+    // Logic คำนวณเบื้องต้น:
+    // สมมติค่าไฟ 4.4 บาท/หน่วย
+    // 1 kWp ผลิตไฟได้ ~120 หน่วย/เดือน ประหยัดได้ ~528 บาท/เดือน
+    let dayUsageRatio = formData.ratio === '70' ? 0.7 : 0.5;
+    let dayBill = bill * dayUsageRatio; 
+    let recommendedKw = (dayBill / 528).toFixed(1); 
+    if(recommendedKw < 3) recommendedKw = 3; // ขั้นต่ำ 3kWp
+
+    let monthlySavings = Math.round(dayBill * 0.85); // ประหยัดได้ราวๆ 85% ของค่าไฟช่วงกลางวัน
+    let batteryRec = formData.ratio === '50' ? 'แนะนำให้ติดแบตเตอรี่เพิ่ม (สำหรับใช้ไฟกลางคืน)' : 'ไม่จำเป็นต้องติดแบตเตอรี่';
+
+    // UI Updates
+    document.getElementById('resSystemSize').innerText = `${recommendedKw} kWp`;
+    document.getElementById('resOldBill').innerText = `${bill.toLocaleString()} บาท/เดือน`;
+    document.getElementById('resSavings').innerText = `${monthlySavings.toLocaleString()} บาท/เดือน`;
+    document.getElementById('resBattery').innerText = batteryRec;
+
+    // Switch View
+    document.getElementById('step1-form').style.display = 'none';
+    document.getElementById('step2-result').style.display = 'block';
+    document.getElementById('step1-dot').classList.remove('active');
+    document.getElementById('step2-dot').classList.add('active');
+  }
+
+  function goBack() {
+    document.getElementById('step1-form').style.display = 'block';
+    document.getElementById('step2-result').style.display = 'none';
+    document.getElementById('step1-dot').classList.add('active');
+    document.getElementById('step2-dot').classList.remove('active');
+  }
+</script>
+
+</body>
+</html>
