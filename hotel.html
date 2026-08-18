@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตัวอย่างเว็บไซต์ โรงแรม รีสอร์ต & คาเฟ่ - prachuap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center">
+                        <img src="logoprachuap.webp" alt="Prachuap Online Logo" class="h-12 w-auto object-contain py-1">
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">Home</a>
+                    <a href="promotion.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">โปรโมชั่น</a>
+                    <a href="service.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">บริการอื่นๆ</a>
+                    <a href="domain.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">ราคา ชื่อเวบ</a>
+                    <a href="WordPress.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">รับทำเว็บไซต์ WordPress</a>
+                        <a href="about.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">เกี่ยวกับเรา</a>
+                    <a href="wordpress-portfolio.html" class="text-blue-600 font-semibold text-sm">ตัวอย่างเวบ</a>
+                    <a href="#contact" class="bg-blue-600 text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-blue-700 transition shadow-md shadow-blue-600/20 flex items-center gap-2">
+                        <i class="fa-solid fa-comments"></i> ติดต่อเรา
+                    </a>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-blue-600 focus:outline-none p-2 text-2xl transition">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobile-sidebar" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-all duration-300">
+        <div id="mobile-backdrop" class="absolute inset-0 bg-slate-900/50 opacity-0 transition-opacity duration-300 pointer-events-auto"></div>
+        <div id="mobile-menu-panel" class="absolute inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl flex flex-col p-6 translate-x-full transition-transform duration-300 ease-in-out pointer-events-auto">
+            <div class="flex items-center justify-between mb-8">
+                <span class="font-bold text-lg text-slate-900">เมนูนำทาง</span>
+                <button id="mobile-close-button" class="text-slate-500 hover:text-slate-800 text-xl p-2">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">Home</a>
+                <a href="promotion.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">โปรโมชั่น</a>
+                <a href="service.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">บริการอื่นๆ</a>
+                <a href="domain.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">ราคา ชื่อเวบ</a>
+                <a href="WordPress.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">รับทำเว็บไซต์ WordPress</a>
+                <a href="about.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">เกี่ยวกับเรา</a>
+                <a href="wordpress-portfolio.html" class="mobile-nav-link text-blue-600 font-medium py-2 border-b border-slate-100 text-base">ตัวอย่างเวบ</a>
+                <a href="#contact" class="mobile-nav-link bg-blue-600 text-white text-center px-5 py-3 rounded-xl font-bold text-base hover:bg-blue-700 transition shadow-md shadow-blue-600/20 flex items-center justify-center gap-2 mt-4">
+                    <i class="fa-solid fa-comments"></i> ติดต่อเรา
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <header class="bg-gradient-to-b from-blue-50 to-slate-50 py-16 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <span class="text-blue-600 font-bold text-sm tracking-wider uppercase bg-blue-50 px-4 py-1.5 rounded-full border border-blue-100">Portfolio</span>
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mt-4 leading-tight">ผลงานการออกแบบเว็บไซต์</h1>
+            <p class="mt-4 text-lg text-slate-600">รวมตัวอย่างเว็บไซต์กลุ่มธุรกิจ โรงแรม รีสอร์ต ที่พัก ที่เน้นความสวยงาม ฟังก์ชันครบครัน และรองรับมือถือ 100%</p>
+        </div>
+    </header>
+
+    <section class="pb-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+                
+                <div class="portfolio-item hotel bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <img src="images_webp/hotel/bangnanglom.webp" alt="Grand Plaza Hotel" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Hotel</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-3">Grand Plaza Hotel & Residence</h3>
+                        <p class="text-sm text-slate-500 mt-2">เว็บไซต์โรงแรมหรูใจกลางเมือง พร้อมระบบจองห้องพักออนไลน์แบบ Real-time</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item hotel bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <img src="images_webp/hotel/categoryban.webp" alt="The Boutique Stay" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Hotel</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-3">The Boutique Stay</h3>
+                        <p class="text-sm text-slate-500 mt-2">ดีไซน์มินิมอล เน้นภาพถ่ายห้องพักขนาดกว้างและมุมมอง 360 องศา</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item hotel bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <img src="images_webp/hotel/chongkrajog.webp" alt="Ocean View Hotel" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Hotel</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-3">Ocean View Premium Hotel</h3>
+                        <p class="text-sm text-slate-500 mt-2">รองรับระบบสองภาษา (ไทย-อังกฤษ) สำหรับกลุ่มนักท่องเที่ยวต่างชาติ</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item hotel bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <img src="images_webp/hotel/mangosteen.webp" alt="The Urban Heritage" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Hotel</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-3">The Urban Heritage Hotel</h3>
+                        <p class="text-sm text-slate-500 mt-2">สไตล์คลาสสิก ย้อนยุค พร้อมหน้าแนะนำแพ็กเกจจัดงานแต่งงานและงานสัมมนา</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item hotel bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <img src="images_webp/hotel/ramutan.webp" alt="Skyline Luxury" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Hotel</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-3">Skyline Luxury Suites</h3>
+                        <p class="text-sm text-slate-500 mt-2">ระบบจองแบบพรีเมียม เชื่อมต่อระบบชำระเงินผ่าน QR Code และบัตรเครดิต</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item resort bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <img src="images_webp/hotel/tamonglai.webp" alt="Klongwan Beach Resort" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md">Resort</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-3">Klongwan Beach Resort</h3>
+                        <p class="text-sm text-slate-500 mt-2">เว็บไซต์รีสอร์ตติดริมชายหาด บรรยากาศอบอุ่น พร้อมหน้ารวมโปรโมชั่นพิเศษ</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item resort bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <img src="images_webp/hotel/turien.webp" alt="Mountain Mist Resort" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md">Resort</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-3">Mountain Mist Eco Resort</h3>
+                        <p class="text-sm text-slate-500 mt-2">ดีไซน์โทนสีเขียวธรรมชาติ อวดภาพบรรยากาศภูเขาและหมอกยามเช้า</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item resort bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <img src="images_webp/travel/wagor.webp" alt="The Palms Pool Villa" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md">Resort</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-3">The Palms Pool Villa</h3>
+                        <p class="text-sm text-slate-500 mt-2">เน้นการขายพูลวิลล่าส่วนตัว เชื่อมต่อระบบเช็ควันว่างผ่าน Google Calendar</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item resort bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <img src="images_webp/travel/aubkham.webp" alt="River Kwai Retreat" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md">Resort</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-3">River Kwai Retreat</h3>
+                        <p class="text-sm text-slate-500 mt-2">การจัดหน้าสำหรับที่พักริมน้ำ แสดงแพ็กเกจล่องแพและกิจกรรมแอดเวนเจอร์</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item resort bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <img src="images_webp/travel/tanonsusuk.webp" alt="Serene Valley" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md">Resort</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-3">Serene Valley Glamping</h3>
+                        <p class="text-sm text-slate-500 mt-2">เว็บไซต์สำหรับที่พักเต็นท์หรู ติดตั้งระบบแจ้งเตือนการจองผ่าน Line Notify</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item coffee bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <img src="images_webp/travel/yacob-coconut.webp" alt="Artisan Roasters" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md">Cafe</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-3">Artisan Roast Laboratory</h3>
+                        <p class="text-sm text-slate-500 mt-2">โทนดาร์กสุดเท่สไตล์ Industrial แสดงเมนูเมล็ดกาแฟ Specialty และขั้นตอนการคั่ว</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item coffee bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <img src="images_webp/hotel/bamboo.webp" alt="Minimalist Cafe" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md">Cafe</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-3">Warm & Cozy Cafe Space</h3>
+                        <p class="text-sm text-slate-500 mt-2">ดีไซน์อบอุ่น มินิมอลสไตล์ญี่ปุ่น มีแผนที่แสดงพิกัดร้านที่ชัดเจนด้วย Google Maps</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item coffee bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <img src="images_webp/hotel/bangnanglom.webp" alt="Botanical Cafe" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md">Cafe</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-3">The Botanical Glasshouse</h3>
+                        <p class="text-sm text-slate-500 mt-2">ออกแบบสำหรับคาเฟ่ในสวนแก้ว เน้นฟังก์ชันจองมุมถ่ายรูปยอดฮิตล่วงหน้า</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item coffee bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <img src="images_webp/hotel/categoryban.webp" alt="Espresso Bar" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md">Cafe</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-3">Speedy Espresso Bar</h3>
+                        <p class="text-sm text-slate-500 mt-2">เน้นการสั่งซื้อแบบ Click & Collect ให้ลูกค้าสั่งล่วงหน้าแล้วขับรถมารับได้เลย</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item coffee bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <img src="images_webp/hotel/chongkrajog.webp" alt="Slow Bar" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md">Cafe</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-3">Craft Drip Slow Bar</h3>
+                        <p class="text-sm text-slate-500 mt-2">หน้าเว็บเน้นสื่อสารเรื่องราว Storytelling ของเกษตรกรผู้ปลูกกาแฟไทย</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item bakery bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <img src="images_webp/hotel/mangosteen.webp" alt="Sripha Bakery" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-pink-600 bg-pink-50 px-2.5 py-1 rounded-md">Bakery</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-3">Sripha Homemade Bakery</h3>
+                        <p class="text-sm text-slate-500 mt-2">หน้าเว็บสวยงามสดใส มีระบบตะกร้าสินค้าสำหรับจัดส่งชุดเบรกและเค้กวันเกิด</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item bakery bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <img src="images_webp/hotel/ramutan.webp" alt="Croissant Factory" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-pink-600 bg-pink-50 px-2.5 py-1 rounded-md">Bakery</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-3">The Croissant Factory</h3>
+                        <p class="text-sm text-slate-500 mt-2">สไตล์ฝรั่งเศส โมเดิร์น แสดงภาพความกรอบนุ่มของแปรรูปแบบวิดีโอสั้นบนเว็บ</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item bakery bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <img src="images_webp/hotel/tamonglai.webp" alt="Sweet Oven" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-pink-600 bg-pink-50 px-2.5 py-1 rounded-md">Bakery</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-3">Sweet Oven & Pastry</h3>
+                        <p class="text-sm text-slate-500 mt-2">ออกแบบฟอร์มให้ลูกค้าปรับแต่งและเลือกขนาดเค้กตามใจชอบก่อนสั่งทำ</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item bakery bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <img src="images_webp/hotel/turien.webp" alt="Daily Bread" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-pink-600 bg-pink-50 px-2.5 py-1 rounded-md">Bakery</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-3">Daily Sourdough Bread</h3>
+                        <p class="text-sm text-slate-500 mt-2">เหมาะสำหรับร้านเบเกอรี่สุขภาพ แสดงส่วนผสม โภชนาการ และการสั่งแบบรายสัปดาห์</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item bakery bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <img src="images_webp/travel/wagor.webp" alt="Macaron House" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-pink-600 bg-pink-50 px-2.5 py-1 rounded-md">Bakery</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-3">Le Paris Macaron</h3>
+                        <p class="text-sm text-slate-500 mt-2">ดีไซน์โทนพาสเทลน่ารัก ดึงดูดสายตา พร้อมระบบสั่งซื้อแบบจัดส่งกล่องของขวัญลักชูรี</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-100">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900">ติดต่อประเมินราคาฟรี</h2>
+                    <p class="mt-4 text-slate-600">พูดคุยแลกเปลี่ยนไอเดียและรายละเอียดความต้องการได้ตลอดเวลา ไม่มีค่าใช้จ่ายเบื้องต้น</p>
+                    
+                    <div class="mt-12 space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm text-slate-400">เบอร์โทรศัพท์</h4>
+                                <p class="text-base font-semibold text-slate-900">063-889-0295</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm text-slate-400">อีเมลเพื่อติดต่องาน</h4>
+                                <p class="text-base font-semibold text-slate-900">zx1000rr@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-4 bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                    <h3 class="text-lg font-bold text-slate-900 mb-4 text-center sm:text-left">เลือกช่องทางที่คุณสะดวกคุย</h3>
+                    
+                    <a href="https://line.me/ti/p/~adminkasem" target="_blank" class="flex items-center justify-center gap-3 w-full bg-[#06C755] hover:bg-[#05b34c] text-white py-4 rounded-xl font-semibold shadow-lg shadow-green-600/20 transition">
+                        <i class="fa-brands fa-line text-xl"></i>
+                        แชทผ่าน Line Official / ID
+                    </a>
+
+                    <a href="mailto:zx1000rr@gmail.com?subject=ติดต่อประเมินราคาเว็บไซต์" class="flex items-center justify-center gap-3 w-full bg-slate-900 hover:bg-slate-800 text-white py-4 rounded-xl font-semibold shadow-lg transition">
+                        <i class="fa-solid fa-envelope text-xl"></i>
+                        ส่งอีเมลหาเราโดยตรง
+                    </a>
+
+                    <a href="tel:0638890295" class="flex items-center justify-center gap-3 w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl font-semibold shadow-lg shadow-blue-600/20 transition">
+                        <i class="fa-solid fa-phone text-xl"></i>
+                        โทรคุยตอนนี้ (063-889-0295)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-code text-blue-500 text-xl"></i>
+                <span class="text-xl font-bold text-white">prachuap online</span>
+            </div>
+            <p class="text-sm">&copy; 2026 prachuap online Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // โค้ดส่วนควบคุม Navbar บนมือถือ
+        const menuButton = document.getElementById('mobile-menu-button');
+        const closeButton = document.getElementById('mobile-close-button');
+        const sidebar = document.getElementById('mobile-sidebar');
+        const backdrop = document.getElementById('mobile-backdrop');
+        const menuPanel = document.getElementById('mobile-menu-panel');
+        const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function openMenu() {
+            sidebar.classList.remove('pointer-events-none');
+            backdrop.classList.remove('opacity-0');
+            backdrop.classList.add('opacity-100');
+            menuPanel.classList.remove('translate-x-full');
+            menuPanel.classList.add('translate-x-0');
+        }
+
+        function closeMenu() {
+            sidebar.classList.add('pointer-events-none');
+            backdrop.classList.remove('opacity-100');
+            backdrop.classList.add('opacity-0');
+            menuPanel.classList.remove('translate-x-0');
+            menuPanel.classList.add('translate-x-full');
+        }
+
+        menuButton.addEventListener('click', openMenu);
+        closeButton.addEventListener('click', closeMenu);
+        backdrop.addEventListener('click', closeMenu);
+        navLinks.forEach(link => { link.addEventListener('click', closeMenu); });
+
+        // โค้ดส่วนระบบ Filter แยกหมวดหมู่ผลงาน
+        function filterSelection(category) {
+            const items = document.querySelectorAll('.portfolio-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // อัปเดตสถานะปุ่มที่คลิกให้เป็น Active และเปลี่ยนสีให้เด่น
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white', 'shadow-md', 'active');
+                btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+            });
+            
+            event.target.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+            event.target.classList.add('bg-blue-600', 'text-white', 'shadow-md', 'active');
+
+            // แสดงหรือซ่อนการ์ดผลงานตามหมวดหมู่
+            items.forEach(item => {
+                if (category === 'all') {
+                    item.classList.remove('hidden');
+                } else {
+                    if (item.classList.contains(category)) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

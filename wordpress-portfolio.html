@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>ตัวอย่างเว็บไซต์ WordPress 13 หมวดธุรกิจ | รับทำเว็บไซต์ WordPress | Prachuap Online</title>
+    <meta name="description" content="รวมตัวอย่างเว็บไซต์ WordPress ทั้ง 13 หมวดธุรกิจ Corporate, eCommerce, Blog, Real Estate, Wedding และอื่น ๆ ออกแบบสวยงาม รองรับ SEO รองรับมือถือ พร้อมดูเว็บเดโมและสอบถามราคาได้ฟรี">
+    <meta name="keywords" content="
+รับทำเว็บไซต์ประจวบ,
+รับทำเว็บไซต์หัวหิน,
+รับทำเว็บไซต์ราคาถูก,
+รับทำเว็บไซต์ 999 บาท,
+รับทำเว็บไซต์ SEO,
+ออกแบบเว็บไซต์ธุรกิจ,
+รับทำเว็บไซต์คลินิก,
+รับทำเว็บไซต์ร้านค้า,
+รับทำเว็บไซต์บริษัท,
+รับทำเว็บไซต์สปา,
+รับทำเว็บไซต์โรงแรม,
+รับทำเว็บไซต์รีสอร์ต,
+รับทำเว็บไซต์ร้านอาหาร,
+รับทำเว็บไซต์คาเฟ่,
+รับทำเว็บไซต์สัตวแพทย์,
+Prachuap Online">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.prachuaponline.com/wordpress-portfolio.html">
+
+    <!-- Open Graph / Facebook (สำหรับเพิ่ม CTR เวลาแชร์ลงโซเชียล) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.prachuaponline.com/wordpress-portfolio.html">
+    <meta property="og:title" content="ตัวอย่างเว็บไซต์ WordPress 13 หมวดธุรกิจ | เว็บเดโมจริง | Prachuap Online">
+    <meta property="og:description" content="บริการรับทำเว็บไซต์ครบวงจร ราคาประหยัด ออกแบบสวยงามทันสมัย รองรับการแสดงผลบนมือถือ พร้อมปรับแต่งโครงสร้างรองรับ SEO">
+    <meta property="og:image" content="https://www.prachuaponline.com/logoprachuap.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.prachuaponline.com/wordpress-portfolio.html">
+    <meta property="twitter:title" content="ตัวอย่างเว็บไซต์ WordPress 13 หมวดธุรกิจ | เว็บเดโมจริง | Prachuap Online">
+    <meta property="twitter:description" content="บริการรับทำเว็บไซต์ครบวงจร ราคาประหยัด ออกแบบสวยงามทันสมัย รองรับการแสดงผลบนมือถือ">
+    <meta property="twitter:image" content="https://www.prachuaponline.com/logoprachuap.webp">
+
+    <!-- JSON-LD Structured Data (Schema Markup) ช่วยให้ Google เข้าใจธุรกิจเราได้ชัดเจนขึ้น -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebService",
+      "name": "Prachuap Online",
+      "description": "บริการรับทำเว็บไซต์ครบวงจร ออกแบบเว็บไซต์รองรับ SEO",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Prachuap Online",
+        "image": "https://yourwebsite.com/logoprachuap.webp",
+        "telephone": "063-889-0295",
+        "email": "zx1000rr@gmail.com",
+        "priceRange": "$$"
+      }
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome สำหรับ Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Prompt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Prompt', sans-serif; }
+        html { scroll-behavior: smooth; }
+    
+@media(max-width:640px){.mobile-safe-bottom{padding-bottom:env(safe-area-inset-bottom,0px)}}
+</style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+<!-- Floating Contact Buttons (ลอยด้านขวาของจอ) -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3.5">
+        <!-- ปุ่ม Line -->
+        <a href="https://line.me/ti/p/~adminkasem" target="_blank" rel="noopener" 
+           class="flex items-center justify-center w-14 h-14 bg-[#06C755] text-white rounded-full shadow-xl hover:bg-[#05b34c] transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group relative"
+           title="แชทผ่าน Line">
+            <i class="fa-brands fa-line text-3xl"></i>
+            <!-- ข้อความ Tooltip แสดงเมื่อเอาเมาส์ชี้ (แสดงเฉพาะบนจอคอม) -->
+            <span class="absolute right-16 bg-slate-900 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-md border border-slate-700">
+                Line: adminkasem
+            </span>
+        </a>
+
+        <!-- ปุ่มโทรศัพท์ -->
+        <a href="tel:0638890295" 
+           class="flex items-center justify-center w-14 h-14 bg-blue-600 text-white rounded-full shadow-xl hover:bg-blue-700 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group relative"
+           title="โทรหาเรา">
+            <i class="fa-solid fa-phone text-2xl animate-pulse"></i>
+            <!-- ข้อความ Tooltip แสดงเมื่อเอาเมาส์ชี้ (แสดงเฉพาะบนจอคอม) -->
+            <span class="absolute right-16 bg-slate-900 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-md border border-slate-700">
+                โทร: 063-889-0295
+            </span>
+        </a>
+    </div>
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main Navigation">
+            <div class="flex justify-between h-20">
+                
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center">
+                        <img src="logoprachuap.webp" alt="Prachuap Online - บริการรับทำเว็บไซต์ครบวงจร" class="h-12 w-auto object-contain py-1">
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                    <div class="hidden xl:flex items-center space-x-5">
+                        <a href="index.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">Home</a>
+                        <a href="promotion.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">โปรโมชั่น</a>
+                        <div class="relative group">
+                            <a href="service.html" class="text-blue-600 font-semibold transition duration-200 text-sm flex items-center gap-1">บริการอื่นๆ<i class="fa-solid fa-chevron-down text-[9px] transition-transform group-hover:rotate-180"></i></a>
+                            <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white rounded-xl shadow-xl border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 p-2 z-50">
+                                <a href="cms.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-solid fa-code text-blue-600 text-lg w-6 text-center"></i>
+                                    <span class="block text-sm font-semibold text-slate-800">รับพัฒนาเว็บเดิม</span>
+                                </a>
+                                <a href="WordPress.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-brands fa-wordpress text-blue-600 text-lg w-6 text-center"></i>
+                                    <span>
+                                        <span class="block text-sm font-semibold text-slate-800">รับทำเว็บไซต์ WordPress</span>
+                                        <span class="block text-[11px] text-slate-500">ครบ 13 หมวดธุรกิจ รองรับ SEO</span>
+                                    </span>
+                                </a>
+                                <a href="wordpress-portfolio.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-solid fa-images text-blue-600 text-lg w-6 text-center"></i>
+                                    <span class="block text-sm font-semibold text-slate-800">Demo WordPress</span>
+                                </a>
+                                <a href="analytics.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-solid fa-chart-pie text-blue-600 text-lg w-6 text-center"></i>
+                                    <span class="block text-sm font-semibold text-slate-800">Data Analytics &amp; BI</span>
+                                </a>
+                                <a href="management-systems-demo.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-solid fa-diagram-project text-blue-600 text-lg w-6 text-center"></i>
+                                    <span>
+                                        <span class="block text-sm font-semibold text-slate-800">ระบบจัดการองค์กร</span>
+                                        <span class="block text-[11px] text-slate-500">ERP CRM HRM CSRM WMS</span>
+                                    </span>
+                                </a>
+                                <div class="border-t border-slate-100 my-1"></div>
+                                <div class="px-3 py-1.5 text-[11px] font-bold text-slate-400 uppercase tracking-wider">ระบบจัดการองค์กร</div>
+                                <a href="ERP.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-solid fa-diagram-project text-blue-600 text-sm w-6 text-center"></i>
+                                    <span class="block text-sm text-slate-700">ERP ระบบวางแผนทรัพยากรองค์กร</span>
+                                </a>
+                                <a href="CRM.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-solid fa-handshake text-blue-600 text-sm w-6 text-center"></i>
+                                    <span class="block text-sm text-slate-700">CRM บริหารความสัมพันธ์ลูกค้า</span>
+                                </a>
+                                <a href="HRM.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-solid fa-user-group text-blue-600 text-sm w-6 text-center"></i>
+                                    <span class="block text-sm text-slate-700">HRM จัดการบุคลากรและเงินเดือน</span>
+                                </a>
+                                <a href="CSRM.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-solid fa-headset text-blue-600 text-sm w-6 text-center"></i>
+                                    <span class="block text-sm text-slate-700">CSRM บริการหลังการขาย</span>
+                                </a>
+                                <a href="WMS.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-solid fa-warehouse text-blue-600 text-sm w-6 text-center"></i>
+                                    <span class="block text-sm text-slate-700">WMS จัดการคลังสินค้าและสต็อก</span>
+                                </a>
+                            </div>
+                        </div>
+        <a href="ai.html" class="text-blue-600 font-semibold transition duration-200 text-sm flex items-center gap-1.5"><i class="fa-solid fa-robot text-base"></i>AI Agent</a>
+
+                        <a href="domain.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">ราคา ชื่อเว็บ</a>
+                        <a href="category.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">ตัวอย่างเว็บ</a>
+                        <a href="about.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">เกี่ยวกับเรา</a>
+                        <a href="#contact" class="bg-blue-600 text-white px-4 py-2.5 rounded-xl font-bold text-sm hover:bg-blue-700 transition shadow-md shadow-blue-600/20 flex items-center gap-2">
+                            <i class="fa-solid fa-comments"></i> ติดต่อเรา
+                        </a>
+                    </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center xl:hidden">
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-blue-600 focus:outline-none p-2 text-2xl transition" aria-label="Open Menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Sidebar Menu -->
+    <div id="mobile-sidebar" class="fixed inset-0 z-50 overflow-hidden hidden transition-all duration-300">
+        <div id="mobile-backdrop" class="absolute inset-0 bg-slate-900/50 opacity-0 transition-opacity duration-300"></div>
+        <div id="mobile-menu-panel" class="absolute inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl flex flex-col p-6 translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="flex items-center justify-between mb-8">
+                <span class="font-bold text-lg text-slate-900">เมนูนำทาง</span>
+                <button id="mobile-close-button" class="text-slate-500 hover:text-slate-800 text-xl p-2" aria-label="Close Menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+                <a href="index.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">Home</a>
+                <a href="promotion.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">โปรโมชั่น</a>
+                <a href="service.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-layer-group mr-1"></i>บริการอื่นๆ</a>
+                <a href="cms.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-code mr-1"></i>รับพัฒนาเว็บเดิม</a>
+                <a href="WordPress.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-brands fa-wordpress mr-1"></i>รับทำเว็บไซต์ WordPress</a>
+                <a href="wordpress-portfolio.html" class="mobile-nav-link text-blue-600 font-bold py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-images mr-1"></i>Demo WordPress</a>
+                <a href="analytics.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-chart-pie mr-1"></i>Data Analytics &amp; BI</a>
+                <a href="management-systems-demo.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-diagram-project mr-1"></i>ระบบจัดการองค์กร</a>
+                <a href="ai.html" class="mobile-nav-link text-blue-600 font-bold py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-robot mr-1"></i>AI Agent</a>
+                <a href="domain.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">ราคา ชื่อเว็บ</a>
+                <a href="category.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">ตัวอย่างเว็บ</a>
+                <a href="about.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">เกี่ยวกับเรา</a>
+                <div class="pt-2 text-xs font-bold text-slate-400 uppercase tracking-wider">ระบบจัดการองค์กร</div>
+                <a href="ERP.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">ERP ระบบวางแผนทรัพยากรองค์กร</a>
+                <a href="CRM.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">CRM บริหารความสัมพันธ์ลูกค้า</a>
+                <a href="HRM.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">HRM จัดการบุคลากรและเงินเดือน</a>
+                <a href="CSRM.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">CSRM บริการหลังการขาย</a>
+                <a href="WMS.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">WMS จัดการคลังสินค้าและสต็อก</a>
+                <a href="#contact" class="mobile-nav-link bg-blue-600 text-white text-center px-5 py-3 rounded-xl font-bold text-base hover:bg-blue-700 transition shadow-md shadow-blue-600/20 flex items-center justify-center gap-2 mt-4">
+                    <i class="fa-solid fa-comments"></i> ติดต่อเรา
+                </a>
+        </div>
+    </div>
+
+    
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-slate-900 via-blue-950 to-blue-900 text-white py-12 md:py-16 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-12 gap-6 md:gap-8 items-center relative z-10">
+            <div class="md:col-span-5 flex justify-center items-end space-x-4">
+               <div class="bg-slate-800 p-2 rounded-t-2xl shadow-2xl border-t-4 border-blue-500 w-52 sm:w-64 md:w-80 transition transform hover:-translate-y-1 duration-300">
+    <div class="bg-slate-700/50 h-40 md:h-48 rounded-lg border border-slate-600 overflow-hidden">
+        <img src="images_webp/banner1.webp" class="w-full h-full object-cover" alt="ตัวอย่างเว็บไซต์ WordPress บนเครื่องคอมพิวเตอร์">
+    </div>
+</div>
+                <div class="bg-slate-900 p-1.5 rounded-2xl shadow-2xl border-2 border-slate-700 w-24 md:w-28 transform translate-y-4 transition transform hover:scale-105 duration-300">
+    <div class="bg-slate-700/50 h-36 md:h-44 rounded-xl border border-slate-600 overflow-hidden">
+        <img src="images_webp/bannerre.webp" class="w-full h-full object-cover" alt="ตัวอย่างเว็บไซต์ WordPress บนมือถือ">
+    </div>
+</div>
+            </div>
+            <div class="md:col-span-7 text-center md:text-left mt-8 md:mt-0">
+                <span class="bg-blue-500/20 text-blue-300 border border-blue-500/30 text-xs uppercase px-3 py-1 rounded-full font-semibold tracking-wider"><i class="fa-brands fa-wordpress mr-1.5"></i>WordPress Portfolio</span>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-4 leading-tight">ตัวอย่างเว็บไซต์ WordPress 13 หมวดธุรกิจ</h1>
+                <p class="text-slate-300 text-lg md:text-xl font-light mb-2">รวมแนวทางออกแบบเว็บไซต์ WordPress สำหรับทุกประเภทธุรกิจ คัดสรรด้วยระบบ CMS ที่อัปเดตง่าย รองรับ SEO</p>
+                <p class="text-amber-400 text-lg font-medium flex items-center justify-center md:justify-start gap-2">
+                    <i class="fa-solid fa-circle-check text-emerald-400"></i> เลือกหมวดธุรกิจของคุณด้านล่าง แล้วปรับใช้ให้เป็นเว็บของคุณได้ทันที
+                </p>
+            </div>
+        </div>
+    </section>
+
+<!-- Jump Nav 13 หมวด -->
+<section class="bg-white border-b border-slate-200 py-5 sticky top-0 md:top-20 z-30 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap justify-center gap-2.5">
+            <a href="#corporate" class="bg-slate-50 text-slate-600 border border-slate-200 px-4 py-2 rounded-full font-medium text-xs transition hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 flex items-center gap-1.5"><i class="fa-solid fa-building text-blue-600"></i>Corporate</a>
+            <a href="#creative" class="bg-slate-50 text-slate-600 border border-slate-200 px-4 py-2 rounded-full font-medium text-xs transition hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 flex items-center gap-1.5"><i class="fa-solid fa-palette text-pink-500"></i>Creative</a>
+            <a href="#retail" class="bg-slate-50 text-slate-600 border border-slate-200 px-4 py-2 rounded-full font-medium text-xs transition hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 flex items-center gap-1.5"><i class="fa-solid fa-store text-amber-500"></i>Retail</a>
+            <a href="#ecommerce" class="bg-slate-50 text-slate-600 border border-slate-200 px-4 py-2 rounded-full font-medium text-xs transition hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 flex items-center gap-1.5"><i class="fa-solid fa-cart-shopping text-emerald-600"></i>eCommerce</a>
+            <a href="#blog" class="bg-slate-50 text-slate-600 border border-slate-200 px-4 py-2 rounded-full font-medium text-xs transition hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 flex items-center gap-1.5"><i class="fa-solid fa-newspaper text-indigo-600"></i>Blog / Magazine</a>
+            <a href="#technology" class="bg-slate-50 text-slate-600 border border-slate-200 px-4 py-2 rounded-full font-medium text-xs transition hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 flex items-center gap-1.5"><i class="fa-solid fa-microchip text-sky-500"></i>Technology</a>
+            <a href="#entertainment" class="bg-slate-50 text-slate-600 border border-slate-200 px-4 py-2 rounded-full font-medium text-xs transition hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 flex items-center gap-1.5"><i class="fa-solid fa-masks-theater text-purple-600"></i>Entertainment</a>
+            <a href="#nonprofit" class="bg-slate-50 text-slate-600 border border-slate-200 px-4 py-2 rounded-full font-medium text-xs transition hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 flex items-center gap-1.5"><i class="fa-solid fa-hand-holding-heart text-rose-500"></i>Nonprofit</a>
+            <a href="#education" class="bg-slate-50 text-slate-600 border border-slate-200 px-4 py-2 rounded-full font-medium text-xs transition hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 flex items-center gap-1.5"><i class="fa-solid fa-graduation-cap text-teal-600"></i>Education</a>
+            <a href="#realestate" class="bg-slate-50 text-slate-600 border border-slate-200 px-4 py-2 rounded-full font-medium text-xs transition hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 flex items-center gap-1.5"><i class="fa-solid fa-house-chimney text-orange-500"></i>Real Estate</a>
+            <a href="#wedding" class="bg-slate-50 text-slate-600 border border-slate-200 px-4 py-2 rounded-full font-medium text-xs transition hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 flex items-center gap-1.5"><i class="fa-solid fa-heart text-red-500"></i>Wedding</a>
+            <a href="#mobile" class="bg-slate-50 text-slate-600 border border-slate-200 px-4 py-2 rounded-full font-medium text-xs transition hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 flex items-center gap-1.5"><i class="fa-solid fa-mobile-screen text-cyan-600"></i>Mobile Setup</a>
+            <a href="#misc" class="bg-slate-50 text-slate-600 border border-slate-200 px-4 py-2 rounded-full font-medium text-xs transition hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 flex items-center gap-1.5"><i class="fa-solid fa-layer-group text-slate-600"></i>Miscellaneous</a>
+        </div>
+    </div>
+</section>
+<!-- Intro SEO -->
+<section class="bg-slate-50 py-8 md:py-12">
+    <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">
+            ทำเว็บไซต์ WordPress ครบทุกประเภทธุรกิจ รองรับ SEO และมือถือ
+        </h2>
+        <p class="text-slate-600 leading-8">
+            Prachuap Online รับทำเว็บไซต์ WordPress ที่ออกแบบเฉพาะสำหรับแต่ละประเภทธุรกิจ
+            ตั้งแต่เว็บไซต์บริษัท (Corporate) สร้างความน่าเชื่อถือให้องค์กร
+            เว็บไซต์ธุรกิจสร้างสรรค์ (Creative) ที่เน้นภาพลักษณ์และผลงาน
+            เว็บไซต์ขายปลีกและขายของออนไลน์ (Retail / eCommerce) พร้อมระบบตะกร้าสินค้า
+            ไปจนถึงเว็บไซต์ Blog / Magazine, เทคโนโลยี, บันเทิง, องค์กรไม่แสวงหากำไร (Nonprofit)
+            สถานศึกษา (Education), อสังหาริมทรัพย์ (Real Estate), งานแต่งงาน (Wedding)
+            ไปจนถึงเว็บไซต์สำหรับการตั้งค่าบนมือถือ (Mobile Setup) และเว็บไซต์แนวอื่น ๆ (Miscellaneous)
+            ทุกเว็บไซต์พัฒนาบน WordPress ระบบบริหารจัดการเนื้อหาที่อัปเดตเองได้ง่าย
+            โครงสร้างรองรับ SEO, โหลดเร็ว, แสดงผลสวยงามบนมือถือ พร้อม SSL และรายงานผลต่อเนื่อง
+        </p>
+    </div>
+</section>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16 space-y-14 md:space-y-20">
+
+<section id="corporate" class="scroll-mt-40">
+    <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-10 border-b border-slate-200 pb-5 gap-4">
+        <div class="flex items-center space-x-3.5">
+            <div class="w-12 h-12 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-md shadow-blue-600/20">
+                <i class="fa-solid fa-building text-xl"></i>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-slate-900 tracking-tight">หมวดเว็บไซต์ WordPress: เว็บไซต์บริษัทและองค์กร (Corporate)</h2>
+                <p class="text-sm text-slate-500 mt-0.5">เว็บไซต์บริษัทที่สื่อความน่าเชื่อถือ มีหน้าเกี่ยวกับบริษัท สินค้าและบริการ ข่าวสาร และช่องทางติดต่อครบครัน <span class="text-blue-600 font-semibold">(3 แนวงานตัวอย่าง)</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/ser/gobal.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์บริษัทและองค์กร - บริษัท" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">บริษัท</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์บริษัท - หน้าแรกพร้อมแบนเนอร์ผลงานและบริการ</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">ดีไซน์โทนเข้ม-เงิน ดูมืออาชีพ เหมาะกับบริษัทก่อสร้าง บริษัทขนส่ง และโรงงาน</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/ser/udom.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์บริษัทและองค์กร - องค์กร" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">องค์กร</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์องค์กร - โครงสร้างหน้าบริการและทีมงาน</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">จัดหมวดบริการชัดเจน หน้าเกี่ยวกับเราแบบมีชั้นเชื่อถือ และช่องทางติดต่อเด่น</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/ser/sangarun.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์บริษัทและองค์กร - บริการองค์กร" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">บริการองค์กร</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์ธุรกิจบริการ - เน้นค่าบริการและผลงาน</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">เน้นหน้าราคา-แพ็กเกจ ช่วยให้ลูกค้าเปรียบเทียบและตัดสินใจเร็วขึ้น</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+
+    </div>
+</section>
+
+<section id="creative" class="scroll-mt-40">
+    <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-10 border-b border-slate-200 pb-5 gap-4">
+        <div class="flex items-center space-x-3.5">
+            <div class="w-12 h-12 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-md shadow-blue-600/20">
+                <i class="fa-solid fa-palette text-xl"></i>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-slate-900 tracking-tight">หมวดเว็บไซต์ WordPress: เว็บไซต์ธุรกิจสร้างสรรค์ (Creative)</h2>
+                <p class="text-sm text-slate-500 mt-0.5">เว็บไซต์สำหรับงานครีเอทีฟ เสริมสวย สตูดิโอ และบริการดูแลรูปลักษณ์ เน้นภาพสวยงาม ดึงดูดทันทีที่เห็น <span class="text-blue-600 font-semibold">(3 แนวงานตัวอย่าง)</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/service/hair.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์ธุรกิจสร้างสรรค์ - Salon" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Salon</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์ร้านเสริมสวยและซาลอน</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">แกลเลอรีรูปงานจริง ราคาบริการ และระบบจองคิวออนไลน์</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/service/nail.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์ธุรกิจสร้างสรรค์ - Nail & Spa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Nail & Spa</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์ทำเล็บและสปา ครีเอทีฟพาสเทล</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">โทนสีอ่อนสบายตา เน้นภาพบริการชุดใหญ่ ดึงดูดกลุ่มลูกค้าใหม่</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/service/hairjapan.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์ธุรกิจสร้างสรรค์ - Styling" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Styling</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์ครีเอทีฟตัดผมสไตล์ญี่ปุ่น-เกาหลี</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">โชว์รูปตัวอย่างผลงานแบบหนึ่งภาพต่อหนึ่งสไตล์ สร้างเอกลักษณ์ให้ร้าน</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+
+    </div>
+</section>
+
+<section id="retail" class="scroll-mt-40">
+    <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-10 border-b border-slate-200 pb-5 gap-4">
+        <div class="flex items-center space-x-3.5">
+            <div class="w-12 h-12 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-md shadow-blue-600/20">
+                <i class="fa-solid fa-store text-xl"></i>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-slate-900 tracking-tight">หมวดเว็บไซต์ WordPress: เว็บไซต์ค้าปลีกและหน้าร้าน (Retail)</h2>
+                <p class="text-sm text-slate-500 mt-0.5">เว็บไซต์หน้าร้าน ค้าปลีก และสินค้าโอท็อป นำเสนอสินค้าเด่น พร้อมช่องทางสั่งซื้อและที่ตั้งร้าน <span class="text-blue-600 font-semibold">(3 แนวงานตัวอย่าง)</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/salicurry/banner.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์ค้าปลีกและหน้าร้าน - ร้านค้า" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">ร้านค้า</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์ร้านค้าและของฝาก</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">นำเสนอหน้าร้านพร้อมข้อมูลเวลาเปิด-ปิด ที่ตั้ง และการเดินทางสะดวก</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/market/prigang.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์ค้าปลีกและหน้าร้าน - ตลาด" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">ตลาด</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์ตลาดและสินค้าชุมชน</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">แสดงร้านค้าในเครือข่ายตลาด พร้อมสินค้าเด่นของแต่ละที่ตั้ง</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/tamsung/banner.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์ค้าปลีกและหน้าร้าน - OTOP" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">OTOP</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์สินค้าโอท็อปจังหวัด</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">เล่าเรื่องราวผลิตภัณฑ์ท้องถิ่น พร้อมสูตรและวิธีใช้แบบบล็อก</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+
+    </div>
+</section>
+
+<section id="ecommerce" class="scroll-mt-40">
+    <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-10 border-b border-slate-200 pb-5 gap-4">
+        <div class="flex items-center space-x-3.5">
+            <div class="w-12 h-12 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-md shadow-blue-600/20">
+                <i class="fa-solid fa-cart-shopping text-xl"></i>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-slate-900 tracking-tight">หมวดเว็บไซต์ WordPress: เว็บไซต์ขายของออนไลน์ (eCommerce)</h2>
+                <p class="text-sm text-slate-500 mt-0.5">ร้านค้าออนไลน์ครบวงจรด้วย WooCommerce ตัดยอดชำระ ผูกตะกร้า ระบบสต็อก และสั่งซื้อผ่านมือถือได้ <span class="text-blue-600 font-semibold">(3 แนวงานตัวอย่าง)</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/yacob/category.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์ขายของออนไลน์ - Shop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Shop</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวร้านค้าออนไลน์ - หน้าหมวดสินค้า</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">จัดสินค้าเป็นหมวด กรองได้ เข้าซื้ออผ่านมือถือได้สะดวก</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/yacob/product.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์ขายของออนไลน์ - Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Product</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวร้านค้าออนไลน์ - หน้ารายละเอียดสินค้า</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">รูปหลายมุม คำอธิบายละเอียด ปุ่มเพิ่มลงตะกร้าเด่นชัด</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/2999/1.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์ขายของออนไลน์ - Bundle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Bundle</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวร้านค้าออนไลน์ - โปรโมชันเซ็ตสินค้า</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">หน้าแพ็กเกจโปรโมชันช่วยเพิ่มยอดต่อออเดอร์ ได้ผลจริงกับธุรกิจขายส่ง</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+
+    </div>
+</section>
+
+<section id="blog" class="scroll-mt-40">
+    <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-10 border-b border-slate-200 pb-5 gap-4">
+        <div class="flex items-center space-x-3.5">
+            <div class="w-12 h-12 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-md shadow-blue-600/20">
+                <i class="fa-solid fa-newspaper text-xl"></i>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-slate-900 tracking-tight">หมวดเว็บไซต์ WordPress: เว็บไซต์บทความและนิตยสาร (Blog / Magazine)</h2>
+                <p class="text-sm text-slate-500 mt-0.5">แพลตฟอร์มเผยแพร่บทความ นิตยสาร และข่าวสาร รองรับหมวดเนื้อหา การค้นหา และการเปิดอ่านบนมือถือ <span class="text-blue-600 font-semibold">(3 แนวงานตัวอย่าง)</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/doc/nurse.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์บทความและนิตยสาร - Article" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Article</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์บทความและข่าวสาร</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">รูปแบบหน้าบล็อกอ่านง่าย รองรับภาพประกอบและข้อความยาว</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/doc/caremen.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์บทความและนิตยสาร - Knowledge" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Knowledge</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์ฐานความรู้และทิปส์</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">จัดหมวดบทความช่วยให้ผู้เข้าชมหาเนื้อหาที่สนใจได้เร็ว</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/doc/needdle.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์บทความและนิตยสาร - Content Hub" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Content Hub</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์คลังเนื้อหาแบบนิตยสาร</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">หน้าแรกตัวอย่างแบบ Grid เรียงบทความล่าสุด พร้อมภาพปก</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+
+    </div>
+</section>
+
+<section id="technology" class="scroll-mt-40">
+    <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-10 border-b border-slate-200 pb-5 gap-4">
+        <div class="flex items-center space-x-3.5">
+            <div class="w-12 h-12 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-md shadow-blue-600/20">
+                <i class="fa-solid fa-microchip text-xl"></i>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-slate-900 tracking-tight">หมวดเว็บไซต์ WordPress: เว็บไซต์เทคโนโลยีและสตาร์ทอัพ (Technology)</h2>
+                <p class="text-sm text-slate-500 mt-0.5">เว็บไซต์บริษัทเทค สตาร์ทอัพ และบริการไอที นำนเสนอโซลูชันด้วยดีไซน์ทันสมัย โครงสร้างเร็วและสะอาด <span class="text-blue-600 font-semibold">(3 แนวงานตัวอย่าง)</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/ser/logis.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์เทคโนโลยีและสตาร์ทอัพ - Logistics" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Logistics</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์บริษัทโลจิสติกส์</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">แสดงบริการขนส่ง โซลูชันการจัดการ และช่องทางขอใบเสนอราคา</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/ser/rungsang.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์เทคโนโลยีและสตาร์ทอัพ - Tech Service" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Tech Service</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์บริการวิศวกรรมและเทค</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">หน้าผลงาน (Portfolio) เรียงเรื่องราวการแก้ปัญหาของลูกค้า</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/ser/logis1.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์เทคโนโลยีและสตาร์ทอัพ - Startup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Startup</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์สตาร์ทอัพไอที</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">เล่า Problem → Solution → ผลลัพธ์ ดีไซน์สะอาด สร้างความน่าเชื่อถือ</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+
+    </div>
+</section>
+
+<section id="entertainment" class="scroll-mt-40">
+    <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-10 border-b border-slate-200 pb-5 gap-4">
+        <div class="flex items-center space-x-3.5">
+            <div class="w-12 h-12 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-md shadow-blue-600/20">
+                <i class="fa-solid fa-masks-theater text-xl"></i>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-slate-900 tracking-tight">หมวดเว็บไซต์ WordPress: เว็บไซต์บันเทิงและกิจกรรม (Entertainment)</h2>
+                <p class="text-sm text-slate-500 mt-0.5">เว็บไซต์ท่องเที่ยว กิจกรรม และบันเทิง รวบรวมจุดเช็คอิน อีเวนต์ และโปรโมชันในหน้าเดียว <span class="text-blue-600 font-semibold">(3 แนวงานตัวอย่าง)</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/travel/aubkham.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์บันเทิงและกิจกรรม - Travel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Travel</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์ท่องเที่ยวและจุดเช็คอิน</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">รวมสถานที่น่าสนใจ พร้อมรูปและคำอธิบายครบหน้าเดียว</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/jokenantaka/banner.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์บันเทิงและกิจกรรม - Activity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Activity</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์กิจกรรมและอีเวนต์</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">แสดงโปรโมชันงานอีเวนต์และกิจกรรมชุมชน ดึงดูดผู้ร่วมงาน</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/tongtung/banner.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์บันเทิงและกิจกรรม - Event" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Event</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์รวมรูปงานและไฮไลต์</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">แกลเลอรีภาพงานพร้อมแบ่งช่วงเวลา ให้แขกเก็บรูปได้ง่าย</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+
+    </div>
+</section>
+
+<section id="nonprofit" class="scroll-mt-40">
+    <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-10 border-b border-slate-200 pb-5 gap-4">
+        <div class="flex items-center space-x-3.5">
+            <div class="w-12 h-12 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-md shadow-blue-600/20">
+                <i class="fa-solid fa-hand-holding-heart text-xl"></i>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-slate-900 tracking-tight">หมวดเว็บไซต์ WordPress: เว็บไซต์องค์กรการกุศล (Nonprofit)</h2>
+                <p class="text-sm text-slate-500 mt-0.5">เว็บไซต์สำหรับองค์กรไม่แสวงหากำไร เล่าเรื่องราว มิชชัน การรับสมัครอาสา และช่องทางบริจาค <span class="text-blue-600 font-semibold">(3 แนวงานตัวอย่าง)</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/samaowanimal/banner.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์องค์กรการกุศล - Charity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Charity</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์องค์กรการกุศลและจิตอาสา</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">เล่าภารกิจการช่วยเหลือ พร้อมช่องทางรับสมัครอาสาและบริจาค</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/animal/pragud1.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์องค์กรการกุศล - Animal Care" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Animal Care</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์ดูแลสัตว์และการช่วยเหลือ</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">ใช้ภาพสัตว์จรจัดสร้างความรู้สึกใกล้ชิด กระตุ้นการให้ความช่วยเหลือ</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/doc/samoawanimal.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์องค์กรการกุศล - Mission" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Mission</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์แคมเปญเพื่อสังคม</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">หน้าแคมเปญเดี่ยว (One Page) เน้นปุ่มร่วมโครงการเด่นชัด</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+
+    </div>
+</section>
+
+<section id="education" class="scroll-mt-40">
+    <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-10 border-b border-slate-200 pb-5 gap-4">
+        <div class="flex items-center space-x-3.5">
+            <div class="w-12 h-12 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-md shadow-blue-600/20">
+                <i class="fa-solid fa-graduation-cap text-xl"></i>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-slate-900 tracking-tight">หมวดเว็บไซต์ WordPress: เว็บไซต์การศึกษาและฝึกอบรม (Education)</h2>
+                <p class="text-sm text-slate-500 mt-0.5">เว็บไซต์สถานศึกษา ศูนย์ฝึกอบรม และคอร์สเรียน จัดตารางคอร์ส วิทยากร และรับลงทะเบียนออนไลน์ <span class="text-blue-600 font-semibold">(3 แนวงานตัวอย่าง)</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/doc/carewomen.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์การศึกษาและฝึกอบรม - Course" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Course</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์ศูนย์ฝึกอบรมอาชีพ</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">แสดงรายชื่อคอร์ส ระยะเวลา ค่าใช้จ่าย และรับลงทะเบียน</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/doc/mennurse.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์การศึกษาและฝึกอบรม - Training" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Training</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์วิทยากรและทีมสอน</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">แนะนำวิทยากรแต่ละท่าน พร้อมผลงานการสอนและรีวิว</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/doc/herb.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์การศึกษาและฝึกอบรม - Classroom" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Classroom</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์หลักสูตรระยะสั้น</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">ตารางคอร์สและปฏิทินเปิดสอนช่วยให้ผู้สนใจวางแผนเข้าร่วม</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+
+    </div>
+</section>
+
+<section id="realestate" class="scroll-mt-40">
+    <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-10 border-b border-slate-200 pb-5 gap-4">
+        <div class="flex items-center space-x-3.5">
+            <div class="w-12 h-12 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-md shadow-blue-600/20">
+                <i class="fa-solid fa-house-chimney text-xl"></i>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-slate-900 tracking-tight">หมวดเว็บไซต์ WordPress: เว็บไซต์อสังหาริมทรัพย์ (Real Estate)</h2>
+                <p class="text-sm text-slate-500 mt-0.5">เว็บไซต์อสังหาฯ โฮมสเตย์ และที่พัก นำเสนอห้อง/ทรัพย์สิน พร้อมรูปภาพหลายมุมและช่องทางจอง <span class="text-blue-600 font-semibold">(3 แนวงานตัวอย่าง)</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/hotel/bamboo.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์อสังหาริมทรัพย์ - Homestay" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Homestay</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์ที่พัก โฮมสเตย์และรีสอร์ท</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">นำเสนอบ้านพักหลายหลัง พร้อมราคาและช่องทางจอง</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/hotel/turien.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์อสังหาริมทรัพย์ - Property" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Property</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์ทรัพย์สินให้เช่า-ขาย</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">จัดแสดงรายการทรัพย์พร้อมภาพละเอียดและข้อมูลพื้นที่</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/hotel/ramutan.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์อสังหาริมทรัพย์ - Nature Stay" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Nature Stay</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์ที่พักแนวธรรมชาติ</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">บรรยากาศสวนไม้ผล ตัดปุ่มจองเด่น ให้แขกตัดสินใจง่าย</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+
+    </div>
+</section>
+
+<section id="wedding" class="scroll-mt-40">
+    <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-10 border-b border-slate-200 pb-5 gap-4">
+        <div class="flex items-center space-x-3.5">
+            <div class="w-12 h-12 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-md shadow-blue-600/20">
+                <i class="fa-solid fa-heart text-xl"></i>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-slate-900 tracking-tight">หมวดเว็บไซต์ WordPress: เว็บไซต์รับจัดงานแต่งงาน (Wedding)</h2>
+                <p class="text-sm text-slate-500 mt-0.5">เว็บไซต์รับจัดงานแต่งและศูนย์รวมรูปแบบงานแต่ง แสดงแพ็กเกจ ผลงานจริง และบันทึกนัดหมาย <span class="text-blue-600 font-semibold">(2 แนวงานตัวอย่าง)</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/service/weddingthai.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์รับจัดงานแต่งงาน - Thai Style" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Thai Style</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์รับจัดงานแต่งสไตล์ไทย</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">แสดงชุดธีมงานแต่งไทย พร้อมแพ็กเกจบริการครบวงจร</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/service/weddingus.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์รับจัดงานแต่งงาน - Modern Style" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Modern Style</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์รับจัดงานแต่งสไตล์โมเดิร์น</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">โทนสีขาว-น้ำเงิน สื่อความเรียบหรู เหมาะกับงานแต่งป้ายนอก</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+
+    </div>
+</section>
+
+<section id="mobile" class="scroll-mt-40">
+    <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-10 border-b border-slate-200 pb-5 gap-4">
+        <div class="flex items-center space-x-3.5">
+            <div class="w-12 h-12 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-md shadow-blue-600/20">
+                <i class="fa-solid fa-mobile-screen text-xl"></i>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-slate-900 tracking-tight">หมวดเว็บไซต์ WordPress: เว็บไซต์บริการจัดที่และติดตั้ง (Mobile Setup)</h2>
+                <p class="text-sm text-slate-500 mt-0.5">เว็บไซต์บริการเคลื่อนที่ เช่น ต่อเติมบ้าน ติดตั้งระบบ และบริการถึงบ้าน เน้นขอเสนอและขั้นตอนทำงาน <span class="text-blue-600 font-semibold">(3 แนวงานตัวอย่าง)</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/hotel/tamonglai.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์บริการจัดที่และติดตั้ง - Renovation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Renovation</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์บริการต่อเติมบ้าน</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">เล่าขั้นตอนทำงาน 4 ขั้นตอน พร้อมภาพผลงานก่อน-หลัง</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/ser/sansaiwatsadu.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์บริการจัดที่และติดตั้ง - Material" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Material</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์ร้านวัสดุและบริการถึงบ้าน</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">แสดงรายการวัสดุ-บริการและพื้นที่ให้บริการชัดเจน</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/travel/wagor.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์บริการจัดที่และติดตั้ง - On-Site" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">On-Site</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์บริการเคลื่อนที่และติดตั้ง</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">เน้นปุ่มโทรออกเด่นบนมือถือ เพราะลูกค้ากลุ่มนี้ต้องการติดต่อเร็ว</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+
+    </div>
+</section>
+
+<section id="misc" class="scroll-mt-40">
+    <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-10 border-b border-slate-200 pb-5 gap-4">
+        <div class="flex items-center space-x-3.5">
+            <div class="w-12 h-12 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-md shadow-blue-600/20">
+                <i class="fa-solid fa-layer-group text-xl"></i>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-slate-900 tracking-tight">หมวดเว็บไซต์ WordPress: เว็บไซต์อื่น ๆ ทั่วไป (Miscellaneous)</h2>
+                <p class="text-sm text-slate-500 mt-0.5">เว็บไซต์แนวอื่น ๆ ที่ไม่เข้าหมวดใดโดยเฉพาะ ปรับดีไซน์และฟีเจอร์ตามลักษณะงานจริงของคุณ <span class="text-blue-600 font-semibold">(3 แนวงานตัวอย่าง)</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/999/1.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์อื่น ๆ ทั่วไป - Package A" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Package A</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์ชุดเริ่มต้น 999 บาท</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">หน้าเว็บเดี่ยวสำหรับธุรกิจที่เพิ่งเริ่มต้น สร้างความน่าเชื่อถือเร็ว</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/2999/2.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์อื่น ๆ ทั่วไป - Package B" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Package B</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์ชุดมาตรฐาน 2,999 บาท</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">เพิ่มหน้าบริการและแกลเลอรี เหมาะกับธุรกิจที่มีหลายบริการ</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 flex flex-col">
+            <div class="bg-slate-100 h-48 md:h-52 relative overflow-hidden">
+    <a href="#contact" class="block w-full h-full">
+        <img src="images_webp/yacob/banner.webp" alt="ตัวอย่างเว็บไซต์ WordPress แนว เว็บไซต์อื่น ๆ ทั่วไป - Custom" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ดูดีไซน์แนวงานนี้แบบเต็มหน้า
+            </span>
+        </div>
+    </a>
+</div>
+            <div class="p-5 flex flex-col flex-grow">
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">Custom</span>
+                <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">แนวเว็บไซต์แบบกำหนดเองตามงานจริง</h3>
+                <p class="text-sm text-slate-500 mt-2 flex-grow">ปรับโทนสี โครงสร้าง และฟีเจอร์ให้ตรงลักษณะงานเฉพาะของคุณ</p>
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <a href="#contact" class="text-xs font-bold text-slate-600 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                        <i class="fa-solid fa-comments text-slate-400"></i> สอบถามดูเว็บเดโมจริง
+                    </a>
+                </div>
+            </div>
+        </article>
+
+
+    </div>
+</section>
+</main>
+
+<!-- CTA -->
+<section class="bg-gradient-to-tr from-blue-600 to-blue-700 text-white py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">ชอบแนวเว็บไหน จับมาสวมให้ธุรกิจคุณได้เลย</h2>
+        <p class="text-blue-100 text-lg mb-8">บอกลูกค้าว่าอยากได้แนวไหน สไตล์โทนสีแบบใด เราจะปรับ WordPress ให้เป็นเว็บของคุณพร้อมระบบอัปเดตเองได้</p>
+        <a href="#contact" class="inline-flex items-center gap-2 bg-white text-blue-700 font-bold px-8 py-4 rounded-2xl hover:bg-blue-50 transition shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transform duration-200">
+            <i class="fa-solid fa-comments"></i> ประเมินราคาฟรี ตอนนี้
+        </a>
+    </div>
+</section>
+    <footer class="bg-slate-900 text-slate-400 pt-16 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-slate-800">
+                
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-code text-blue-500 text-2xl" aria-hidden="true"></i>
+                        <span class="text-2xl font-bold text-white tracking-wide">Prachuap Online</span>
+                    </div>
+                    <p class="text-sm leading-relaxed text-slate-400">
+                        บริการรับทำเว็บไซต์ครบวงจร ออกแบบเว็บไซต์สวยงาม รองรับสมาร์ตโฟน 
+                        และพัฒนาระบบตามความต้องการเพื่อความสำเร็จของธุรกิจคุณ
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold text-base mb-4 tracking-wider uppercase">ผังเว็บไซต์ (Sitemap)</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <div class="flex flex-col space-y-2.5">
+                            <a href="index.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> Home</a>
+                            <a href="promotion.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> โปรโมชั่น</a>
+                            <a href="service.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> บริการอื่นๆ</a>
+                            <a href="domain.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> ราคา ชื่อเว็บ</a>
+                        </div>
+                        <div class="flex flex-col space-y-2.5">
+                            <a href="category.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> ตัวอย่างเว็บ</a>
+                            <a href="cms.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> พัฒนาเว็บเดิม</a>
+                            <a href="about.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> เกี่ยวกับเรา</a>
+                            <a href="ai.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> AI Agent</a>
+                            <a href="WordPress.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> รับทำเว็บไซต์ WordPress</a>
+                            <a href="analytics.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> Data Analytics &amp; BI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-3 text-sm">
+                    <h3 class="text-white font-semibold text-base mb-4 tracking-wider uppercase">ติดต่อรับทำเว็บ</h3>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-blue-500 w-4"></i> 063-889-0295</p>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-blue-500 w-4"></i> zx1000rr@gmail.com</p>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-slate-500">&copy; 2026 prachuap online Studio. All rights reserved.</p>
+                <div class="flex gap-4 text-slate-500 text-lg">
+    <a href="https://www.facebook.com/profile.php?id=61577335364780" class="hover:text-white transition" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+    
+    <a href="http://line.me/ti/p/~adminkasem" class="hover:text-white transition" aria-label="Line"><i class="fa-brands fa-line"></i></a>
+    
+    <a href="https://www.youtube.com" class="hover:text-white transition" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    
+    <a href="https://discord.com" class="hover:text-white transition" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+    
+    <a href="https://www.tiktok.com" class="hover:text-white transition" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+    
+    <a href="https://github.com" class="hover:text-white transition" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Mobile Menu -->
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const closeButton = document.getElementById('mobile-close-button');
+        const sidebar = document.getElementById('mobile-sidebar');
+        const backdrop = document.getElementById('mobile-backdrop');
+        const menuPanel = document.getElementById('mobile-menu-panel');
+        const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function openMenu() {
+            sidebar.classList.remove('hidden');
+            setTimeout(() => {
+                backdrop.classList.remove('opacity-0');
+                backdrop.classList.add('opacity-100');
+                menuPanel.classList.remove('translate-x-full');
+                menuPanel.classList.add('translate-x-0');
+            }, 10);
+        }
+
+        function closeMenu() {
+            backdrop.classList.remove('opacity-100');
+            backdrop.classList.add('opacity-0');
+            menuPanel.classList.remove('translate-x-0');
+            menuPanel.classList.add('translate-x-full');
+            
+            setTimeout(() => {
+                sidebar.classList.add('hidden');
+            }, 300);
+        }
+
+        menuButton.addEventListener('click', openMenu);
+        closeButton.addEventListener('click', closeMenu);
+        backdrop.addEventListener('click', closeMenu);
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    </script>
+
+</body>
+</html>

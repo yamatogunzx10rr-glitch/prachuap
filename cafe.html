@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตัวอย่างเว็บไซต์ร้านกาแฟและเบเกอรี่ - prachuap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center">
+                        <img src="logoprachuap.webp" alt="Prachuap Online Logo" class="h-12 w-auto object-contain py-1">
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">Home</a>
+                    <a href="promotion.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">โปรโมชั่น</a>
+                    <a href="service.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">บริการอื่นๆ</a>
+                    <a href="domain.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">ราคา ชื่อเวบ</a>
+                    <a href="WordPress.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">รับทำเว็บไซต์ WordPress</a>
+                        <a href="about.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">เกี่ยวกับเรา</a>
+                    <a href="wordpress-portfolio.html" class="text-blue-600 font-semibold text-sm">ตัวอย่างเวบ</a>
+                    
+                    <a href="#contact" class="bg-blue-600 text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-blue-700 transition shadow-md shadow-blue-600/20 flex items-center gap-2">
+                        <i class="fa-solid fa-comments"></i> ติดต่อเรา
+                    </a>
+                </div>
+
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-blue-600 focus:outline-none p-2 text-2xl transition">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobile-sidebar" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-all duration-300">
+        <div id="mobile-backdrop" class="absolute inset-0 bg-slate-900/50 opacity-0 transition-opacity duration-300 pointer-events-auto"></div>
+        <div id="mobile-menu-panel" class="absolute inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl flex flex-col p-6 translate-x-full transition-transform duration-300 ease-in-out pointer-events-auto">
+            <div class="flex items-center justify-between mb-8">
+                <span class="font-bold text-lg text-slate-900">เมนูนำทาง</span>
+                <button id="mobile-close-button" class="text-slate-500 hover:text-slate-800 text-xl p-2">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">Home</a>
+                <a href="promotion.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">โปรโมชั่น</a>
+                <a href="service.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">บริการอื่นๆ</a>
+                <a href="domain.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">ราคา ชื่อเวบ</a>
+                <a href="WordPress.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">รับทำเว็บไซต์ WordPress</a>
+                <a href="about.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">เกี่ยวกับเรา</a>
+                <a href="wordpress-portfolio.html" class="mobile-nav-link text-blue-600 font-medium py-2 border-b border-slate-100 text-base">ตัวอย่างเวบ</a>
+                
+                <a href="#contact" class="mobile-nav-link bg-blue-600 text-white text-center px-5 py-3 rounded-xl font-bold text-base hover:bg-blue-700 transition shadow-md shadow-blue-600/20 flex items-center justify-center gap-2 mt-4">
+                    <i class="fa-solid fa-comments"></i> ติดต่อเรา
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <header class="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white py-20 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <span class="bg-blue-500/20 text-blue-400 text-sm font-semibold px-4 py-1.5 rounded-full border border-blue-500/30 uppercase tracking-wider">PORTFOLIO</span>
+            <h1 class="text-4xl sm:text-5xl font-extrabold mt-4 tracking-tight">เทมเพลตเว็บไซต์ ร้านกาแฟ & เบเกอรี่</h1>
+            <p class="mt-4 text-slate-400 text-base sm:text-lg font-light max-w-2xl mx-auto">รวม 20 ไอเดียตัวอย่างการออกแบบหน้าเว็บสำหรับธุรกิจ คาเฟ่ ร้านกาแฟ และร้านขนมหวาน สไตล์โมเดิร์น โหลดเร็ว รองรับมือถือ 100%</p>
+        </div>
+    </header>
+
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden group">
+                            <img src="images_webp/cafe/coffee1.webp" alt="ตัวอย่างเวบไซต์ Espresso Craft" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-4 left-4 bg-amber-600 text-white text-xs font-semibold px-3 py-1 rounded-full"><i class="fa-solid fa-coffee mr-1"></i> Cafe</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900">Espresso Craft</h3>
+                            <p class="text-slate-500 text-sm mt-2">เน้นโทนสีเข้ม ดำ-ทอง หรูหรา เหมาะสำหรับร้านกาแฟ Specialty บรรยากาศพรีเมียม</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-50 mt-4 flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-sm">Responsive Design</span>
+                        <span class="text-slate-400 text-xs">ID: C01</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden group">
+                            <img src="images_webp/cafe/coffee2.webp" alt="ตัวอย่างเวบไซต์ Sweet Pastel Bakery" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-4 left-4 bg-pink-500 text-white text-xs font-semibold px-3 py-1 rounded-full"><i class="fa-solid fa-cake-slice mr-1"></i> Bakery</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900">Sweet Pastel Bakery</h3>
+                            <p class="text-slate-500 text-sm mt-2">ดีไซน์โทนสีพาสเทล น่ารัก สดใส เหมาะสำหรับร้านขนมเค้กแฮนด์เมดสไตล์เกาหลี</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-50 mt-4 flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-sm">E-commerce Ready</span>
+                        <span class="text-slate-400 text-xs">ID: B01</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden group">
+                            <img src="images_webp/cafe/coffee3.webp" alt="ตัวอย่างเวบไซต์ Minimalist Cafe" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-4 left-4 bg-amber-600 text-white text-xs font-semibold px-3 py-1 rounded-full"><i class="fa-solid fa-coffee mr-1"></i> Cafe</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900">Minimalist Cafe Space</h3>
+                            <p class="text-slate-500 text-sm mt-2">เน้นสีขาว ครีม และงานไม้ สไตล์ญี่ปุ่น มินิมอลเรียบง่าย สะอาดตา คลีนๆ</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-50 mt-4 flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-sm">Minimal Style</span>
+                        <span class="text-slate-400 text-xs">ID: C02</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden group">
+                            <img src="images_webp/cafe/coffee4.webp" alt="ตัวอย่างเวบไซต์ Daily Croissant" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-4 left-4 bg-pink-500 text-white text-xs font-semibold px-3 py-1 rounded-full"><i class="fa-solid fa-cake-slice mr-1"></i> Bakery</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900">Daily Croissant</h3>
+                            <p class="text-slate-500 text-sm mt-2">การจัดหน้าแบบโมเดิร์น พรีเซนต์ภาพครัวซองต์อบใหม่ๆ ชัดเจน ชวนน่ารับประทาน</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-50 mt-4 flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-sm">High Conversion</span>
+                        <span class="text-slate-400 text-xs">ID: B02</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden group">
+                            <img src="images_webp/cafe/darkcafe.webp" alt="ตัวอย่างเวบไซต์ Roaster Lab" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-4 left-4 bg-amber-600 text-white text-xs font-semibold px-3 py-1 rounded-full"><i class="fa-solid fa-coffee mr-1"></i> Cafe</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900">Roaster Lab</h3>
+                            <p class="text-slate-500 text-sm mt-2">แนวโรงคั่วกาแฟ สไตล์ลอฟท์ อิฐเปลือย ดิบๆ เท่ๆ เหมาะสำหรับคาเฟ่สายเข้ม</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-50 mt-4 flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-sm">Industrial Loft</span>
+                        <span class="text-slate-400 text-xs">ID: C03</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden group">
+                            <img src="images_webp/cafe/greentea.webp" alt="ตัวอย่างเวบไซต์ Little Oven" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-4 left-4 bg-pink-500 text-white text-xs font-semibold px-3 py-1 rounded-full"><i class="fa-solid fa-cake-slice mr-1"></i> Bakery</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900">Little Oven</h3>
+                            <p class="text-slate-500 text-sm mt-2">ร้านขนมปังโฮมเมด อบอุ่น ฟีลครอบครัว มีระบบจองคอร์สเรียนทำขนมออนไลน์</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-50 mt-4 flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-sm">Booking System</span>
+                        <span class="text-slate-400 text-xs">ID: B03</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden group">
+                            <img src="images_webp/cafe/greentea1.webp" alt="ตัวอย่างเวบไซต์ Botanical Cafe" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-4 left-4 bg-amber-600 text-white text-xs font-semibold px-3 py-1 rounded-full"><i class="fa-solid fa-coffee mr-1"></i> Cafe</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900">Botanical Garden Cafe</h3>
+                            <p class="text-slate-500 text-sm mt-2">ธีมธรรมชาติ ป่าไม้ สีเขียวขจีผ่อนคลาย สำหรับคาเฟ่ในสวนหรือเน้นธรรมชาติ</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-50 mt-4 flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-sm">Nature Theme</span>
+                        <span class="text-slate-400 text-xs">ID: C04</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden group">
+                            <img src="images_webp/cafe/greentea2.webp" alt="ตัวอย่างเวบไซต์ French Patisserie" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-4 left-4 bg-pink-500 text-white text-xs font-semibold px-3 py-1 rounded-full"><i class="fa-solid fa-cake-slice mr-1"></i> Bakery</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900">French Patisserie</h3>
+                            <p class="text-slate-500 text-sm mt-2">หรูหราสไตล์ฝรั่งเศส คลาสสิก เหมาะกับร้านขนมหวานเกรดไฮเอนด์และมาการอง</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-50 mt-4 flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-sm">Luxury Class</span>
+                        <span class="text-slate-400 text-xs">ID: B04</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden group">
+                            <img src="images_webp/cafe/greentea3.webp" alt="ตัวอย่างเวบไซต์ Slow Bar Vibe" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-4 left-4 bg-amber-600 text-white text-xs font-semibold px-3 py-1 rounded-full"><i class="fa-solid fa-coffee mr-1"></i> Cafe</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900">Slow Bar Vibe</h3>
+                            <p class="text-slate-500 text-sm mt-2">ร้านกาแฟดริปสโลว์บาร์ เน้นเรื่องเล่าสตอรี่ของเมล็ดกาแฟแต่ละแหล่งปลูก</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-50 mt-4 flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-sm">Storytelling Menu</span>
+                        <span class="text-slate-400 text-xs">ID: C05</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden group">
+                            <img src="images_webp/cafe/preawcafe.webp" alt="ตัวอย่างเวบไซต์ Artisan Bread" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-4 left-4 bg-pink-500 text-white text-xs font-semibold px-3 py-1 rounded-full"><i class="fa-solid fa-cake-slice mr-1"></i> Bakery</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900">Artisan Bread Co.</h3>
+                            <p class="text-slate-500 text-sm mt-2">เน้นขนมปังเพื่อสุขภาพ ขนมปังซาวโดว์ (Sourdough) สไตล์ยุโรปดั้งเดิม</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-50 mt-4 flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-sm">Healthy Focus</span>
+                        <span class="text-slate-400 text-xs">ID: B05</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden group">
+                            <img src="images_webp/cafe/coffee.webp" alt="ตัวอย่างเวบไซต์ Neon Night Cafe" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-4 left-4 bg-amber-600 text-white text-xs font-semibold px-3 py-1 rounded-full"><i class="fa-solid fa-coffee mr-1"></i> Cafe</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900">Neon Night Cafe</h3>
+                            <p class="text-slate-500 text-sm mt-2">เปิดทั้งกลางวันกลางคืน ตกแต่งไซเบอร์พังก์/นีออน สำหรับคาเฟ่กึ่งบาร์</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-50 mt-4 flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-sm">Cyberpunk Cyber</span>
+                        <span class="text-slate-400 text-xs">ID: C06</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden group">
+                            <img src="images_webp/cafe/coffee1.webp" alt="ตัวอย่างเวบไซต์ Cupcake Paradise" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-4 left-4 bg-pink-500 text-white text-xs font-semibold px-3 py-1 rounded-full"><i class="fa-solid fa-cake-slice mr-1"></i> Bakery</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900">Cupcake Paradise</h3>
+                            <p class="text-slate-500 text-sm mt-2">เว็บแฟนซีสีสันสดใส รวมคัพเค้กหลากหลายหน้า แอนิเมชันลูกเล่นขยับน่ารักๆ</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-50 mt-4 flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-sm">Creative Animation</span>
+                        <span class="text-slate-400 text-xs">ID: B06</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden group">
+                            <img src="images_webp/cafe/coffee2.webp" alt="ตัวอย่างเวบไซต์ Coastal Brew" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-4 left-4 bg-amber-600 text-white text-xs font-semibold px-3 py-1 rounded-full"><i class="fa-solid fa-coffee mr-1"></i> Cafe</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900">Coastal Brew</h3>
+                            <p class="text-slate-500 text-sm mt-2">คาเฟ่ริมทะเล โทนสีฟ้า ขาว สบายตา ให้ฟีลลิ่งวันหยุดพักผ่อนหย่อนใจ</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-50 mt-4 flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-sm">Beach Side Vibe</span>
+                        <span class="text-slate-400 text-xs">ID: C07</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden group">
+                            <img src="images_webp/cafe/coffee3.webp" alt="ตัวอย่างเวบไซต์ Tokyo Sweet" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-4 left-4 bg-pink-500 text-white text-xs font-semibold px-3 py-1 rounded-full"><i class="fa-solid fa-cake-slice mr-1"></i> Bakery</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900">Tokyo Sweet & Café</h3>
+                            <p class="text-slate-500 text-sm mt-2">ร้านขนมไดฟูกุและเบเกอรี่สไตล์ญี่ปุ่นโบราณ คลาสสิก อบอุ่นละมุนหัวใจ</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-50 mt-4 flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-sm">Japanese Style</span>
+                        <span class="text-slate-400 text-xs">ID: B07</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden group">
+                            <img src="images_webp/cafe/coffee4.webp" alt="ตัวอย่างเวบไซต์ Retro Coffee" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-4 left-4 bg-amber-600 text-white text-xs font-semibold px-3 py-1 rounded-full"><i class="fa-solid fa-coffee mr-1"></i> Cafe</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900">Retro 90s Coffee</h3>
+                            <p class="text-slate-500 text-sm mt-2">ย้อนยุค 90s ด้วยโทนสีส้มอิฐและน้ำตาล คอนเซปต์แผ่นเสียงเก่าและคลาสสิก</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-50 mt-4 flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-sm">Vintage Design</span>
+                        <span class="text-slate-400 text-xs">ID: C08</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden group">
+                            <img src="images_webp/cafe/darkcafe.webp" alt="ตัวอย่างเวบไซต์ Custom Cake" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-4 left-4 bg-pink-500 text-white text-xs font-semibold px-3 py-1 rounded-full"><i class="fa-solid fa-cake-slice mr-1"></i> Bakery</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900">The Custom Cake</h3>
+                            <p class="text-slate-500 text-sm mt-2">เน้นรับทำเค้กวันเกิดตามสั่ง มีแบบฟอร์มให้ลูกค้าเลือกมิกซ์ส่วนผสมและหน้าเค้กเองได้</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-50 mt-4 flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-sm">Interactive Form</span>
+                        <span class="text-slate-400 text-xs">ID: B08</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden group">
+                            <img src="images_webp/cafe/greentea.webp" alt="ตัวอย่างเวบไซต์ Smart Cafe Truck" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-4 left-4 bg-amber-600 text-white text-xs font-semibold px-3 py-1 rounded-full"><i class="fa-solid fa-coffee mr-1"></i> Cafe</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900">Smart Cafe Truck</h3>
+                            <p class="text-slate-500 text-sm mt-2">หน้าเดียวจบ (One-page) สำหรับรถ Food Truck กาแฟเคลื่อนที่ เน้นแผนที่และพิกัดร้าน</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-50 mt-4 flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-sm">One-Page Setup</span>
+                        <span class="text-slate-400 text-xs">ID: C09</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden group">
+                            <img src="images_webp/cafe/greentea1.webp" alt="ตัวอย่างเวบไซต์ Sweet Box" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-4 left-4 bg-pink-500 text-white text-xs font-semibold px-3 py-1 rounded-full"><i class="fa-solid fa-cake-slice mr-1"></i> Bakery</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900">Sweet Box Catering</h3>
+                            <p class="text-slate-500 text-sm mt-2">เน้นรับจัดทำ Snack Box ชุดอาหารว่างและขนมเบเกอรี่สำหรับงานสัมมนาต่างๆ</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-50 mt-4 flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-sm">Catering Focus</span>
+                        <span class="text-slate-400 text-xs">ID: B09</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden group">
+                            <img src="images_webp/cafe/greentea2.webp" alt="ตัวอย่างเวบไซต์ Co-Working Coffee" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-4 left-4 bg-amber-600 text-white text-xs font-semibold px-3 py-1 rounded-full"><i class="fa-solid fa-coffee mr-1"></i> Cafe</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900">Co-Working Coffee</h3>
+                            <p class="text-slate-500 text-sm mt-2">คาเฟ่สำหรับสายฟรีแลนซ์ นำเสนอระบบจองห้องประชุมส่วนตัวและตรวจสอบปลั๊กไฟ</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-50 mt-4 flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-sm">Space Booking</span>
+                        <span class="text-slate-400 text-xs">ID: C10</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden group">
+                            <img src="images_webp/cafe/greentea3.webp" alt="ตัวอย่างเวบไซต์ Zero Sugar Bakery" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-4 left-4 bg-pink-500 text-white text-xs font-semibold px-3 py-1 rounded-full"><i class="fa-solid fa-cake-slice mr-1"></i> Bakery</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900">Zero Sugar Bakery</h3>
+                            <p class="text-slate-500 text-sm mt-2">เว็บขนมคีโต ชูจุดเด่นไม่ใช้น้ำตาล แคลอรีต่ำ สำหรับกลุ่มลูกค้าคนรักสุขภาพรุ่นใหม่</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-50 mt-4 flex justify-between items-center">
+                        <span class="text-blue-600 font-bold text-sm">Keto Friendly</span>
+                        <span class="text-slate-400 text-xs">ID: B10</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-100">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900">ติดต่อประเมินราคาฟรี</h2>
+                    <p class="mt-4 text-slate-600">พูดคุยแลกเปลี่ยนไอเดียและรายละเอียดความต้องการได้ตลอดเวลา ไม่มีค่าใช้จ่ายเบื้องต้น</p>
+                    
+                    <div class="mt-12 space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm text-slate-400">เบอร์โทรศัพท์</h4>
+                                <p class="text-base font-semibold text-slate-900">063-889-0295</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm text-slate-400">อีเมลเพื่อติดต่องาน</h4>
+                                <p class="text-base font-semibold text-slate-900">zx1000rr@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-4 bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                    <h3 class="text-lg font-bold text-slate-900 mb-4 text-center sm:text-left">เลือกช่องทางที่คุณสะดวกคุย</h3>
+                    
+                    <a href="https://line.me/ti/p/~adminkasem" target="_blank" class="flex items-center justify-center gap-3 w-full bg-[#06C755] hover:bg-[#05b34c] text-white py-4 rounded-xl font-semibold shadow-lg shadow-green-600/20 transition">
+                        <i class="fa-brands fa-line text-xl"></i>
+                        แชทผ่าน Line Official / ID
+                    </a>
+
+                    <a href="mailto:zx1000rr@gmail.com?subject=ติดต่อประเมินราคาเว็บไซต์ร้านกาแฟ" class="flex items-center justify-center gap-3 w-full bg-slate-900 hover:bg-slate-800 text-white py-4 rounded-xl font-semibold shadow-lg transition">
+                        <i class="fa-solid fa-envelope text-xl"></i>
+                        ส่งอีเมลหาเราโดยตรง
+                    </a>
+
+                    <a href="tel:0638890295" class="flex items-center justify-center gap-3 w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl font-semibold shadow-lg shadow-blue-600/20 transition">
+                        <i class="fa-solid fa-phone text-xl"></i>
+                        โทรคุยตอนนี้ (063-889-0295)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-code text-blue-500 text-xl"></i>
+                <span class="text-xl font-bold text-white">prachuap online</span>
+            </div>
+            <p class="text-sm">&copy; 2026 prachuap online Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const closeButton = document.getElementById('mobile-close-button');
+        const sidebar = document.getElementById('mobile-sidebar');
+        const backdrop = document.getElementById('mobile-backdrop');
+        const menuPanel = document.getElementById('mobile-menu-panel');
+        const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function openMenu() {
+            sidebar.classList.remove('pointer-events-none');
+            backdrop.classList.remove('opacity-0');
+            backdrop.classList.add('opacity-100');
+            menuPanel.classList.remove('translate-x-full');
+            menuPanel.classList.add('translate-x-0');
+        }
+
+        function closeMenu() {
+            sidebar.classList.add('pointer-events-none');
+            backdrop.classList.remove('opacity-100');
+            backdrop.classList.add('opacity-0');
+            menuPanel.classList.remove('translate-x-0');
+            menuPanel.classList.add('translate-x-full');
+        }
+
+        menuButton.addEventListener('click', openMenu);
+        closeButton.addEventListener('click', closeMenu);
+        backdrop.addEventListener('click', closeMenu);
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    </script>
+
+</body>
+</html>

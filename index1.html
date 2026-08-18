@@ -3,156 +3,856 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vian Real Estate - Modern Single Page</title>
+    <title>prachuap - รับทำเว็บไซต์ครบวงจร</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome สำหรับ Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Prompt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Prompt', sans-serif; }
-        .hero-gradient { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; }
+        body {
+            font-family: 'Prompt', sans-serif;
+        }
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-slate-50 text-slate-800 antialiased">
 
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-blue-900">VIAN<span class="text-amber-500">ESTATE</span></div>
-            <div class="hidden md:flex space-x-8 font-medium">
-                <a href="#home" class="hover:text-amber-500 transition">หน้าแรก</a>
-                <a href="#about" class="hover:text-amber-500 transition">เกี่ยวกับเรา</a>
-                <a href="#properties" class="hover:text-amber-500 transition">โครงการ</a>
-                <a href="#contact" class="hover:text-amber-500 transition">ติดต่อเรา</a>
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center">
+                        <img src="logoprachuap.webp" alt="Prachuap Online Logo" class="h-12 w-auto object-contain py-1">
+                    </a>
+                </div>
+
+                <!-- Desktop Menu (แสดงบนจอคอมพิวเตอร์) -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">Home</a>
+                    <a href="promotion.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">โปรโมชั่น</a>
+                    <a href="service.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">บริการอื่นๆ</a>
+                    <a href="domain.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">ราคา ชื่อเวบ</a>
+                    <a href="WordPress.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">รับทำเว็บไซต์ WordPress</a>
+                        <a href="about.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">เกี่ยวกับเรา</a>
+                    <a href="wordpress-portfolio.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">ตัวอย่างเวบ</a>
+                    
+                    <a href="#contact" class="bg-blue-600 text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-blue-700 transition shadow-md shadow-blue-600/20 flex items-center gap-2">
+                        <i class="fa-solid fa-comments"></i> ติดต่อเรา
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button (ปุ่มแฮมเบอร์เกอร์สำหรับมือถือ) -->
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-blue-600 focus:outline-none p-2 text-2xl transition">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+
             </div>
-            <button class="bg-blue-900 text-white px-6 py-2 rounded-full hover:bg-amber-500 transition">จองชมโครงการ</button>
         </div>
     </nav>
 
-    <section id="home" class="hero-gradient h-screen flex items-center justify-center text-center text-white px-4">
-        <div class="max-w-3xl">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6">ค้นหาบ้านในฝัน<br>ที่ออกแบบมาเพื่อคุณ</h1>
-            <p class="text-lg md:text-xl mb-8 text-gray-200">เราคือผู้เชี่ยวชาญด้านอสังหาริมทรัพย์และการก่อสร้างระดับพรีเมียม ด้วยประสบการณ์กว่า 20 ปี</p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="#properties" class="bg-amber-500 text-white px-8 py-4 rounded-lg font-bold hover:bg-amber-600 transition">ดูโครงการทั้งหมด</a>
-                <a href="#about" class="bg-white text-blue-900 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition">รู้จักเรามากขึ้น</a>
+    <!-- Mobile Sidebar Menu (เมนูด้านข้างสำหรับมือถือ ซ่อนไว้เริ่มต้น) -->
+    <div id="mobile-sidebar" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-all duration-300">
+        <!-- Backdrop พื้นหลังสีดำโปร่งแสง -->
+        <div id="mobile-backdrop" class="absolute inset-0 bg-slate-900/50 opacity-0 transition-opacity duration-300 pointer-events-auto"></div>
+        
+        <!-- แผงเมนูสไลด์ -->
+        <div id="mobile-menu-panel" class="absolute inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl flex flex-col p-6 translate-x-full transition-transform duration-300 ease-in-out pointer-events-auto">
+            <!-- ปุ่มปิดเมนู -->
+            <div class="flex items-center justify-between mb-8">
+                <span class="font-bold text-lg text-slate-900">เมนูนำทาง</span>
+                <button id="mobile-close-button" class="text-slate-500 hover:text-slate-800 text-xl p-2">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <!-- รายการลิงก์เมนู -->
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">Home</a>
+                <a href="promotion.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">โปรโมชั่น</a>
+                <a href="service.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">บริการอื่นๆ</a>
+                <a href="domain.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">ราคา ชื่อเวบ</a>
+                <a href="WordPress.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">รับทำเว็บไซต์ WordPress</a>
+                <a href="about.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">เกี่ยวกับเรา</a>
+                <a href="wordpress-portfolio.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">ตัวอย่างเวบ</a>
+                
+                <a href="#contact" class="mobile-nav-link bg-blue-600 text-white text-center px-5 py-3 rounded-xl font-bold text-base hover:bg-blue-700 transition shadow-md shadow-blue-600/20 flex items-center justify-center gap-2 mt-4">
+                    <i class="fa-solid fa-comments"></i> ติดต่อเรา
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-900 pt-16 pb-24 text-white overflow-hidden">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-400/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3"></div>
+        <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-500/20 rounded-full blur-2xl -translate-x-1/4 translate-y-1/4"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-yellow-400 text-slate-900 font-black px-4 py-1.5 rounded-full text-sm uppercase tracking-wide shadow-md animate-bounce">
+                        <i class="fa-solid fa-fire"></i> โปรโมชั่นสุดคุ้ม!
+                    </div>
+                    
+                    <h1 class="text-5xl sm:text-6xl font-black text-white leading-none tracking-tight">
+                        ทำเว็บไซต์ <br>
+                        <span class="text-slate-950 bg-white px-4 py-1 my-2 inline-block rounded-2xl transform -rotate-1 shadow-lg text-4xl">จบเพียง</span> 
+                        <span class="text-yellow-400 text-6xl sm:text-7xl block sm:inline font-extrabold ml-0 sm:ml-2 drop-shadow-[0_4px_6px_rgba(0,0,0,0.4)]">999.-</span>
+                        <span class="text-sm bg-blue-900 border border-blue-500 text-sky-300 font-bold px-3 py-1 rounded-full align-middle ml-2 inline-block">เท่านั้น!</span>
+                    </h1>
+
+                    <div class="inline-block bg-yellow-400 text-slate-900 font-bold text-lg sm:text-xl px-6 py-2 rounded-xl shadow-md">
+                        ครบ จบ ในราคาสบายกระเป๋า
+                    </div>
+
+                    <p class="text-blue-100 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
+                        สร้างเว็บไซต์ให้ธุรกิจของคุณเติบโตอย่างมืออาชีพ ตอบโจทย์ทุกอุตสาหกรรมด้วยดีไซน์ที่ทันสมัยและระบบงานที่สมบูรณ์แบบ
+                    </p>
+
+                    <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#contact" class="inline-flex justify-center items-center px-8 py-4 rounded-xl text-lg font-bold text-slate-900 bg-yellow-400 hover:bg-yellow-300 shadow-xl shadow-yellow-400/20 transition-all transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-comment-dots mr-2 text-xl"></i> ทักแชทเลย! ให้เราช่วยสร้างเว็บ
+                        </a>
+                        <a href="promotion.html" class="inline-flex justify-center items-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-blue-800/80 hover:bg-blue-800 border border-blue-500/50 transition">
+                            ดูรายละเอียดบริการ
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 flex flex-col items-center justify-center relative">
+                    <div class="relative w-full max-w-lg transition duration-500 transform hover:scale-[1.02]">
+                        <img src="images_webp/banner1.webp" alt="prachuap online Studio Showcase" class="w-full h-auto drop-shadow-[0_20px_35px_rgba(0,0,0,0.3)] rounded-xl object-contain">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-white/10 pt-10">
+                <div class="flex flex-col items-center text-center p-4 bg-white/5 rounded-2xl border border-white/5 backdrop-blur-sm group hover:bg-white/10 transition">
+                    <div class="w-12 h-12 bg-yellow-400 text-slate-900 rounded-xl flex items-center justify-center text-xl font-bold mb-3 shadow-lg">
+                        <i class="fa-solid fa-pen-ruler"></i>
+                    </div>
+                    <h4 class="text-base font-bold text-white">ออกแบบสวยทันสมัย</h4>
+                    <p class="text-xs text-blue-200 mt-1">ดีไซน์สวย ใช้งานง่ายเป็นระบบ</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-4 bg-white/5 rounded-2xl border border-white/5 backdrop-blur-sm group hover:bg-white/10 transition">
+                    <div class="w-12 h-12 bg-yellow-400 text-slate-900 rounded-xl flex items-center justify-center text-xl font-bold mb-3 shadow-lg">
+                        <i class="fa-solid fa-display"></i>
+                    </div>
+                    <h4 class="text-base font-bold text-white">รองรับทุกอุปกรณ์</h4>
+                    <p class="text-xs text-blue-200 mt-1">มือถือ, แท็บเล็ต, PC แสดงผลเป๊ะ</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-4 bg-white/5 rounded-2xl border border-white/5 backdrop-blur-sm group hover:bg-white/10 transition">
+                    <div class="w-12 h-12 bg-yellow-400 text-slate-900 rounded-xl flex items-center justify-center text-xl font-bold mb-3 shadow-lg">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    </div>
+                    <h4 class="text-base font-bold text-white">รองรับระบบ SEO</h4>
+                    <p class="text-xs text-blue-200 mt-1">ติดอันดับง่าย ค้นเจอไวบน Google</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-4 bg-white/5 rounded-2xl border border-white/5 backdrop-blur-sm group hover:bg-white/10 transition">
+                    <div class="w-12 h-12 bg-yellow-400 text-slate-900 rounded-xl flex items-center justify-center text-xl font-bold mb-3 shadow-lg">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <h4 class="text-base font-bold text-white">ดูแลหลังบ้านใช้งานง่าย</h4>
+                    <p class="text-xs text-blue-200 mt-1">จัดการเนื้อหา อัพเดตข้อมูลเองได้สบาย</p>
+                </div>
+            </div>
+
+            <div class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-8 text-sm text-blue-100 border-t border-white/5 pt-6">
+                <div class="flex items-center gap-2.5">
+                    <i class="fa-solid fa-circle-check text-yellow-400 text-lg"></i>
+                    <span><strong>รับประกันผลงาน:</strong> แก้ไขงานให้จนกว่าคุณจะพึงพอใจ</span>
+                </div>
+                <div class="hidden sm:block text-white/30">|</div>
+                <div class="flex items-center gap-2.5">
+                    <i class="fa-solid fa-clock text-yellow-400 text-lg"></i>
+                    <span><strong>ส่งงานตรงเวลา:</strong> พร้อมเปิดระบบใช้งานจริงทันใจ</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">บริการของเราตอบโจทย์ทุกความต้องการ</h2>
+                <p class="mt-4 text-slate-600">เราใส่ใจในทุกขั้นตอนเพื่อส่งมอบสิ่งที่ดีที่สุด ไม่ว่าจะเป็นระบบการใช้งานหรือโครงสร้างหลังบ้าน</p>
+            </div>
+
+            <!-- 🔥 บล็อกโปรโมชั่นพิเศษ (เหลือ 999 บาท) 🔥 -->
+            <div class="max-w-4xl mx-auto mb-20 bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-800 rounded-3xl p-8 sm:p-10 shadow-xl shadow-blue-600/20 text-white relative overflow-hidden transform hover:scale-[1.01] transition duration-300">
+                <div class="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+                <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-sky-400/20 rounded-full blur-2xl"></div>
+                
+                <div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
+                    <div class="text-center md:text-left">
+                        <span class="inline-block bg-sky-400 text-slate-900 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-3">🔥 Flash Sale Promotion</span>
+                        <h3 class="text-2xl sm:text-3xl font-bold">โปรโมชั่นเปิดร้านค้า/เปิดตัวสินค้า</h3>
+                        <p class="text-blue-100 mt-2 text-sm sm:text-base max-w-md">รับทำหน้า Landing Page สำเร็จรูป ดีไซน์สวยงาม โหลดเร็ว คุ้มค่าและรวดเร็ว เหมาะสำหรับการนำไปยิงแอดสร้างยอดขายด่วน!</p>
+                    </div>
+                    <div class="text-center border-t border-white/20 pt-6 md:pt-0 md:border-t-0 md:border-l md:pl-10 flex flex-col items-center min-w-[220px]">
+                        <span class="text-sm text-blue-200 line-through font-medium">ปกติ ฿2,999</span>
+                        <div class="flex items-baseline gap-1 mt-1">
+                            <span class="text-sm font-semibold text-sky-300">จ่ายเพียง</span>
+                            <span class="text-4xl sm:text-5xl font-black text-white tracking-tight">฿999</span>
+                        </div>
+                        <a href="#contact" class="mt-5 inline-flex items-center justify-center w-full px-6 py-3 bg-white text-blue-700 font-bold rounded-xl shadow-lg hover:bg-sky-50 transition transform active:scale-95">
+                            จองสิทธิ์โปรโมชั่นนี้
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- รายการบริการหลัก 3 คอลัมน์ -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-xl transition group flex flex-col justify-between h-full">
+    <div>
+        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-xl font-bold mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+            <i class="fa-solid fa-laptop-code"></i>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-3">Corporate &amp; Landing Page</h3>
+        <p class="text-slate-600 leading-relaxed text-sm mb-6">เว็บไซต์แนะนำบริษัท หรือหน้าเว็บขายสินค้าหน้าเดียว ดีไซน์หรูหรา เพิ่มความน่าเชื่อถือให้กับแบรนด์ของคุณอย่างเป็นระบบ</p>
+    </div>
+    
+    <!-- ปุ่มดูตัวอย่างที่เพิ่มเข้ามา -->
+    <a href="#" class="inline-flex items-center justify-center bg-white border border-slate-200 text-slate-700 font-semibold text-sm py-2.5 px-4 rounded-xl shadow-sm hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 transition-all duration-200 w-full text-center">
+        ดูตัวอย่าง
+        <i class="fa-solid fa-arrow-right ml-2 text-xs opacity-70 group-hover:translate-x-1 transition-transform"></i>
+    </a>
+</div>
+                <!-- Service 2 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-xl transition group flex flex-col justify-between h-full">
+    <div>
+        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-xl font-bold mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-3">E-Commerce System</h3>
+        <p class="text-slate-600 leading-relaxed text-sm mb-6">ระบบร้านค้าออนไลน์ ตะกร้าสินค้า และระบบการชำระเงินที่สะดวกสบาย รัดกุม ปลอดภัย เชื่อมต่อง่าย จัดการออเดอร์สบายใจ</p>
+    </div>
+    
+    <a href="#" class="inline-flex items-center justify-center bg-white border border-slate-200 text-slate-700 font-semibold text-sm py-2.5 px-4 rounded-xl shadow-sm hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 transition-all duration-200 w-full text-center">
+        ดูตัวอย่าง
+        <i class="fa-solid fa-arrow-right ml-2 text-xs opacity-70 group-hover:translate-x-1 transition-transform"></i>
+    </a>
+</div>
+                <!-- Service 3 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-xl transition group flex flex-col justify-between h-full">
+    <div>
+        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-xl font-bold mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-3">SEO &amp; Speed Optimization</h3>
+        <p class="text-slate-600 leading-relaxed text-sm mb-6">ปรับแต่งโครงสร้างให้สอดรับกับแนวทางของ Google โหลดรวดเร็วทันใจ พร้อมรองรับเทคโนโลยีเว็บยุคใหม่ได้อย่างราบรื่น</p>
+    </div>
+    
+    <a href="#" class="inline-flex items-center justify-center bg-white border border-slate-200 text-slate-700 font-semibold text-sm py-2.5 px-4 rounded-xl shadow-sm hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 transition-all duration-200 w-full text-center">
+        ดูตัวอย่าง
+        <i class="fa-solid fa-arrow-right ml-2 text-xs opacity-70 group-hover:translate-x-1 transition-transform"></i>
+    </a>
+</div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-12 text-center">
-                <div>
-                    <div class="text-4xl font-bold text-blue-900 mb-2">500+</div>
-                    <p class="text-gray-600">โครงการที่สำเร็จ</p>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold text-blue-900 mb-2">15+</div>
-                    <p class="text-gray-600">รางวัลการันตี</p>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold text-blue-900 mb-2">1,200+</div>
-                    <p class="text-gray-600">ลูกค้าที่ไว้วางใจ</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="properties" class="py-20">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-end mb-12">
-                <div>
-                    <h2 class="text-3xl font-bold text-blue-900">โครงการแนะนำ</h2>
-                    <p class="text-gray-600 mt-2">คัดสรรบ้านและคอนโดทำเลทองเพื่อการลงทุนและการอยู่อาศัย</p>
-                </div>
+    <!-- 🌐 Section: หมวดหมู่เว็บไซต์ที่เราเชี่ยวชาญ (Website Categories) 🌐 -->
+    <section id="categories" class="py-24 bg-slate-100/70 border-y border-slate-200/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-blue-600 font-bold tracking-widest uppercase text-xs">Categories Specialize</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">หมวดหมู่เว็บไซต์ที่เราเปิดบริการ</h2>
+                <p class="mt-4 text-slate-600">เราปรับเปลี่ยนรูปแบบและฟังก์ชันการทำงานให้ลงตัวกับอุตสาหกรรมและประเภทธุรกิจของคุณโดยเฉพาะ</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg group">
-                    <div class="relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="House" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
-                        <span class="absolute top-4 left-4 bg-blue-900 text-white px-3 py-1 rounded text-sm">ขายดี</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">The Grand Residence</h3>
-                        <p class="text-gray-500 text-sm mb-4"><i class="fas fa-map-marker-alt mr-2"></i>สุขุมวิท, กรุงเทพฯ</p>
-                        <div class="flex justify-between items-center border-t pt-4">
-                            <span class="text-amber-600 font-bold text-lg">฿12,900,000</span>
-                            <div class="flex space-x-3 text-gray-400 text-sm">
-                                <span><i class="fas fa-bed mr-1"></i> 4</span>
-                                <span><i class="fas fa-bath mr-1"></i> 3</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg group">
-                    <div class="relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="House" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
-                        <span class="absolute top-4 left-4 bg-amber-500 text-white px-3 py-1 rounded text-sm">โครงการใหม่</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Modern Villa Ocean View</h3>
-                        <p class="text-gray-500 text-sm mb-4"><i class="fas fa-map-marker-alt mr-2"></i>หัวหิน, ประจวบคีรีขันธ์</p>
-                        <div class="flex justify-between items-center border-t pt-4">
-                            <span class="text-amber-600 font-bold text-lg">฿8,500,000</span>
-                            <div class="flex space-x-3 text-gray-400 text-sm">
-                                <span><i class="fas fa-bed mr-1"></i> 3</span>
-                                <span><i class="fas fa-bath mr-1"></i> 2</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg group">
-                    <div class="relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1600607687940-c52fb047302c?auto=format&fit=crop&w=800&q=80" alt="House" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Urban Loft Condo</h3>
-                        <p class="text-gray-500 text-sm mb-4"><i class="fas fa-map-marker-alt mr-2"></i>อารีย์, กรุงเทพฯ</p>
-                        <div class="flex justify-between items-center border-t pt-4">
-                            <span class="text-amber-600 font-bold text-lg">฿4,200,000</span>
-                            <div class="flex space-x-3 text-gray-400 text-sm">
-                                <span><i class="fas fa-bed mr-1"></i> 1</span>
-                                <span><i class="fas fa-bath mr-1"></i> 1</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Grid หมวดหมู่ 7 ประเภท -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Category 1: ร้านอาหาร -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group flex flex-col h-full justify-between">
+    <div>
+        <div class="flex items-center gap-4 mb-5">
+            <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                <i class="fa-solid fa-utensils"></i>
             </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-20 bg-blue-900 text-white">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
             <div>
-                <h2 class="text-4xl font-bold mb-6">เริ่มสร้างอนาคตกับเรา</h2>
-                <p class="text-blue-200 mb-8">หากคุณสนใจโครงการหรือต้องการปรึกษาเรื่องการสร้างบ้าน ทีมงานมืออาชีพของเราพร้อมให้คำแนะนำฟรี</p>
-                <div class="space-y-4">
-                    <div class="flex items-center space-x-4">
-                        <i class="fas fa-phone text-amber-500 text-xl"></i>
-                        <span>02-123-4567</span>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <i class="fas fa-envelope text-amber-500 text-xl"></i>
-                        <span>info@vianestate.com</span>
+                <span class="text-xs font-semibold text-slate-400 uppercase">Category 01</span>
+                <h3 class="text-lg font-bold text-slate-900">รับทำเว็บไซต์ ร้านอาหาร</h3>
+            </div>
+        </div>
+        
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">แสดงเมนูอาหารดิจิทัลแสนอร่อย มีระบบจองโต๊ะล่วงหน้า ฟังก์ชันปักหมุดแผนที่นำทางอย่างถูกต้อง และเชื่อมต่อปุ่มสั่งอาหารบริการเดลิเวอรีชั้นนำ</p>
+        
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Digital Menu</span>
+            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Table Booking</span>
+            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Google Maps</span>
+        </div>
+    </div>
+
+    <a href="#" class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 text-sm font-semibold text-blue-600 bg-blue-50 hover:bg-blue-600 hover:text-white rounded-xl transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+        <span>ดูตัวอย่างเว็บไซต์</span>
+        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+    </a>
+</div>
+
+                <!-- Category 2: ร้านกาแฟ -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group flex flex-col h-full justify-between">
+    <div>
+        <!-- ส่วนหัวและไอคอน -->
+        <div class="flex items-center gap-4 mb-5">
+            <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                <i class="fa-solid fa-mug-hot"></i>
+            </div>
+            <div>
+                <span class="text-xs font-semibold text-slate-400 uppercase">Category 02</span>
+                <h3 class="text-lg font-bold text-slate-900">รับทำเว็บไซต์ ร้านกาแฟ</h3>
+            </div>
+        </div>
+        
+        <!-- รายละเอียด -->
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">ถ่ายทอดบรรยากาศสุดคลาสสิกของคาเฟ่ แนะนำเมนูซิกเนเจอร์ประจำฤดูกาล ระบบสมาชิกสะสมแต้มออนไลน์ และลิงก์สั่งซื้อด่วนผ่าน Line Official Account</p>
+        
+        <!-- แท็กฟีเจอร์ -->
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Cafe Vibe</span>
+            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Menu Gallery</span>
+            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Line Integration</span>
+        </div>
+    </div>
+
+    <!-- ปุ่มดูตัวอย่างที่เพิ่มเข้ามา -->
+    <a href="#" class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 text-sm font-semibold text-blue-600 bg-blue-50 hover:bg-blue-600 hover:text-white rounded-xl transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+        <span>ดูตัวอย่างเว็บไซต์</span>
+        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+    </a>
+</div>
+
+                <!-- Category 3: โรงแรม -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group flex flex-col h-full justify-between">
+    <div>
+        <!-- ส่วนหัวและไอคอน -->
+        <div class="flex items-center gap-4 mb-5">
+            <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                <i class="fa-solid fa-hotel"></i>
+            </div>
+            <div>
+                <span class="text-xs font-semibold text-slate-400 uppercase">Category 03</span>
+                <h3 class="text-lg font-bold text-slate-900">รับทำเว็บไซต์ โรงแรม</h3>
+            </div>
+        </div>
+        
+        <!-- รายละเอียด -->
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">ยกระดับที่พักด้วยระบบจองห้องพักตรง (Direct Booking) ไม่ผ่านคนกลาง ดีไซน์สวยงามน่าเชื่อถือ แกลเลอรีแชร์บรรยากาศ และระบบเปรียบเทียบห้องพัก</p>
+        
+        <!-- แท็กฟีเจอร์ -->
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Direct Booking</span>
+            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Room Gallery</span>
+            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Reviews Display</span>
+        </div>
+    </div>
+
+    <!-- ปุ่มดูตัวอย่างที่เพิ่มเข้ามา -->
+    <a href="#" class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 text-sm font-semibold text-blue-600 bg-blue-50 hover:bg-blue-600 hover:text-white rounded-xl transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+        <span>ดูตัวอย่างเว็บไซต์</span>
+        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+    </a>
+</div>
+
+                <!-- Category 4: ของแห้งของฝาก -->
+               <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group flex flex-col h-full justify-between">
+    <div>
+        <div class="flex items-center gap-4 mb-5">
+            <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                <i class="fa-solid fa-box-open"></i>
+            </div>
+            <div>
+                <span class="text-xs font-semibold text-slate-400 uppercase">Category 04</span>
+                <h3 class="text-lg font-bold text-slate-900">เว็บไซต์ ของแห้งของฝาก</h3>
+            </div>
+        </div>
+        
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">ระบบจัดซื้อสินค้าอีคอมเมิร์ซเต็มพิกัด คำนวณราคาสินค้ารวมน้ำหนักจัดส่งอัตโนมัติ ระบบชำระเงินสแกน QR Code และเชื่อมระบบพัสดุขนส่ง</p>
+        
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">E-Commerce</span>
+            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Shipping Calc</span>
+            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">QR Payment</span>
+        </div>
+    </div>
+
+    <a href="#" class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 text-sm font-semibold text-blue-600 bg-blue-50 hover:bg-blue-600 hover:text-white rounded-xl transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+        <span>ดูตัวอย่างเว็บไซต์</span>
+        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+    </a>
+</div>
+
+                <!-- Category 5: ราชการ -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group flex flex-col h-full justify-between">
+    <div>
+        <div class="flex items-center gap-4 mb-5">
+            <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                <i class="fa-solid fa-landmark"></i>
+            </div>
+            <div>
+                <span class="text-xs font-semibold text-slate-400 uppercase">Category 05</span>
+                <h3 class="text-lg font-bold text-slate-900">รับทำเว็บไซต์ ราชการ</h3>
+            </div>
+        </div>
+        
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">จัดสร้างตรงตามมาตรฐานและกฎเกณฑ์ภาครัฐ (ITA) การจัดหมวดหมู่ข่าวสารจัดหาจัดซื้อ ดาวน์โหลดเอกสาร เว็บบอร์ดประชาสัมพันธ์เพื่อประชาชน</p>
+        
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">ITA Standard</span>
+            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">E-Service Docs</span>
+            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Highly Secure</span>
+        </div>
+    </div>
+
+    <a href="#" class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 text-sm font-semibold text-blue-600 bg-blue-50 hover:bg-blue-600 hover:text-white rounded-xl transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+        <span>ดูตัวอย่างเว็บไซต์</span>
+        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+    </a>
+</div>
+
+                <!-- Category 6: บริการซ่อม -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group flex flex-col h-full justify-between">
+    <div>
+        <div class="flex items-center gap-4 mb-5">
+            <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <div>
+                <span class="text-xs font-semibold text-slate-400 uppercase">Category 06</span>
+                <h3 class="text-lg font-bold text-slate-900">รับทำเว็บไซต์ บริการซ่อม</h3>
+            </div>
+        </div>
+        
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">เว็บไซต์สำหรับธุรกิจช่างหรือศูนย์ซ่อม มีระบบเปิดตั๋วรับเรื่องแจ้งซ่อมออนไลน์ ตรวจเช็กและติดตามสถานะงาน นัดหมายช่าง ตลอดจนแสดงรีวิวจริง</p>
+        
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Ticket System</span>
+            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Job Status Tracking</span>
+            <span class="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">Booking Calendar</span>
+        </div>
+    </div>
+
+    <a href="#" class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 text-sm font-semibold text-blue-600 bg-blue-50 hover:bg-blue-600 hover:text-white rounded-xl transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+        <span>ดูตัวอย่างเว็บไซต์</span>
+        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+    </a>
+</div>
+
+                <!-- Category 7: อื่นๆ (Custom) - กินพื้นที่ 3 คอลัมน์เต็มบนหน้าจอใหญ่เพื่อความสวยงาม -->
+                <div class="bg-gradient-to-r from-blue-900 to-indigo-950 rounded-2xl p-8 sm:p-10 border border-slate-800 text-white lg:col-span-3 hover:shadow-2xl hover:shadow-blue-950/20 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden group">
+                    <div class="absolute -right-20 -top-20 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl"></div>
+                    <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+                        <div class="flex items-center gap-5">
+                            <div class="w-16 h-16 bg-white/10 text-sky-400 rounded-2xl flex items-center justify-center text-3xl shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                                <i class="fa-solid fa-wand-magic-sparkles animate-pulse"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-semibold text-blue-300 uppercase tracking-widest">Category 07</span>
+                                <h3 class="text-2xl font-bold mt-1">เว็บไซต์ระบบเฉพาะทางอื่นๆ สั่งทำพิเศษ (Custom Web Application)</h3>
+                                <p class="text-blue-100/80 text-sm mt-2 max-w-2xl leading-relaxed">
+                                    หากธุรกิจของคุณอยู่นอกเหนือจากระบบที่กล่าวมาข้างต้น ไม่ต้องกังวล! ทีมผู้เชี่ยวชาญ UI/UX และ Developer ของเราพร้อมร่วมวิเคราะห์ ออกแบบ และพัฒนาระบบพิเศษเฉพาะตัว (เช่น เว็บอสังหาริมทรัพย์, คลังสินค้าออนไลน์, สถาบันการศึกษา, หรือพอร์ตโฟลิโอส่วนตัว) ให้เหมาะกับไอเดียของคุณอย่างไร้ขอบเขต
+                                </p>
+                            </div>
+                        </div>
+                        <a href="#contact" class="bg-white text-slate-900 px-6 py-3.5 rounded-xl text-sm font-bold shadow-lg hover:bg-slate-100 transition whitespace-nowrap">
+                            <i class="fa-solid fa-comments mr-2"></i> ปรึกษาไอเดียฟรี
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="bg-white p-8 rounded-2xl text-gray-800">
-                <form class="space-y-4">
-                    <input type="text" placeholder="ชื่อของคุณ" class="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-amber-500">
-                    <input type="email" placeholder="อีเมล" class="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-amber-500">
-                    <textarea placeholder="ข้อความถึงเรา" rows="4" class="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
-                    <button class="w-full bg-amber-500 text-white py-4 rounded-lg font-bold hover:bg-amber-600 transition">ส่งข้อความ</button>
-                </form>
+
             </div>
         </div>
     </section>
 
-    <footer class="py-8 text-center text-gray-500 border-t">
-        <p>&copy; 2026 VIAN ESTATE. All Rights Reserved.</p>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">ตัวอย่างผลงานเด่น</h2>
+                <p class="mt-4 text-slate-600">ผลงานล่าสุดที่เราได้รับความไว้วางใจในการออกแบบและพัฒนา</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 group hover:shadow-xl transition">
+                    <div class="h-48 bg-gradient-to-br from-blue-600 to-indigo-900 flex items-center justify-center text-white font-medium text-lg relative overflow-hidden">
+                        <span>Klongwan Beach Resort</span>
+                        <div class="absolute inset-0 bg-blue-900/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                            <span class="bg-white text-slate-900 px-4 py-2 rounded-lg text-sm font-semibold shadow-md">ดูรายละเอียด</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Resort & Accommodation</span>
+                        <h3 class="text-lg font-bold text-slate-900 mt-2">เว็บไซต์รีสอร์ทและที่พักริมชายหาด</h3>
+                        <p class="text-xs text-slate-500 mt-1">สวยหรู รองรับระบบสำรวจห้องพัก แกลเลอรี และการจองโดยตรง</p>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 group hover:shadow-xl transition">
+                    <div class="h-48 bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center text-white font-medium text-lg relative overflow-hidden">
+                        <span>Sripha Bakery Online</span>
+                        <div class="absolute inset-0 bg-blue-900/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                            <span class="bg-white text-slate-900 px-4 py-2 rounded-lg text-sm font-semibold shadow-md">ดูรายละเอียด</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">E-Commerce Shop</span>
+                        <h3 class="text-lg font-bold text-slate-900 mt-2">หน้าร้านสั่งเบเกอรี่และของหวานออนไลน์</h3>
+                        <p class="text-xs text-slate-500 mt-1">จัดการตะกร้าสินค้า อัพโหลดสลิปชำระเงิน ตรวจพัสดุแม่นยำ</p>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 group hover:shadow-xl transition">
+                    <div class="h-48 bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center text-white font-medium text-lg relative overflow-hidden">
+                        <span>Rungsaeng Concrete ERP</span>
+                        <div class="absolute inset-0 bg-blue-900/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                            <span class="bg-white text-slate-900 px-4 py-2 rounded-lg text-sm font-semibold shadow-md">ดูรายละเอียด</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Internal Web App</span>
+                        <h3 class="text-lg font-bold text-slate-900 mt-2">เว็บระบบจัดการคลังงานโครงสร้างภายใน</h3>
+                        <p class="text-xs text-slate-500 mt-1">ตอบโจทย์การขนส่ง ข้อมูลคลังวัสดุ และบันทึกปริมาณงานในแอปเดียว</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section id="why-website" class="py-24 bg-white relative overflow-hidden">
+        <div class="absolute top-1/4 left-0 w-96 h-96 bg-blue-50 rounded-full blur-3xl -z-10 opacity-60"></div>
+        <div class="absolute bottom-1/4 right-0 w-96 h-96 bg-sky-50 rounded-full blur-3xl -z-10 opacity-60"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-blue-600 font-bold tracking-widest uppercase text-xs px-3 py-1 bg-blue-50 rounded-full">Business Growth</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">ทำไมยุคนี้... ธุรกิจของคุณต้องมีเว็บไซต์?</h2>
+                <p class="mt-4 text-slate-600">มากกว่าแค่หน้าตาออนไลน์ แต่คือเครื่องมือขับเคลื่อนยอดขายและสร้างความได้เปรียบทางการแข่งขันที่ยั่งยืน</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-400 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-shield-check"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">เพิ่มความน่าเชื่อถือขั้นสุด</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">ธุรกิจที่มีเว็บไซต์จดโดเมนเป็นของตัวเอง จะดูเป็นมืออาชีพ มีตัวตนชัดเจน และสร้างความมั่นใจให้ลูกค้ากล้าโอนเงินซื้อสินค้าได้ง่ายขึ้น</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-400 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">ลูกค้าค้นเจอทันทีบน Google</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">เมื่อลูกค้ามีปัญหาหรือต้องการสินค้า และค้นหาบน Google โครงสร้างเว็บที่รองรับ SEO จะช่วยให้ธุรกิจของคุณไปแสดงผลอยู่ต่อหน้าพวกเขา</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-400 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-shop"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">เปิดหน้าร้านขายของ 24 ชั่วโมง</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">ไม่ต้องนอนเฝ้าแชท เว็บไซต์ทำหน้าที่เป็นพนักงานขายระบบออโตเมติกคอยต้อนรับ รับออเดอร์ และปิดการขายแทนคุณได้ตลอดวันทุกคืน</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-400 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-folder-open"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">รวมข้อมูลสินค้า & บริการที่เดียว</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">จัดหมวดหมู่ข้อมูล รีวิว แผนที่ และราคาไว้อย่างเป็นระเบียบ ลูกค้าหาข้อมูลได้เองทันที โดยที่คุณไม่ต้องคอยส่งรูปซ้ำๆ ในแชท</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-400 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">สร้างภาพลักษณ์และอัตลักษณ์แบรนด์</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">คุณสามารถกำหนดธีม สีสัน และการจัดวาง (UI/UX) ถ่ายทอดความหรูหรา น่าเชื่อถือ หรือความสร้างสรรค์ของแบรนด์ได้อย่างไร้ขีดจำกัด</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-400 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">ขยายฐานลูกค้าออนไลน์ไร้พรมแดน</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">ทลายข้อจำกัดเรื่องทำเลที่ตั้ง ทั่วประเทศหรือทั่วโลกสามารถเข้าถึงธุรกิจของคุณ ขยายโอกาสการขายไปยังกลุ่มตลาดใหม่ๆ ได้ตลอดเวลา</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-400 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-circle-nodes"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">เป็นเจ้าของข้อมูลระบบ 100%</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">ปลอดภัยจากการโดนปิดกั้นการมองเห็น หรือโดนแบนบัญชีจาก Social Media เพราะเว็บไซต์คืออสังหาริมทรัพย์ดิจิทัลที่คุณเป็นเจ้าของอย่างแท้จริง</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-400 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">วิเคราะห์ข้อมูลลูกค้าต่อยอดโฆษณา</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">สามารถฝังเครื่องมือติดตามพฤติกรรมลูกค้า เพื่อนำไปทำ Re-targeting ยิงโฆษณา (Facebook Pixel / Google Tag) กลับไปหาคนที่เคยเข้าเว็บได้อย่างแม่นยำ</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-400 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">ลดต้นทุนการบริหารธุรกิจระยะยาว</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">ประเมินแล้วคุ้มค่ากว่าการพิมพ์โบรชัวร์กระดาษ หรือการจ้างพนักงานหน้าร้านจำนวนมาก เว็บไซต์ดูแลรักษาง่ายและกระจายข้อมูลสู่คนนับหมื่นได้ในคลิกเดียว</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">แพ็กเกจการลงทุนที่คุ้มค่า</h2>
+                <p class="mt-4 text-slate-600">ประเมินอย่างตรงไปตรงมา สอดคล้องตามฟังก์ชันที่เลือกใช้จริง</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                <!-- Package 1 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border-2 border-emerald-500 flex flex-col justify-between relative overflow-hidden shadow-lg">
+    <!-- แท็กยอดฮิตมุมขวาบน -->
+    <div class="absolute top-0 right-0 bg-emerald-500 text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl uppercase tracking-wider animate-pulse">
+        คุ้มที่สุด!
+    </div>
+
+    <div>
+        <h3 class="text-xl font-bold text-slate-900">Landing Page</h3>
+        <p class="text-slate-500 text-sm mt-1">สําหรับเพจยิงแอด/หน้าเว็บเดี่ยว</p>
+        
+        <!-- ส่วนราคาปรับปรุงใหม่แบบสุดๆ -->
+        <div class="mt-6 border-b border-dashed border-slate-200 pb-4">
+            <div class="flex items-center gap-2">
+                <span class="text-slate-400 line-through text-base">฿4,900</span>
+                <span class="text-xs bg-rose-100 text-rose-600 font-bold px-2 py-0.5 rounded-md">-80% OFF</span>
+            </div>
+            <div class="flex items-baseline text-rose-600 mt-1">
+                <span class="text-5xl font-black tracking-tight">฿999</span>
+                <span class="text-sm font-semibold text-slate-500 ml-2">/ พิเศษเฉพาะวันนี้</span>
+            </div>
+            <p class="text-xs text-rose-500 font-medium mt-2 flex items-center gap-1">
+                <i class="fa-solid fa-clock"></i> จำกัด 10 สิทธิ์แรกเท่านั้น (เหลือ 3 สิทธิ์สุดท้าย)
+            </p>
+        </div>
+
+        <ul class="mt-4 space-y-4 text-sm text-slate-600">
+            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-500"></i> เว็บหน้าเดี่ยวครอบคลุมเนื้อหาครบ</li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-500"></i> ปรับปรุง Mobile Responsive 100%</li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-500"></i> ปุ่มเชื่อมโยง Line/โทร สั่งซื้อไว</li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-500"></i> เชื่อมต่อ Google Tag &amp; Facebook Pixel</li>
+        </ul>
+    </div>
+    
+    <!-- ปุ่มแบบตอกย้ำความคุ้มค่า -->
+    <a href="promotion.html" target="_blank" class="mt-8 block w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white py-3.5 rounded-xl font-bold text-base shadow-md shadow-emerald-200 transition-all transform hover:-translate-y-0.5">
+    จองสิทธิ์ราคาพิเศษ ฿999 ด่วน!
+</a>
+</div>
+                <!-- Package 2 -->
+                <div class="bg-slate-900 p-8 rounded-2xl border-2 border-amber-500 flex flex-col justify-between relative shadow-2xl shadow-blue-900/20 overflow-hidden">
+    <!-- ปรับแท็กด้านบนเป็นสีส้ม/ทอง ให้เด่นตัดกับพื้นหลังสีเข้ม -->
+    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 px-5 py-1 rounded-full text-xs font-black uppercase tracking-widest animate-bounce">
+        HOT DEAL!
+    </div>
+
+    <div>
+        <h3 class="text-xl font-bold text-white">Standard Corporate</h3>
+        <p class="text-slate-400 text-sm mt-1">ดีไซน์เว็บหลายหน้าขององค์กรธุรกิจ</p>
+        
+        <!-- ส่วนราคาปรับปรุงใหม่แบบลดโหดสะใจ -->
+        <div class="mt-6 border-b border-dashed border-slate-800 pb-5">
+            <div class="flex items-center gap-2">
+                <span class="text-slate-500 line-through text-base">฿12,900</span>
+                <span class="text-xs bg-red-500/20 text-red-400 border border-red-500/30 font-bold px-2 py-0.5 rounded">SAVE 75%</span>
+            </div>
+            <div class="flex items-baseline text-amber-400 mt-1">
+                <span class="text-5xl font-black tracking-tight">฿2,999</span>
+                <span class="text-xs font-semibold text-slate-400 ml-2">/ เฉพาะจองวันนี้</span>
+            </div>
+            <p class="text-xs text-orange-400 font-medium mt-2.5 flex items-center gap-1">
+                <i class="fa-solid fa-fire-flame-curved"></i> ด่วน! โควตาราคานี้เหลือเพียง 2 บริษัทสุดท้าย
+            </p>
+        </div>
+
+        <ul class="mt-5 space-y-4 text-sm text-slate-300">
+            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-blue-400"></i> สูงสุด 5 หน้าข้อมูลแยกเป็นสัดส่วน</li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-blue-400"></i> วางโครงสร้างสไตล์ On-Page SEO</li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-blue-400"></i> แกลเลอรี อัลบั้มผลงาน / หน้าข่าว</li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-blue-400"></i> ฟรี Web Hosting </li>
+        </ul>
+    </div>
+    
+    <!-- ปุ่มปรับสีให้ลิ้งก์กับแท็กราคาส้มทอง ดึงดูดสายตาดีเยี่ยม -->
+    <a href="#contact" class="mt-8 block w-full text-center bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 py-3.5 rounded-xl font-black text-base shadow-lg shadow-orange-500/20 transition-all transform hover:-translate-y-0.5 active:scale-95">
+        รับสิทธิ์ราคาพิเศษ ฿2,999 ทันที
+    </a>
+</div>
+                <!-- Package 3 -->
+                <div class="bg-gradient-to-b from-slate-50 to-indigo-50/30 p-8 rounded-2xl border-2 border-indigo-600 flex flex-col justify-between relative shadow-xl overflow-hidden">
+    <!-- ป้ายดีลพิเศษสุดหรูมุมขวา -->
+    <div class="absolute top-0 right-0 bg-indigo-600 text-white text-xs font-black px-4 py-1.5 rounded-bl-xl uppercase tracking-wider">
+        MEGA DEAL
+    </div>
+
+    <div>
+        <h3 class="text-xl font-bold text-slate-900">Custom / E-Commerce</h3>
+        <p class="text-slate-500 text-sm mt-1">ร้านค้าสมบูรณ์หรือแอประบบเฉพาะ</p>
+        
+        <!-- ส่วนราคาที่หั่นลงมาแบบพรีเมียมและเร้าใจ -->
+        <div class="mt-6 border-b border-dashed border-slate-200 pb-5">
+            <div class="flex items-center gap-2">
+                <span class="text-slate-400 line-through text-base">เริ่มต้น ฿25,000</span>
+                <span class="text-xs bg-indigo-100 text-indigo-700 font-extrabold px-2 py-0.5 rounded-full">ประหยัด ฿10,001</span>
+            </div>
+            <div class="flex items-baseline text-indigo-600 mt-1">
+                <span class="text-5xl font-black tracking-tight">฿14,999</span>
+                <span class="text-xs font-bold text-slate-500 ml-2">/ ราคาเน็ตไม่มีบวกเพิ่ม</span>
+            </div>
+            <p class="text-xs text-amber-600 font-semibold mt-2.5 flex items-center gap-1">
+                <i class="fa-solid fa-star text-amber-500"></i> โปรโมชันพิเศษสุดจำกัดเฉพาะ 3 แบรนด์แรกของเดือนนี้
+            </p>
+        </div>
+
+        <ul class="mt-5 space-y-4 text-sm text-slate-600">
+            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-500"></i> จัดเต็มระบบตะกร้าและชำระเงิน</li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-500"></i> เชื่อมต่อระบบบัตรเครดิต &amp; QR</li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-500"></i> ตกแต่ง UI/UX พิเศษเพื่อกลุ่มแบรนด์เนม</li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-500"></i> คอร์สสอนการใช้จัดการหลังบ้านตัวต่อตัว</li>
+        </ul>
+    </div>
+    
+    <!-- ปุ่มติดต่อที่ปรับให้เด่นและน่าคลิกมากขึ้น -->
+    <a href="#contact" class="mt-8 block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white py-3.5 rounded-xl font-bold text-base shadow-lg shadow-indigo-600/20 transition-all transform hover:-translate-y-0.5">
+        รับสิทธิ์ราคาพิเศษ ฿14,999 (คุยรายละเอียด)
+    </a>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-100">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900">ติดต่อประเมินราคาฟรี</h2>
+                    <p class="mt-4 text-slate-600">พูดคุยแลกเปลี่ยนไอเดียและรายละเอียดความต้องการได้ตลอดเวลา ไม่มีค่าใช้จ่ายเบื้องต้น</p>
+                    
+                    <div class="mt-12 space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm text-slate-400">เบอร์โทรศัพท์</h4>
+                                <p class="text-base font-semibold text-slate-900">063-889-0295</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm text-slate-400">อีเมลเพื่อติดต่องาน</h4>
+                                <p class="text-base font-semibold text-slate-900">zx1000rr@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-4 bg-slate-50 rounded-2xl p-6 border border-slate-100">
+    <h3 class="text-lg font-bold text-slate-900 mb-4 text-center sm:text-left">เลือกช่องทางที่คุณสะดวกคุย</h3>
+    
+    <a href="https://line.me/ti/p/~adminkasem" target="_blank" class="flex items-center justify-center gap-3 w-full bg-[#06C755] hover:bg-[#05b34c] text-white py-4 rounded-xl font-semibold shadow-lg shadow-green-600/20 transition">
+        <i class="fa-brands fa-line text-xl"></i>
+        แชทผ่าน Line Official / ID
+    </a>
+
+    <a href="mailto:zx1000rr@gmail.com?subject=ติดต่อประเมินราคาเว็บไซต์" class="flex items-center justify-center gap-3 w-full bg-slate-900 hover:bg-slate-800 text-white py-4 rounded-xl font-semibold shadow-lg transition">
+        <i class="fa-solid fa-envelope text-xl"></i>
+        ส่งอีเมลหาเราโดยตรง
+    </a>
+
+    <a href="tel:0638890295" class="flex items-center justify-center gap-3 w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl font-semibold shadow-lg shadow-blue-600/20 transition">
+        <i class="fa-solid fa-phone text-xl"></i>
+        โทรคุยตอนนี้ (063-889-0295)
+    </a>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-code text-blue-500 text-xl"></i>
+                <span class="text-xl font-bold text-white">prachuap online</span>
+            </div>
+            <p class="text-sm">&copy; 2026 prachuap online Studio. All rights reserved.</p>
+        </div>
     </footer>
+
+    <!-- JavaScript สำหรับควบคุมการ เปิด-ปิด เมนูบนมือถือ -->
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const closeButton = document.getElementById('mobile-close-button');
+        const sidebar = document.getElementById('mobile-sidebar');
+        const backdrop = document.getElementById('mobile-backdrop');
+        const menuPanel = document.getElementById('mobile-menu-panel');
+        const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+        // ฟังก์ชันสำหรับเปิดเมนู
+        function openMenu() {
+            sidebar.classList.remove('pointer-events-none');
+            backdrop.classList.remove('opacity-0');
+            backdrop.classList.add('opacity-100');
+            menuPanel.classList.remove('translate-x-full');
+            menuPanel.classList.add('translate-x-0');
+        }
+
+        // ฟังก์ชันสำหรับปิดเมนู
+        function closeMenu() {
+            sidebar.classList.add('pointer-events-none');
+            backdrop.classList.remove('opacity-100');
+            backdrop.classList.add('opacity-0');
+            menuPanel.classList.remove('translate-x-0');
+            menuPanel.classList.add('translate-x-full');
+        }
+
+        // ตรวจจับการคลิกปุ่มต่างๆ
+        menuButton.addEventListener('click', openMenu);
+        closeButton.addEventListener('click', closeMenu);
+        backdrop.addEventListener('click', closeMenu);
+
+        // เมื่อคลิกลิงก์เมนู ให้ปิดเมนูอัตโนมัติ (เพื่อเลื่อนไปยัง Section นั้นๆ)
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    </script>
 
 </body>
 </html>
