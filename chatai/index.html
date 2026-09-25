@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Companion - ค้นหาเพื่อนคุย AI ที่เข้ากับคุณ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar sticky">
+  <div class="nav-inner">
+    <div class="logo"><span class="logo-icon">◍</span> AI Companion <span class="badge-ai">AI ตัวละครสมมติ</span></div>
+    <nav class="nav-links">
+      <a href="#home" class="nav-link active" data-page="home">หน้าแรก</a>
+      <a href="#explore" class="nav-link" data-page="explore">สำรวจตัวละคร</a>
+      <a href="#match" class="nav-link" data-page="match">ค้นหาคู่คุย</a>
+      <a href="#chats" class="nav-link" data-page="chats">แชตของฉัน <span id="chat-count" class="count">0</span></a>
+    </nav>
+    <button class="hamburger" id="hamburger">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#home" data-page="home">หน้าแรก</a>
+    <a href="#explore" data-page="explore">สำรวจตัวละคร</a>
+    <a href="#match" data-page="match">ค้นหาคู่คุย</a>
+    <a href="#chats" data-page="chats">แชตของฉัน</a>
+  </div>
+</header>
+
+<main>
+<!-- HOME -->
+<section id="page-home" class="page active">
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content fade-up">
+      <p class="hero-kicker">ทุกโปรไฟล์คือตัวละคร AI สมมติ • ปลอดภัย • 18+</p>
+      <h1>วันนี้อยากคุยกับใครดี?</h1>
+      <p class="hero-sub">เลือกเพื่อนคุย AI ที่เข้ากับอารมณ์คุณที่สุด จากเพื่อนรับฟัง คนขี้เล่น ไปจนถึงคู่ซ้อมไอเดีย ทุกบทสนทนาเป็นพื้นที่สมมติเพื่อความบันเทิงและการฝึกสื่อสาร</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" onclick="goTo('match')">ค้นหาคนที่เข้ากัน →</button>
+        <button class="btn btn-ghost" onclick="goTo('explore')">สำรวจตัวละครทั้งหมด</button>
+      </div>
+      <div class="trust-row">
+        <span>✦ ไม่มีระบบสมัครสมาชิก</span><span>✦ ไม่มีค่าใช้จ่าย</span><span>✦ เดโม - ยังไม่ได้เชื่อม AI จริง</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section-head fade-up">
+      <h2>ตัวละครยอดนิยม</h2>
+      <p>คัดมาให้จากบุคลิกที่หลากหลาย</p>
+    </div>
+    <div id="home-cards" class="grid"></div>
+  </div>
+</section>
+
+<!-- EXPLORE -->
+<section id="page-explore" class="page">
+  <div class="container">
+    <div class="page-title">
+      <h1>สำรวจตัวละคร</h1>
+      <p>ค้นหาจากชื่อ คำโปรย แท็ก หรือกรองตามสไตล์ที่ชอบ</p>
+    </div>
+    <div class="toolbar">
+      <div class="search-box">
+        <input id="search-input" type="text" placeholder="ค้นหา เช่น ขี้เล่น, รับฟัง, ดนตรี, เกม...">
+        <span class="search-icon">⌕</span>
+      </div>
+      <div class="filter-row">
+        <div class="filter-group">
+          <label>บุคลิก</label>
+          <div id="personality-filters" class="chips"></div>
+        </div>
+        <div class="filter-group">
+          <label>แนวความสัมพันธ์</label>
+          <div id="relation-filters" class="chips"></div>
+        </div>
+        <button class="btn btn-sm" id="clear-filters">ล้างตัวกรอง</button>
+      </div>
+    </div>
+    <div id="explore-cards" class="grid"></div>
+  </div>
+</section>
+
+<!-- MATCH -->
+<section id="page-match" class="page">
+  <div class="container">
+    <div class="page-title">
+      <h1>ค้นหาคู่คุยที่เข้ากัน</h1>
+      <p>ตอบ 3 ข้อนี้ ระบบจะเรียงตัวละครที่ตรงใจคุณที่สุด (คำนวณในเบราว์เซอร์)</p>
+    </div>
+    <div class="match-layout">
+      <div class="match-form card-glass">
+        <div class="form-group">
+          <label>1. วันนี้อยากคุยกับใคร?</label>
+          <select id="match-who">
+            <option value="">เลือกเลย</option>
+            <option value="เพื่อนคุย">เพื่อนคุยสบายๆ</option>
+            <option value="คนรับฟัง">คนรับฟังใจเย็น</option>
+            <option value="คนขี้เล่น">คนขี้เล่น ขี้แซว</option>
+            <option value="ที่ปรึกษา">ที่ปรึกษา / โค้ช</option>
+            <option value="roleplay">สายโรลเพลย์สร้างสรรค์</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>2. ชอบบุคลิกแบบไหน?</label>
+          <div id="match-personality" class="chips"></div>
+        </div>
+        <div class="form-group">
+          <label>3. วันนี้อยากคุยเรื่องอะไร?</label>
+          <input id="match-topic" type="text" placeholder="เช่น เหนื่อยงาน, อยากหาไอเดียเขียนนิยาย, ฝึกภาษา">
+        </div>
+        <button class="btn btn-primary full" id="match-btn">จัดอันดับคู่คุยให้หน่อย ✨</button>
+        <p class="hint">ระบบให้คะแนนจากแท็กและบุคลิกที่ตรงกัน — ไม่มีการส่งข้อมูลออกนอกเครื่อง</p>
+      </div>
+      <div class="match-result">
+        <div id="match-cards" class="grid single-col"></div>
+        <div id="match-empty" class="empty">เลือกด้านซ้ายแล้วกดค้นหาได้เลย</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHATS -->
+<section id="page-chats" class="page">
+  <div class="container">
+    <div class="page-title row-between">
+      <div><h1>แชตของฉัน</h1><p>ประวัติเดโมเก็บในเครื่องคุณด้วย localStorage</p></div>
+      <button class="btn btn-danger btn-sm" id="clear-history">ล้างประวัติทั้งหมด</button>
+    </div>
+    <div id="chat-list" class="chat-list"></div>
+    <div id="chat-empty" class="empty">ยังไม่มีประวัติแชต — ไปเริ่มคุยกับใครสักคนในหน้าสำรวจก่อนสิ</div>
+  </div>
+</section>
+</main>
+
+<!-- PROFILE MODAL -->
+<div id="profile-modal" class="modal hidden">
+  <div class="modal-backdrop"></div>
+  <div class="modal-content">
+    <button class="modal-close" id="modal-close">✕</button>
+    <div class="profile-layout">
+      <img id="pm-img" class="profile-img" alt="">
+      <div>
+        <div class="profile-top">
+          <h2 id="pm-name"></h2><span id="pm-age" class="age"></span>
+          <span class="badge-ai small">AI ตัวละครสมมติ</span>
+        </div>
+        <p id="pm-quote" class="quote"></p>
+        <div id="pm-tags" class="tags"></div>
+        <div class="profile-meta">
+          <div><strong>บุคลิก:</strong> <span id="pm-personality"></span></div>
+          <div><strong>สไตล์:</strong> <span id="pm-relation"></span></div>
+          <div><strong>คำทักทายแรก:</strong> <span id="pm-greeting" class="greeting"></span></div>
+        </div>
+        <p id="pm-bio" class="bio"></p>
+        <button id="pm-chat" class="btn btn-primary full">เริ่มคุยกับ <span id="pm-chat-name"></span> →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CHAT PAGE OVERLAY -->
+<div id="chat-overlay" class="chat-overlay hidden">
+  <div class="chat-header">
+    <button id="chat-back" class="icon-btn">←</button>
+    <img id="chat-avatar" class="chat-avatar" alt="">
+    <div>
+      <div class="chat-name-row"><span id="chat-name"></span><span class="badge-ai small">AI</span></div>
+      <div class="chat-status">เดโมบทสนทนา ยังไม่ได้เชื่อม AI จริง</div>
+    </div>
+  </div>
+  <div id="chat-messages" class="chat-messages"></div>
+  <div class="chat-input-row">
+    <input id="chat-input" type="text" placeholder="พิมพ์ข้อความ...">
+    <button id="chat-send" class="btn btn-primary">ส่ง</button>
+  </div>
+  <div class="demo-notice">⚠️ นี่คือเดโม — คำตอบเป็นข้อความจำลองที่เตรียมไว้ล่วงหน้า ไม่ได้มาจากโมเดล AI จริง <br><span class="mono">อนาคต: เชื่อม API ที่ // TODO: CONNECT REAL AI API HERE</span></div>
+</div>
+
+<footer class="footer">
+  <p>AI Companion • ตัวละครทั้งหมดเป็น AI สมมติ อายุ 18+ • สร้างเพื่อเดโมการออกแบบ UX เท่านั้น • ไม่มีระบบสมัครสมาชิก/ชำระเงิน</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
